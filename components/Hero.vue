@@ -76,8 +76,8 @@ const initWebGLComponent = () => {
  */
 const renderWebGLComponent = () => {
 
-  // Set the view port (disabled for mobile testing, if we don't want to shrink down the hero)
-  //gl.viewport(0, 0, width.value, height.value);
+  // Set the view port
+  gl.viewport(0, 0, width.value, height.value);
 
   // Clear the canvas
   gl.clearColor(0, 0, 0, 0);
