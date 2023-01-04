@@ -7,11 +7,11 @@ export default `
       uniform vec2 iMouse;
 
       // Configuration
-      #define NOISE_STRENGTH 0.05
+      #define NOISE_STRENGTH 0.06
       #define SPECULAR_STRENGTH 0.2
       #define ANIMATION_SPEED 0.3
       #define DEPTH 100.
-      #define SEGMENT_QUALITY 1.1
+      #define SEGMENT_QUALITY 1.3
 
       // Blob Effect
       float blob(vec3 q) {
