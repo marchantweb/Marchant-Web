@@ -2,18 +2,12 @@
   <div class="cursor" :style="{ transform: 'translate(' + (x - 10) + 'px, ' + (y - 10) + 'px)' }"></div>
 </template>
 
-<script>
+<script setup>
 
 import {useMouse} from "@vueuse/core";
 
-export default {
-  data() {
-    return {
-      x: useMouse().x,
-      y: useMouse().y
-    };
-  }
-};
+const {x, y} = useMouse();
+
 </script>
 
 <style lang="scss" scoped>

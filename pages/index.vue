@@ -18,8 +18,8 @@ html {
 
 body {
   overflow: hidden !important;
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: #02000b;
+  color: #FFFFFF;
   cursor: none !important;
 }
 

@@ -1,96 +1,59 @@
 <template>
   <div class="canvasContainer">
-    <canvas id="heroCanvas" ref="canvas" :width="this.width" :height="this.height"/>
+    <canvas id="heroCanvas" ref="canvas" :width="width === Infinity ? window.innerWidth : width"
+            :height="height === Infinity ? window.innerHeight : height"/>
   </div>
 </template>
 
-<script>
+<script setup>
 
-import { useWindowSize, useMouse } from '@vueuse/core'
+// Imports
+import {useMouse, useWindowSize} from "@vueuse/core";
+import {createShader, createProgram} from "~/shaders/shaderHelpers";
 
-export default {
-  data() {
-    return {
-      gl: null,
-      program: null,
-      positionBuffer: null,
-      locations: {
-        time: null,
-        resolution: null,
-        position: null,
-        mouse: null
-      },
-      width: useWindowSize().width,
-      height: useWindowSize().height,
-      x: useMouse().x,
-      y: useMouse().y,
-      time: 1
-    };
-  },
-  methods: {
+// Non-reactive WebGL variables
+let gl = null;
+let program = null;
+let positionBuffer = null;
+const locations = {
+  time: null,
+  resolution: null,
+  position: null,
+  mouse: null
+};
+let time = 0;
 
-    /**
-     * Creates a WebGL shader from the provided GLSL source code.
-     */
-    createShader(type, source) {
-      const shader = this.gl.createShader(type);
-      this.gl.shaderSource(shader, source);
-      this.gl.compileShader(shader);
-      const success = this.gl.getShaderParameter(shader, this.gl.COMPILE_STATUS);
-      if (success) {
-        return shader;
-      }
-      console.log(this.gl.getShaderInfoLog(shader));
-      this.gl.deleteShader(shader);
-    },
+// Reactive WebGL variables
+const {width, height} = useWindowSize();
+const {x, y} = useMouse();
 
-    /**
-     * Creates a WebGL program from the provided shaders
-     */
-    createProgram(vertexShader, fragmentShader) {
-      const program = this.gl.createProgram();
-      this.gl.attachShader(program, vertexShader);
-      this.gl.attachShader(program, fragmentShader);
-      this.gl.linkProgram(program);
-      const success = this.gl.getProgramParameter(program, this.gl.LINK_STATUS);
-      if (success) {
-        return program;
-      }
-      console.log(this.gl.getProgramInfoLog(program));
-      this.gl.deleteProgram(program);
-    },
+/**
+ * Does the initial work to set up the WebGL context and shaders
+ */
+const initWebGLComponent = () => {
 
-    /**
-     * Does the initial work to set up the WebGL context and shaders
-     */
-    initWebGLComponent: function () {
+  // Set up the canvas and WebGL context
+  const canvas = document.getElementById('heroCanvas');
+  gl = canvas.getContext('webgl');
+  if (!gl) {
+    return;
+  }
 
-      /* Step1: Prepare the canvas and get WebGL context */
+  // Vertex shader source code
+  const vertCode = `attribute vec4 position;
 
-      const canvas = document.getElementById('heroCanvas');
-      this.gl = canvas.getContext('webgl');
-
-      if (!this.gl) {
-        return;
-      }
-
-      // Vertex shader source code
-      const vertCode = `
-      attribute vec4 position;
-
-      varying vec2 fragCoord;
+      varying vec2 fragmentCoordinates;
 
       void main() {
         gl_Position = vec4(position.xy, 0.0, 1.0);
-        fragCoord = position.xy * 1.;
-      }
-      `;
+        fragmentCoordinates = position.xy * 1.;
+      }`;
 
-      //Fragment shader source code
-      const fragCode = `
+  //Fragment shader source code
+  const fragCode = `
 
       precision highp float;
-      varying vec2 fragCoord;
+      varying vec2 fragmentCoordinates;
       uniform vec2 iResolution;
       uniform float iTime;
       uniform vec2 iMouse;
@@ -119,10 +82,10 @@ export default {
 
           // Basics
           vec2 ps = vec2(1.0) / iResolution.xy;
-          vec2 uv = fragCoord * ps;
+          vec2 uv = fragmentCoordinates * ps;
           gl_FragColor = vec4(0, 0, 0, 1.);
 
-          vec2 p= -3. + 1.8 * fragCoord;
+          vec2 p= -3. + 1.8 * fragmentCoordinates;
           vec3 o=vec3(p.x + 14. + (iMouse.x * 0.1), p.y + 2.7 - (iMouse.y * 0.1), -0.35);
           vec3 d=vec3(p.x*8.,p.y,1.)/128.;
           vec4 c=vec4(0.);
@@ -159,88 +122,81 @@ export default {
           vec3 grain = vec3(noise) * (1.0 - gl_FragColor.rgb);
           gl_FragColor.rgb -= grain * NOISE_STRENGTH;
 
-      }
+      } `;
 
-      `;
+  // Create the shaders
+  const vertexShader = createShader(gl, gl.VERTEX_SHADER, vertCode);
+  const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fragCode);
 
-      const vertexShader = this.createShader(this.gl.VERTEX_SHADER, vertCode);
-      const fragmentShader = this.createShader(this.gl.FRAGMENT_SHADER, fragCode);
+  // Create a shader program object to store combined shader program
+  program = createProgram(gl, vertexShader, fragmentShader);
 
-      // Create a shader program object to store combined shader program
-      this.program = this.createProgram(vertexShader, fragmentShader);
+  // Prepare the position attribute and buffer
+  locations.position = gl.getAttribLocation(program, "position");
+  positionBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  const vertices = new Float32Array([-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0]);
+  gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
-      // Prepare the position attribute and buffer
-      this.locations.position = this.gl.getAttribLocation(this.program, "position");
-      this.positionBuffer = this.gl.createBuffer();
-      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.positionBuffer);
-      const vertices = new Float32Array([-1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, 1.0]);
-      this.gl.bufferData(this.gl.ARRAY_BUFFER, vertices, this.gl.STATIC_DRAW);
+  // Get the location of the time uniform
+  locations.time = gl.getUniformLocation(program, "iTime");
 
-      // Get the location of the time uniform
-      this.locations.time = this.gl.getUniformLocation(this.program, "iTime");
+  // Get the location of the resolution uniform
+  locations.resolution = gl.getUniformLocation(program, "iResolution");
 
-      // Get the location of the resolution uniform
-      this.locations.resolution = this.gl.getUniformLocation(this.program, "iResolution");
+  // Get the location of the mouse uniform
+  locations.mouse = gl.getUniformLocation(program, "iMouse");
 
-      // Get the location of the mouse uniform
-      this.locations.mouse = this.gl.getUniformLocation(this.program, "iMouse");
+}
 
-    },
+/**
+ * Updates the WebGL component on every "frame" of the animation.
+ */
+const renderWebGLComponent = () => {
 
-    /**
-     * Updates the WebGL component on every "frame" of the animation.
-     */
-    renderWebGLComponent: function () {
+  // Set the view port
+  gl.viewport(0, 0, width.value, height.value);
 
-      // Set the view port
-      this.gl.viewport(0, 0, this.width, this.height);
+  // Clear the canvas
+  gl.clearColor(0, 0, 0, 0);
+  gl.clear(gl.COLOR_BUFFER_BIT);
 
-      // Clear the canvas
-      this.gl.clearColor(0, 0, 0, 0);
-      this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+  // Enable the depth test
+  gl.enable(gl.DEPTH_TEST);
 
-      // Enable the depth test
-      this.gl.enable(this.gl.DEPTH_TEST);
+  // Use the program
+  gl.useProgram(program);
 
-      // Use the program
-      this.gl.useProgram(this.program);
+  // Handle the position buffer update
+  gl.enableVertexAttribArray(locations.position);
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  gl.vertexAttribPointer(locations.position, 2, gl.FLOAT, false, 0, 0);
 
-      // Handle the position buffer update
-      this.gl.enableVertexAttribArray(this.locations.position);
-      this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.positionBuffer);
-      this.gl.vertexAttribPointer(this.locations.position, 2, this.gl.FLOAT, false, 0, 0);
+  // Pass the time uniform
+  time++;
+  gl.uniform1f(locations.time, time * 0.01);
 
-      // Handle the time update
-      this.time++;
-      this.gl.uniform1f(this.locations.time, this.time * 0.01);
+  // Pass the resolution uniform
+  gl.uniform2f(locations.resolution, width.value, height.value);
 
-      // Handle the resolution
-      this.gl.uniform2f(this.locations.resolution, this.width, this.height);
+  // Pass the mouse uniform
+  gl.uniform2f(locations.mouse, (1 / width.value) * x.value, (1 / height.value) * y.value);
 
-      // Handle the mouse position
-      this.gl.uniform2f(this.locations.mouse, (1 / this.width) * this.x, (1 / this.height) * this.y);
+  // Draw the vertices
+  gl.drawArrays(gl.TRIANGLES, 0, 6);
 
-      // Draw the vertices
-      this.gl.drawArrays(this.gl.TRIANGLES, 0, 6);
+  // All done
+  requestAnimationFrame(renderWebGLComponent);
+}
 
-      // All done
-      requestAnimationFrame(this.renderWebGLComponent);
+/**
+ * Initialize the WebGL background
+ */
+onMounted(() => {
+    initWebGLComponent();
+    requestAnimationFrame(renderWebGLComponent);
+});
 
-    }
-
-  },
-  mounted() {
-
-    this.initWebGLComponent();
-    requestAnimationFrame(this.renderWebGLComponent);
-
-    addEventListener("resize", () => {
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
-    });
-
-  }
-};
 </script>
 
 <style lang="scss" scoped>
