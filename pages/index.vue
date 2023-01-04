@@ -7,20 +7,19 @@
     <!-- WebGL Background -->
     <Hero/>
 
+    <img class="main-logo" src="/icon-white.svg"
+         alt="A small icon for the Marchant Web logo, with a circle that merges into a square and the text: MW.">
+
   </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-html {
-  overflow: hidden !important;
-}
-
-body {
-  overflow: hidden !important;
-  background-color: #02000b;
-  color: #FFFFFF;
-  cursor: none !important;
+.main-logo {
+  position: fixed;
+  bottom: 60px;
+  left: 60px;
+  width: 64px;
 }
 
 </style>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Exclusion_1_00000054265771325903344530000012757785384839471524_);}
+	.st1{enable-background:new;}
+</style>
+<g id="Group_85" transform="translate(-96 -382.776)">
+
+		<linearGradient id="Exclusion_1_00000029737699455271198090000005099991032595095209_" gradientUnits="userSpaceOnUse" x1="94.7372" y1="1385.5929" x2="110.6291" y2="1371.5587" gradientTransform="matrix(64.0144 0 0 -64 -5918.4077 89049.4688)">
+		<stop  offset="0" style="stop-color:#6675E4"/>
+		<stop  offset="1" style="stop-color:#A561FF"/>
+	</linearGradient>
+	<path id="Exclusion_1" style="fill:url(#Exclusion_1_00000029737699455271198090000005099991032595095209_);" d="M510.5,1381.9
+		C282,1382.1,96.7,1197,96.5,968.5c-0.1-110,43.6-215.5,121.4-293.1c13.9-13.9,28.7-26.7,44.3-38.5v557.3h595
+		c-15.7,24-33.8,46.3-54.1,66.5C725.6,1338.4,620.3,1382,510.5,1381.9z M1095.8,1194.1H857.2C963.5,1030,941,814,803.1,675.4
+		c-145.6-145.6-376.2-162-541-38.5V382.8h833.6V1194.1z"/>
+	<g class="st1">
+		<path d="M393,960.2v137h-26.4V955.1h50.5l24.4,137l24.4-137h50.5v142.1H490v-137l-22.7,137h-51.5L393,960.2z" fill="#FFFFFF"/>
+		<path d="M624.6,960.2l-14.2,137h-52.8l-22.9-142.1h28l21.3,137l14.2-137h52.8l14.2,137l21.3-137h28l-22.9,142.1h-52.8L624.6,960.2z" fill="#FFFFFF"/>
+	</g>
+</g>
+</svg>

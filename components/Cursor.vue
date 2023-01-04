@@ -16,7 +16,7 @@ const {x, y} = useMouse();
   width: 20px;
   height: 20px;
   position: absolute;
-  z-index: 10;
+  z-index: 999;
   background-color: white;
   border-radius: 100%;
   top: 0;
