@@ -9,14 +9,14 @@ export default `
       // Configuration
       #define NOISE_STRENGTH 0.06
       #define SPECULAR_STRENGTH 0.2
-      #define ANIMATION_SPEED 0.3
+      #define ANIMATION_SPEED 0.2
       #define DEPTH 100.
       #define SEGMENT_QUALITY 1.3
 
       // Blob Effect
       float blob(vec3 q) {
           float f = DEPTH;
-          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2.)) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * (.6 + (iMouse.y * .1));
+          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2.)) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * (.6 + (iMouse.y * .05));
           return f;
       }
 
@@ -48,7 +48,7 @@ export default `
                   n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy));
                   n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx));
                   n = normalize(n);
-                  c += max(dot(vec3(0.5 + (iMouse.x * 0.1), 2. - (iMouse.y * .1), -1), n), .0) + min(dot(vec3(3.0 - (iMouse.x * 0.1), 10.2, -11.), n), .1) * 0.1;
+                  c += max(dot(vec3(0.2 + (iMouse.x * 0.1), 2. - (iMouse.y * .1), -1), n), .0) + min(dot(vec3(3.0 - (iMouse.x * 0.1), 10.2, -11.), n), .1) * 0.1;
                   break;
               }
               t += SEGMENT_QUALITY;
