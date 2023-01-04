@@ -132,6 +132,7 @@ canvas {
   right: 0;
   bottom: 0;
   object-fit: cover;
+  z-index: -1;
   // clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
 }
 

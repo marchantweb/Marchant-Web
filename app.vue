@@ -8,6 +8,7 @@ import {useHead} from "nuxt/app";
 useHead({
   title: 'Simon Le Marchant | Creative Front End Engineer',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  lang: 'en',
   charset: 'utf-8',
   meta: [
     {
@@ -28,6 +29,9 @@ useHead({
 
 /* JetBrains Mono */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* Application SCSS */
 @import "assets/scss/app.scss";
