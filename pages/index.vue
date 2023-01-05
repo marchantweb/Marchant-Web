@@ -20,7 +20,6 @@
             <li>Vue</li>
             <li>Nuxt</li>
             <li>Electron</li>
-            <li>WebGL</li>
           </ul>
         </div>
       </div>

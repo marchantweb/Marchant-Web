@@ -9,6 +9,7 @@ import {useMouse, useWindowSize} from "@vueuse/core";
 import {createShader, createProgram} from "~/shaders/shaderHelpers";
 import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
+import {gsap} from "gsap";
 
 // Non-reactive WebGL variables
 let gl = null;
@@ -18,13 +19,16 @@ const locations = {
   time: null,
   resolution: null,
   position: null,
-  mouse: null
+  mouse: null,
+  verticalOffset: null
 };
 let time = 0;
+let verticalOffset = ref(0);
 
 // Reactive WebGL variables
 const {width, height} = useWindowSize();
 const {x, y} = useMouse();
+
 
 // Computed properties
 const outputWidth = computed(() => {
@@ -69,6 +73,9 @@ const initWebGLComponent = () => {
   // Get the location of the mouse uniform
   locations.mouse = gl.getUniformLocation(program, "iMouse");
 
+  // Get the location of the vertical offset uniform
+  locations.verticalOffset = gl.getUniformLocation(program, "iVerticalOffset");
+
 }
 
 /**
@@ -104,6 +111,9 @@ const renderWebGLComponent = () => {
   // Pass the mouse uniform
   gl.uniform2f(locations.mouse, (1 / width.value) * x.value, (1 / height.value) * y.value);
 
+  // Pass the vertical offset uniform
+  gl.uniform1f(locations.verticalOffset, verticalOffset.value);
+
   // Draw the vertices
   gl.drawArrays(gl.TRIANGLES, 0, 6);
 
@@ -117,6 +127,15 @@ const renderWebGLComponent = () => {
 onMounted(() => {
     initWebGLComponent();
     requestAnimationFrame(renderWebGLComponent);
+
+    // Test animation
+    gsap.to(verticalOffset, {
+      duration: 5,
+      value: 1,
+      ease: "power2.inOut",
+      repeat: -1,
+      yoyo: true
+    });
 });
 
 </script>

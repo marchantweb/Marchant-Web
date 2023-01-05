@@ -8,11 +8,13 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "nuxt": "3.0.0",
     "raw-loader": "^4.0.2"
   },
   "dependencies": {
     "@vueuse/core": "^9.9.0",
+    "gsap": "^3.11.4",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2"
   }
