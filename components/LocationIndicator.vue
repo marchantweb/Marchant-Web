@@ -1,10 +1,14 @@
 <template>
   <div class="location-indicator">
-    <span class="location-indicator__light"/> Currently in Orlando, FL
+    <span class="location-indicator__light"/> Currently in {{ location }}
   </div>
 </template>
 
 <script setup>
+
+// Acquire the location from the metadata API
+const metadata = await $fetch('/api/metadata');
+const location = metadata["location"];
 
 </script>
 
