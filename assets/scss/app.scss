@@ -2,6 +2,7 @@
 
 html {
   overflow: hidden !important;
+  font-size: 14px;
 }
 
 body {
@@ -78,3 +79,9 @@ $enable-negative-margins: true;
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/bootstrap-grid";
 @import "bootstrap/scss/bootstrap-utilities";
+
+//////////////////////////
+// Import Custom Styles //
+//////////////////////////
+
+@import "components/typography";

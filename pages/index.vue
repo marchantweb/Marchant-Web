@@ -8,19 +8,22 @@
     <Hero/>
 
     <div id="bottom-navigation" class="container">
-      <div class="row mb-5 align-items-center">
-        <div class="col-3 d-flex align-items-center">
+      <div class="row mb-5 align-items-end">
+        <div class="col-auto d-flex align-items-center">
           <img class="main-logo" src="/icon-white.svg" width="64" height="64"
                alt="A small icon for the Marchant Web logo, with a circle that merges into a square and the text: MW.">
           <h1 class="bottom-navigation__title ms-4">Simon Le Marchant<br>Creative Front End Engineer</h1>
         </div>
-        <div class="col-3">
+        <div class="col-3 ms-5 mb-3 me-auto">
           <ul class="tech-stack">
             <li>UX</li>
             <li>Vue</li>
             <li>Nuxt</li>
             <li>Electron</li>
           </ul>
+        </div>
+        <div class="col-auto mb-3">
+          <LocationIndicator/>
         </div>
       </div>
     </div>
@@ -59,13 +62,10 @@
   flex-wrap: nowrap;
   list-style-type: none;
   justify-content: space-between;
+  margin-bottom: 0;
 
   li {
     color: #AFBFD6;
-    font-size: 14px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.2px;
   }
 }
 

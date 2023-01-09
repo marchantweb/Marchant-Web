@@ -1,0 +1,10 @@
+@mixin text-small{
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.tech-stack li, .location-indicator{
+    @include text-small;
+}
