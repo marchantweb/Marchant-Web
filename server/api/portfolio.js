@@ -6,9 +6,16 @@ import {Client} from '@notionhq/client';
 export default defineEventHandler(async (event) => {
     const notion = new Client({auth: process.env.NOTION_API_KEY});
     const response = await notion.databases.query({
-        database_id: process.env.NOTION_DATABASE_METADATA
+        database_id: process.env.NOTION_DATABASE_PORTFOLIO,
+        filter: {
+            "property": "Visibility",
+            "select": {
+                "equals": "Published"
+            }
+        },
+        page_size: 100
     });
     return {
-        location: response["results"][0]["properties"]["Current Location"]["rich_text"][0]["plain_text"]
+        items: response
     }
 });
