@@ -7,7 +7,19 @@
     <!-- WebGL Background -->
     <Hero/>
 
-    <div id="bottom-navigation" class="container">
+    <!-- Home - Navigation -->
+    <section class="container pt-6">
+      <div class="row">
+        <div class="col">
+          <button class="me-3">About</button>
+          <button class="me-3">Portfolio</button>
+          <button>Contact</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home - Bottom Bar -->
+    <div id="bottom-bar" class="container">
       <div class="row mb-5 align-items-end">
         <div class="col-auto d-flex align-items-center">
           <img class="main-logo" src="/icon-white.svg" width="64" height="64"
@@ -34,7 +46,7 @@
 
 <style lang="scss" scoped>
 
-#bottom-navigation {
+#bottom-bar {
   position: fixed;
   bottom: 0;
   left: 0;
