@@ -128,14 +128,14 @@ onMounted(() => {
     initWebGLComponent();
     requestAnimationFrame(renderWebGLComponent);
 
-    // Test animation
-    gsap.to(verticalOffset, {
+    // Example of animating to a background state
+    /*gsap.to(verticalOffset, {
       duration: 5,
       value: 1,
       ease: "power2.inOut",
       repeat: -1,
       yoyo: true
-    });
+    });*/
 });
 
 </script>
