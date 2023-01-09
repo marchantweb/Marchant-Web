@@ -1,11 +1,11 @@
 <template>
-  <section class="home">
+  <section class="page">
 
     <!-- Home - Navigation -->
     <section class="container pt-6">
       <div class="row">
         <div class="col">
-          <button class="me-3">About</button>
+          <NuxtLink to="/about"><button class="me-3">About</button></NuxtLink>
           <button class="me-3">Portfolio</button>
           <button>Contact</button>
         </div>
