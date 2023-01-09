@@ -1,11 +1,5 @@
 <template>
-  <main>
-
-    <!-- Dynamic Cursor Element -->
-    <Cursor/>
-
-    <!-- WebGL Background -->
-    <Hero/>
+  <section class="home">
 
     <!-- Home - Navigation -->
     <section class="container pt-6">
@@ -40,8 +34,7 @@
       </div>
     </div>
 
-
-  </main>
+  </section>
 </template>
 
 <style lang="scss" scoped>
