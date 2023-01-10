@@ -9,6 +9,6 @@ export default defineEventHandler(async (event) => {
         database_id: process.env.NOTION_DATABASE_METADATA
     });
     return {
-        location: response["results"][0]["properties"]["Current Location"]["rich_text"][0]["plain_text"]
+        status: response["results"][0]["properties"]["Status Message"]["rich_text"][0]["plain_text"]
     }
 });

@@ -32,7 +32,7 @@
           </ul>
         </div>
         <div class="col-auto mb-3">
-          <LocationIndicator/>
+          <StatusIndicator/>
         </div>
       </div>
     </div>

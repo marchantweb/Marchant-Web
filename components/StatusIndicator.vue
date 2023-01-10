@@ -1,25 +1,25 @@
 <template>
-  <div class="location-indicator">
-    <span class="location-indicator__light"/> Currently in {{ location }}
+  <div class="status-indicator">
+    <span class="status-indicator__light"/> {{ status }}
   </div>
 </template>
 
 <script setup>
 
-// Acquire the location from the metadata API
+// Acquire the status from the metadata API
 const metadata = await $fetch('/api/metadata');
-const location = metadata["location"];
+const status = metadata["status"];
 
 </script>
 
 <style lang="scss" scoped>
 
-.location-indicator {
+.status-indicator {
   color: #AFBFD6;
   cursor: default;
 }
 
-.location-indicator__light {
+.status-indicator__light {
   display: inline-block;
   width: 9px;
   height: 9px;
