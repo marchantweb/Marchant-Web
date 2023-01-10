@@ -1,13 +1,17 @@
 <template>
   <section class="page">
 
-    <h1>About Page</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+          <MWIcon/>
+        </div>
+      </div>
+    </div>
 
   </section>
 </template>
 
 <style lang="scss" scoped>
-
-
 
 </style>

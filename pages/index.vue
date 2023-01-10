@@ -16,8 +16,7 @@
     <div id="bottom-bar" class="container">
       <div class="row mb-5 align-items-end">
         <div class="col-auto d-flex align-items-center">
-          <img class="main-logo" src="/icon-white.svg" width="64" height="64"
-               alt="A small icon for the Marchant Web logo, with a circle that merges into a square and the text: MW.">
+          <MWIcon/>
           <h1 class="bottom-navigation__title ms-4">Simon Le Marchant<br>Creative Front End Engineer</h1>
         </div>
         <div class="col-3 ms-5 mb-3 me-auto">
@@ -55,10 +54,6 @@
   line-height: 22px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
-}
-
-.main-logo {;
-  width: 64px;
 }
 
 .tech-stack {
