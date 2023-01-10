@@ -1,5 +1,5 @@
 <template>
-    <canvas id="heroCanvas" ref="canvas" :width="outputWidth" :height="outputHeight"/>
+  <canvas id="heroCanvas" ref="canvas" :width="outputWidth" :height="outputHeight"/>
 </template>
 
 <script setup>
@@ -125,17 +125,30 @@ const renderWebGLComponent = () => {
  * Initialize the WebGL background
  */
 onMounted(() => {
-    initWebGLComponent();
-    requestAnimationFrame(renderWebGLComponent);
+  initWebGLComponent();
+  requestAnimationFrame(renderWebGLComponent);
+});
 
-    // Example of animating to a background state
-    /*gsap.to(verticalOffset, {
-      duration: 5,
+/**
+ * Animate the vertical offset based on the current route.
+ * Only the index gets the full hero animation, other routes get the subdued background.
+ * @type {*}
+ */
+const route = useRoute();
+watch(route, (route) => {
+  if (route["path"] === "/") {
+    gsap.to(verticalOffset, {
+      duration: 8,
+      value: 0,
+      ease: "power1.inOut"
+    });
+  } else {
+    gsap.to(verticalOffset, {
+      duration: 8,
       value: 1,
-      ease: "power2.inOut",
-      repeat: -1,
-      yoyo: true
-    });*/
+      ease: "power1.inOut"
+    });
+  }
 });
 
 </script>
