@@ -9,6 +9,14 @@
       </div>
     </div>
 
+    <div class="container">
+      <div class="row justify-content-center mt-6">
+        <div class="col-10">
+          <PortfolioCover />
+        </div>
+      </div>
+    </div>
+
   </section>
 </template>
 

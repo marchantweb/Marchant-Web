@@ -56,7 +56,7 @@ export default `
           }
 
           // Base Color
-          gl_FragColor += vec4(.16, 0.05, .38, 1.) * (1. + (iVerticalOffset * 0.2));
+          gl_FragColor += vec4(.16, 0.05, .38, 1.) * (1. - (iVerticalOffset * 0.2));
 
           // Specular
           gl_FragColor += c * (SPECULAR_STRENGTH - (iVerticalOffset * 0.05)) * vec4(.40, 0.6, 0.9, 1);

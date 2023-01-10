@@ -5,8 +5,12 @@
     <section class="container pt-6">
       <div class="row">
         <div class="col">
-          <NuxtLink to="/about"><button class="me-3">About</button></NuxtLink>
-          <button class="me-3">Portfolio</button>
+          <NuxtLink to="/about">
+            <button class="me-3">About</button>
+          </NuxtLink>
+          <NuxtLink to="/portfolio">
+            <button class="me-3">Portfolio</button>
+          </NuxtLink>
           <button>Contact</button>
         </div>
       </div>
@@ -54,19 +58,6 @@
   line-height: 22px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
-}
-
-.tech-stack {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  list-style-type: none;
-  justify-content: space-between;
-  margin-bottom: 0;
-
-  li {
-    color: #AFBFD6;
-  }
 }
 
 </style>

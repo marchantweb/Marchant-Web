@@ -9,6 +9,19 @@ h1, h2, h3, h4, h5, h6, p, span, li{
   letter-spacing: 0.2px;
 }
 
-.tech-stack li, .location-indicator{
+.tech-stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  list-style-type: none;
+  justify-content: space-between;
+  margin-bottom: 0;
+
+  li {
+    color: #AFBFD6;
+  }
+}
+
+.tech-stack li, .location-indicator, .text-small{
     @include text-small;
 }
