@@ -23,7 +23,6 @@ const locations = {
   verticalOffset: null
 };
 let time = 0;
-let verticalOffset = ref(0);
 
 // Reactive WebGL variables
 const {width, height} = useWindowSize();
@@ -135,6 +134,7 @@ onMounted(() => {
  * @type {*}
  */
 const route = useRoute();
+let verticalOffset = ref(route.path === '/' ? 0 : 1);
 watch(route, (route) => {
   if (route["path"] === "/") {
     gsap.to(verticalOffset, {
