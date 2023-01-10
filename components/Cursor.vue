@@ -1,5 +1,6 @@
 <template>
-  <div class="cursor" :style="{ transform: 'translate(' + (x - 10) + 'px, ' + (y - 10) + 'px)' }"></div>
+  <div class="cursor"
+       :style="{ transform: 'translate(' + (x - (size/2)) + 'px, ' + (y - (size/2)) + 'px)', width: size + 'px', height: size + 'px' }"></div>
 </template>
 
 <script setup>
@@ -8,16 +9,17 @@ import {useMouse} from "@vueuse/core";
 
 const {x, y} = useMouse();
 
+let size = ref(20);
+
 </script>
 
 <style lang="scss" scoped>
 
 .cursor {
-  width: 20px;
-  height: 20px;
   position: absolute;
   z-index: 999;
   background-color: white;
+  border: 2px solid white;
   border-radius: 100%;
   top: 0;
   left: 0;

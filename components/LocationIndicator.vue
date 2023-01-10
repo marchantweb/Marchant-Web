@@ -16,6 +16,7 @@ const location = metadata["location"];
 
 .location-indicator {
   color: #AFBFD6;
+  cursor: default;
 }
 
 .location-indicator__light {
