@@ -39,6 +39,8 @@ export default defineEventHandler(async (event) => {
     const output = [];
     response["results"].forEach(item => {
         output.push(formatPortfolioData(item));
+        output.push(formatPortfolioData(item));
+        output.push(formatPortfolioData(item));
     });
     return output;
 });

@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <LazyPortfolioSlider />
+    <PortfolioSlider />
 
   </section>
 </template>
