@@ -2,8 +2,8 @@
   <section ref="container" :class="elementClasses" :style="elementStyle">
 
     <!-- Title & Stack -->
-    <div class="row justify-content-between align-items-end mb-4">
-      <div class="col">
+    <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
+      <div class="col-8">
         <span class="portfolio-cover__type text-small mb-2 d-block">{{ portfolioItem["type"] }}</span>
         <h1 class="portfolio-cover__title">{{ portfolioItem["title"] }}</h1>
       </div>
@@ -47,8 +47,32 @@ const container = ref(null);
 const {width, height} = useElementSize(container);
 const screen = useWindowSize();
 
-const percentage = computed(() => {
-  return (1 / props.total) * props.index;
+/**
+ * How much of the total percentage does each item represent?
+ * @type {number}
+ */
+const percentagePerItem = 1 / props.total;
+
+/**
+ * How much of the total percentage fit 3 items to the screen at once?
+ * @type {number}
+ */
+const localOffsetWidth = percentagePerItem * 2;
+
+/**
+ * What's the total width of all the portfolio elements?
+ * @type {ComputedRef<unknown>}
+ */
+const totalWidth = computed(() => {
+  return Math.round((screen.width.value / 3) * props.total);
+});
+
+/**
+ * The percentage of the total width that this item represents
+ * @type {ComputedRef<unknown>}
+ */
+const totalPercentage = computed(() => {
+  return percentagePerItem * props.index;
 });
 
 /**
@@ -57,11 +81,15 @@ const percentage = computed(() => {
  */
 const position = computed(() => {
   return {
-    x: Math.round((percentage.value * screen.width.value) - (width.value / 2)),
+    x: Math.round(totalPercentage.value * totalWidth.value),
     y: Math.round(screen.height.value - height.value - 60)
   };
 });
 
+/**
+ * Determine the inline styles to apply to the element
+ * @type {ComputedRef<{transform: string, top: number, left: number, position: string, transition: string}>}
+ */
 const elementStyle = computed(() => {
   return {
     position: 'absolute',
@@ -72,10 +100,14 @@ const elementStyle = computed(() => {
   }
 });
 
+/**
+ * Determine the CSS classes to apply to the element
+ * @type {ComputedRef<{"portfolio-cover": boolean, "portfolio-cover--active"}>}
+ */
 const elementClasses = computed(() => {
   return {
     'portfolio-cover': true,
-    'portfolio-cover--active': (percentage.value > 0.4 && percentage.value < 0.6)
+    'portfolio-cover--active': (totalPercentage.value > 0.4 && totalPercentage.value < 0.6)
   }
 });
 
@@ -89,10 +121,24 @@ const elementClasses = computed(() => {
   aspect-ratio: 16 / 9;
   transition: height 0.5s ease-in-out;
 
-  &.portfolio-cover--active{
+  .title-bar {
+    //opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .tech-stack {
+    flex-wrap: nowrap;
+  }
+
+  &.portfolio-cover--active {
     height: calc(100vh - 220px);
+
+    .title-bar {
+      opacity: 1;
+    }
   }
 }
+
 
 .portfolio-cover__type {
   color: #AFBFD6;

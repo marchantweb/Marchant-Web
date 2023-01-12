@@ -23,6 +23,7 @@ function formatPortfolioData(item){
 
 /**
  * Returns the portfolio data from Notion, pre-parsing it and securing the environment variable.
+ * @returns {Promise<*>}
  */
 export default defineEventHandler(async (event) => {
     const notion = new Client({auth: process.env.NOTION_API_KEY});
