@@ -5,7 +5,7 @@ import {Client} from '@notionhq/client';
  * @param item - A single portfolio page record in Notion format.
  * @returns {{id, video: *, title: *, type: *}}
  */
-function formatPortfolioData(item){
+function formatPortfolioData(item, pageContent){
     return {
         id: item["id"],
         title: item["properties"]["Name"]["title"][0]["plain_text"],
@@ -18,6 +18,7 @@ function formatPortfolioData(item){
         stack: item["properties"]["Stack"]["multi_select"],
         role: item["properties"]["Role"]["rich_text"][0]["plain_text"],
         lead: item["properties"]["Lead Text"]["rich_text"][0]["text"]["content"],
+        pageContent: pageContent
     }
 }
 
@@ -38,10 +39,16 @@ export default defineEventHandler(async (event) => {
         page_size: 100
     });
     const output = [];
-    response["results"].forEach(item => {
-        output.push(formatPortfolioData(item));
-        output.push(formatPortfolioData(item));
-        output.push(formatPortfolioData(item));
-    });
+    for (const item of response["results"]) {
+        const pageID = item["id"];
+        const pageContent = await notion.blocks.children.list({
+            block_id: pageID,
+        });
+        output.push(formatPortfolioData(item, pageContent["results"]));
+        output.push(formatPortfolioData(item, pageContent["results"]));
+        output.push(formatPortfolioData(item, pageContent["results"]));
+        output.push(formatPortfolioData(item, pageContent["results"]));
+    }
+    //return response;
     return output;
 });
