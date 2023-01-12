@@ -4,7 +4,9 @@
     <!-- Title & Stack -->
     <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
       <div class="col-8">
-        <span class="portfolio-cover__type text-small mb-2 d-block">{{ portfolioItem["type"] }}</span>
+        <span class="portfolio-cover__type text-small mb-2 d-block">{{ portfolioItem["type"] }} {{
+            localPercentage
+          }}%</span>
         <h1 class="portfolio-cover__title">{{ portfolioItem["title"] }}</h1>
       </div>
       <div class="col-4">
@@ -40,6 +42,11 @@ const props = defineProps({
   total: {
     type: Number,
     required: true
+  },
+  offset: {
+    type: Number,
+    required: true,
+    default: 0
   }
 });
 
@@ -57,7 +64,7 @@ const percentagePerItem = 1 / props.total;
  * How much of the total percentage fit 3 items to the screen at once?
  * @type {number}
  */
-const localOffsetWidth = percentagePerItem * 2;
+const localOffsetWidth = percentagePerItem * 3;
 
 /**
  * What's the total width of all the portfolio elements?
@@ -81,9 +88,18 @@ const totalPercentage = computed(() => {
  */
 const position = computed(() => {
   return {
-    x: Math.round(totalPercentage.value * totalWidth.value),
+    x: Math.round((totalPercentage.value * totalWidth.value) - (props.offset * totalWidth.value)),
     y: Math.round(screen.height.value - height.value - 60)
   };
+});
+
+/**
+ * What percentage across the visible screen is this element?
+ * @type {ComputedRef<unknown>}
+ */
+const localPercentage = computed(() => {
+  const localEnd = props.offset + localOffsetWidth;
+  return (totalPercentage.value - props.offset) / (localEnd - props.offset);
 });
 
 /**
@@ -93,7 +109,6 @@ const position = computed(() => {
 const elementStyle = computed(() => {
   return {
     position: 'absolute',
-    transition: 'none',
     top: 0,
     left: 0,
     'transform': "translate(" + position.value.x + "px, " + position.value.y + "px)",
@@ -107,7 +122,7 @@ const elementStyle = computed(() => {
 const elementClasses = computed(() => {
   return {
     'portfolio-cover': true,
-    'portfolio-cover--active': (totalPercentage.value > 0.4 && totalPercentage.value < 0.6)
+    'portfolio-cover--active': (localPercentage.value > 0.4 && localPercentage.value < 0.6)
   }
 });
 
