@@ -4,10 +4,10 @@
     <client-only>
 
       <!-- Dynamic Cursor Element -->
-      <Cursor/>
+      <LazyCursor/>
 
       <!-- WebGL Background -->
-      <Hero/>
+      <LazyHero/>
 
     </client-only>
 

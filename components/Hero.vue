@@ -1,5 +1,5 @@
 <template>
-  <canvas id="heroCanvas" ref="canvas" :width="outputWidth" :height="outputHeight"/>
+  <canvas id="heroCanvas" ref="canvas" :width="width" :height="height"/>
 </template>
 
 <script setup>
@@ -27,15 +27,6 @@ let time = 0;
 // Reactive WebGL variables
 const {width, height} = useWindowSize();
 const {x, y} = useMouse();
-
-
-// Computed properties
-const outputWidth = computed(() => {
-  return width.value === Infinity ? window.innerWidth : width.value;
-});
-const outputHeight = computed(() => {
-  return height.value === Infinity ? window.innerHeight : height.value;
-});
 
 /**
  * Does the initial work to set up the WebGL context and shaders
