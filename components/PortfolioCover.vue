@@ -111,7 +111,8 @@ const elementStyle = computed(() => {
     position: 'absolute',
     top: 0,
     left: 0,
-    'transform': "translate(" + position.value.x + "px, " + position.value.y + "px)",
+    'transform': "translate(" + (position.value.x - (width.value / 2)) + "px, " + position.value.y + "px)",
+    /*'transform': "translate(" + (position.value.x + Math.max(0, screen.width.value * (0.1 - localPercentage.value))) + "px, " + position.value.y + "px)",*/
   }
 });
 
@@ -132,13 +133,13 @@ const elementClasses = computed(() => {
 
 .portfolio-cover {
   position: absolute;
-  height: calc(30vh);
+  width: 20vw;
   aspect-ratio: 16 / 9;
-  transition: height 0.5s ease-in-out;
+  transition: width 0.6s cubic-bezier(0.85, 0, 0.15, 1);
 
   .title-bar {
-    //opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
 
   .tech-stack {
@@ -146,7 +147,8 @@ const elementClasses = computed(() => {
   }
 
   &.portfolio-cover--active {
-    height: calc(100vh - 220px);
+    width: 70vw;
+    z-index: 2;
 
     .title-bar {
       opacity: 1;
