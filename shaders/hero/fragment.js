@@ -9,7 +9,7 @@ export default `
 
       // Configuration
       #define NOISE_STRENGTH 0.06
-      #define SPECULAR_STRENGTH 0.2
+      #define SPECULAR_STRENGTH 0.18
       #define ANIMATION_SPEED 0.2
       #define DEPTH 120.
       #define SEGMENT_QUALITY 1.2
@@ -56,7 +56,7 @@ export default `
           }
 
           // Base Color
-          gl_FragColor += vec4(.16, 0.05, .38, 1.) * (1. - (iVerticalOffset * 0.2));
+          gl_FragColor += vec4(.16, 0.05, .38, 1.) * 0.9 * (1. - (iVerticalOffset * 0.2));
 
           // Specular
           gl_FragColor += c * (SPECULAR_STRENGTH - (iVerticalOffset * 0.05)) * vec4(.40, 0.6, 0.9, 1);
