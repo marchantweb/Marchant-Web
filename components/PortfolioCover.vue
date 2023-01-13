@@ -4,9 +4,7 @@
     <!-- Title & Stack -->
     <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
       <div class="col-8">
-        <span class="portfolio-cover__type text-small mb-2 d-block">{{ portfolioItem["type"] }} {{
-            localPercentage
-          }}%</span>
+        <span class="portfolio-cover__type text-small mb-2 d-block">{{ portfolioItem["type"] }}</span>
         <h1 class="portfolio-cover__title">{{ portfolioItem["title"] }}</h1>
       </div>
       <div class="col-4">
@@ -30,7 +28,6 @@
 
 import {useElementSize, useWindowSize} from "@vueuse/core";
 import { SlowMo} from "gsap/EasePack";
-import { Power4 } from "gsap";
 
 const props = defineProps({
   portfolioItem: {
@@ -138,7 +135,7 @@ const elementClasses = computed(() => {
 
 .portfolio-cover {
   position: absolute;
-  width: 20vw;
+  width: 50vw;
   aspect-ratio: 16 / 9;
   transition: width 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 

@@ -18,7 +18,7 @@ const offset = ref(0);
 
 onMounted(() => {
   gsap.to(offset, {
-    duration: 10,
+    duration: 60,
     value: 1,
     ease: 'linear',
     repeat: -1,
