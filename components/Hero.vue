@@ -23,6 +23,7 @@ const locations = {
   verticalOffset: null
 };
 let time = 0;
+let then = Date.now();
 
 // Reactive WebGL variables
 const {width, height} = useWindowSize();
@@ -73,39 +74,52 @@ const initWebGLComponent = () => {
  */
 const renderWebGLComponent = () => {
 
-  // Set the view port
-  gl.viewport(0, 0, width.value, height.value);
+  // Check the frame rate
+  let now = Date.now();
+  let delta = now - then;
 
-  // Clear the canvas
-  gl.clearColor(0, 0, 0, 0);
-  gl.clear(gl.COLOR_BUFFER_BIT);
+  // Only render if at least 16.67ms (60fps max) has passed
+  if (delta > (1000 / 60)) {
 
-  // Enable the depth test
-  gl.enable(gl.DEPTH_TEST);
+    // Set the view port
+    gl.viewport(0, 0, width.value, height.value);
 
-  // Use the program
-  gl.useProgram(program);
+    // Clear the canvas
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
 
-  // Handle the position buffer update
-  gl.enableVertexAttribArray(locations.position);
-  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
-  gl.vertexAttribPointer(locations.position, 2, gl.FLOAT, false, 0, 0);
+    // Enable the depth test
+    gl.enable(gl.DEPTH_TEST);
 
-  // Pass the time uniform
-  time++;
-  gl.uniform1f(locations.time, time * 0.01);
+    // Use the program
+    gl.useProgram(program);
 
-  // Pass the resolution uniform
-  gl.uniform2f(locations.resolution, width.value, height.value);
+    // Handle the position buffer update
+    gl.enableVertexAttribArray(locations.position);
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.vertexAttribPointer(locations.position, 2, gl.FLOAT, false, 0, 0);
 
-  // Pass the mouse uniform
-  gl.uniform2f(locations.mouse, (1 / width.value) * x.value, (1 / height.value) * y.value);
+    // Pass the time uniform
+    time++;
+    gl.uniform1f(locations.time, time * 0.01);
 
-  // Pass the vertical offset uniform
-  gl.uniform1f(locations.verticalOffset, verticalOffset.value);
+    // Pass the resolution uniform
+    gl.uniform2f(locations.resolution, width.value, height.value);
 
-  // Draw the vertices
-  gl.drawArrays(gl.TRIANGLES, 0, 6);
+    // Pass the mouse uniform
+    gl.uniform2f(locations.mouse, (1 / width.value) * x.value, (1 / height.value) * y.value);
+
+    // Pass the vertical offset uniform
+    gl.uniform1f(locations.verticalOffset, verticalOffset.value);
+
+    // Draw the vertices
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+  }
+
+  // Update delta for last frame rate check
+  then = Date.now() - (then % (1000 / 60))
+
 
   // All done
   requestAnimationFrame(renderWebGLComponent);
