@@ -29,6 +29,8 @@
 <script setup>
 
 import {useElementSize, useWindowSize} from "@vueuse/core";
+import { SlowMo} from "gsap/EasePack";
+import { Power4 } from "gsap";
 
 const props = defineProps({
   portfolioItem: {
@@ -64,14 +66,14 @@ const percentagePerItem = 1 / props.total;
  * How much of the total percentage fit 3 items to the screen at once?
  * @type {number}
  */
-const localOffsetWidth = percentagePerItem * 3;
+const totalOffsetWidth = percentagePerItem * 1;
 
 /**
  * What's the total width of all the portfolio elements?
  * @type {ComputedRef<unknown>}
  */
 const totalWidth = computed(() => {
-  return Math.round((screen.width.value / 3) * props.total);
+  return Math.round((screen.width.value / 1) * props.total);
 });
 
 /**
@@ -83,23 +85,27 @@ const totalPercentage = computed(() => {
 });
 
 /**
- * Determines the shape function to draw the cover, assuming we're within a portfolio slider.
- * @type {ComputedRef<{x, y: number}>}
- */
-const position = computed(() => {
-  return {
-    x: Math.round((totalPercentage.value * totalWidth.value) - (props.offset * totalWidth.value)),
-    y: Math.round(screen.height.value - height.value - 60)
-  };
-});
-
-/**
  * What percentage across the visible screen is this element?
  * @type {ComputedRef<unknown>}
  */
 const localPercentage = computed(() => {
-  const localEnd = props.offset + localOffsetWidth;
-  return (totalPercentage.value - props.offset) / (localEnd - props.offset);
+  const localEnd = props.offset + totalOffsetWidth;
+  return (totalPercentage.value - (props.offset - totalOffsetWidth)) / (localEnd - props.offset);
+});
+
+/**
+ * Determines the shape function to draw the cover, assuming we're within a portfolio slider.
+ * @type {ComputedRef<{x, y: number}>}
+ */
+const position = computed(() => {
+
+  //let rangedPercentage = Power4.easeInOut(localPercentage.value);
+  let rangedPercentage = SlowMo(localPercentage.value);
+
+  return {
+    x: Math.round(rangedPercentage * screen.width.value),
+    y: Math.round(screen.height.value - height.value - 60)
+  };
 });
 
 /**
@@ -112,7 +118,6 @@ const elementStyle = computed(() => {
     top: 0,
     left: 0,
     'transform': "translate(" + (position.value.x - (width.value / 2)) + "px, " + position.value.y + "px)",
-    /*'transform': "translate(" + (position.value.x + Math.max(0, screen.width.value * (0.1 - localPercentage.value))) + "px, " + position.value.y + "px)",*/
   }
 });
 
@@ -123,7 +128,7 @@ const elementStyle = computed(() => {
 const elementClasses = computed(() => {
   return {
     'portfolio-cover': true,
-    'portfolio-cover--active': (localPercentage.value > 0.4 && localPercentage.value < 0.6)
+    'portfolio-cover--active': (localPercentage.value >= 0 && localPercentage.value <= 1)
   }
 });
 
@@ -135,7 +140,7 @@ const elementClasses = computed(() => {
   position: absolute;
   width: 20vw;
   aspect-ratio: 16 / 9;
-  transition: width 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: width 0.5s cubic-bezier(0.85, 0, 0.15, 1);
 
   .title-bar {
     opacity: 0;
