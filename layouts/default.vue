@@ -46,16 +46,17 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  transition: transform 1.5s cubic-bezier(0.85, 0, 0, 1);
+  transition: all 1.5s cubic-bezier(0.85, 0, 0, 1);
+  border-radius: 0px;
+  box-shadow: rgb(50 50 93 / 0%) 0 60px 10px -75px, rgba(116, 43, 255, 0.0) 0px 13px 156px -16px;
+  backface-visibility: hidden;
 
   &.main--with-navigation{
     transform: scale(0.7) perspective(600px) rotateX(1deg) translateZ(0) translateY(-6vh);
-    backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgb(50 50 93 / 20%) 0px 100px 20px -75px, #742bff 0px 13px 156px -16px;
+    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
-    cursor: pointer;
   }
 }
 

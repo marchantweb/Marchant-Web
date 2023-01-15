@@ -20,6 +20,7 @@
     <div class="container mt-9">
       <div class="row">
         <div class="col">
+          <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
           <h1 class="lead-text">I'M A CREATIVE DEVELOPER WHO COLLABORATES WITH TOP-NOTCH AGENCIES ON EXCITING PROJECTS;</h1>
         </div>
       </div>
@@ -59,6 +60,12 @@
   font-family: "N27", sans-serif;
   text-shadow: 0 22px 30px rgba(0,0,0,0.4), 2px 2px 1px rgba(206,89,55,0);
   letter-spacing: 1px;
+}
+
+.lead-icon{
+  color: white;
+  font-size: 40px;
+  text-shadow: 0 22px 30px rgba(0,0,0,0.4), 2px 2px 1px rgba(206,89,55,0);
 }
 
 #bottom-bar {

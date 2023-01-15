@@ -9,15 +9,15 @@ export default `
 
       // Configuration
       #define NOISE_STRENGTH 0.06
-      #define SPECULAR_STRENGTH 0.18
-      #define ANIMATION_SPEED 0.2
-      #define DEPTH 120.
+      #define SPECULAR_STRENGTH 0.17
+      #define ANIMATION_SPEED 0.4
+      #define DEPTH 30.
       #define SEGMENT_QUALITY 1.2
 
       // Shape Definition
       float blob(vec3 q) {
           float f = DEPTH;
-          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2 + (iVerticalOffset * 0.5)) * (cos(q.y * cos(q.z * 2. )) + 1.0) + cos(q.z * 5. + (iVerticalOffset * 3.0) + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * ((.6 * (1.0 - (iVerticalOffset * 0.5))) + (iMouse.y * .05));
+          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2 + (iVerticalOffset * 0.5)) * (cos(q.y * cos(q.z * 2. )) + 1.0) + cos(q.z * 5. + (iVerticalOffset * 2.0) + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * ((.6 * (1.0 - (iVerticalOffset * 0.9))) + (iMouse.y * .05));
           return f;
       }
 
@@ -35,8 +35,8 @@ export default `
           gl_FragColor = vec4(0, 0, 0, 1.);
 
           vec2 p= -3. + 1.8 * fragmentCoordinates;
-          vec3 o=vec3(p.x + 14. - (iVerticalOffset * 3.0) + (iMouse.x * 0.1), p.y + 2.7 + (iVerticalOffset * 0.2) - (iMouse.y * 0.1), -0.35  + (iVerticalOffset * 0.2));
-          vec3 d=vec3(p.x*8.,p.y,1.)/128.;
+          vec3 o=vec3(p.x + 14. - (iVerticalOffset * 3.0) - (iMouse.x * 0.15), p.y + 2.7 + (iVerticalOffset * 0.8) - (iMouse.y * 0.15), -0.35  + (iVerticalOffset * 0.2));
+          vec3 d=vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iVerticalOffset * 8.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iVerticalOffset * 2.0), 1.)/128.;
           vec4 c=vec4(0.);
           float t = 0.;
           for (int i = 0;i < 180; i++)
@@ -56,13 +56,13 @@ export default `
           }
 
           // Base Color
-          gl_FragColor += vec4(.16, 0.05, .38, 1.) * 0.9 * (1. - (iVerticalOffset * 0.2));
+          gl_FragColor += vec4(.16, 0.05, .38, 1.) * 0.9 * (1. - (iVerticalOffset * 0.05));
 
           // Specular
-          gl_FragColor += c * (SPECULAR_STRENGTH - (iVerticalOffset * 0.02)) * vec4(.40, 0.6, 0.9, 1);
+          gl_FragColor += c * (SPECULAR_STRENGTH - (iVerticalOffset * 0.08)) * vec4(.40, 0.6, 0.9, 1);
 
           // Brightness
-          gl_FragColor *= (t * (.04 - (iVerticalOffset * .01)));
+          gl_FragColor *= (t * (.04));
 
           // Apply Noise
           float seed = dot(uv * vec2(1000.), vec2(12, 52));

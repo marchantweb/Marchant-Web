@@ -29,6 +29,15 @@ let then = Date.now();
 const {width, height} = useWindowSize();
 const {x, y} = useMouse();
 
+let outputX = ref(x.value);
+let outputY = ref(y.value);
+
+gsap.ticker.add(() => {
+  const dt = 0.05 * gsap.ticker.deltaRatio();
+  outputX.value += (x.value - outputX.value) * dt;
+  outputY.value += (y.value - outputY.value) * dt;
+});
+
 /**
  * Does the initial work to set up the WebGL context and shaders
  */
@@ -107,7 +116,7 @@ const renderWebGLComponent = () => {
     gl.uniform2f(locations.resolution, width.value, height.value);
 
     // Pass the mouse uniform
-    gl.uniform2f(locations.mouse, (1 / width.value) * x.value, (1 / height.value) * y.value);
+    gl.uniform2f(locations.mouse, (1 / width.value) * outputX.value, (1 / height.value) * outputY.value);
 
     // Pass the vertical offset uniform
     gl.uniform1f(locations.verticalOffset, verticalOffset.value);
@@ -143,13 +152,13 @@ let verticalOffset = ref(route.path === '/' ? 0 : 1);
 watch(route, (route) => {
   if (route["path"] === "/") {
     gsap.to(verticalOffset, {
-      duration: 8,
+      duration: 6,
       value: 0,
       ease: "power1.inOut"
     });
   } else {
     gsap.to(verticalOffset, {
-      duration: 8,
+      duration: 6,
       value: 1,
       ease: "power1.inOut"
     });
