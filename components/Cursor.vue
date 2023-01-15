@@ -10,7 +10,7 @@ import {gsap} from "gsap";
 
 const {x, y} = useMouse();
 
-let size = ref(26);
+let size = ref(180);
 
 let outputX = ref(x.value);
 let outputY = ref(y.value);
