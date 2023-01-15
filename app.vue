@@ -35,6 +35,17 @@ useHead({
 /* Inter */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* N27 */
+@font-face {
+  font-family: 'N27';
+  src: url('assets/fonts/n27-bold-webfont.eot'),
+  url('assets/fonts/n27-bold-webfont.woff2') format('woff2'),
+  url('assets/fonts/n27-bold-webfont.woff') format('woff'),
+  url('assets/fonts/n27-bold-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* Application SCSS */
 @import "assets/scss/app.scss";
 

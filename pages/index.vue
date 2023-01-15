@@ -16,6 +16,15 @@
       </div>
     </section>
 
+    <!-- Lead Text -->
+    <div class="container mt-9">
+      <div class="row">
+        <div class="col">
+          <h1 class="lead-text">I'M A CREATIVE DEVELOPER WHO COLLABORATES WITH TOP-NOTCH AGENCIES ON EXCITING PROJECTS;</h1>
+        </div>
+      </div>
+    </div>
+
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container">
       <div class="row mb-5 align-items-end">
@@ -41,6 +50,16 @@
 </template>
 
 <style lang="scss" scoped>
+
+.lead-text {
+  color: white;
+  font-size: 60px;
+  line-height: 48px;
+  width: 740px;
+  font-family: "N27", sans-serif;
+  text-shadow: 0 22px 30px rgba(0,0,0,0.4), 2px 2px 1px rgba(206,89,55,0);
+  letter-spacing: 1px;
+}
 
 #bottom-bar {
   position: fixed;
