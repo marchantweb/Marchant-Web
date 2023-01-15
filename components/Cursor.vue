@@ -1,15 +1,26 @@
 <template>
   <div class="cursor"
-       :style="{ transform: 'translate(' + (x - (size/2)) + 'px, ' + (y - (size/2)) + 'px)', width: size + 'px', height: size + 'px' }"></div>
+       :style="{ transform: 'translate(' + (outputX - (size/2)) + 'px, ' + (outputY - (size/2)) + 'px)', width: size + 'px', height: size + 'px' }"></div>
 </template>
 
 <script setup>
 
 import {useMouse} from "@vueuse/core";
+import {gsap} from "gsap";
 
 const {x, y} = useMouse();
 
 let size = ref(20);
+
+let outputX = ref(0);
+let outputY = ref(0);
+
+gsap.ticker.add(() => {
+  const dt = 0.4 * gsap.ticker.deltaRatio();
+  outputX.value += (x.value - outputX.value) * dt;
+  outputY.value += (y.value - outputY.value) * dt;
+});
+
 
 </script>
 
