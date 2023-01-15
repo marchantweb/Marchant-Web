@@ -10,15 +10,45 @@ import {gsap} from "gsap";
 
 const {x, y} = useMouse();
 
-let size = ref(180);
+let size = ref(20);
 
 let outputX = ref(x.value);
 let outputY = ref(y.value);
 
 gsap.ticker.add(() => {
-  const dt = 0.4 * gsap.ticker.deltaRatio();
+  const dt = 0.3 * gsap.ticker.deltaRatio();
   outputX.value += (x.value - outputX.value) * dt;
   outputY.value += (y.value - outputY.value) * dt;
+});
+
+/**
+ * Respond to any DOM element with the class of ".mouse-lg" by increasing the size of the cursor
+ */
+onMounted(() => {
+  document.body.addEventListener('mouseover', (event) => {
+    if (event.target.classList.contains('mouse-lg')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.2, value: 200});
+    }
+  });
+  document.body.addEventListener('mouseout', (event) => {
+    if (event.target.classList.contains('mouse-lg')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.1, value: 20});
+    }
+  });
+  document.body.addEventListener('mouseover', (event) => {
+    if (event.target.classList.contains('mouse-md')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.2, value: 100});
+    }
+  });
+  document.body.addEventListener('mouseout', (event) => {
+    if (event.target.classList.contains('mouse-md')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.1, value: 20});
+    }
+  });
 });
 
 
