@@ -7,7 +7,7 @@
 <script setup>
 
 // Acquire the status from the metadata API
-const metadata = await $fetch('/api/metadata');
+const metadata = await $fetch('https://api.marchantweb.com/metadata');
 const status = metadata["status"];
 
 </script>
