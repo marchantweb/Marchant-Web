@@ -148,18 +148,18 @@ onMounted(() => {
  * @type {*}
  */
 const route = useRoute();
-let verticalOffset = ref(route.path === '/' ? 0 : 1);
+let verticalOffset = ref(route.path === '/portfolio' ? 1 : 0);
 watch(route, (route) => {
-  if (route["path"] === "/") {
+  if (route["path"] === "/portfolio") {
     gsap.to(verticalOffset, {
       duration: 6,
-      value: 0,
+      value: 1,
       ease: "power1.inOut"
     });
   } else {
     gsap.to(verticalOffset, {
       duration: 6,
-      value: 1,
+      value: 0,
       ease: "power1.inOut"
     });
   }

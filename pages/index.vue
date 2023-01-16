@@ -2,19 +2,19 @@
   <section class="page">
 
     <!-- Home - Navigation -->
-    <section class="container pt-6">
-      <div class="row">
-        <div class="col">
-          <NuxtLink to="/about">
-            <button class="me-3">About</button>
-          </NuxtLink>
-          <NuxtLink to="/portfolio">
-            <button class="me-3">Portfolio</button>
-          </NuxtLink>
-          <button>Contact</button>
-        </div>
-      </div>
-    </section>
+    <!--    <section class="container pt-6">
+          <div class="row">
+            <div class="col">
+              <NuxtLink to="/about">
+                <button class="me-3">About</button>
+              </NuxtLink>
+              <NuxtLink to="/portfolio">
+                <button class="me-3">Portfolio</button>
+              </NuxtLink>
+              <button>Contact</button>
+            </div>
+          </div>
+        </section>-->
 
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container">
@@ -32,10 +32,10 @@
         </div>
         <div class="col-3 ms-5 mb-3 me-auto">
           <ul class="tech-stack">
-            <li>UX</li>
             <li>Vue</li>
             <li>Nuxt</li>
             <li>Electron</li>
+            <li>WebGL</li>
           </ul>
         </div>
         <div class="col-auto mb-3">
