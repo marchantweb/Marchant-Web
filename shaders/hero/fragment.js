@@ -35,7 +35,7 @@ export default `
           gl_FragColor = vec4(0, 0, 0, 1.);
 
           vec2 p= -3. + 1.8 * fragmentCoordinates;
-          vec3 o=vec3(p.x + 14. - (iVerticalOffset * 3.0) - (iMouse.x * 0.15), p.y + 2.7 + (iVerticalOffset * 0.8) - (iMouse.y * 0.15), -0.35  + (iVerticalOffset * 0.2));
+          vec3 o=vec3(p.x + 14. - (iVerticalOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iVerticalOffset * 0.8) - (iMouse.y * 0.15), -0.35  + (iVerticalOffset * 0.2));
           vec3 d=vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iVerticalOffset * 8.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iVerticalOffset * 2.0), 1.)/128.;
           vec4 c=vec4(0.);
           float t = 0.;

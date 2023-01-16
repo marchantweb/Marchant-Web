@@ -21,7 +21,8 @@
       <div class="row mb-8">
         <div class="col">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
-          <h1 class="lead-text mouse-lg">I'M A CREATIVE DEVELOPER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON DYNAMIC PROJECTS;</h1>
+          <h1 class="lead-text mouse-lg">I'M A CREATIVE DEVELOPER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON DYNAMIC
+            PROJECTS;</h1>
         </div>
       </div>
       <div class="row mb-5 align-items-end">
@@ -46,6 +47,18 @@
   </section>
 </template>
 
+<script setup>
+
+onMounted(() => {
+  window.addEventListener('wheel', function (event) {
+    if (event.deltaY > 0) {
+      return navigateTo('/about');
+    }
+  })
+});
+
+</script>
+
 <style lang="scss" scoped>
 
 .lead-text {
@@ -54,15 +67,15 @@
   line-height: 48px;
   width: 740px;
   font-family: "N27", sans-serif;
-  text-shadow: 0 22px 30px rgba(0,0,0,0.4), 2px 2px 1px rgba(206,89,55,0);
+  text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.lead-icon{
+.lead-icon {
   color: white;
   font-size: 40px;
-  text-shadow: 0 22px 30px rgba(0,0,0,0.4), 2px 2px 1px rgba(206,89,55,0);
+  text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
 }
 
 #bottom-bar {
