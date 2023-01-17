@@ -32,7 +32,7 @@ const route = useRoute();
  */
 const mainClasses = computed(() => {
   return {
-    'main--with-navigation': route.path === '/navigation'
+    'main--zoomed-out': route.path === '/about'
   }
 });
 
@@ -50,7 +50,7 @@ main {
   border-radius: 0;
   box-shadow: none;
 
-  &.main--with-navigation{
+  &.main--zoomed-out{
     transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;

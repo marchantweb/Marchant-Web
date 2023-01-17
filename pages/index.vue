@@ -1,6 +1,21 @@
 <template>
   <section class="page">
 
+    <!-- Home - Navigation -->
+    <section class="container pt-6">
+      <div class="row">
+        <div class="col">
+          <NuxtLink to="/about">
+            <button class="me-3">About</button>
+          </NuxtLink>
+          <NuxtLink to="/portfolio">
+            <button class="me-3">Portfolio</button>
+          </NuxtLink>
+          <button>Contact</button>
+        </div>
+      </div>
+    </section>
+
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container">
       <div class="row mb-8">
@@ -37,7 +52,7 @@
 onMounted(() => {
   window.addEventListener('wheel', function (event) {
     if (event.deltaY > 0) {
-      return navigateTo('/navigation');
+      return navigateTo('/portfolio');
     }
   })
 });
