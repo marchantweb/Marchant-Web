@@ -1,5 +1,5 @@
 <template>
-  <canvas id="heroCanvas" ref="canvas" :width="width" :height="height"/>
+  <canvas id="heroCanvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
 </template>
 
 <script setup>
@@ -165,21 +165,43 @@ watch(route, (route) => {
   }
 });
 
+/**
+ * Determine the CSS classes to apply to the element
+ */
+const heroClasses = computed(() => {
+  return {
+    'hero--about': route.path === '/about',
+    'hero--contact': route.path === '/contact'
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
 
-canvas {
+#heroCanvas {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s cubic-bezier(0.7, 0, 0, 1);
+  border-radius: 0;
+  box-shadow: none;
   object-fit: cover;
   z-index: -1;
   // clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
+
+  &.hero--about{
+    transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(75vw);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
+    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  }
 }
 
 </style>

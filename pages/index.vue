@@ -49,8 +49,15 @@
 
 <script setup>
 
+import {useEventListener} from "@vueuse/core";
+
 onMounted(() => {
-  window.addEventListener('wheel', function (event) {
+  /*window.addEventListener('wheel', function (event) {
+    if (event.deltaY > 0) {
+      return navigateTo('/portfolio');
+    }
+  });*/
+  useEventListener(document, 'wheel', (event) => {
     if (event.deltaY > 0) {
       return navigateTo('/portfolio');
     }
