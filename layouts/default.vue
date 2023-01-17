@@ -32,7 +32,7 @@ const route = useRoute();
  */
 const mainClasses = computed(() => {
   return {
-    'main--with-navigation': route.path === '/about'
+    'main--with-navigation': route.path === '/navigation'
   }
 });
 
@@ -51,7 +51,7 @@ main {
   box-shadow: none;
 
   &.main--with-navigation{
-    transform: scale(0.8) perspective(400px) rotateX(4deg);
+    transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
