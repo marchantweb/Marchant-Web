@@ -21,7 +21,7 @@
       <div class="row mb-8">
         <div class="col">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
-          <h1 class="lead-text mouse-lg">I'M A CREATIVE DEVELOPER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON DYNAMIC
+          <h1 class="lead-text mouse-lg">I'M A FRONT-END ENGINEER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON CREATIVE
             PROJECTS;</h1>
         </div>
       </div>
