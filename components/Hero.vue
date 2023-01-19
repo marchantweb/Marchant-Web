@@ -20,7 +20,7 @@ const locations = {
   resolution: null,
   position: null,
   mouse: null,
-  verticalOffset: null
+  zoomOffset: null
 };
 let time = 0;
 let then = Date.now();
@@ -74,7 +74,7 @@ const initWebGLComponent = () => {
   locations.mouse = gl.getUniformLocation(program, "iMouse");
 
   // Get the location of the vertical offset uniform
-  locations.verticalOffset = gl.getUniformLocation(program, "iVerticalOffset");
+  locations.zoomOffset = gl.getUniformLocation(program, "iZoomOffset");
 
 }
 
@@ -119,7 +119,7 @@ const renderWebGLComponent = () => {
     gl.uniform2f(locations.mouse, (1 / width.value) * outputX.value, (1 / height.value) * outputY.value);
 
     // Pass the vertical offset uniform
-    gl.uniform1f(locations.verticalOffset, verticalOffset.value);
+    gl.uniform1f(locations.zoomOffset, zoomOffset.value);
 
     // Draw the vertices
     gl.drawArrays(gl.TRIANGLES, 0, 6);
@@ -148,16 +148,16 @@ onMounted(() => {
  * @type {*}
  */
 const route = useRoute();
-let verticalOffset = ref(route.path === '/portfolio' ? 1 : 0);
+let zoomOffset = ref(route.path === '/portfolio' ? 1 : 0);
 watch(route, (route) => {
   if (route["path"] === "/portfolio") {
-    gsap.to(verticalOffset, {
+    gsap.to(zoomOffset, {
       duration: 6,
       value: 1,
       ease: "power1.inOut"
     });
   } else {
-    gsap.to(verticalOffset, {
+    gsap.to(zoomOffset, {
       duration: 6,
       value: 0,
       ease: "power1.inOut"
