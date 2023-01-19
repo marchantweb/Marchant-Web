@@ -58,7 +58,7 @@ onMounted(() => {
 
 .cursor {
   position: absolute;
-  z-index: 999;
+  z-index: 10000;
   background-color: white;
   border: 2px solid white;
   border-radius: 100%;

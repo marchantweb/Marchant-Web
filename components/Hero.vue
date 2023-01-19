@@ -20,7 +20,8 @@ const locations = {
   resolution: null,
   position: null,
   mouse: null,
-  zoomOffset: null
+  zoomOffset: null,
+  initialXOffset: null,
 };
 let time = 0;
 let then = Date.now();
@@ -31,6 +32,8 @@ const {x, y} = useMouse();
 
 let outputX = ref(x.value);
 let outputY = ref(y.value);
+
+let initialXOffset = ref(1);
 
 gsap.ticker.add(() => {
   const dt = 0.05 * gsap.ticker.deltaRatio();
@@ -73,8 +76,11 @@ const initWebGLComponent = () => {
   // Get the location of the mouse uniform
   locations.mouse = gl.getUniformLocation(program, "iMouse");
 
-  // Get the location of the vertical offset uniform
+  // Get the location of the zoom offset uniform
   locations.zoomOffset = gl.getUniformLocation(program, "iZoomOffset");
+
+  // Get the location of the initial X offset uniform
+  locations.initialXOffset = gl.getUniformLocation(program, "iInitialXOffset");
 
 }
 
@@ -118,8 +124,11 @@ const renderWebGLComponent = () => {
     // Pass the mouse uniform
     gl.uniform2f(locations.mouse, (1 / width.value) * outputX.value, (1 / height.value) * outputY.value);
 
-    // Pass the vertical offset uniform
+    // Pass the zoom offset uniform
     gl.uniform1f(locations.zoomOffset, zoomOffset.value);
+
+    // Pass the initial X offset uniform
+    gl.uniform1f(locations.initialXOffset, initialXOffset.value);
 
     // Draw the vertices
     gl.drawArrays(gl.TRIANGLES, 0, 6);
@@ -140,6 +149,11 @@ const renderWebGLComponent = () => {
 onMounted(() => {
   initWebGLComponent();
   requestAnimationFrame(renderWebGLComponent);
+  gsap.to(initialXOffset, {
+    duration: 2,
+    value: 0,
+    ease: "power1.out"
+  });
 });
 
 /**
