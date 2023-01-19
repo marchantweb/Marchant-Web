@@ -13,7 +13,6 @@
     "raw-loader": "^4.0.2"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.3",
     "@vueuse/core": "^9.9.0",
     "gsap": "^3.11.4",
     "sass": "^1.55.0",
