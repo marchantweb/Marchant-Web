@@ -39,24 +39,35 @@
             of other technologies and frameworks. I'm always trying new things, and keeping up-to-date with the latest
             releases and best practices.
           </p>
-          <h2 class="mb-3">A Brief History</h2>
+          <h2 class="mb-3">Awards &amp; Recognition</h2>
+          <p>
+            In February 2023 my work on this website won both an Honorable Mention and later "Site of the Day" from
+            Awwwards, which recognizes the talent and effort of the best web designers, developers and agencies in the
+            world.
+          </p>
+          <p>
+            In terms of freelancing, I was in the top 3% of all full-stack developers on <a
+              href="https://www.upwork.com/freelancers/marchantweb" target="_blank" class="mouse-md">UpWork</a> as a
+            top-rated professional, and touched multitudes of different projects with a near perfect 5-star rating.
+          </p>
+          <p class="mb-5">I've also supported teams on other projects that have won awards at various levels from different organizations, and have
+            been considered a <em>"Star Partner"</em> with various clients in the past.</p>
+          <h2 class="mb-3">My Background</h2>
           <p>
             Before I focused on front-end work I spent a number of years working as a full-stack developer, so I have a
-            solid proficiency across the back-end. I've built many custom WordPress themes, plugins and websites - and
-            some interesting SaaS platforms for MySQL data management on AWS. In terms of freelancing, I was in the top 3% of
-            all full-stack developers on <a href="https://www.upwork.com/freelancers/marchantweb"
-                                            target="_blank"
-                                            class="mouse-md">UpWork</a> and generally got some great feedback.
+            solid proficiency across the back-end. I've built many custom WordPress themes, plugins and websites - along
+            with some personal SaaS platforms for MySQL data management on AWS.
           </p>
-          <p>While I didn't consider myself a designer at any point in time, I fell into UX design as a necessity for a
-            few projects that needed it, and ended up consulting and providing both UX design and development services
-            for some large contracts, including government work.</p>
+          <p>While I didn't consider myself a designer at any point in time, I fell into UX design as a necessity for
+            projects that needed it, and ended up consulting and providing both UX design and development services
+            for some large contracts, including government and corporate work.</p>
           <p>
-            In my early years, I also ran <a href="https://www.youtube.com/watch?v=i4sVMSV0OhA" target="_blank"
-                                             class="mouse-md">Small Island Productions</a>, that produced branding,
+            In my early years before spending most of my time in code, I ran <a
+              href="https://www.youtube.com/watch?v=i4sVMSV0OhA" target="_blank"
+              class="mouse-md">Small Island Productions</a>. We produced branding,
             motion design, video content and campaigns for corporate clients. I've bought a lot of that experience in
             After Effects to my front-end work in animations/interaction design, as well as my understanding of best
-            practices for SEO and marketing funnels.
+            practices for SEO and marketing funnels. I also did wedding videography... but never again.
           </p>
         </div>
       </div>

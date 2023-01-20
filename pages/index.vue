@@ -21,7 +21,7 @@
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container">
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-7 mb-lg-8">
-        <div class="col-6">
+        <div class="col-12 col-md-10 col-xl-8 col-xxl-6">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
           <h1 class="lead mouse-lg">I'M A FRONT-END ENGINEER WHO WORKS WITH AGENCIES TO DELIVER NEXT-LEVEL CREATIVE PROJECTS;</h1>
         </div>
