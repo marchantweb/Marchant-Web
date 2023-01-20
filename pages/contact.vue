@@ -3,7 +3,8 @@
 
     <div class="container">
       <div class="row mt-7 justify-content-end">
-        <div class="col-8">
+        <div class="col-7">
+          <MWIcon :size="50" type="dark" />
           <h1 class="mt-3">Let's Chat</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur, esse nesciunt nihil
@@ -21,12 +22,13 @@
 <script setup>
 
 onMounted(() => {
-  Calendly.initInlineWidget({
+  // TODO: Replace with a design that opens the form in an external window. Layout of this element will be impractical.
+ /* Calendly.initInlineWidget({
     url: 'https://calendly.com/marchantweb/discovery?hide_gdpr_banner=1&primary_color=6900ff',
     parentElement: document.getElementById('calendar-container'),
     prefill: {},
     utm: {}
-  });
+  });*/
 })
 
 </script>
