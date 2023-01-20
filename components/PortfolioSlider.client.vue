@@ -9,7 +9,7 @@ import {gsap} from "gsap";
 
 const portfolioData = await $fetch('https://api.marchantweb.com/portfolio');
 
-const visiblePortfolioItems = computed(() => {
+const currentPortfolioItem = computed(() => {
   return portfolioData;
   //return portfolioData.slice(0, 4);
 });

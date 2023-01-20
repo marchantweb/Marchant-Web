@@ -31,6 +31,12 @@ h2 {
   @include font-size(1.6rem);
   @include rfs(1.8rem, line-height);
   font-weight: 600;
+
+  &.lead {
+    @include font-size(2rem);
+    @include rfs(1.2rem, line-height);
+    font-weight: 700;
+  }
 }
 
 .lead {
@@ -67,6 +73,6 @@ h2 {
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 600;
   color: #AFBFD6;
-  @include font-size(1.1rem);
+  @include font-size(1rem);
   @include rfs(1rem, line-height);
 }

@@ -9,7 +9,7 @@
       </div>
     </div>
 
-    <PortfolioSlider />
+    <ProjectGallery />
 
   </section>
 </template>
