@@ -16,8 +16,8 @@ h1, h2, h3, h4, h5, h6, p, span, li {
 }
 
 h1 {
-  @include font-size(2.2rem);
-  @include rfs(2rem, line-height);
+  @include font-size(2.6rem);
+  @include rfs(2.4rem, line-height);
   font-weight: 600;
 
   &.lead {

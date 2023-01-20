@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-hint mouse-lg">
-    <span>Scroll to Explore</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x"></i>
+    <span>Scroll to Explore Portfolio</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x"></i>
   </div>
 </template>
 
@@ -12,9 +12,9 @@
 
 .scroll-hint {
 
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #7795c2;
   padding-bottom: 30px;
-  min-width: 300px;
+  min-width: 500px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;

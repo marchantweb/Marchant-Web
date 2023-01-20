@@ -228,7 +228,7 @@ const heroClasses = computed(() => {
   }
 
   &.hero--portfolio-single{
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 65%);
   }
 }
 
