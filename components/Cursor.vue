@@ -1,6 +1,6 @@
 <template>
   <div class="cursor"
-       :style="{ transform: 'translate(' + (outputX - (size/2)) + 'px, ' + (outputY - (size/2)) + 'px)', width: size + 'px', height: size + 'px' }"></div>
+       :style="{ transform: 'translate(' + Math.round((outputX - (size/2))) + 'px, ' + Math.round((outputY - (size/2)) + 1) + 'px)', width: size + 'px', height: size + 'px' }"></div>
 </template>
 
 <script setup>
@@ -10,7 +10,7 @@ import {gsap} from "gsap";
 
 const {x, y} = useMouse();
 
-let size = ref(16);
+let size = ref(22);
 
 let outputX = ref(x.value);
 let outputY = ref(y.value);
@@ -34,7 +34,7 @@ onMounted(() => {
   document.body.addEventListener('mouseout', (event) => {
     if (event.target.classList.contains('mouse-lg')) {
       gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.1, value: 16});
+      gsap.to(size, {duration: 0.1, value: 22});
     }
   });
   document.body.addEventListener('mouseover', (event) => {
@@ -46,7 +46,7 @@ onMounted(() => {
   document.body.addEventListener('mouseout', (event) => {
     if (event.target.classList.contains('mouse-md')) {
       gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.1, value: 16});
+      gsap.to(size, {duration: 0.1, value: 22});
     }
   });
 });
