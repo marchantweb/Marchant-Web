@@ -15,7 +15,7 @@
     </div>
 
     <!-- Video -->
-    <video class="portfolio-cover__video" loop="true" muted autoplay>
+    <video class="portfolio-cover__video mouse-lg" loop="true" muted autoplay>
       <source
           :src="portfolioItem['video']"
           type="video/mp4">
