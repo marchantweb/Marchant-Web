@@ -11,7 +11,9 @@
           <NuxtLink to="/portfolio">
             <button class="me-3">Portfolio</button>
           </NuxtLink>
-          <button>Contact</button>
+          <NuxtLink to="/contact">
+            <button class="me-3">Contact</button>
+          </NuxtLink>
         </div>
       </div>
     </section>

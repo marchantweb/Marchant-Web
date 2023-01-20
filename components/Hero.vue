@@ -168,7 +168,7 @@ watch(route, (route) => {
     gsap.to(zoomOffset, {
       duration: 6,
       value: 1,
-      ease: "power1.inOut"
+      ease: "power1.out"
     });
   } else {
     gsap.to(zoomOffset, {
@@ -210,6 +210,15 @@ const heroClasses = computed(() => {
 
   &.hero--about{
     transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(75vw);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
+    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  &.hero--contact{
+    transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(-75vw);
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
