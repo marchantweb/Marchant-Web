@@ -32,7 +32,7 @@
  * The index of the current portfolio item to display.
  * @type {Number}
  */
-const offset = ref(1);
+const offset = ref(0);
 
 const portfolioData = await $fetch('https://api.marchantweb.com/portfolio');
 

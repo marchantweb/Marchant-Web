@@ -2,11 +2,13 @@
   <section ref="container" :class="elementClasses" :style="elementStyle">
 
     <!-- Video -->
-    <video class="portfolio-cover__video mouse-lg" loop="true" muted autoplay>
-      <source
-          :src="portfolioItem['video']"
-          type="video/mp4">
-    </video>
+    <NuxtLink :to="'/portfolio/' + portfolioItem['slug']">
+      <video class="portfolio-cover__video mouse-lg" loop="true" muted autoplay>
+        <source
+            :src="portfolioItem['video']"
+            type="video/mp4">
+      </video>
+    </NuxtLink>
 
   </section>
 </template>

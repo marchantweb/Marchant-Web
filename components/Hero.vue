@@ -185,7 +185,8 @@ watch(route, (route) => {
 const heroClasses = computed(() => {
   return {
     'hero--about': route.path === '/about',
-    'hero--contact': route.path === '/contact'
+    'hero--contact': route.path === '/contact',
+    'hero--portfolio-single': route.path.startsWith('/portfolio/'),
   }
 });
 
@@ -206,7 +207,7 @@ const heroClasses = computed(() => {
   box-shadow: none;
   object-fit: cover;
   z-index: -1;
-  // clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
   &.hero--about{
     transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(75vw);
@@ -224,6 +225,10 @@ const heroClasses = computed(() => {
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  &.hero--portfolio-single{
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 70%);
   }
 }
 
