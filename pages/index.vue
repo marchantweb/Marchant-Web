@@ -20,19 +20,19 @@
 
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container">
-      <div class="row mb-8">
+      <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-7 mb-lg-8">
         <div class="col">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
           <h1 class="lead-text mouse-lg">I'M A FRONT-END ENGINEER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON CREATIVE
             PROJECTS;</h1>
         </div>
       </div>
-      <div class="row mb-5 align-items-end">
+      <div class="row mb-5 align-items-end d-none d-lg-flex">
         <div class="col-auto d-flex align-items-center">
           <MWIcon/>
           <h1 class="bottom-navigation__title ms-4">Simon Le Marchant<br>Creative Front End Engineer</h1>
         </div>
-        <div class="col-3 ms-5 mb-3 me-auto">
+        <div class="col-4 col-xl-3 ms-5 mb-3 me-auto">
           <ul class="tech-stack">
             <li>Vue</li>
             <li>Nuxt</li>
@@ -72,9 +72,8 @@ onMounted(() => {
 
 .lead-text {
   color: white;
-  font-size: 60px;
-  line-height: 48px;
   width: 740px;
+  max-width: 100%;
   font-family: "N27", sans-serif;
   text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
   letter-spacing: 1px;

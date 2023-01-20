@@ -2,6 +2,11 @@ h1, h2, h3, h4, h5, h6, p, span, li{
   cursor: crosshair;
 }
 
+h1{
+  @include font-size(4rem);
+  @include rfs(3.2rem, line-height);
+}
+
 @mixin text-small{
   font-size: 13px;
   font-family: 'Inter', sans-serif;
