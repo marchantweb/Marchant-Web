@@ -36,7 +36,7 @@ export default `
           gl_FragColor = vec4(0, 0, 0, 1.);
 
           vec2 p= -3. + 1.8 * fragmentCoordinates;
-          vec3 o=vec3(p.x + 14. - (iZoomOffset * 3.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.8) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
+          vec3 o=vec3(p.x + 14. - (iZoomOffset * 3.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.6) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
           vec3 d=vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iZoomOffset * 2.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iZoomOffset * 0.5), 0.8 + (iZoomOffset * -1.5))/128.;
           vec4 c=vec4(0.);
           float t = 0.;
@@ -50,7 +50,7 @@ export default `
                   n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy));
                   n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx));
                   n = normalize(n);
-                  c += max(dot(vec3(0.2 + (iMouse.x * 0.1), 2., -1.), n), .0) + min(dot(vec3(3.0, 10.2, -11.), n), .1) * 0.1;
+                  c += max(dot(vec3(0.2 + (iZoomOffset * 1.0) + (iMouse.x * 0.1), 2., -1. - (iZoomOffset * 0.5)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
                   break;
               }
               t += SEGMENT_QUALITY;
@@ -60,7 +60,7 @@ export default `
           gl_FragColor += vec4(.16, 0.05, .38, 1.) * 0.8;
 
           // Specular
-          gl_FragColor += c * SPECULAR_STRENGTH * vec4(.40, 0.6, 0.9, 1);
+          gl_FragColor += c * (SPECULAR_STRENGTH + (iZoomOffset * 0.02)) * vec4(.40, 0.6, 0.9, 1);
 
           // Brightness
           gl_FragColor *= (t * (.05));

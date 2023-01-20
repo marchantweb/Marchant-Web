@@ -23,7 +23,7 @@
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-7 mb-lg-8">
         <div class="col">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
-          <h1 class="lead-text mouse-lg">I'M A FRONT-END ENGINEER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON CREATIVE
+          <h1 class="lead mouse-lg">I'M A FRONT-END ENGINEER WHO COLLABORATES WITH NEXT-LEVEL AGENCIES ON CREATIVE
             PROJECTS;</h1>
         </div>
       </div>
@@ -70,14 +70,11 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
-.lead-text {
+.lead {
   color: white;
   width: 740px;
   max-width: 100%;
-  font-family: "N27", sans-serif;
   text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .lead-icon {

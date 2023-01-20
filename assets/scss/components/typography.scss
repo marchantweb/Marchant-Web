@@ -1,13 +1,45 @@
-h1, h2, h3, h4, h5, h6, p, span, li{
+h1, h2, h3, h4, h5, h6, p, span, li {
   cursor: crosshair;
+  font-family: $font-family-sans-serif;
+  color: #212A36;
+
+  a{
+    color: #212A36;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px dotted #212A36;
+
+    &:hover{
+        color: #000000;
+    }
+  }
 }
 
-h1{
-  @include font-size(4rem);
-  @include rfs(3.2rem, line-height);
+h1 {
+  @include font-size(2.2rem);
+  @include rfs(2rem, line-height);
+  font-weight: 600;
+
+  &.lead {
+    @include font-size(4rem);
+    @include rfs(3.2rem, line-height);
+    font-weight: 700;
+  }
 }
 
-@mixin text-small{
+h2 {
+  @include font-size(1.6rem);
+  @include rfs(1.8rem, line-height);
+  font-weight: 600;
+}
+
+.lead {
+  font-family: "N27", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@mixin text-small {
   font-size: 13px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -27,6 +59,14 @@ h1{
   }
 }
 
-.tech-stack li, .location-indicator, .text-small{
-    @include text-small;
+.tech-stack li, .location-indicator, .text-small {
+  @include text-small;
+}
+
+.code-tag {
+  font-family: "JetBrains Mono", sans-serif;
+  font-weight: 600;
+  color: #AFBFD6;
+  @include font-size(1.1rem);
+  @include rfs(1rem, line-height);
 }
