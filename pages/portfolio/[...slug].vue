@@ -5,8 +5,8 @@
       <div class="row mt-8">
         <div class="col-7">
           <MWIcon :size="50" type="white"/>
-          <CodeTag class="mt-5 mb-3">Portfolio Item</CodeTag>
-          <h1 class="mt-6 mb-3 lead">Who Knows Which One?</h1>
+          <CodeTag class="mt-5 mb-3">{{ currentPortfolioItem['type'] }}</CodeTag>
+          <h1 class="mt-4 mb-3 lead"> {{ currentPortfolioItem['title'] }} </h1>
           <p class="text-light">
             So, we got this far.
           </p>
@@ -16,6 +16,17 @@
 
   </section>
 </template>
+
+<script setup>
+
+const route = useRoute();
+const portfolioData = await usePortfolio();
+
+const currentPortfolioItem = computed(() => {
+  return portfolioData.value[portfolioData.value.findIndex(project => project["slug"] === route.params["slug"][0])];
+});
+
+</script>
 
 <style lang="scss" scoped>
 

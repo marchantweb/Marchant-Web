@@ -34,10 +34,10 @@
  */
 const offset = ref(0);
 
-const portfolioData = await $fetch('https://api.marchantweb.com/portfolio');
+const portfolioData = await usePortfolio();
 
 const currentPortfolioItem = computed(() => {
-  return portfolioData[offset.value];
+  return portfolioData.value[offset.value];
 });
 
 onMounted(() => {
