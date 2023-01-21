@@ -37,10 +37,10 @@
         </div>
         <div class="col-4 col-xl-3 ms-5 mb-3 me-auto">
           <ul class="tech-stack">
+            <li>UX</li>
             <li>Vue</li>
             <li>Nuxt</li>
             <li>Electron</li>
-            <li>WebGL</li>
           </ul>
         </div>
         <div class="col-auto mb-3">
