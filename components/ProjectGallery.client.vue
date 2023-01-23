@@ -4,7 +4,7 @@
       <div class="row mt-5 mb-4 align-items-end gx-8">
         <div class="col-5">
           <MWIcon :size="50"/>
-          <CodeTag class="mt-8">Featured Projects</CodeTag>
+          <CodeTag class="mt-8">{{ currentPortfolioItem["type"] }}</CodeTag>
         </div>
         <div class="col-4">
           <ul class="tech-stack">
@@ -19,7 +19,6 @@
         <div class="col">
           <h1 class="lead mt-5 mb-3">0{{ offset }}.</h1>
           <h1>{{ currentPortfolioItem.title }}</h1>
-          <CodeTag class="mt-3">{{ currentPortfolioItem.type }}</CodeTag>
         </div>
       </div>
     </div>
