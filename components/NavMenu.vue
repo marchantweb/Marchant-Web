@@ -2,7 +2,7 @@
   <div class="container mt-6">
     <div class="row justify-content-end">
       <div class="col-auto">
-        <section class="nav-container nav-container--open">
+        <section :class="navClasses" @click.prevent="isOpen = !isOpen">
           <a href="#" class="nav-icon mouse-md">
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
@@ -27,6 +27,15 @@
 
 <script setup>
 
+const isOpen = ref(false);
+
+const navClasses = computed(() => {
+  return {
+    'nav-container': true,
+    'nav-container--open': isOpen.value
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -49,13 +58,14 @@
     background-color: #FFFFFF;
     box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
     pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0, 1);
   }
 
   .nav-links {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition: clip-path 0.5s ease-in-out;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: clip-path 0.5s cubic-bezier(0.7, 0, 0, 1);
     position: absolute;
-    top: -10px;
+    top: -30px;
     right: 90px;
     display: flex;
     flex-direction: row;
@@ -64,18 +74,36 @@
     button{
       background: none;
       border: none;
-      padding: 10px 30px;
+      padding: 30px;
       margin: 0;
       color: white;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
       letter-spacing: 0.2px;
-      text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
+      text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);
     }
   }
 
   &.nav-container--open{
+
+    .nav-icon__line{
+
+      &:nth-child(1){
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+
+      &:nth-child(2){
+        transition: transform 1s cubic-bezier(0.7, 0, 0, 1);
+        transform: translate(-50vw);
+      }
+
+      &:nth-child(3){
+        transform: rotate(-45deg) translate(5px, -8px);
+      }
+    }
+
     .nav-links{
+      transition: clip-path 1s cubic-bezier(0.7, 0, 0, 1);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
