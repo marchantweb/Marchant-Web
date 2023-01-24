@@ -1,5 +1,7 @@
 <template>
-  <canvas id="heroCanvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
+  <div id="hero-canvas__container" :class="heroClasses">
+    <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
+  </div>
 </template>
 
 <script setup>
@@ -47,7 +49,7 @@ gsap.ticker.add(() => {
 const initWebGLComponent = () => {
 
   // Set up the canvas and WebGL context
-  const canvas = document.getElementById('heroCanvas');
+  const canvas = document.getElementById('hero-canvas');
   gl = canvas.getContext('webgl');
   if (!gl) {
     return;
@@ -194,12 +196,8 @@ const heroClasses = computed(() => {
 
 <style lang="scss" scoped>
 
-#heroCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#hero-canvas {
+  position: relative;
   width: 100%;
   height: 100%;
   transition: all 1.5s cubic-bezier(0.7, 0, 0, 1);
@@ -210,7 +208,7 @@ const heroClasses = computed(() => {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 
   &.hero--about{
-    transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(75vw);
+    transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
@@ -219,7 +217,7 @@ const heroClasses = computed(() => {
   }
 
   &.hero--contact{
-    transform: scale(0.8) perspective(400px) rotateX(2deg) translateX(-75vw);
+    transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
@@ -229,6 +227,22 @@ const heroClasses = computed(() => {
 
   &.hero--portfolio-single{
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 65%);
+  }
+}
+
+#hero-canvas__container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.15, 1);
+
+  &.hero--about{
+    transition-delay: 1.2s;
+    transform: translateX(65vw);
   }
 }
 
