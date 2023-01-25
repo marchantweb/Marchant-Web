@@ -15,6 +15,9 @@
             <NuxtLink to="/portfolio">
               <button>Portfolio</button>
             </NuxtLink>
+            <a href="https://github.com/marchantweb" target="_blank">
+              <button>GitHub</button>
+            </a>
             <NuxtLink to="/contact">
               <button>Contact</button>
             </NuxtLink>
