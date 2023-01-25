@@ -49,6 +49,18 @@ onMounted(() => {
       gsap.to(size, {duration: 0.1, value: 22});
     }
   });
+  document.body.addEventListener('mouseover', (event) => {
+    if (event.target.classList.contains('mouse-sm')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.2, value: 60});
+    }
+  });
+  document.body.addEventListener('mouseout', (event) => {
+    if (event.target.classList.contains('mouse-sm')) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.1, value: 22});
+    }
+  });
 });
 
 

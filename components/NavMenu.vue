@@ -2,24 +2,24 @@
   <div class="container mt-6">
     <div class="row justify-content-end">
       <div class="col-auto">
-        <section :class="navClasses" @click.prevent="isOpen = !isOpen">
-          <a href="#" class="nav-icon mouse-md">
+        <section :class="navClasses">
+          <a href="#" class="nav-icon mouse-md" @click.prevent="isOpen = !isOpen">
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
           </a>
           <nav class="nav-links">
             <NuxtLink to="/about">
-              <button>About</button>
+              <button class="mouse-sm">About</button>
             </NuxtLink>
             <NuxtLink to="/portfolio">
-              <button>Portfolio</button>
+              <button class="mouse-sm">Portfolio</button>
             </NuxtLink>
-            <a href="https://github.com/marchantweb" target="_blank">
-              <button>GitHub</button>
-            </a>
+            <NuxtLink to="https://github.com/marchantweb" target="_blank">
+              <button class="mouse-sm">GitHub</button>
+            </NuxtLink>
             <NuxtLink to="/contact">
-              <button>Contact</button>
+              <button class="mouse-sm">Contact</button>
             </NuxtLink>
           </nav>
         </section>
