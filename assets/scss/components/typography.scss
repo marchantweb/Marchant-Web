@@ -39,6 +39,12 @@ h2 {
   }
 }
 
+h3 {
+  @include font-size(1.2rem);
+  @include rfs(1.4rem, line-height);
+  font-weight: 600;
+}
+
 .lead {
   font-family: "N27", sans-serif;
   letter-spacing: 1px;

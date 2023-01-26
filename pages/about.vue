@@ -8,66 +8,128 @@
           <CodeTag class="mt-5 mb-3">about</CodeTag>
           <h1>Simon Le Marchant</h1>
           <StatusIndicator class="mb-4"/>
-          <h2 class="mb-4">Creative front end engineer with 10+ years building bespoke sites, interactive experiences
+          <h2 class="mb-4">Senior front end engineer with 10+ years building creative websites, interactive experiences
             and custom web software.</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit omnis quae velit. Ab at consequatur culpa
-            dignissimos, dolorem dolorum excepturi iure maiores nam nesciunt possimus praesentium quas sint sit,
-            veritatis? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur dicta, doloremque
-            eos eveniet, explicabo iste iure laudantium maxime neque odit, provident repudiandae rerum tempore
-            temporibus ut vitae. In, reprehenderit.
+            Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
+            incredible user experiences with web technology. I specialize in programming with <a
+              href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
+            <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
+                                                                                          target="_blank"
+                                                                                          class="mouse-sm">Electron</a>.
           </p>
-          <p class="mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at atque consequuntur cupiditate
-            doloremque eum exercitationem fugiat illo ipsam libero minima necessitatibus nesciunt nostrum omnis optio
-            sed, ut veritatis voluptates? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis
-            quibusdam quis tempora. Aperiam architecto atque dolorem eos expedita fugiat iste, laboriosam, laudantium
-            magni, odio quos reiciendis? Aut, eveniet, reiciendis.
+          <p>
+            I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
+            understanding of user interactions and best practices. I’ve worked on many projects where I start early in
+            the discovery process, guide and design the UX from the ground up, and then get to work building it. I’m
+            very opinionated about what makes for good design and UX flow, which is a blessing and a curse at times.
           </p>
-          <h2 class="mb-3">Clients &amp; Partners</h2>
+          <p>
+            In my day-to-day work, I strive to make sure that every project I take on is delivered to the highest degree
+            of quality. There are so many facets to look at, but I’m constantly working to improve UX, performance,
+            security, accessibility, and documentation towards industry best practices. Every detail matters.
+          </p>
+          <details>
+            <summary>Read more</summary>
+            <h2 class="mt-5 mb-4">Professional Background</h2>
+            <p>Before focusing on creative front-end, I worked extensively in full-stack development; building with
+              WordPress, CodeIgniter, AWS, etc. I’ve built SaaS platforms, enterprise applications, and dynamic
+              content-driven websites. I built a lot of projects directly for freelance clients, from local businesses
+              to
+              household brands. Most of my work came either from word-of-mouth, or through freelancing platforms like
+              UpWork.</p>
+            <p>Go far enough back and you’ll find me building desktop applications in Macromedia Flash and ActionScript
+              <em>(yeah, before it was even an Adobe product)</em>. Back then I also did a lot of motion graphics work
+              in
+              Adobe After Effects, and created digital marketing campaigns from scratch.</p>
+            <h2 class="mt-5 mb-4">A little about my personal life</h2>
+            <p>I live in Orlando, FL with my wife Krystina and my 3-year old daughter Calysta, nickname “Beanie”. We
+              live
+              right behind Disney World, which is where you can often find us when not working. I’m from Guernsey in the
+              Channel Islands in the U.K. originally, so you may notice a British accent, although I moved to the U.S.
+              when I was twelve. We’re often found traveling between Orlando and Pittsburgh <em>(where my wife’s family
+                reside)</em>. When not programming for work, I enjoy programming for fun - and literally doing anything
+              that
+              makes my daughter laugh.</p>
+            <p><strong>Fun fact:</strong> My wife’s birthday and mine are literally half-a-year apart, to the day.</p>
+          </details>
+          <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
           <p class="mb-8">
             Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
-            industry for some incredible clients.
+            industry for some incredible clients. To name-drop a few:
           </p>
-          <h2 class="mb-3">My Stack</h2>
-          <p class="mb-5">
-            Most of my time is spent working with <a href="https://vuejs.org/" target="_blank" class="mouse-md">Vue</a>,
-            <a href="https://nuxt.com/" target="_blank" class="mouse-md">Nuxt</a>, and <a href="https://electronJS.org/"
+          <h2 class="mt-5 mb-4">My Stack</h2>
+          <p>
+            As mentioned, most of my time is spent working with <a
+              href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
+            <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
                                                                                           target="_blank"
-                                                                                          class="mouse-md">Electron</a>,
-            but I also have experience with a wide range
-            of other technologies and frameworks. I'm always trying new things, and keeping up-to-date with the latest
-            releases and best practices.
+                                                                                          class="mouse-sm">Electron</a>,
+            but I also have experience with a wide range of other technologies and frameworks. I'm always trying new
+            things, and keeping up-to-date with the latest releases and best practices.
           </p>
-          <h2 class="mb-3">Awards &amp; Recognition</h2>
+          <p>Here’s a non-exhaustive list of some technology I’ve worked with:</p>
+          <ul style="column-count: 3">
+            <li>GSAP</li>
+            <li>ThreeJS</li>
+            <li>Webpack</li>
+            <li>Vite</li>
+            <li>Vue</li>
+            <li>Nuxt</li>
+            <li>Electron</li>
+            <li>Wordpress</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>Heroku</li>
+            <li>Git / GitHub</li>
+            <li>Jira</li>
+            <li>Asana</li>
+            <li>Rest/GraphQL APIs</li>
+            <li>Adobe XD</li>
+            <li>Figma</li>
+            <li>CSS/SCSS</li>
+            <li>HTML5 Canvas</li>
+            <li>WebGL</li>
+            <li>AWS</li>
+          </ul>
+          <h2 class="mt-5 mb-4">Awards &amp; Recognition</h2>
           <p>
-            In February 2023 my work on this website won both an Honorable Mention and later "Site of the Day" from
-            Awwwards, which recognizes the talent and effort of the best web designers, developers and agencies in the
-            world.
+            My work has won an Honorable Mention from Awwwards, which recognizes the talent and effort of the best web
+            designers, developers and agencies in the world.
+
+
           </p>
           <p>
-            In terms of freelancing, I was in the top 3% of all full-stack developers on <a
-              href="https://www.upwork.com/freelancers/marchantweb" target="_blank" class="mouse-md">UpWork</a> as a
-            top-rated professional, and touched multitudes of different projects with a near perfect 5-star rating.
+            I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
+            multitudes of different projects with a near perfect 5-star rating.
           </p>
-          <p class="mb-5">I've also supported teams on other projects that have won awards at various levels from different organizations, and have
-            been considered a <em>"Star Partner"</em> with various clients in the past.</p>
-          <h2 class="mb-3">My Background</h2>
           <p>
-            Before I focused on front-end work I spent a number of years working as a full-stack developer, so I have a
-            solid proficiency across the back-end. I've built many custom WordPress themes, plugins and websites - along
-            with some personal SaaS platforms for MySQL data management on AWS.
+            I've also supported teams on other projects that have won awards at various levels from different
+            organizations, and have been considered a <em>"Star Partner"</em> with one particular client for completely
+            overhauling their online business, driving $3M+ in revenue.
           </p>
-          <p>While I didn't consider myself a designer at any point in time, I fell into UX design as a necessity for
-            projects that needed it, and ended up consulting and providing both UX design and development services
-            for some large contracts, including government and corporate work.</p>
+          <h2 class="mt-5 mb-4">Freelancing &amp; Consulting</h2>
           <p>
-            In my early years before spending most of my time in code, I ran <a
-              href="https://www.youtube.com/watch?v=i4sVMSV0OhA" target="_blank"
-              class="mouse-md">Small Island Productions</a>. We produced branding,
-            motion design, video content and campaigns for corporate clients. I've bought a lot of that experience in
-            After Effects to my front-end work in animations/interaction design, as well as my understanding of best
-            practices for SEO and marketing funnels. I also did wedding videography... but never again.
+            Instead of working directly with clients on one-off builds, I prefer to work with agencies who have a need
+            to bring in talent for recurring work. I can either act as a consultant, bringing UX design and architecture
+            experience to the table, or I can supplement your existing team as a technical lead/developer. I’m always
+            happy to chat about new projects; even if I may not be able to take on the work immediately. You can
+            schedule a discovery call with me to see if we’re a good fit and how I can help by clicking here.
+          </p>
+          <h3 class="mt-4 mb-3">
+            Rate
+          </h3>
+          <p>Consulting is billed at an hourly rate of $225/hr. UX design or programming I often bill on a daily rate
+            ($1,800). For agency projects following an agile methodology, you can book me for a two-week sprint at
+            $14,400 (a 20% discount). For any project I’m happy to provide an estimate, provided a SOW or RFP and an
+            initial discovery call. All of my work is considered work-for-hire, although I usually retain rights to
+            display the work within the context of my portfolio; unless agreed to otherwise.</p>
+          <h2 class="mt-5 mb-4">
+            Get in Touch
+          </h2>
+          <p>
+            Thanks for reading a little bit about me. If you’d like to discuss working together, I’d be glad to chat. If
+            there’s anything I can do to help, please don’t hesitate to reach out.
           </p>
         </div>
       </div>
