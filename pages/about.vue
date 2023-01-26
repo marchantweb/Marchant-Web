@@ -4,11 +4,10 @@
     <div class="container">
       <div class="row mt-6">
         <div class="col-6 about-scroller">
-          <MWIcon :size="50" type="dark"/>
           <CodeTag class="mt-5 mb-3">about</CodeTag>
           <h1>Simon Le Marchant</h1>
-          <StatusIndicator class="mb-4"/>
-          <h2 class="mb-4">Senior front end engineer with 10+ years building creative websites, interactive experiences
+          <h2 class="mt-5 mb-4">Senior front end engineer with 10+ years building creative websites, interactive
+            experiences
             and custom web software.</h2>
           <p>
             Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
@@ -29,30 +28,27 @@
             of quality. There are so many facets to look at, but I’m constantly working to improve UX, performance,
             security, accessibility, and documentation towards industry best practices. Every detail matters.
           </p>
-          <details>
-            <summary>Read more</summary>
-            <h2 class="mt-5 mb-4">Professional Background</h2>
-            <p>Before focusing on creative front-end, I worked extensively in full-stack development; building with
-              WordPress, CodeIgniter, AWS, etc. I’ve built SaaS platforms, enterprise applications, and dynamic
-              content-driven websites. I built a lot of projects directly for freelance clients, from local businesses
-              to
-              household brands. Most of my work came either from word-of-mouth, or through freelancing platforms like
-              UpWork.</p>
-            <p>Go far enough back and you’ll find me building desktop applications in Macromedia Flash and ActionScript
-              <em>(yeah, before it was even an Adobe product)</em>. Back then I also did a lot of motion graphics work
-              in
-              Adobe After Effects, and created digital marketing campaigns from scratch.</p>
-            <h2 class="mt-5 mb-4">A little about my personal life</h2>
-            <p>I live in Orlando, FL with my wife Krystina and my 3-year old daughter Calysta, nickname “Beanie”. We
-              live
-              right behind Disney World, which is where you can often find us when not working. I’m from Guernsey in the
-              Channel Islands in the U.K. originally, so you may notice a British accent, although I moved to the U.S.
-              when I was twelve. We’re often found traveling between Orlando and Pittsburgh <em>(where my wife’s family
-                reside)</em>. When not programming for work, I enjoy programming for fun - and literally doing anything
-              that
-              makes my daughter laugh.</p>
-            <p><strong>Fun fact:</strong> My wife’s birthday and mine are literally half-a-year apart, to the day.</p>
-          </details>
+          <h2 class="mt-5 mb-4">Professional Background</h2>
+          <p>Before focusing on creative front-end, I worked extensively in full-stack development; building with
+            WordPress, CodeIgniter, AWS, etc. I’ve built SaaS platforms, enterprise applications, and dynamic
+            content-driven websites. I built a lot of projects directly for freelance clients, from local businesses
+            to
+            household brands. Most of my work came either from word-of-mouth, or through freelancing platforms like
+            UpWork.</p>
+          <p>Go far enough back and you’ll find me building desktop applications in Macromedia Flash and ActionScript
+            <em>(yeah, before it was even an Adobe product)</em>. Back then I also did a lot of motion graphics work
+            in
+            Adobe After Effects, and created digital marketing campaigns from scratch.</p>
+          <h2 class="mt-5 mb-4">A little about my personal life</h2>
+          <p>I live in Orlando, FL with my wife Krystina and my 3-year old daughter Calysta, nickname “Beanie”. We
+            live
+            right behind Disney World, which is where you can often find us when not working. I’m from Guernsey in the
+            Channel Islands in the U.K. originally, so you may notice a British accent, although I moved to the U.S.
+            when I was twelve. We’re often found traveling between Orlando and Pittsburgh <em>(where my wife’s family
+              reside)</em>. When not programming for work, I enjoy programming for fun - and literally doing anything
+            that
+            makes my daughter laugh.</p>
+          <p><strong>Fun fact:</strong> My wife’s birthday and mine are literally half-a-year apart, to the day.</p>
           <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
           <p class="mb-8">
             Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
@@ -112,14 +108,12 @@
           <p>
             Instead of working directly with clients on one-off builds, I prefer to work with agencies who have a need
             to bring in talent for recurring work. I can either act as a consultant, bringing UX design and architecture
-            experience to the table, or I can supplement your existing team as a technical lead/developer. I’m always
-            happy to chat about new projects; even if I may not be able to take on the work immediately. You can
-            schedule a discovery call with me to see if we’re a good fit and how I can help by clicking here.
+            experience to the table, or I can supplement your existing team as a technical lead/developer.
           </p>
           <h3 class="mt-4 mb-3">
             Rate
           </h3>
-          <p>Consulting is billed at an hourly rate of $225/hr. UX design or programming I often bill on a daily rate
+          <p>Consulting is billed at an hourly rate of $225/hr. I typically bill for programming work as a daily rate
             ($1,800). For agency projects following an agile methodology, you can book me for a two-week sprint at
             $14,400 (a 20% discount). For any project I’m happy to provide an estimate, provided a SOW or RFP and an
             initial discovery call. All of my work is considered work-for-hire, although I usually retain rights to
@@ -128,8 +122,10 @@
             Get in Touch
           </h2>
           <p>
-            Thanks for reading a little bit about me. If you’d like to discuss working together, I’d be glad to chat. If
-            there’s anything I can do to help, please don’t hesitate to reach out.
+            Thanks for reading a little bit about me. I’m always happy to chat about new projects; even if I may not be
+            able to take on the work immediately. You can schedule a discovery call with me to see if we’re a good fit
+            by clicking here. If there’s anything I can do to help, please don’t hesitate to reach
+            out.
           </p>
         </div>
       </div>
