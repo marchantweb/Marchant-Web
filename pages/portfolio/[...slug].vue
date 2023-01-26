@@ -19,12 +19,12 @@
         </div>
       </div>
 
-      <div class="row mt-8 gx-6">
+      <div class="row mt-8 gx-8">
         <div class="col-4">
 
         </div>
-        <div class="col-6 mb-8">
-          <h2 class="mb-5">{{ currentPortfolioItem['lead'] }}</h2>
+        <div class="col-6 mb-7">
+          <h2 class="mb-4">{{ currentPortfolioItem['lead'] }}</h2>
           <NotionContent :blocks="currentPortfolioItem['pageContent']" />
         </div>
       </div>
