@@ -23,29 +23,9 @@
         <div class="col-4">
 
         </div>
-        <div class="col">
+        <div class="col-6 mb-8">
           <h2 class="mb-5">{{ currentPortfolioItem['lead'] }}</h2>
-          <section v-for="block in currentPortfolioItem['pageContent']">
-            <!--            <p v-if="block['type'] === 'paragraph'" v-html="block['paragraph']['rich_text'][0]['text']['content']"/>-->
-          </section>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur at, debitis dignissimos ducimus esse
-            fugiat impedit, magnam minima modi natus neque nihil odio provident quae, qui tenetur vel voluptatem! Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Ab, adipisci aliquid atque cum, error harum illo ipsam
-            libero maxime minus nostrum nulla perferendis quaerat quisquam ut? Aut expedita molestias voluptate? Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Alias, dolorem fuga, impedit laboriosam modi nobis
-            obcaecati placeat quia, recusandae repellat veniam voluptatem voluptates. Doloremque nemo optio quas sequi
-            soluta voluptate.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio dolore, eligendi, facere
-            itaque labore magni nostrum odit omnis rem repudiandae sint? Cupiditate distinctio eos illum, laboriosam
-            molestiae rerum sit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores exercitationem
-            ipsam neque quasi, quo voluptas! Asperiores aut, doloremque esse natus necessitatibus numquam odio
-            perspiciatis praesentium quibusdam sequi. Animi, magnam, vero. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Atque cum deserunt, dicta dolorum enim in laborum modi optio repellat tempore, ullam velit
-            vitae voluptate! Dolor ea est facere incidunt quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Accusamus aperiam, cum delectus deleniti dolore eligendi error molestias nam necessitatibus neque
-            nihil nulla numquam quaerat sequi sit temporibus voluptas voluptate voluptatem. Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Blanditiis, illo repudiandae. A ab aspernatur aut beatae, cumque dolores
-            eveniet, facere fugit itaque nostrum odit officiis quam unde vel voluptate voluptatum.</p>
+          <NotionContent :blocks="currentPortfolioItem['pageContent']" />
         </div>
       </div>
 

@@ -74,8 +74,8 @@
             <li>Nuxt</li>
             <li>Electron</li>
             <li>Wordpress</li>
-            <li>Node</li>
-            <li>Express</li>
+            <li>Node / Express</li>
+            <li>Contentful</li>
             <li>Heroku</li>
             <li>Git / GitHub</li>
             <li>Jira</li>
