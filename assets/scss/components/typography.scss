@@ -79,6 +79,6 @@ h3 {
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 600;
   color: #AFBFD6;
-  @include font-size(1rem);
-  @include rfs(1rem, line-height);
+  @include font-size(0.9rem);
+  @include rfs(0.9rem, line-height);
 }

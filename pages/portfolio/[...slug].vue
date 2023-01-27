@@ -1,16 +1,18 @@
 <template>
   <section class="page">
 
+    <NavMenu/>
+
     <div class="container">
 
       <!-- Hero-->
       <div class="row mt-5 gx-6">
         <div class="col-4">
           <MWIcon :size="50" type="white"/>
-          <CodeTag class="mt-8 mb-3">{{ currentPortfolioItem['type'] }}</CodeTag>
-          <h1 class="mb-3"> {{ currentPortfolioItem['title'] }} </h1>
+          <CodeTag class="mt-7 mb-3">{{ currentPortfolioItem['type'] }}</CodeTag>
+          <h1 class="mb-3 project__name"> {{ currentPortfolioItem['title'] }} </h1>
         </div>
-        <div class="col mt-5">
+        <div class="col mt-7">
           <video class="mouse-md" loop="true" muted autoplay>
             <source
                 :src="currentPortfolioItem['video']"
@@ -19,13 +21,31 @@
         </div>
       </div>
 
-      <div class="row mt-8 gx-8">
+      <div class="row mt-6 gx-8">
         <div class="col-4">
+          <section class="ps-6">
+            <h3 class="mb-4">Case Study</h3>
+            <dl>
 
+              <dt v-if="currentPortfolioItem['client']">Client</dt>
+              <dd v-if="currentPortfolioItem['client']"> {{ currentPortfolioItem['client']}} </dd>
+
+              <dt v-if="currentPortfolioItem['partner']">Partner</dt>
+              <dd v-if="currentPortfolioItem['partner']"> {{ currentPortfolioItem['partner']}} </dd>
+
+              <dt v-if="currentPortfolioItem['role']">Role</dt>
+              <dd v-if="currentPortfolioItem['role']"> {{ currentPortfolioItem['role']}} </dd>
+
+              <dt v-if="currentPortfolioItem['completed']">Completed</dt>
+              <dd v-if="currentPortfolioItem['completed']"> {{ currentPortfolioItem['completed']}} </dd>
+
+            </dl>
+            <h3 class="mt-5 mb-4">Get in Touch</h3>
+          </section>
         </div>
         <div class="col-6 mb-7">
-          <h2 class="mb-4">{{ currentPortfolioItem['lead'] }}</h2>
-          <NotionContent :blocks="currentPortfolioItem['pageContent']" />
+          <h1 class="mb-4">{{ currentPortfolioItem['lead'] }}</h1>
+          <NotionContent :blocks="currentPortfolioItem['pageContent']"/>
         </div>
       </div>
 
@@ -51,7 +71,7 @@ page {
   overflow-x: auto;
 }
 
-h1 {
+h1.project__name {
   color: white;
 }
 

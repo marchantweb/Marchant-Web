@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-6">
+  <div class="container pt-5">
     <div class="row justify-content-end">
       <div class="col-auto">
         <section :class="navClasses">
