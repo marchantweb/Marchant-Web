@@ -3,11 +3,11 @@
     <div class="row justify-content-end">
       <div class="col-auto">
         <section :class="navClasses">
-          <a href="#" class="nav-icon mouse-md" @click.prevent="isOpen = !isOpen">
+          <div class="nav-icon">
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
-          </a>
+          </div>
           <nav class="nav-links">
             <NuxtLink to="/about">
               <button class="mouse-sm">About</button>
@@ -30,12 +30,14 @@
 
 <script setup>
 
-const isOpen = ref(false);
+import {useMouse} from "@vueuse/core";
+
+const {y} = useMouse();
 
 const navClasses = computed(() => {
   return {
     'nav-container': true,
-    'nav-container--open': isOpen.value
+    'nav-container--open': y.value < 100
   }
 });
 
@@ -52,7 +54,6 @@ const navClasses = computed(() => {
     justify-content: space-between;
     height: 20px;
     width: 30px;
-    cursor: pointer;
   }
 
   .nav-icon__line {
