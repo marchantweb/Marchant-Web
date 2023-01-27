@@ -1,7 +1,7 @@
 <template>
   <section class="page">
 
-    <div class="container">
+    <div class="container-xxxl">
       <div class="row mt-6 justify-content-start">
         <div class="col-6 offset-5">
           <MWIcon :size="50" type="dark"/>

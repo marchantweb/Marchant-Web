@@ -3,12 +3,11 @@
 
     <NavMenu/>
 
-    <div class="container">
+    <div class="container-xxxl">
 
       <!-- Hero-->
-      <div class="row mt-5 gx-6">
+      <div class="row gx-6">
         <div class="col-4">
-          <MWIcon :size="50" type="white"/>
           <CodeTag class="mt-7 mb-3">{{ currentPortfolioItem['type'] }}</CodeTag>
           <h1 class="mb-3 project__name"> {{ currentPortfolioItem['title'] }} </h1>
         </div>

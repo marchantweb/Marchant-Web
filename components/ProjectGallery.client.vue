@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-xxxl">
       <div class="row mt-5 mb-4 align-items-end gx-8">
         <div class="col-5">
           <CodeTag class="mt-8">{{ currentPortfolioItem["type"] }}</CodeTag>

@@ -4,7 +4,7 @@
     <NavMenu />
 
     <!-- Home - Bottom Bar -->
-    <div id="bottom-bar" class="container">
+    <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-7 mb-lg-8 justify-content-between align-items-end">
         <div class="col-12 col-md-10 col-xl-8 col-xxl-6">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
@@ -42,11 +42,6 @@
 import {useEventListener} from "@vueuse/core";
 
 onMounted(() => {
-  /*window.addEventListener('wheel', function (event) {
-    if (event.deltaY > 0) {
-      return navigateTo('/portfolio');
-    }
-  });*/
   useEventListener(document, 'wheel', (event) => {
     if (event.deltaY > 0) {
       return navigateTo('/portfolio');
