@@ -63,13 +63,19 @@ const currentPortfolioItem = computed(() => {
   return portfolioData.value[portfolioData.value.findIndex(project => project["slug"] === route.params["slug"][0])];
 });
 
+useHead({
+  title: 'Case Study: ' + currentPortfolioItem.value['title'] + ', ' + currentPortfolioItem.value['type'] + ' | ' + 'Marchant Web',
+  meta: [
+    { name: 'description', content: currentPortfolioItem.value['lead'] }
+  ],
+  bodyAttrs: {
+    class: 'enable-scroll'
+  }
+});
+
 </script>
 
 <style lang="scss" scoped>
-
-page {
-  overflow-x: auto;
-}
 
 h1.project__name {
   color: white;
