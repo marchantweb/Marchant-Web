@@ -22,7 +22,7 @@
 
       <div class="row mt-6 gx-8">
         <div class="col-4">
-          <section class="ps-6">
+          <section class="ps-6" style="position: sticky; top: 60px">
             <h3 class="mb-4">Case Study</h3>
             <dl>
 

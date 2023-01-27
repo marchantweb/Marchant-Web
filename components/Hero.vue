@@ -1,7 +1,12 @@
 <template>
-  <div id="hero-canvas__container" :class="heroClasses">
-    <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
-  </div>
+  <section id="hero-element" :class="heroClasses">
+    <div id="hero-canvas__container" :class="heroClasses">
+      <div class="hero-canvas__sidebar" :class="heroClasses">
+        <CodeTag>html</CodeTag>
+      </div>
+      <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height" />
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -196,43 +201,7 @@ const heroClasses = computed(() => {
 
 <style lang="scss" scoped>
 
-#hero-canvas {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: all 1.5s cubic-bezier(0.7, 0, 0, 1);
-  border-radius: 0;
-  box-shadow: none;
-  object-fit: cover;
-  z-index: -1;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-  &.hero--about{
-    transform: scale(0.8) perspective(400px) rotateX(2deg);
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
-    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
-    clip-path: none;
-  }
-
-  &.hero--contact{
-    transform: scale(0.8) perspective(400px) rotateX(2deg);
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
-    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
-    clip-path: none;
-  }
-
-  &.hero--portfolio-single{
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 65%);
-  }
-}
-
-#hero-canvas__container{
+#hero-element {
   position: absolute;
   top: 0;
   left: 0;
@@ -240,16 +209,77 @@ const heroClasses = computed(() => {
   bottom: 0;
   width: 100%;
   height: 100%;
-  transition: transform 1.5s cubic-bezier(0.65, 0, 0.15, 1);
+  transition: transform 2s cubic-bezier(0.65, 0, 0.15, 1);
 
-  &.hero--about{
-    transition-delay: 1.2s;
+  &.hero--about {
+    transition-delay: 0.8s;
     transform: translateX(65vw);
   }
 
-  &.hero--contact{
-    transition-delay: 1.2s;
+  &.hero--contact {
+    transition-delay: 0.8s;
     transform: translateX(-65vw);
+  }
+}
+
+#hero-canvas__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 1.5s cubic-bezier(0.7, 0, 0, 1);
+  border-radius: 0;
+  box-shadow: transparent 0 0px 20px -10px, transparent 0px 13px 156px -10px;
+  object-fit: cover;
+  z-index: -1;
+  clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+
+  &.hero--about {
+    transform: scale(0.8) perspective(400px) rotateX(2deg);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
+    transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    clip-path: none;
+  }
+
+  &.hero--contact {
+    transform: scale(0.8) perspective(400px) rotateX(2deg);
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -40px;
+    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    clip-path: none;
+  }
+
+  &.hero--portfolio-single {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 65%);
+  }
+}
+
+#hero-canvas {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-canvas__sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background-color: #E6ECF3;
+  height: 100%;
+  z-index: 2;
+  transition: transform 1.5s cubic-bezier(0.65, 0, 0.15, 1);
+  transform: translateX(-100%);
+  padding: 30px;
+
+  &.hero--about{
+    transition: transform 1s cubic-bezier(0.65, 0, 0.15, 1);
+    transform: translateX(0);
   }
 }
 
