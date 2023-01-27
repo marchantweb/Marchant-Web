@@ -17,6 +17,7 @@ const status = metadata["status"];
 .status-indicator {
   color: #AFBFD6;
   cursor: default;
+  font-size: 0.9rem;
 }
 
 .status-indicator__light {

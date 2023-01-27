@@ -5,7 +5,7 @@
       <div class="row mt-6">
         <div class="col-5 about-scroller">
           <CodeTag class="mt-5 mb-3">about</CodeTag>
-          <h1>Simon Le Marchant</h1>
+          <h1 class="mb-3">Simon Le Marchant</h1>
           <StatusIndicator/>
           <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive
             experiences

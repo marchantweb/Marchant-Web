@@ -14,7 +14,7 @@
 
   border-bottom: 2px solid #7795c2;
   padding-bottom: 20px;
-  min-width: 500px;
+  min-width: 300px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
