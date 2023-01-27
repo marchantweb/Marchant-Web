@@ -214,6 +214,7 @@ const heroClasses = computed(() => {
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    clip-path: none;
   }
 
   &.hero--contact{
@@ -223,6 +224,7 @@ const heroClasses = computed(() => {
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -16px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    clip-path: none;
   }
 
   &.hero--portfolio-single{
@@ -243,6 +245,11 @@ const heroClasses = computed(() => {
   &.hero--about{
     transition-delay: 1.2s;
     transform: translateX(65vw);
+  }
+
+  &.hero--contact{
+    transition-delay: 1.2s;
+    transform: translateX(-65vw);
   }
 }
 
