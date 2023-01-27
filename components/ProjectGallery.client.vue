@@ -1,9 +1,7 @@
 <template>
-  <section class="page">
     <div class="container">
       <div class="row mt-5 mb-4 align-items-end gx-8">
         <div class="col-5">
-          <MWIcon :size="50"/>
           <CodeTag class="mt-8">{{ currentPortfolioItem["type"] }}</CodeTag>
         </div>
         <div class="col-4">
@@ -22,7 +20,6 @@
         </div>
       </div>
     </div>
-  </section>
 </template>
 
 <script setup>

@@ -59,7 +59,7 @@ const navClasses = computed(() => {
     height: 2px;
     width: 100%;
     background-color: #FFFFFF;
-    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px, rgba(0, 0, 0, 0.1) 0 2px 2px;
     pointer-events: none;
     transition: transform 0.5s cubic-bezier(0.7, 0, 0, 1);
   }
@@ -83,7 +83,8 @@ const navClasses = computed(() => {
       font-family: 'Inter', sans-serif;
       font-weight: 600;
       letter-spacing: 0.2px;
-      text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);
+      font-size: 14px;
     }
   }
 
