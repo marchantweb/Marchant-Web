@@ -31,13 +31,15 @@
 <script setup>
 
 import {useMouse} from "@vueuse/core";
+import {useWindowSize} from "@vueuse/core";
 
-const {y} = useMouse();
+const {x, y} = useMouse();
+const {width} = useWindowSize();
 
 const navClasses = computed(() => {
   return {
     'nav-container': true,
-    'nav-container--open': y.value < 100
+    'nav-container--open': y.value < 100 && x.value > (width.value / 2)
   }
 });
 
@@ -98,7 +100,7 @@ const navClasses = computed(() => {
       }
 
       &:nth-child(2){
-        transition: transform 1s cubic-bezier(0.7, 0, 0, 1);
+        transition: transform 0.7s cubic-bezier(0.7, 0, 0, 1);
         transform: translate(-50vw);
       }
 
@@ -108,7 +110,7 @@ const navClasses = computed(() => {
     }
 
     .nav-links{
-      transition: clip-path 1s cubic-bezier(0.7, 0, 0, 1);
+      transition: clip-path 0.7s cubic-bezier(0.7, 0, 0, 1);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }

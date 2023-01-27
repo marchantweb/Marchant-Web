@@ -13,7 +13,7 @@
 .scroll-hint {
 
   border-bottom: 2px solid #7795c2;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   min-width: 500px;
   display: flex;
   justify-content: flex-end;

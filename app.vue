@@ -21,7 +21,7 @@ useHead({
   link: [{rel: 'icon', type: 'image/svg', href: '/icon-notext.svg'}],
   script: [
     {
-      src: "https://kit.fontawesome.com/172ddc2486.js",
+      src: "https://kit.fontawesome.com/172ddc2486.js", async: true, defer: true
     },
     { src: 'https://assets.calendly.com/assets/external/widget.js', async: true, defer: true }
   ],
@@ -29,23 +29,6 @@ useHead({
 </script>
 
 <style lang="scss">
-
-/* JetBrains Mono */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-/* Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* N27 */
-@font-face {
-  font-family: 'N27';
-  src: url('assets/fonts/n27-bold-webfont.eot'),
-  url('assets/fonts/n27-bold-webfont.woff2') format('woff2'),
-  url('assets/fonts/n27-bold-webfont.woff') format('woff'),
-  url('assets/fonts/n27-bold-webfont.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
 
 /* Application SCSS */
 @import "assets/scss/app.scss";
