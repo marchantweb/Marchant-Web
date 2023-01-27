@@ -16,8 +16,8 @@ h1, h2, h3, h4, h5, h6, p, span, li {
 }
 
 h1 {
-  @include font-size(2.6rem);
-  @include rfs(2.4rem, line-height);
+  @include font-size(2.4rem);
+  @include rfs(2.2rem, line-height);
   font-weight: 600;
 
   &.lead {
@@ -75,9 +75,9 @@ h3 {
   @include text-small;
 }
 
-.code-tag {
+.code-tag, .line-number__line {
   font-family: "JetBrains Mono", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   color: #AFBFD6;
   @include font-size(0.9rem);
   @include rfs(0.9rem, line-height);

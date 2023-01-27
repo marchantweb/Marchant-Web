@@ -3,6 +3,9 @@
     <div id="hero-canvas__container" :class="heroClasses">
       <div class="hero-canvas__sidebar" :class="heroClasses">
         <CodeTag>html</CodeTag>
+        <div class="line-numbers">
+          <span class="line-number__line" v-once v-for="i in 50">{{ i }}</span>
+        </div>
       </div>
       <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height" />
     </div>
@@ -275,12 +278,23 @@ const heroClasses = computed(() => {
   z-index: 2;
   transition: transform 1.5s cubic-bezier(0.65, 0, 0.15, 1);
   transform: translateX(-100%);
-  padding: 30px;
+  padding: 20px;
 
   &.hero--about{
     transition: transform 1s cubic-bezier(0.65, 0, 0.15, 1);
     transform: translateX(0);
   }
+}
+
+.line-numbers{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  opacity: 0.8;
 }
 
 </style>
