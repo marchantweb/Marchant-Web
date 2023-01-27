@@ -1,6 +1,6 @@
 <template>
     <div class="container-xxxl">
-      <div class="row mt-5 mb-4 align-items-end gx-8">
+      <div class="row mt-4 mb-4 align-items-end gx-8">
         <div class="col-5">
           <CodeTag class="mt-8">{{ currentPortfolioItem["type"] }}</CodeTag>
         </div>
@@ -10,7 +10,7 @@
           </ul>
         </div>
       </div>
-      <div class="row gx-8">
+      <div class="row gx-6">
         <div class="col-9">
           <LazyProjectCover :portfolioItem="currentPortfolioItem" :total="portfolioData.length" :offset="offset"/>
         </div>
@@ -28,7 +28,7 @@
  * The index of the current portfolio item to display.
  * @type {Number}
  */
-const offset = ref(1);
+const offset = ref(2);
 
 const portfolioData = await usePortfolio();
 

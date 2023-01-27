@@ -1,13 +1,15 @@
 <template>
-  <section ref="container" :class="elementClasses" :style="elementStyle">
+  <section ref="container" :class="elementClasses">
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + portfolioItem['slug']">
-      <video class="portfolio-cover__video mouse-lg" loop="true" muted autoplay>
-        <source
-            :src="portfolioItem['video']"
-            type="video/mp4">
-      </video>
+      <div class="portfolio-cover__video-container">
+        <video :style="elementStyle" class="portfolio-cover__video mouse-md" loop="true" muted autoplay>
+          <source
+              :src="portfolioItem['video']"
+              type="video/mp4">
+        </video>
+      </div>
     </NuxtLink>
 
   </section>
@@ -15,7 +17,7 @@
 
 <script setup>
 
-import {useElementSize, useWindowSize} from "@vueuse/core";
+import {useElementSize, useMouse, useWindowSize} from "@vueuse/core";
 
 const props = defineProps({
   portfolioItem: {
@@ -36,29 +38,15 @@ const props = defineProps({
 const container = ref(null);
 const {width, height} = useElementSize(container);
 const screen = useWindowSize();
-
-/**
- * Determines the shape function to draw the cover, assuming we're within a portfolio slider.
- * @type {ComputedRef<{x, y: number}>}
- */
-const position = computed(() => {
-
-  return {
-    x: Math.round(0),
-    y: Math.round(screen.height.value - height.value - 60)
-  };
-});
+const {x, y} = useMouse();
+const parallaxOffset = 10;
 
 /**
  * Determine the inline styles to apply to the element
- * @type {ComputedRef<{transform: string, top: number, left: number, position: string, transition: string}>}
  */
 const elementStyle = computed(() => {
   return {
-    //position: 'absolute',
-    //top: 0,
-    //left: 0,
-    //'transform': "translate(" + (position.value.x) + "px, " + position.value.y + "px)",
+    'transform': `translate(${(((1 / width.value) * x.value) * parallaxOffset * -1)}px, ${(((1 / height.value) * y.value) * parallaxOffset * -1)}px)`,
   }
 });
 
@@ -109,15 +97,21 @@ const elementClasses = computed(() => {
   letter-spacing: 0.2px;
 }
 
-.portfolio-cover__video {
+.portfolio-cover__video-container {
   width: 100%;
-  aspect-ratio: 2;
-  object-fit: cover;
+  aspect-ratio: 16/9;
   box-shadow: #120e26 0 20px 50px -10px;
   border-radius: 5px;
-  object-position: top center;
-  transition: transform 1s ease;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.portfolio-cover__video {
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  object-fit: cover;
+  object-position: center center;
+  transform-origin: center center;
 }
 
 .page-enter-from,
