@@ -3,7 +3,7 @@
 
     <div class="container-xxxl">
       <div class="row mt-6">
-        <div class="col-6 about-scroller">
+        <div class="col-5 about-scroller">
           <CodeTag class="mt-5 mb-3">about</CodeTag>
           <h1>Simon Le Marchant</h1>
           <h2 class="mt-5 mb-4">Senior front end engineer with 10+ years building creative websites, interactive
@@ -15,18 +15,18 @@
               href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
             <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
                                                                                           target="_blank"
-                                                                                          class="mouse-sm">Electron</a>.
+                                                                                          class="mouse-sm">Electron</a>,
+            although I come from a full-stack background.
           </p>
           <p>
             I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
             understanding of user interactions and best practices. I’ve worked on many projects where I start early in
-            the discovery process, guide and design the UX from the ground up, and then get to work building it. I’m
-            very opinionated about what makes for good design and UX flow, which is a blessing and a curse at times.
+            the discovery process, guide and design the UX from the ground up, and then get to work building it.
           </p>
           <p>
             In my day-to-day work, I strive to make sure that every project I take on is delivered to the highest degree
             of quality. There are so many facets to look at, but I’m constantly working to improve UX, performance,
-            security, accessibility, and documentation towards industry best practices. Every detail matters.
+            security, accessibility, and documentation towards industry best practices.
           </p>
           <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
           <p class="mb-8">
