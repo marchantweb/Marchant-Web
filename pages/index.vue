@@ -9,7 +9,7 @@
         <div class="col-12 col-md-10 col-xl-8 col-xxl-6">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
           <h1 class="lead mouse-lg" v-once>
-            <div class="heading-char" :style="{'animation-delay': (0.01 * index) + 's'}" v-for="(char, index) in headingChars">{{ char }}</div>
+            <div class="heading-char" aria-hidden="true" :style="{'animation-delay': (0.005 * index) + 's'}" v-for="(char, index) in headingChars">{{ char }}</div>
           </h1>
         </div>
         <div class="col-auto">
@@ -89,7 +89,7 @@ const headingChars = heading.split('');
 .heading-char{
   display: inline;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: headingCharReveal 2s cubic-bezier(0.7, 0, 0, 1) forwards;
+  animation: headingCharReveal 3s cubic-bezier(0.7, 0, 0, 1) forwards;
 }
 
 @keyframes headingCharReveal {
