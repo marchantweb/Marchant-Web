@@ -1,17 +1,19 @@
 <template>
   <section class="page">
 
-    <NavMenu />
+    <NavMenu/>
 
     <!-- Home - Bottom Bar -->
     <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-7 mb-lg-8 justify-content-between align-items-end">
         <div class="col-12 col-md-10 col-xl-8 col-xxl-6">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5"></i>
-          <h1 class="lead mouse-lg">I'M A FRONT-END ENGINEER WHO WORKS WITH AGENCIES TO DELIVER NEXT-LEVEL CREATIVE PROJECTS;</h1>
+          <h1 class="lead mouse-lg" v-once>
+            <div class="heading-char" :style="{'animation-delay': (0.01 * index) + 's'}" v-for="(char, index) in headingChars">{{ char }}</div>
+          </h1>
         </div>
         <div class="col-auto">
-          <ScrollHint />
+          <ScrollHint/>
         </div>
       </div>
       <div class="row mb-5 align-items-end d-none d-lg-flex">
@@ -48,6 +50,9 @@ onMounted(() => {
   })
 });
 
+const heading = "I'M A FRONT-END ENGINEER WHO WORKS WITH AGENCIES TO DELIVER NEXT-LEVEL CREATIVE PROJECTS;"
+const headingChars = heading.split('');
+
 </script>
 
 <style lang="scss" scoped>
@@ -79,6 +84,21 @@ onMounted(() => {
   line-height: 22px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
+}
+
+.heading-char{
+  display: inline;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: headingCharReveal 2s cubic-bezier(0.7, 0, 0, 1) forwards;
+}
+
+@keyframes headingCharReveal {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
+  }
 }
 
 </style>
