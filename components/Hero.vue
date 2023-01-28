@@ -2,9 +2,9 @@
   <section id="hero-element" :class="heroClasses">
     <div id="hero-canvas__container" :class="heroClasses">
       <div class="hero-canvas__sidebar" :class="heroClasses">
-        <CodeTag>html</CodeTag>
+        <CodeTag>fps: {{fps}} </CodeTag>
         <div class="line-numbers">
-          <span class="line-number__line" v-once v-for="i in 50">{{ i }}</span>
+          <span class="line-number__line" v-once v-for="i in 50"><span v-if="i < 10">0</span>{{ i }}</span>
         </div>
       </div>
       <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height" />
@@ -15,7 +15,7 @@
 <script setup>
 
 // Imports
-import {useMouse, useWindowSize} from "@vueuse/core";
+import {useFps, useMouse, useWindowSize} from "@vueuse/core";
 import {createShader, createProgram} from "~/shaders/shaderHelpers";
 import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
@@ -50,6 +50,8 @@ gsap.ticker.add(() => {
   outputX.value += (x.value - outputX.value) * dt;
   outputY.value += (y.value - outputY.value) * dt;
 });
+
+const fps = useFps();
 
 /**
  * Does the initial work to set up the WebGL context and shaders
@@ -243,7 +245,7 @@ const heroClasses = computed(() => {
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
     transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
-    clip-path: none;
+    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
   }
 
   &.hero--contact {
@@ -253,7 +255,7 @@ const heroClasses = computed(() => {
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -40px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
-    clip-path: none;
+    clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
   }
 
   &.hero--portfolio-single {

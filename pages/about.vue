@@ -17,22 +17,12 @@
             <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
                                                                                           target="_blank"
                                                                                           class="mouse-sm">Electron</a>,
-            although I come from a full-stack background.
+            although I have an extensive full-stack development background.
           </p>
           <p>
             I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
             understanding of user interactions and best practices. I’ve worked on many projects where I start early in
             the discovery process, guide and design the UX from the ground up, and then get to work building it.
-          </p>
-          <p>
-            In my day-to-day work, I strive to make sure that every project I take on is delivered to the highest degree
-            of quality. There are so many facets to look at, but I’m constantly working to improve UX, performance,
-            security, accessibility, and documentation towards industry best practices.
-          </p>
-          <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
-          <p class="mb-8">
-            Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
-            industry for some incredible clients. To name-drop a few:
           </p>
           <h2 class="mt-5 mb-4">My Stack</h2>
           <p>
@@ -68,7 +58,20 @@
             <li>WebGL</li>
             <li>AWS</li>
           </ul>
-          <h2 class="mt-5 mb-4">Awards &amp; Recognition</h2>
+          <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
+          <p class="mb-4">
+            Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
+            industry for some incredible clients. To name-drop a few:
+          </p>
+          <div style="display: flex; gap: 10px 80px; flex-wrap: wrap;">
+            <img src="~/assets/images/clients/google.svg" alt="Google logo" class="client-logo">
+            <img src="~/assets/images/clients/dolby.svg" alt="Dolby logo" class="client-logo">
+            <img src="~/assets/images/clients/alaska.svg" alt="Alaska Airlines logo" class="client-logo">
+            <img src="~/assets/images/clients/abm.svg" alt="ABM logo" class="client-logo">
+            <img src="~/assets/images/clients/mit.svg" alt="MIT logo" class="client-logo">
+            <img src="~/assets/images/clients/steward.svg" alt="Steward logo" class="client-logo">
+          </div>
+          <h2 class="mt-6 mb-4">Awards &amp; Recognition</h2>
           <p>
             My work has won an Honorable Mention from Awwwards, which recognizes the talent and effort of the best web
             designers, developers and agencies in the world.
@@ -130,6 +133,13 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.client-logo {
+  width: 140px;
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
 }
 
 </style>

@@ -75,7 +75,7 @@ h3 {
   @include text-small;
 }
 
-.code-tag, .line-number__line {
+.code-tag, .line-number__line, .line-number__line span {
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 400;
   color: #AFBFD6;
