@@ -231,7 +231,7 @@ const heroClasses = computed(() => {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: all 1.5s cubic-bezier(0.7, 0, 0, 1);
+  transition: all 1.8s cubic-bezier(0.7, 0, 0, 1);
   border-radius: 0;
   box-shadow: transparent 0 0px 20px -10px, transparent 0px 13px 156px -10px;
   object-fit: cover;
@@ -244,7 +244,7 @@ const heroClasses = computed(() => {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
-    transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    transition: all 2.5s cubic-bezier(0.5, 0, 0, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
   }
 
@@ -278,7 +278,7 @@ const heroClasses = computed(() => {
   background-color: #E6ECF3;
   height: 100%;
   z-index: 2;
-  transition: transform 1.5s cubic-bezier(0.65, 0, 0.15, 1);
+  transition: transform 2s cubic-bezier(0.65, 0, 0.15, 1);
   transform: translateX(-100%);
   padding: 20px;
 
