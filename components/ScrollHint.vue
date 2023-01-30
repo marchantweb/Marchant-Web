@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-hint mouse-lg">
+  <div class="scroll-hint mouse-md">
     <span>Scroll to Explore Portfolio</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x"></i>
   </div>
 </template>

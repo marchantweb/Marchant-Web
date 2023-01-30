@@ -29,7 +29,8 @@
             <li>Electron</li>
           </ul>
         </div>
-        <div class="col-auto mb-3">
+        <div class="col-auto mb-3 d-flex align-items-center">
+          <NuxtLink to="https://github.com/marchantweb" target="_blank" class="me-5"><i class="fa-brands fa-github fa-xl github-icon mouse-sm"></i></NuxtLink>
           <StatusIndicator/>
         </div>
       </div>
@@ -93,7 +94,7 @@ const headingChars = heading.split('');
 .heading-char{
   display: inline;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: headingCharReveal 3s cubic-bezier(0.7, 0, 0, 1) forwards;
+  animation: headingCharReveal 3s cubic-bezier(0.6, 0, 0, 1) forwards;
 }
 
 @keyframes headingCharReveal {
@@ -102,6 +103,14 @@ const headingChars = heading.split('');
   }
   100% {
     clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
+  }
+}
+
+.github-icon{
+  color: #7795c2;
+
+  &:hover{
+    color: white;
   }
 }
 
