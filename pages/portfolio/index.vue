@@ -4,31 +4,8 @@
     <NavMenu />
 
  <div class="container-fluid mt-8 pe-0">
-  <div class="feed-section pe-6" v-if="portfolioData">
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
-    <ProjectCover :portfolioItem="portfolioData[2]"/>
-    <ProjectCover :portfolioItem="portfolioData[0]"/>
-    <ProjectCover :portfolioItem="portfolioData[1]"/>
+  <div id="portfolio-feed" class="feed-section pe-6" v-if="portfolioData">
+    <ProjectCover :portfolioItem="portfolioItem" v-for="portfolioItem in portfolioData"/>
   </div>
 </div>
 
@@ -37,13 +14,22 @@
 
 <script setup>
 
+import {useEventListener} from "@vueuse/core";
+
 const portfolioData = await usePortfolio();
+
+onMounted(() => {
+  useEventListener(document, 'wheel', (event) => {
+    document.getElementById('portfolio-feed').scrollLeft += event.deltaY * 2;
+  })
+});
 
 </script>
 
 <style lang="scss" scoped>
 
 .feed-section{
+  scroll-behavior: smooth;
   position: relative;
   width: 100%;
   overflow: auto;
@@ -59,7 +45,7 @@ const portfolioData = await usePortfolio();
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
-    //display: none;
+    display: none;
   }
 }
 
