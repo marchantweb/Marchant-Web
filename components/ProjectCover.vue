@@ -2,11 +2,11 @@
   <section ref="container" :class="elementClasses">
 
     <!-- Video -->
-    <NuxtLink :to="'/portfolio/' + portfolioItem['slug']">
+    <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="portfolio-cover__video-container">
-        <video :style="elementStyle" class="portfolio-cover__video mouse-md" loop="true" muted autoplay>
+        <video :style="elementStyle" class="portfolio-cover__video mouse-md" loop="true" muted autoplay :src="currentPortfolioItem['video']">
           <source
-              :src="portfolioItem['video']"
+              :src="currentPortfolioItem['video']"
               type="video/mp4">
         </video>
       </div>
@@ -23,17 +23,10 @@ const props = defineProps({
   portfolioItem: {
     type: Object,
     required: true
-  },
-  total: {
-    type: Number,
-    required: true
-  },
-  offset: {
-    type: Number,
-    required: true,
-    default: 0
   }
 });
+
+const currentPortfolioItem = toRef(props, 'portfolioItem');
 
 const container = ref(null);
 const {width, height} = useElementSize(container);
