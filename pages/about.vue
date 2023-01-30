@@ -121,6 +121,21 @@
 
 <style lang="scss" scoped>
 
+.page-enter-active{
+  transition: all 2.4s cubic-bezier(0.6, 0, 0, 1);
+}
+
+.page-leave-active {
+  transition: all 1.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(-30%) scale(0.9);
+  transform-origin: left center;
+}
+
 .about-scroller {
   overflow-y: scroll;
   max-height: 85vh;
