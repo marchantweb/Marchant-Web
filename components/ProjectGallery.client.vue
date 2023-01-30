@@ -28,7 +28,7 @@
  * The index of the current portfolio item to display.
  * @type {Number}
  */
-const offset = ref(0);
+const offset = ref(1);
 
 const portfolioData = await usePortfolio();
 

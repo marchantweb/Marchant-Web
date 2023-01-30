@@ -59,7 +59,11 @@ const headingChars = heading.split('');
 
 .lead {
   color: white;
-  text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
+  user-select: none;
+
+  div{
+    pointer-events: none;
+  }
 }
 
 .lead-icon {

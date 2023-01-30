@@ -9,7 +9,7 @@ export default `
       uniform float iInitialXOffset;
 
       // Configuration
-      #define NOISE_STRENGTH 0.06
+      #define NOISE_STRENGTH 0.05
       #define SPECULAR_STRENGTH 0.17
       #define ANIMATION_SPEED 0.4
       #define DEPTH 30.
@@ -30,19 +30,18 @@ export default `
       // Output
       void main(void) {
 
-          // Basics
-          vec2 ps = vec2(1.0) / iResolution.xy;
-          vec2 uv = fragmentCoordinates * ps;
           gl_FragColor = vec4(0, 0, 0, 1.);
 
-          vec2 p= -3. + 1.8 * fragmentCoordinates;
-          vec3 o=vec3(p.x + 14. - (iZoomOffset * 3.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.6) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
-          vec3 d=vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iZoomOffset * 2.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iZoomOffset * 0.5), 0.8 + (iZoomOffset * -1.5))/128.;
-          vec4 c=vec4(0.);
+          vec2 p= -3. + 1.6 * fragmentCoordinates;
+          vec3 o= vec3(p.x + 14. - (iZoomOffset * 3.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.6) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
+          vec3 d= vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iZoomOffset * 2.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iZoomOffset * 0.5), 0.8 + (iZoomOffset * -1.5))/128.;
+         
+          
+          vec4 c= vec4(0.);
           float t = 0.;
           for (int i = 0;i < 180; i++)
           {
-              if (blob(o + d * t) < 8.)
+              if (blob(o + d * t) < 10.)
               {
                   vec3 e = vec3(.1, .0, 2.1 - (iZoomOffset * 0.8));
                   vec3 n = vec3(.0);
@@ -66,6 +65,8 @@ export default `
           gl_FragColor *= (t * (.05));
 
           // Apply Noise
+          vec2 ps = vec2(1.0) / iResolution.xy;
+          vec2 uv = fragmentCoordinates * ps;
           float seed = dot(uv * vec2(1000.), vec2(12, 52));
           float noise = fract(sin(seed) * 43758.5453 + t);
           noise = gaussian(noise, float(0.0), float(0.5) * float(0.5));

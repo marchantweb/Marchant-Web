@@ -9,15 +9,18 @@
             <div class="nav-icon__line"></div>
           </div>
           <nav class="nav-links">
+            <NuxtLink to="/">
+              <button class="mouse-sm">Home</button>
+            </NuxtLink>
             <NuxtLink to="/about">
               <button class="mouse-sm">About</button>
             </NuxtLink>
             <NuxtLink to="/portfolio">
               <button class="mouse-sm">Portfolio</button>
             </NuxtLink>
-            <NuxtLink to="https://github.com/marchantweb" target="_blank">
+            <!--  <NuxtLink to="https://github.com/marchantweb" target="_blank">
               <button class="mouse-sm">GitHub</button>
-            </NuxtLink>
+            </NuxtLink>-->
             <NuxtLink to="/contact">
               <button class="mouse-sm">Contact</button>
             </NuxtLink>
@@ -83,7 +86,8 @@ const navClasses = computed(() => {
       padding: 30px;
       margin: 0;
       color: white;
-      font-family: 'Inter', sans-serif;
+      font-family: 'N27', sans-serif;
+      text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.2px;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);

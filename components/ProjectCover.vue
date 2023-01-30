@@ -39,7 +39,7 @@ const container = ref(null);
 const {width, height} = useElementSize(container);
 const screen = useWindowSize();
 const {x, y} = useMouse();
-const parallaxOffset = 10;
+const parallaxOffset = 30;
 
 /**
  * Determine the inline styles to apply to the element
@@ -107,8 +107,8 @@ const elementClasses = computed(() => {
 }
 
 .portfolio-cover__video {
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
+  width: calc(100% + 60px);
+  height: calc(100% + 60px);
   object-fit: cover;
   object-position: center center;
   transform-origin: center center;
