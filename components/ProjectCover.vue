@@ -1,5 +1,5 @@
 <template>
-  <section ref="container" :class="elementClasses">
+  <section class="portfolio-cover">
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
@@ -17,7 +17,7 @@
 
 <script setup>
 
-import {useElementSize, useMouse, useWindowSize} from "@vueuse/core";
+import {useMouse, useWindowSize} from "@vueuse/core";
 
 const props = defineProps({
   portfolioItem: {
@@ -29,8 +29,7 @@ const props = defineProps({
 const currentPortfolioItem = toRef(props, 'portfolioItem');
 
 const container = ref(null);
-const {width, height} = useElementSize(container);
-const screen = useWindowSize();
+const {width, height} = useWindowSize();
 const {x, y} = useMouse();
 const parallaxOffset = 30;
 
@@ -43,56 +42,39 @@ const elementStyle = computed(() => {
   }
 });
 
-/**
- * Determine the CSS classes to apply to the element
- * @type {ComputedRef<{"portfolio-cover": boolean, "portfolio-cover--active"}>}
- */
-const elementClasses = computed(() => {
-  return {
-    'portfolio-cover': true
-  }
-});
-
 </script>
 
 <style lang="scss" scoped>
 
-.portfolio-cover {
-  //position: absolute;
+.portfolio-cover{
+  position: relative;
   width: 100%;
-  transition: width 0.5s cubic-bezier(0.85, 0, 0.15, 1);
+  height: 100%;
 
-  .title-bar {
-    opacity: 0;
-    transition: opacity 0.2s ease;
+  &:nth-child(3n+1) {
+    grid-row-end: span 2;
+    grid-column-end: span 4;
   }
 
-  .tech-stack {
-    flex-wrap: nowrap;
+  &:nth-child(5n+2) {
+    grid-row-end: span 2;
+    grid-column-end: span 1;
   }
 
-  &.portfolio-cover--active {
-    //
+  &:nth-child(5n+1) {
+    grid-row-end: span 1;
+    grid-column-end: span 2;
   }
-}
 
-
-.portfolio-cover__type {
-  color: #AFBFD6;
-}
-
-.portfolio-cover__title {
-  color: white;
-  font-size: 30px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  line-height: 22px;
-  letter-spacing: 0.2px;
+  &:first-child {
+    grid-row-end: span 2;
+    grid-column-end: span 4;
+  }
 }
 
 .portfolio-cover__video-container {
   width: 100%;
-  aspect-ratio: 16/9;
+  height: 100%;
   box-shadow: #120e26 0 20px 50px -10px;
   border-radius: 5px;
   cursor: pointer;
@@ -105,13 +87,6 @@ const elementClasses = computed(() => {
   object-fit: cover;
   object-position: center center;
   transform-origin: center center;
-}
-
-.page-enter-from,
-.page-leave-to {
-  .portfolio-cover__video {
-    transform: scale(0.7);
-  }
 }
 
 </style>
