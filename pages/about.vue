@@ -3,12 +3,11 @@
 
     <div class="container-xxxl">
       <div class="row mt-6">
-        <div class="col-5 about-scroller">
+        <div class="col-5 mb-7">
           <CodeTag class="mt-5 mb-3">about</CodeTag>
           <h1 class="mb-3">Simon Le Marchant</h1>
           <StatusIndicator/>
-          <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive
-            experiences
+          <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive experiences
             and custom web software.</h2>
           <p>
             Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
@@ -35,7 +34,8 @@
             things, and keeping up-to-date with the latest releases and best practices.
           </p>
           <details>
-            <summary style="cursor: pointer; font-weight: 600;" class="mouse-sm">View other tech/tools I've worked with</summary>
+            <summary style="cursor: pointer; font-weight: 600;" class="mouse-sm">Some tech I've explored in the past
+            </summary>
             <ul style="column-count: 3" class="pt-3">
               <li>GSAP</li>
               <li>ThreeJS</li>
@@ -119,9 +119,26 @@
   </section>
 </template>
 
+<script setup>
+
+useHead({
+  title: 'Hey, I\'m Simon | Marchant Web',
+  meta: [
+    {
+      name: 'description',
+      content: 'Senior front end engineer with 10+ years building creative websites, interactive experiences and custom web software.'
+    }
+  ],
+  bodyAttrs: {
+    class: 'enable-scroll fixed-webgl'
+  }
+});
+
+</script>
+
 <style lang="scss" scoped>
 
-.page-enter-active{
+.page-enter-active {
   transition: all 2.4s cubic-bezier(0.6, 0, 0, 1);
 }
 
@@ -134,22 +151,6 @@
   opacity: 0;
   transform: translateX(-30%) scale(0.9);
   transform-origin: left center;
-}
-
-.about-scroller {
-  overflow-y: scroll;
-  max-height: 85vh;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  cursor: ns-resize;
-
-  *:not(a) {
-    cursor: ns-resize;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .client-logo {

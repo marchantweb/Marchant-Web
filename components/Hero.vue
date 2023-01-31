@@ -220,6 +220,13 @@ const heroClasses = computed(() => {
 
 <style lang="scss" scoped>
 
+body.fixed-webgl{
+  #hero-element{
+    position: fixed;
+    bottom: unset;
+  }
+}
+
 #hero-element {
   position: absolute;
   top: 0;
