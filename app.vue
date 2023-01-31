@@ -14,7 +14,6 @@ useHead({
   charset: 'utf-8',
   htmlAttrs: {
     lang: 'en',
-    charset: 'utf-8',
   },
   meta: [
     {
