@@ -1,16 +1,28 @@
 <template>
+
   <section id="hero-element" :class="heroClasses">
-    <CodeLine number="00" class="hello-world"><span class="code--purple">console</span>.<span class="code--yellow">log</span>(<span class="code--green">"hello world"</span>)<span class="code--orange">;</span></CodeLine>
-    <CodeLine number="01" class="import-from-orlando"><span class="code--orange">import</span> software_engineer <span class="code--orange">from</span> <span class="code--green">"Orlando, FL"</span><span class="code--orange">;</span></CodeLine>
+
+    <!-- Hello World -->
+    <CodeLine :visible="route.path === '/about'" number="00" class="hello-world"><span
+        class="code--purple">console</span>.<span class="code--yellow">log</span>(<span class="code--green">"hello world"</span>)<span
+        class="code--orange">;</span></CodeLine>
+
+    <!-- Import from Orlando -->
+    <CodeLine :visible="route.path === '/about'" number="01" class="import-from-orlando"><span class="code--orange">import</span>
+      software_engineer <span class="code--orange">from</span> <span class="code--green">"Orlando, FL"</span><span
+          class="code--orange">;</span></CodeLine>
+
+    <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
       <div class="hero-canvas__sidebar" :class="heroClasses">
-        <CodeTag>fps: {{fps}} </CodeTag>
+        <CodeTag>fps: {{ fps }}</CodeTag>
         <div class="line-numbers">
           <span class="line-number__line" v-once v-for="i in 50"><span v-if="i < 10">0</span>{{ i }}</span>
         </div>
       </div>
-      <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height" />
+      <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
     </div>
+
   </section>
 </template>
 
@@ -284,13 +296,13 @@ const heroClasses = computed(() => {
   transform: translateX(-100%);
   padding: 20px;
 
-  &.hero--about{
+  &.hero--about {
     transition: transform 1s cubic-bezier(0.65, 0, 0.15, 1);
     transform: translateX(0);
   }
 }
 
-.line-numbers{
+.line-numbers {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -301,13 +313,13 @@ const heroClasses = computed(() => {
   opacity: 0.8;
 }
 
-.hello-world{
+.hello-world {
   position: absolute;
   top: 200px;
   left: 120px;
 }
 
-.import-from-orlando{
+.import-from-orlando {
   position: absolute;
   top: 260px;
   left: 40px;
