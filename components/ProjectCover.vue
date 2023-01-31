@@ -1,5 +1,5 @@
 <template>
-  <section class="portfolio-cover">
+  <article role="article" class="portfolio-cover" tabindex="0" :aria-label="currentPortfolioItem['title']" :aria-description="currentPortfolioItem['lead']">
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
@@ -12,7 +12,7 @@
       </div>
     </NuxtLink>
 
-  </section>
+  </article>
 </template>
 
 <script setup>

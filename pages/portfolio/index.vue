@@ -4,8 +4,8 @@
     <NavMenu />
 
  <div class="container-fluid mt-8 pe-0">
-  <div id="portfolio-feed" class="feed-section pe-6" v-if="portfolioData">
-    <ProjectCover :portfolioItem="portfolioItem" v-for="portfolioItem in portfolioData"/>
+  <div id="portfolio-feed" class="feed-section pe-6" role="feed" aria-busy="false" aria-label="Case Studies" v-if="portfolioData">
+    <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" v-for="(portfolioItem, index) in portfolioData"/>
   </div>
 </div>
 
