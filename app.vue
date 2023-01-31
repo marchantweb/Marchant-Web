@@ -12,6 +12,10 @@ useHead({
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   lang: 'en',
   charset: 'utf-8',
+  htmlAttrs: {
+    lang: 'en',
+    charset: 'utf-8',
+  },
   meta: [
     {
       name: 'description',
