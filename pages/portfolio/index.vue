@@ -9,6 +9,10 @@
   </div>
 </div>
 
+    <div id="bottom-bar" class="container-xxxl">
+      <BottomBar />
+    </div>
+
   </section>
 </template>
 

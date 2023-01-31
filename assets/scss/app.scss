@@ -118,3 +118,10 @@ $enable-negative-margins: true;
 
 @import "components/typography";
 @import "components/transitions";
+
+#bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
