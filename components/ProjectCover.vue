@@ -1,10 +1,23 @@
 <template>
-  <article role="article" class="portfolio-cover" tabindex="0" :aria-label="currentPortfolioItem['title']" :aria-description="currentPortfolioItem['lead']">
+  <article role="article" class="project-cover" tabindex="0" :aria-label="currentPortfolioItem['title']" :aria-description="currentPortfolioItem['lead']">
+
+    <!-- Title & Stack -->
+    <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
+      <div class="col-auto">
+        <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
+        <h2 class="project-cover__title">{{ currentPortfolioItem["title"] }}</h2>
+      </div>
+      <div class="col-6">
+        <ul class="tech-stack">
+          <li v-for="stackItem in currentPortfolioItem['stack']">{{ stackItem["name"] }}</li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
-      <div class="portfolio-cover__video-container">
-        <video :style="elementStyle" class="portfolio-cover__video mouse-md" loop="true" muted autoplay :src="currentPortfolioItem['video']">
+      <div class="project-cover__video-container">
+        <video :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted autoplay :src="currentPortfolioItem['video']">
           <source
               :src="currentPortfolioItem['video']"
               type="video/mp4">
@@ -46,33 +59,22 @@ const elementStyle = computed(() => {
 
 <style lang="scss" scoped>
 
-.portfolio-cover{
+.project-cover{
   position: relative;
-  width: 100%;
-  height: 100%;
-
-  &:nth-child(3n+1) {
-    grid-row-end: span 2;
-    grid-column-end: span 4;
-  }
-
-  &:nth-child(5n+2) {
-    grid-row-end: span 2;
-    grid-column-end: span 1;
-  }
-
-  &:nth-child(5n+1) {
-    grid-row-end: span 1;
-    grid-column-end: span 2;
-  }
-
-  &:first-child {
-    grid-row-end: span 2;
-    grid-column-end: span 4;
-  }
+  width: 960px;
+  aspect-ratio: 2;
+  flex: none;
 }
 
-.portfolio-cover__video-container {
+.project-cover__type {
+  color: #AFBFD6;
+}
+
+.project-cover__title {
+  color: white;
+}
+
+.project-cover__video-container {
   width: 100%;
   height: 100%;
   box-shadow: #120e26 0 20px 50px -10px;
@@ -81,7 +83,7 @@ const elementStyle = computed(() => {
   overflow: hidden;
 }
 
-.portfolio-cover__video {
+.project-cover__video {
   width: calc(100% + 60px);
   height: calc(100% + 60px);
   object-fit: cover;

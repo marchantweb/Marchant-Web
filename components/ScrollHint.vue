@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-hint mouse-md">
-    <span>Scroll to Explore</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x fa-fade" style="--fa-animation-duration: 3s;"></i>
+    <span>Scroll to Explore Projects</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x fa-fade" style="--fa-animation-duration: 3s;"></i>
   </div>
 </template>
 

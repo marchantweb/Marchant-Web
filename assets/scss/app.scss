@@ -125,3 +125,17 @@ $enable-negative-margins: true;
   left: 0;
   right: 0;
 }
+
+.feed-section__container-padding {
+  width: calc(((100vw - 1600px) / 2) - (var(--bs-gutter-x) * 0.5));
+  height: 10px;
+  display: block;
+  flex: none;
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+      width: calc(((100vw - #{$container-max-width}) / 2) - (var(--bs-gutter-x) * 0.5));
+    }
+  }
+
+}

@@ -14,7 +14,7 @@ defineProps({
   },
   type: {
     type: String,
-    default: 'notext'
+    default: 'white'
   }
 });
 

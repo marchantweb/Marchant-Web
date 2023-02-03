@@ -56,10 +56,10 @@ export default `
           }
 
           // Base Color
-          gl_FragColor += vec4(.16, 0.05, .38, 1.) * 0.8;
+          gl_FragColor += vec4(.16, 0.05, .38, 1.) * (0.8 + (iZoomOffset * 0.1));
 
           // Specular
-          gl_FragColor += c * (SPECULAR_STRENGTH + (iZoomOffset * 0.02)) * vec4(.40, 0.6, 0.9, 1);
+          gl_FragColor += c * (SPECULAR_STRENGTH - (iZoomOffset * 0.02)) * vec4(.40, 0.6, 0.9, 1);
 
           // Brightness
           gl_FragColor *= (t * (.05));

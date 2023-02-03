@@ -1,16 +1,33 @@
 <template>
   <section class="page">
 
-    <NavMenu />
+    <NavMenu/>
 
- <div class="container-fluid mt-8 pe-0">
-  <div id="portfolio-feed" class="feed-section pe-6" role="feed" aria-busy="false" aria-label="Case Studies" v-if="portfolioData">
-    <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" v-for="(portfolioItem, index) in portfolioData"/>
-  </div>
-</div>
+    <div class="container-xxxl">
+      <div class="row">
+        <div class="col">
+          <h1 class="lead small">Explore Projects;</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-7 pe-0">
+      <div id="portfolio-feed" class="feed-section pe-6" role="feed" aria-busy="false" aria-label="Case Studies"
+           v-if="portfolioData">
+
+        <div class="feed-section__container-padding" />
+
+        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
+                      v-for="(portfolioItem, index) in portfolioData"/>
+
+        <div class="feed-section__container-padding" />
+
+
+      </div>
+    </div>
 
     <div id="bottom-bar" class="container-xxxl">
-      <BottomBar />
+      <BottomBar/>
     </div>
 
   </section>
@@ -24,7 +41,7 @@ const portfolioData = await usePortfolio();
 
 onMounted(() => {
   useEventListener(document, 'wheel', (event) => {
-    document.getElementById('portfolio-feed').scrollLeft += event.deltaY * 2;
+    document.getElementById('portfolio-feed').scrollLeft += event.deltaY;
   })
 });
 
@@ -32,19 +49,20 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
-.feed-section{
-  scroll-behavior: smooth;
+h1{
+  color: white;
+}
+
+.feed-section {
   position: relative;
-  width: 100%;
   overflow: auto;
   margin-left: 0;
   margin-right: 0;
-  display: grid;
-  grid-gap: 30px;
-  grid-auto-rows: 280px;
-  grid-auto-columns: 280px;
-  grid-auto-flow: column dense;
-  grid-template-rows: 280px 280px;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  flex-wrap: nowrap;
+  width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
