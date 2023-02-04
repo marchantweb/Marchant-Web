@@ -4,8 +4,11 @@
     <!-- Title & Stack -->
     <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
       <div class="col-auto">
-        <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
-        <h2 class="project-cover__title">{{ currentPortfolioItem["title"] }}</h2>
+        <h2 class="lead pb-1 pe-3 d-inline-block" style="color: white">{{ displayIndex }}.</h2>
+        <div class="d-inline-block">
+          <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
+          <h2 class="project-cover__title">{{ currentPortfolioItem["title"] }}</h2>
+        </div>
       </div>
       <div class="col-6">
         <ul class="tech-stack">
@@ -36,10 +39,18 @@ const props = defineProps({
   portfolioItem: {
     type: Object,
     required: true
+  },
+  index: {
+    type: Number,
+    required: true
   }
 });
 
 const currentPortfolioItem = toRef(props, 'portfolioItem');
+
+const displayIndex = computed(() => {
+  return props.index.toString().padStart(2, '0');
+});
 
 const container = ref(null);
 const {width, height} = useWindowSize();
@@ -77,7 +88,7 @@ const elementStyle = computed(() => {
 .project-cover__video-container {
   width: 100%;
   height: 100%;
-  box-shadow: #120e26 0 20px 50px -10px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;

@@ -17,7 +17,7 @@
 
         <div class="feed-section__container-padding" />
 
-        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
+        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" :index="index"
                       v-for="(portfolioItem, index) in portfolioData"/>
 
         <div class="feed-section__container-padding" />
@@ -65,6 +65,7 @@ h1{
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding-bottom: 60px;
 
   &::-webkit-scrollbar {
     display: none;
