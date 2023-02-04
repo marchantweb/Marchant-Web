@@ -9,9 +9,9 @@
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5" aria-hidden="true"></i>
           <h1 role="heading" class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
-            <div class="heading-char" aria-hidden="true" :style="{'animation-delay': (0.005 * index) + 's'}"
+            <span class="heading-char" aria-hidden="true" :style="{'animation-delay': (index % 5 === 0 ? 0.7 : 0.005 * index) + 's'}"
                  v-for="(char, index) in headingChars">{{ char }}
-            </div>
+            </span>
           </h1>
         </div>
         <div class="col-auto">
@@ -59,9 +59,14 @@ const headingChars = heading.split('');
 .lead {
   color: white;
   user-select: none;
+  text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+  10px 20px 5px rgba(0,0,0,0.05),
+  -10px 20px 5px rgba(0,0,0,0.05);
 
-  div {
+  span {
     pointer-events: none;
+    color: white;
+    user-select: none;
   }
 }
 
@@ -74,7 +79,7 @@ const headingChars = heading.split('');
 .heading-char {
   display: inline;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: headingCharReveal 3s cubic-bezier(0.6, 0, 0, 1) forwards;
+  animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0, 1) forwards;
 }
 
 @keyframes headingCharReveal {
@@ -82,7 +87,7 @@ const headingChars = heading.split('');
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
   100% {
-    clip-path: polygon(0 0, 110% 0, 110% 100%, 0 100%);
+    clip-path: polygon(0 0, 110% 0, 110% 110%, 0 110%);
   }
 }
 

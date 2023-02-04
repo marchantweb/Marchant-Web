@@ -3,7 +3,7 @@
 
     <NavMenu/>
 
-    <div class="container-xxxl">
+    <div class="container-xxxl pt-1">
       <div class="row">
         <div class="col">
           <h1 class="lead small">Explore Projects;</h1>
@@ -51,6 +51,9 @@ onMounted(() => {
 
 h1{
   color: white;
+  text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
+  10px 20px 5px rgba(0,0,0,0.05),
+  -10px 20px 5px rgba(0,0,0,0.05);
 }
 
 .feed-section {
