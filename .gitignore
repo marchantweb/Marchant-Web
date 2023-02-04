@@ -11,3 +11,5 @@ dist
 /.idea/inspectionProfiles
 .idea/inspectionProfiles
 .idea/*
+/tools
+/.idea
