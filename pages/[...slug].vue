@@ -20,7 +20,7 @@
 <style lang="scss" scoped>
 
 .lead {
-  color: white;
+  color: #F2F2F2;
   width: 740px;
   text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
   letter-spacing: 1px;

@@ -77,7 +77,7 @@ useHead({
 <style lang="scss" scoped>
 
 h1.project__name {
-  color: white;
+  color: #F2F2F2;
 }
 
 video {

@@ -16,11 +16,11 @@
               <button class="mouse-sm">About</button>
             </NuxtLink>
             <NuxtLink to="/portfolio">
-              <button class="mouse-sm">Portfolio</button>
+              <button class="mouse-sm">Projects</button>
             </NuxtLink>
-            <!--  <NuxtLink to="https://github.com/marchantweb" target="_blank">
+            <NuxtLink to="https://github.com/marchantweb" target="_blank">
               <button class="mouse-sm">GitHub</button>
-            </NuxtLink>-->
+            </NuxtLink>
             <NuxtLink to="/contact">
               <button class="mouse-sm">Contact</button>
             </NuxtLink>

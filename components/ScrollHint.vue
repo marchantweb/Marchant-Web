@@ -12,7 +12,7 @@
 
 .scroll-hint {
 
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: 20px;
   min-width: 300px;
   display: flex;
@@ -20,14 +20,14 @@
   align-items: flex-end;
 
   span {
-    color: white;
+    color: #F2F2F2;
     font-weight: 600;
     margin-right: 30px;
     pointer-events: none;
   }
 
   i {
-    color: white;
+    color: #F2F2F2;
     pointer-events: none;
   }
 }

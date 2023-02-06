@@ -67,7 +67,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 h1 {
-  color: white;
+  color: #F2F2F2;
 }
 
 </style>

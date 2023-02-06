@@ -18,7 +18,7 @@
         <div class="feed-section__container-padding" />
 
         <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" :index="index"
-                      v-for="(portfolioItem, index) in portfolioData"/>
+                      v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
         <div class="feed-section__container-padding" />
 
@@ -39,6 +39,8 @@ import {useEventListener} from "@vueuse/core";
 
 const portfolioData = await usePortfolio();
 
+const selected = ref(0);
+
 onMounted(() => {
   useEventListener(document, 'wheel', (event) => {
     document.getElementById('portfolio-feed').scrollLeft += event.deltaY;
@@ -50,7 +52,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 h1{
-  color: white;
+  color: #F2F2F2;
   text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
 }
 
@@ -71,6 +73,12 @@ h1{
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.page-enter-from{
+  opacity: 0;
+  filter: blur(1rem);
+  transform: translateX(10%);
 }
 
 </style>

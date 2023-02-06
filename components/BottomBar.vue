@@ -13,6 +13,9 @@
       </ul>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
+      <DevOnly>
+        <i class="fa-sharp fa-solid fa-volume fa-lg mouse-sm audio-icon me-4"></i>
+      </DevOnly>
       <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-6"><i
           class="fa-brands fa-github fa-xl github-icon mouse-sm"></i></NuxtLink>
       <StatusIndicator/>
@@ -37,8 +40,9 @@
   margin-bottom: 12px;
 }
 
-.github-icon {
-  color: #7795c2;
+.github-icon, .audio-icon {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
 
   &:hover {
     color: white;
