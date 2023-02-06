@@ -3,7 +3,7 @@
 
     <NavMenu/>
 
-    <div class="container-xxxl pt-1">
+    <div class="container-xxxl mt-n4">
       <div class="row">
         <div class="col">
           <h1 class="lead small">Explore Projects;</h1>

@@ -26,8 +26,8 @@ h1 {
     font-weight: 700;
 
     &.small{
-      @include font-size(2.8rem);
-      @include rfs(2.4rem, line-height);
+      @include font-size(2rem);
+      @include rfs(2rem, line-height);
     }
   }
 }
