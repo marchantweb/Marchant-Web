@@ -68,7 +68,7 @@ const headingChars = heading.split('');
 .heading-char {
   display: inline;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0, 1) forwards;
+  animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0.2, 1) forwards;
 }
 
 @keyframes headingCharReveal {
