@@ -51,9 +51,7 @@ onMounted(() => {
 
 h1{
   color: white;
-  text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
-  10px 20px 5px rgba(0,0,0,0.05),
-  -10px 20px 5px rgba(0,0,0,0.05);
+  text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
 }
 
 .feed-section {

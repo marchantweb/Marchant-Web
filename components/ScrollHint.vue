@@ -1,6 +1,6 @@
 <template>
   <div class="scroll-hint mouse-md">
-    <span>Scroll to Explore Projects</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x fa-fade" style="--fa-animation-duration: 3s;"></i>
+    <span>Scroll to Explore Projects</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x"></i>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
 
 .scroll-hint {
 
-  border-bottom: 2px solid #7795c2;
+  border-bottom: 2px solid white;
   padding-bottom: 20px;
   min-width: 300px;
   display: flex;

@@ -11,7 +11,7 @@ export default `
       // Configuration
       #define NOISE_STRENGTH 0.05
       #define SPECULAR_STRENGTH 0.17
-      #define ANIMATION_SPEED 0.4
+      #define ANIMATION_SPEED 0.6
       #define DEPTH 30.
       #define SEGMENT_QUALITY 1.2
 

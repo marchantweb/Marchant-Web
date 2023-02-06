@@ -90,7 +90,7 @@ const navClasses = computed(() => {
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 0.2px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);
+      text-shadow: -0.5px 0px 0px rgb(54, 201, 227), 0.5px 0px 0px rgb(255, 0, 106), 0px 2px 5px rgb(0 0 0 / 50%);
       font-size: 14px;
     }
   }

@@ -42,9 +42,9 @@
 import {useEventListener} from "@vueuse/core";
 
 onMounted(() => {
-  useEventListener(document, 'wheel', (event) => {
+  useEventListener(document, 'wheel', async (event) => {
     if (event.deltaY > 0) {
-      return navigateTo('/portfolio');
+      await navigateTo('/portfolio');
     }
   })
 });
@@ -59,9 +59,7 @@ const headingChars = heading.split('');
 .lead {
   color: white;
   user-select: none;
-  text-shadow: 0px 15px 5px rgba(0,0,0,0.1),
-  10px 20px 5px rgba(0,0,0,0.05),
-  -10px 20px 5px rgba(0,0,0,0.05);
+  text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
 
   span {
     pointer-events: none;
