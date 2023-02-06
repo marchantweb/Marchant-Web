@@ -13,7 +13,7 @@
       </div>
       <div class="col-6">
         <ul class="tech-stack">
-          <li v-for="stackItem in currentPortfolioItem['stack']">{{ stackItem["name"] }}</li>
+          <li v-for="stackItem in currentPortfolioItem['stack']"><img src="~/assets/images/stack/vue.svg" alt="VueJS" style="width: 20px;"></li>
         </ul>
       </div>
     </div>
@@ -89,8 +89,8 @@ const elementClasses = computed(() => {
   width: 960px;
   aspect-ratio: 2;
   flex: none;
-  transform: scale(0.7);
-  transform-origin: bottom center;
+  transform: scale(1);
+  transform-origin: bottom right;
   transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
 }
 
@@ -113,7 +113,7 @@ const elementClasses = computed(() => {
   width: 100%;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 40px 10px -20px;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
 }

@@ -11,8 +11,8 @@
       </div>
     </div>
 
-    <div class="container-fluid mt-7 pe-0">
-      <div id="portfolio-feed" class="feed-section pe-6" role="feed" aria-busy="false" aria-label="Case Studies"
+    <div class="container-fluid mt-7 px-0">
+      <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies"
            v-if="portfolioData">
 
         <div class="feed-section__container-padding" />
@@ -63,7 +63,7 @@ h1{
   margin-right: 0;
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  gap: 0;
   flex-wrap: nowrap;
   width: 100%;
   -ms-overflow-style: none;

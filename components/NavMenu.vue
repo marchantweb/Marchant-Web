@@ -89,7 +89,7 @@ const navClasses = computed(() => {
       font-family: 'N27', sans-serif;
       text-transform: uppercase;
       font-weight: 600;
-      letter-spacing: 0.2px;
+      letter-spacing: 1px;
       text-shadow: -0.5px 0px 0px rgb(54, 201, 227), 0.5px 0px 0px rgb(255, 0, 106), 0px 2px 5px rgb(0 0 0 / 50%);
       font-size: 14px;
     }
