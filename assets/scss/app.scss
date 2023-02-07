@@ -139,3 +139,7 @@ $enable-negative-margins: true;
   }
 
 }
+
+.nav-container {
+  right: calc((100vw - (1600px - 120px)) / 2);
+}

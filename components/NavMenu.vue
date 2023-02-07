@@ -1,8 +1,5 @@
 <template>
-  <div class="container-xxxl pt-6">
-    <div class="row justify-content-end">
-      <div class="col-auto">
-        <section :class="navClasses">
+        <div :class="navClasses">
           <div class="nav-icon">
             <div class="nav-icon__line"></div>
             <div class="nav-icon__line"></div>
@@ -22,10 +19,7 @@
               <button class="mouse-sm">Contact</button>
             </NuxtLink>
           </nav>
-        </section>
-      </div>
-    </div>
-  </div>
+        </div>
 </template>
 
 <script setup>
@@ -48,7 +42,8 @@ const navClasses = computed(() => {
 <style lang="scss" scoped>
 
 .nav-container {
-  position: relative;
+  position: absolute;
+  top: 60px;
 
   .nav-icon {
     display: flex;

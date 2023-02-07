@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="col-6 d-flex justify-content-end">
-        <CodeLine :visible="props.isFocused" :number="'=>'"><span class="code--white" v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{stackItem.name}} <span class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
+        <CodeLine :visible="props.isFocused" :number="'//'"><span class="code--white" v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{stackItem.name}} <span class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>
     </div>
 

@@ -40,7 +40,7 @@ const codeLineClasses = computed(() => {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 11px 5px -6px;
   width: fit-content;
   border-radius: 3px;
   overflow: hidden;
@@ -50,7 +50,7 @@ const codeLineClasses = computed(() => {
     display: block;
     width: fit-content;
     padding: 6px 10px;
-    background-color: #6675E4;
+    background-color: #5e4fd9;
     color: rgba(255,255,255,0.5);
     font-family: 'JetBrains Mono', sans-serif;
     font-weight: 400;

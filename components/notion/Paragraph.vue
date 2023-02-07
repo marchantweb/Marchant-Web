@@ -1,7 +1,9 @@
 <template>
-  <p>
-    <span v-for="item in block['paragraph']['rich_text']">{{ item.text.content }}</span>
-  </p>
+  <div class="col-9">
+    <p>
+      <span v-for="item in block['paragraph']['rich_text']">{{ item.text.content }}</span>
+    </p>
+  </div>
 </template>
 
 <script setup>
@@ -16,5 +18,9 @@ defineProps({
 </script>
 
 <style scoped>
+
+p span{
+  font-size: 1.1rem;
+}
 
 </style>

@@ -25,12 +25,7 @@
           </p>
           <h2 class="mt-5 mb-4">My Stack</h2>
           <p>
-            As mentioned, most of my time is spent working with <a
-              href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
-            <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
-                                                                                          target="_blank"
-                                                                                          class="mouse-sm">Electron</a>,
-            but I also have experience with a wide range of other technologies and frameworks. I'm always trying new
+            Outside of my core stack, I'm also experienced with a wide range of other technologies and frameworks. I'm always trying new
             things, and keeping up-to-date with the latest releases and best practices.
           </p>
           <details>
@@ -91,26 +86,18 @@
           </p>
           <h2 class="mt-5 mb-4">Freelancing &amp; Consulting</h2>
           <p>
-            Instead of working directly with clients on one-off builds, I prefer to work with agencies who have a need
-            to bring in talent for recurring work. I can either act as a consultant, bringing UX design and architecture
-            experience to the table, or I can supplement your existing team as a technical lead/developer.
+            I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can take on projects solo, act as a technical lead, or supplement your existing team by smashing on a keyboard.
           </p>
-          <h3 class="mt-4 mb-3">
-            Rate
-          </h3>
-          <p>Consulting is billed at an hourly rate of $225/hr. I typically bill for programming work as a daily rate
-            ($1,800). For agency projects following an agile methodology, you can book me for a two-week sprint at
-            $14,400 (a 20% discount). For any project I’m happy to provide an estimate, provided a SOW or RFP and an
-            initial discovery call. All of my work is considered work-for-hire, although I usually retain rights to
-            display the work within the context of my portfolio; unless agreed to otherwise.</p>
+          <p>Consulting and programming work is billed at $225/hr. For long-term projects, you can book me for two-week
+            sprints at
+            $14,400 (a 20% discount). I’m always happy to provide an estimate for any project following an
+            initial discovery call.</p>
+          <p>While I'm aware that my rate is on the higher side, I always strive to bring that level of value to any project; and work efficiently and effectively towards your goals, making measurable progress each day.</p>
           <h2 class="mt-5 mb-4">
             Get in Touch
           </h2>
           <p>
-            Thanks for reading a little bit about me. I’m always happy to chat about new projects; even if I may not be
-            able to take on the work immediately. You can schedule a discovery call with me to see if we’re a good fit
-            by clicking here. If there’s anything I can do to help, please don’t hesitate to reach
-            out.
+            Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can <NuxtLink to="/contact" class="mouse-sm">schedule a discovery call</NuxtLink> to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
           </p>
         </div>
       </div>
