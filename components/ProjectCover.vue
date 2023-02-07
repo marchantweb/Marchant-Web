@@ -13,7 +13,7 @@
       </div>
       <div class="col-6">
         <ul class="tech-stack">
-          <li v-for="stackItem in currentPortfolioItem['stack']"><img src="~/assets/images/stack/vue.svg" alt="VueJS" style="width: 20px;"></li>
+          <li v-for="stackItem in currentPortfolioItem['stack']"><!--<img src="~/assets/images/stack/vue.svg" alt="VueJS" style="width: 20px;">-->{{stackItem.name}}</li>
         </ul>
       </div>
     </div>
@@ -127,6 +127,7 @@ const elementClasses = computed(() => {
 }
 
 .project-cover--focused {
+  transition: transform 0.4s cubic-bezier(0.6, 0, 0.2, 1);
   transform: scale(1);
 
   .project-cover__type {

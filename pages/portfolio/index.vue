@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="container-fluid mt-7 px-0">
+    <div id="portfolio-feed-container" class="container-fluid mt-7 px-0" style="overflow: hidden;">
       <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies"
            v-if="portfolioData">
 
@@ -39,6 +39,8 @@
 <script setup>
 
 import {useEventListener} from "@vueuse/core";
+import { gsap } from "gsap";
+import { Draggable } from "gsap/Draggable";
 
 const portfolioData = await usePortfolio();
 const selected = ref(0);
@@ -51,10 +53,17 @@ const updateSelected = (selectedIndex) => {
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
-  document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
+  gsap.to("#portfolio-feed", {
+    x: 960 * selected.value * -1,
+    duration: 0.5,
+    ease: "power3.out"
+  });
+  //document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
 }
 
 onMounted(() => {
+
+  gsap.registerPlugin(Draggable);
 
   // Wheel Events
   useEventListener(document, 'wheel', (event) => {
@@ -76,6 +85,20 @@ onMounted(() => {
     updateSelected(newSelected);
   });
 
+  const container = document.querySelector("#portfolio-feed");
+  let dragMe = Draggable.create(container, {
+    type: "x",
+    edgeResistance: 1,
+    //snap: offsets,
+    //inertia: true,
+    //bounds: "#portfolio-feed-container",
+    //onDrag: tweenDot,
+    //onThrowUpdate: tweenDot,
+    //onDragEnd: slideAnim,
+    allowNativeTouchScrolling: false,
+    zIndexBoost: false
+  });
+
 });
 
 </script>
@@ -85,18 +108,19 @@ onMounted(() => {
 h1 {
   color: #F2F2F2;
   text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
+  letter-spacing: 2px;
 }
 
 .feed-section {
   position: relative;
-  overflow: auto;
+  //overflow: auto;
   margin-left: 0;
   margin-right: 0;
   display: flex;
   flex-direction: row;
   gap: 0;
   flex-wrap: nowrap;
-  width: 100%;
+  width: fit-content;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding-bottom: 60px;
