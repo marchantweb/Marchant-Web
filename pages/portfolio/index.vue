@@ -15,14 +15,15 @@
       <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies"
            v-if="portfolioData">
 
-        <div class="feed-section__container-padding" />
+        <div class="feed-section__container-padding"/>
 
-        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" :index="index"
+        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
+                      :index="index"
                       v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
-        <div class="feed-section__extraElement" style="width: 960px; height: 10px; display: block; flex:none" />
+        <div class="feed-section__extraElement" style="width: 960px; height: 10px; display: block; flex:none"/>
 
-        <div class="feed-section__container-padding" />
+        <div class="feed-section__container-padding"/>
 
 
       </div>
@@ -40,25 +41,39 @@
 import {useEventListener} from "@vueuse/core";
 
 const portfolioData = await usePortfolio();
-
 const selected = ref(0);
+
+/**
+ * Update the selected project, called by wheel, key, drag and touch events
+ * @param selectedIndex
+ */
+const updateSelected = (selectedIndex) => {
+  selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
+  selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
+  selected.value = selectedIndex;
+  document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
+}
 
 onMounted(() => {
 
+  // Wheel Events
   useEventListener(document, 'wheel', (event) => {
-
-    // Per-Scroll Increment
     let newSelected = selected.value;
     newSelected = event.deltaY > 0 ? (newSelected += 1) : (newSelected -= 1);
-    newSelected = newSelected < 0 ? 0 : newSelected;
-    newSelected = newSelected > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : newSelected;
-
-    // Go to the selected slide
-    selected.value = newSelected;
-    document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
-
-    //document.getElementById('portfolio-feed').scrollLeft += event.deltaY;
+    updateSelected(newSelected);
     //selected.value = Math.floor(document.getElementById('portfolio-feed').scrollLeft / 960);
+  });
+
+  // Keyboard Events
+  useEventListener(document, 'keyup', (event) => {
+    let newSelected = selected.value;
+    if (event.key === 'ArrowRight') {
+      newSelected += 1
+    }
+    if (event.key === 'ArrowLeft') {
+      newSelected -= 1
+    }
+    updateSelected(newSelected);
   });
 
 });
@@ -67,7 +82,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 
-h1{
+h1 {
   color: #F2F2F2;
   text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
 }
@@ -91,7 +106,7 @@ h1{
   }
 }
 
-.page-enter-from{
+.page-enter-from {
   opacity: 0;
   filter: blur(10px);
   transform: translateX(10%);
