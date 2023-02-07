@@ -3,18 +3,16 @@
            :aria-description="currentPortfolioItem['lead']">
 
     <!-- Title & Stack -->
-    <div class="title-bar row justify-content-between align-items-end mb-4 flex-nowrap">
+    <div class="title-bar row justify-content-between align-items-end mb-3 flex-nowrap">
       <div class="col-auto">
-        <h2 class="lead pb-1 pe-3 d-inline-block" style="color: #F2F2F2">{{ displayIndex }}.</h2>
+        <h2 class="lead pb-1 pe-3 d-inline-block mb-0" style="color: #F2F2F2">{{ displayIndex }}.</h2>
         <div class="d-inline-block">
           <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
-          <h2 class="project-cover__title">{{ currentPortfolioItem["title"] }}</h2>
+          <h2 class="project-cover__title mb-0">{{ currentPortfolioItem["title"] }}</h2>
         </div>
       </div>
-      <div class="col-6">
-        <ul class="tech-stack">
-          <li v-for="stackItem in currentPortfolioItem['stack']"><!--<img src="~/assets/images/stack/vue.svg" alt="VueJS" style="width: 20px;">-->{{stackItem.name}}</li>
-        </ul>
+      <div class="col-6 d-flex justify-content-end">
+        <CodeLine :visible="props.isFocused" :number="'=>'"><span class="code--white" v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{stackItem.name}} <span class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>
     </div>
 

@@ -73,6 +73,10 @@ const codeLineClasses = computed(() => {
       font-size: 0.9rem;
     }
 
+    :deep(.code--white){
+      color: #FFFFFF;
+    }
+
     :deep(.code--purple){
       color: #b774e1;
     }
