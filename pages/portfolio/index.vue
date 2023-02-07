@@ -39,38 +39,53 @@
 <script setup>
 
 import {useEventListener} from "@vueuse/core";
-import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
+import {gsap} from "gsap";
+import {Draggable} from "gsap/Draggable";
+import {InertiaPlugin} from "gsap/InertiaPlugin";
 
 const portfolioData = await usePortfolio();
 const selected = ref(0);
 
 /**
- * Update the selected project, called by wheel, key, drag and touch events
+ * Update the selected project, called by wheel and key events
  * @param selectedIndex
  */
 const updateSelected = (selectedIndex) => {
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
+  gsap.killTweensOf("#portfolio-feed");
   gsap.to("#portfolio-feed", {
     x: 960 * selected.value * -1,
     duration: 0.5,
     ease: "power3.out"
   });
-  //document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
+}
+
+/**
+ * Updates the selected project, called by drag and touch events
+ * @param event
+ */
+const updateDragSelected = function(event){
+  let selectedIndex = Math.floor(Math.abs((this.endX) / 960));
+  selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
+  selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
+  selected.value = selectedIndex;
 }
 
 onMounted(() => {
 
-  gsap.registerPlugin(Draggable);
+  gsap.registerPlugin(Draggable, InertiaPlugin);
 
   // Wheel Events
   useEventListener(document, 'wheel', (event) => {
     let newSelected = selected.value;
-    newSelected = event.deltaY > 0 ? (newSelected += 1) : (newSelected -= 1);
+    if (event.deltaY > 0) {
+      newSelected += 1
+    } else {
+      newSelected -= 1
+    }
     updateSelected(newSelected);
-    //selected.value = Math.floor(document.getElementById('portfolio-feed').scrollLeft / 960);
   });
 
   // Keyboard Events
@@ -85,16 +100,23 @@ onMounted(() => {
     updateSelected(newSelected);
   });
 
+  const offsets = [];
+  for (let i = 0; i < portfolioData.value.length; i++) {
+    offsets.push((i * 960) * -1);
+  }
+
   const container = document.querySelector("#portfolio-feed");
   let dragMe = Draggable.create(container, {
     type: "x",
     edgeResistance: 1,
-    //snap: offsets,
-    //inertia: true,
-    //bounds: "#portfolio-feed-container",
-    //onDrag: tweenDot,
-    //onThrowUpdate: tweenDot,
-    //onDragEnd: slideAnim,
+    snap: offsets,
+    inertia: true,
+    bounds: {
+      minX: 0,
+      maxX: 960 * (portfolioData.value.length - 1) * -1
+    },
+    //onDrag: updateDragSelected,
+    onDragEnd: updateDragSelected,
     allowNativeTouchScrolling: false,
     zIndexBoost: false
   });
