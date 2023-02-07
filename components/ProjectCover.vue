@@ -89,8 +89,8 @@ const elementClasses = computed(() => {
   width: 960px;
   aspect-ratio: 2;
   flex: none;
-  transform: scale(1);
-  transform-origin: bottom right;
+  transform: scale(0.7);
+  transform-origin: bottom center;
   transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
 }
 
@@ -131,6 +131,7 @@ const elementClasses = computed(() => {
 
   .project-cover__type {
     opacity: 1;
+    transition-delay: 0.2s;
   }
 
   .tech-stack{

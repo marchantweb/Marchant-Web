@@ -9,10 +9,10 @@ export default `
       uniform float iInitialXOffset;
 
       // Configuration
-      #define NOISE_STRENGTH 0.05
+      #define NOISE_STRENGTH 0.08
       #define SPECULAR_STRENGTH 0.17
       #define ANIMATION_SPEED 0.6
-      #define DEPTH 30.
+      #define DEPTH 60.
       #define SEGMENT_QUALITY 1.2
 
       // Shape Definition

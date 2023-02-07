@@ -20,6 +20,8 @@
         <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem" :index="index"
                       v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
+        <div class="feed-section__extraElement" style="width: 960px; height: 10px; display: block; flex:none" />
+
         <div class="feed-section__container-padding" />
 
 
@@ -42,9 +44,23 @@ const portfolioData = await usePortfolio();
 const selected = ref(0);
 
 onMounted(() => {
+
   useEventListener(document, 'wheel', (event) => {
-    document.getElementById('portfolio-feed').scrollLeft += event.deltaY;
-  })
+
+    // Per-Scroll Increment
+    let newSelected = selected.value;
+    newSelected = event.deltaY > 0 ? (newSelected += 1) : (newSelected -= 1);
+    newSelected = newSelected < 0 ? 0 : newSelected;
+    newSelected = newSelected > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : newSelected;
+
+    // Go to the selected slide
+    selected.value = newSelected;
+    document.getElementById('portfolio-feed').scrollLeft = 960 * selected.value;
+
+    //document.getElementById('portfolio-feed').scrollLeft += event.deltaY;
+    //selected.value = Math.floor(document.getElementById('portfolio-feed').scrollLeft / 960);
+  });
+
 });
 
 </script>
@@ -77,7 +93,7 @@ h1{
 
 .page-enter-from{
   opacity: 0;
-  filter: blur(1rem);
+  filter: blur(10px);
   transform: translateX(10%);
 }
 

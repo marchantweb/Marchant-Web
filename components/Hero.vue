@@ -60,7 +60,7 @@ let outputY = ref(y.value);
 let initialXOffset = ref(1);
 
 gsap.ticker.add(() => {
-  const dt = 0.05 * gsap.ticker.deltaRatio();
+  const dt = 0.1 * gsap.ticker.deltaRatio();
   outputX.value += (x.value - outputX.value) * dt;
   outputY.value += (y.value - outputY.value) * dt;
 });
