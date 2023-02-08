@@ -46,6 +46,8 @@ import {InertiaPlugin} from "gsap/InertiaPlugin";
 const portfolioData = await usePortfolio();
 const selected = ref(0);
 
+
+
 /**
  * Update the selected project, called by wheel and key events
  * @param selectedIndex
@@ -72,6 +74,8 @@ const updateDragSelected = function(event){
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
 }
+
+let draggable = null;
 
 onMounted(() => {
 
@@ -100,28 +104,51 @@ onMounted(() => {
     updateSelected(newSelected);
   });
 
-  const offsets = [];
-  for (let i = 0; i < portfolioData.value.length; i++) {
-    offsets.push((i * 960) * -1);
-  }
-
-  const container = document.querySelector("#portfolio-feed");
-  let dragMe = Draggable.create(container, {
-    type: "x",
-    edgeResistance: 1,
-    snap: offsets,
-    inertia: true,
-    bounds: {
-      minX: 0,
-      maxX: 960 * (portfolioData.value.length - 1) * -1
-    },
-    //onDrag: updateDragSelected,
-    onDragEnd: updateDragSelected,
-    allowNativeTouchScrolling: false,
-    zIndexBoost: false
-  });
+  setupDraggable();
 
 });
+onActivated(() => {
+  setupDraggable();
+  setupDraggable();
+});
+onUnmounted(() => {
+  if(draggable){
+    draggable[0].kill();
+  }
+});
+
+function setupDraggable(){
+  if(draggable){
+    return;
+  }
+  nextTick(() => {
+    const offsets = [];
+    for (let i = 0; i < portfolioData.value.length; i++) {
+      offsets.push((i * 960) * -1);
+    }
+    const container = document.querySelector("#portfolio-feed");
+    if(!container){
+      setTimeout(() => {
+        setupDraggable();
+      }, 100);
+      return;
+    }
+    draggable = Draggable.create(container, {
+      type: "x",
+      edgeResistance: 1,
+      snap: offsets,
+      inertia: true,
+      bounds: {
+        minX: 0,
+        maxX: 960 * (portfolioData.value.length - 1) * -1
+      },
+      //onDrag: updateDragSelected,
+      onDragEnd: updateDragSelected,
+      allowNativeTouchScrolling: false,
+      zIndexBoost: false
+    });
+  });
+}
 
 </script>
 
