@@ -96,9 +96,13 @@
           <h2 class="mt-5 mb-4">
             Get in Touch
           </h2>
-          <p>
-            Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can <NuxtLink to="/contact" class="mouse-sm">schedule a discovery call</NuxtLink> to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
+          <p class="mb-5">
+            Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can schedule a discovery call to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
           </p>
+          <ActionButton to="/contact">
+            <i class="fa-sharp fa-solid fa-message-captions"></i>
+            Let's Chat
+          </ActionButton>
         </div>
       </div>
     </div>

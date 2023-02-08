@@ -42,7 +42,7 @@ const codeLineClasses = computed(() => {
   align-items: center;
   box-shadow: rgba(50, 50, 93, 0.25) 0 11px 5px -6px;
   width: fit-content;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   opacity: 0;
 

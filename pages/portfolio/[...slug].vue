@@ -31,7 +31,7 @@
         <div class="col-4">
           <section class="ps-6" style="position: sticky; top: 60px">
             <h3 class="mb-5">Details</h3>
-            <dl>
+            <dl class="mb-5">
 
               <dt v-if="currentPortfolioItem['client']">Client</dt>
               <dd v-if="currentPortfolioItem['client']"> {{ currentPortfolioItem['client']}} </dd>
@@ -46,7 +46,10 @@
               <dd v-if="currentPortfolioItem['completed']"> {{ currentPortfolioItem['completed']}} </dd>
 
             </dl>
-            <NuxtLink to="/contact"><h3 class="mt-5 mb-4">Get in Touch</h3></NuxtLink>
+            <ActionButton to="/contact">
+              <i class="fa-sharp fa-solid fa-message-captions"></i>
+              Let's Chat
+            </ActionButton>
           </section>
         </div>
         <div class="col-8">
