@@ -24,7 +24,7 @@
 
     <DevOnly>
       <div id="awwwards" style="position: fixed; z-index: 999; top: 60px;  right: 0"><a
-          href="https://www.awwwards.com/sites/marchantweb" target="_blank">
+          href="https://www.awwwards.com/sites/marchantweb" target="_blank" class="mouse-md">
         <svg width="53.08" height="171.358">
           <path class="js-color-bg" fill="#5ABDB2" d="M0 0h53.08v171.358H0z"></path>
           <g class="js-color-text" fill="#fff">
@@ -136,6 +136,29 @@ const headingChars = heading.split('');
   }
   100% {
     clip-path: polygon(0 0, 110% 0, 110% 110%, 0 110%);
+  }
+}
+
+#awwwards {
+  transform: translateX(100%);
+  animation: animateAwwwardsIn 1s ease-out forwards;
+  animation-delay: 1.8s;
+
+  > a {
+    display: block;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes animateAwwwardsIn {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
   }
 }
 
