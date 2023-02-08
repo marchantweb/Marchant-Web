@@ -23,6 +23,16 @@
 
 <script setup>
 
+useHead({
+  title: 'Let\'s Chat - Schedule a Discovery Session | Marchant Web',
+  meta: [
+    {
+      name: 'description',
+      content: 'Schedule a one-hour initial discovery session for your project, or reach out via email.'
+    }
+  ]
+});
+
 onMounted(() => {
   // TODO: Replace with a design that opens the form in an external window. Layout of this element will be impractical.
   /* Calendly.initInlineWidget({

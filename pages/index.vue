@@ -94,40 +94,6 @@ const headingChars = heading.split('');
   display: inline;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0.2, 1) forwards;
-
-  &:nth-child(4n + 1) {
-    animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0.2, 1) forwards, headingCharFocus 4s cubic-bezier(0.7, 0, 0.2, 1) forwards;
-  }
-}
-
-@keyframes headingCharFocus {
-  0% {
-    filter: blur(3px);
-  }
-  10% {
-    filter: blur(0px);
-  }
-  20% {
-    filter: blur(1px);
-  }
-  50% {
-    filter: blur(0px);
-  }
-  60% {
-    filter: blur(2px);
-  }
-  70% {
-    filter: blur(0px);
-  }
-  80% {
-    filter: blur(1px);
-  }
-  90% {
-    filter: blur(0px);
-  }
-  100% {
-    filter: none;
-  }
 }
 
 @keyframes headingCharReveal {

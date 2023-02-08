@@ -46,7 +46,15 @@ import {InertiaPlugin} from "gsap/InertiaPlugin";
 const portfolioData = await usePortfolio();
 const selected = ref(0);
 
-
+useHead({
+  title: 'Explore Projects | Marchant Web',
+  meta: [
+    {
+      name: 'description',
+      content: 'Senior front end engineer with 10+ years building creative websites, interactive experiences and custom web software.'
+    }
+  ]
+});
 
 /**
  * Update the selected project, called by wheel and key events
