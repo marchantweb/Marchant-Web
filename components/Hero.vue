@@ -35,6 +35,7 @@ import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
 import {gsap} from "gsap";
 import { useWindowFocus } from '@vueuse/core'
+import { useElementVisibility } from '@vueuse/core'
 
 // Non-reactive WebGL variables
 let gl = null;
@@ -67,9 +68,20 @@ gsap.ticker.add(() => {
 });
 
 const focused = useWindowFocus();
+const canvas = ref(null);
+const canvasIsVisible = useElementVisibility(canvas);
 
 let enableRendering = computed(() => {
-  return (route.path === '/' || route.path === '/portfolio') && focused.value;
+  if(focused.value === false){
+    return false;
+  }
+  if(route.path === '/' || route.path === '/portfolio'){
+    return true;
+  }
+  if(route.path.startsWith('/portfolio/') && canvasIsVisible.value === true){
+    return true;
+  }
+  return false;
 });
 
 /**
