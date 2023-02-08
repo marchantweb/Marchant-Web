@@ -61,16 +61,11 @@ let outputY = ref(y.value);
 
 let initialXOffset = ref(1);
 
-const initialRender = ref(false);
 const focused = useWindowFocus();
 const canvas = ref(null);
 const canvasIsVisible = useElementVisibility(canvas);
 
 let enableRendering = computed(() => {
-  if(initialRender.value === false){
-    initialRender.value = true;
-    return true;
-  }
   if(focused.value === false){
     return false;
   }
@@ -128,7 +123,7 @@ const initWebGLComponent = () => {
  */
 const renderWebGLComponent = () => {
 
-  if(enableRendering.value === false){
+  if(enableRendering.value === false && time !== 0){
     requestAnimationFrame(renderWebGLComponent);
     return;
   }

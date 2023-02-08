@@ -102,7 +102,7 @@ const headingChars = heading.split('');
 
 @keyframes headingCharFocus {
   0% {
-    filter: blur(2px);
+    filter: blur(3px);
   }
   10% {
     filter: blur(0px);
@@ -114,7 +114,7 @@ const headingChars = heading.split('');
     filter: blur(0px);
   }
   60% {
-    filter: blur(1px);
+    filter: blur(2px);
   }
   70% {
     filter: blur(0px);
