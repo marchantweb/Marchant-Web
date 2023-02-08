@@ -25,8 +25,7 @@ useHead({
   script: [
     {
       src: "https://kit.fontawesome.com/172ddc2486.js", async: true, defer: true
-    },
-    { src: 'https://assets.calendly.com/assets/external/widget.js', async: true, defer: true }
+    }
   ],
 });
 </script>

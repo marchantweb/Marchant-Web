@@ -47,7 +47,8 @@ onMounted(() => {
     if (event.deltaY > 0) {
       await navigateTo('/portfolio');
     }
-  })
+  });
+  preloadRouteComponents('/portfolio');
 });
 
 const heading = "I'M A FRONT-END ENGINEER WHO WORKS WITH AGENCIES TO DELIVER NEXT-LEVEL CREATIVE PROJECTS;"
