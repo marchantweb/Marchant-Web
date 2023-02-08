@@ -318,7 +318,7 @@ body.fixed-webgl{
   transform: translateX(-100%);
   padding: 20px;
 
-  &.hero--about {
+  &.hero--about, &.hero--contact {
     transition: transform 1s cubic-bezier(0.65, 0, 0.15, 1);
     transform: translateX(0);
   }
