@@ -16,9 +16,8 @@ let outputX = ref(x.value);
 let outputY = ref(y.value);
 
 gsap.ticker.add(() => {
-  const dt = 0.4 * gsap.ticker.deltaRatio();
-  outputX.value += (x.value - outputX.value) * dt;
-  outputY.value += (y.value - outputY.value) * dt;
+  outputX.value += (x.value - outputX.value) * 0.4;
+  outputY.value += (y.value - outputY.value) * 0.4;
 });
 
 /**

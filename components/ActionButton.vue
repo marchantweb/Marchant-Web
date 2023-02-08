@@ -35,7 +35,7 @@ const props = defineProps({
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
   &:hover{
-    background-color: #8254ff;
+    background-color: #1E1F22;
     transform: translateY(-5px);
     box-shadow: rgba(50, 50, 93, 0.15) 0 14px 10px 0;
   }

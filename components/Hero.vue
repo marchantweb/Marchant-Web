@@ -61,12 +61,6 @@ let outputY = ref(y.value);
 
 let initialXOffset = ref(1);
 
-gsap.ticker.add(() => {
-  const dt = 0.1 * gsap.ticker.deltaRatio();
-  outputX.value += (x.value - outputX.value) * dt;
-  outputY.value += (y.value - outputY.value) * dt;
-});
-
 const focused = useWindowFocus();
 const canvas = ref(null);
 const canvasIsVisible = useElementVisibility(canvas);
@@ -78,10 +72,7 @@ let enableRendering = computed(() => {
   if(route.path === '/' || route.path === '/portfolio'){
     return true;
   }
-  if(route.path.startsWith('/portfolio/') && canvasIsVisible.value === true){
-    return true;
-  }
-  return false;
+  return !!(route.path.startsWith('/portfolio/') && canvasIsVisible.value === true);
 });
 
 /**
@@ -170,6 +161,8 @@ const renderWebGLComponent = () => {
     gl.uniform2f(locations.resolution, width.value, height.value);
 
     // Pass the mouse uniform
+    outputX.value += (x.value - outputX.value) * 0.1;
+    outputY.value += (y.value - outputY.value) * 0.1;
     gl.uniform2f(locations.mouse, (1 / width.value) * outputX.value, (1 / height.value) * outputY.value);
 
     // Pass the zoom offset uniform
