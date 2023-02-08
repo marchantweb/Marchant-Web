@@ -84,7 +84,7 @@ const elementClasses = computed(() => {
 
 .project-cover {
   position: relative;
-  width: 960px;
+  width: 1040px;
   aspect-ratio: 2;
   flex: none;
   transform: scale(0.7);

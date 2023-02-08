@@ -6,7 +6,7 @@
     <div class="container-xxxl pt-6">
       <div class="row">
         <div class="col">
-          <h1 class="lead small">Explore Projects;</h1>
+          <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home</NuxtLink>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
                       :index="index"
                       v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
-        <div class="feed-section__extraElement" style="width: 960px; height: 10px; display: block; flex:none"/>
+        <div class="feed-section__extraElement" style="width: 1040px; height: 10px; display: block; flex:none"/>
 
         <div class="feed-section__container-padding"/>
 
@@ -66,7 +66,7 @@ const updateSelected = (selectedIndex) => {
   selected.value = selectedIndex;
   gsap.killTweensOf("#portfolio-feed");
   gsap.to("#portfolio-feed", {
-    x: 960 * selected.value * -1,
+    x: 1040 * selected.value * -1,
     duration: 0.5,
     ease: "power3.out"
   });
@@ -77,7 +77,7 @@ const updateSelected = (selectedIndex) => {
  * @param event
  */
 const updateDragSelected = function(event){
-  let selectedIndex = Math.floor(Math.abs((this.endX) / 960));
+  let selectedIndex = Math.floor(Math.abs((this.endX) / 1040));
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
@@ -87,6 +87,7 @@ let draggable = null;
 
 onMounted(() => {
 
+  selected.value = 0;
   gsap.registerPlugin(Draggable, InertiaPlugin);
 
   // Wheel Events
@@ -116,6 +117,7 @@ onMounted(() => {
 
 });
 onActivated(() => {
+  selected.value = 0;
   setupDraggable();
   setupDraggable();
 });
@@ -132,7 +134,7 @@ function setupDraggable(){
   nextTick(() => {
     const offsets = [];
     for (let i = 0; i < portfolioData.value.length; i++) {
-      offsets.push((i * 960) * -1);
+      offsets.push((i * 1040) * -1);
     }
     const container = document.querySelector("#portfolio-feed");
     if(!container){
@@ -148,7 +150,7 @@ function setupDraggable(){
       inertia: true,
       bounds: {
         minX: 0,
-        maxX: 960 * (portfolioData.value.length - 1) * -1
+        maxX: 1040 * (portfolioData.value.length - 1) * -1
       },
       //onDrag: updateDragSelected,
       onDragEnd: updateDragSelected,
