@@ -15,7 +15,7 @@
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
       <div class="hero-canvas__sidebar" :class="heroClasses">
-        <CodeTag>fps: {{ fps }}</CodeTag>
+        <CodeTag>WebGL</CodeTag>
         <div class="line-numbers">
           <span class="line-number__line" v-once v-for="i in 50"><span v-if="i < 10">0</span>{{ i }}</span>
         </div>
@@ -34,6 +34,7 @@ import {createShader, createProgram} from "~/shaders/shaderHelpers";
 import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
 import {gsap} from "gsap";
+import { useWindowFocus } from '@vueuse/core'
 
 // Non-reactive WebGL variables
 let gl = null;
@@ -65,7 +66,11 @@ gsap.ticker.add(() => {
   outputY.value += (y.value - outputY.value) * dt;
 });
 
-const fps = useFps();
+const focused = useWindowFocus();
+
+let enableRendering = computed(() => {
+  return (route.path === '/' || route.path === '/portfolio') && focused.value;
+});
 
 /**
  * Does the initial work to set up the WebGL context and shaders
@@ -114,6 +119,11 @@ const initWebGLComponent = () => {
  * Updates the WebGL component on every "frame" of the animation.
  */
 const renderWebGLComponent = () => {
+
+  if(enableRendering.value === false){
+    requestAnimationFrame(renderWebGLComponent);
+    return;
+  }
 
   // Check the frame rate
   let now = Date.now();
