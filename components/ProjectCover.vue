@@ -5,13 +5,13 @@
     <!-- Title & Stack -->
     <div class="title-bar row justify-content-between align-items-end mb-3 flex-nowrap">
       <div class="col-auto">
-        <h2 class="lead pb-1 pe-3 d-inline-block mb-0" style="color: #F2F2F2">{{ displayIndex }}.</h2>
+        <h2 class="lead pb-1 pe-3 d-inline-block mb-0 ps-4 ps-0" style="color: #F2F2F2">{{ displayIndex }}.</h2>
         <div class="d-inline-block">
           <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
           <h2 class="project-cover__title mb-0">{{ currentPortfolioItem["title"] }}</h2>
         </div>
       </div>
-      <div class="col-6 d-flex justify-content-end">
+      <div class="col-6 d-flex justify-content-end d-none d-lg-block">
         <CodeLine :visible="props.isFocused" :number="'//'"><span class="code--white" v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{stackItem.name}} <span class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>
     </div>
@@ -90,6 +90,12 @@ const elementClasses = computed(() => {
   transform: scale(0.7);
   transform-origin: bottom center;
   transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
+
+  @media screen and (max-width: 992px) {
+    transform: scale(1);
+    aspect-ratio: 2.5;
+    height: 65vh;
+  }
 }
 
 .project-cover__type {
@@ -101,6 +107,10 @@ const elementClasses = computed(() => {
 .tech-stack{
   opacity: 0;
   transition: opacity 0.6s ease;
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
 }
 
 .project-cover__title {
@@ -114,6 +124,11 @@ const elementClasses = computed(() => {
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
+
+  @media screen and (max-width: 992px) {
+    width: 100vw;
+    border-radius: 0;
+  }
 }
 
 .project-cover__video {
