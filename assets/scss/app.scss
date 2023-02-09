@@ -4,6 +4,7 @@ html {
   font-size: 15px;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
@@ -67,7 +68,7 @@ $grid-breakpoints: (
         xxxl: 1680px
 );
 
-$container-padding-x: 120px;
+$container-padding-x: 60px;
 
 $container-max-widths: (
         sm: 540px,
@@ -142,4 +143,9 @@ $enable-negative-margins: true;
 
 .nav-container {
   right: calc((100vw - (1600px - 120px)) / 2);
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
+      right: calc(((100vw - (#{$container-max-width} - 120px)) / 2));
+    }
+  }
 }

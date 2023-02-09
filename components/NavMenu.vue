@@ -45,6 +45,11 @@ const navClasses = computed(() => {
   position: absolute;
   top: 60px;
 
+  @media screen and (max-width: 992px) {
+    display: none;
+    position: relative;
+  }
+
   .nav-icon {
     display: flex;
     flex-direction: column;
@@ -97,7 +102,7 @@ const navClasses = computed(() => {
 
       &:nth-child(2){
         transition: transform 0.7s cubic-bezier(0.7, 0, 0, 1);
-        transform: translate(-50vw);
+        transform: translate(max(-50vw, -800px));
       }
 
       &:nth-child(3){

@@ -3,14 +3,14 @@ h1, h2, h3, h4, h5, h6, p, span, li {
   font-family: $font-family-sans-serif;
   color: #212A36;
 
-  a{
+  a {
     color: #212A36;
     text-decoration: none;
     font-weight: bold;
     border-bottom: 1px dotted #212A36;
 
-    &:hover{
-        color: #000000;
+    &:hover {
+      color: #000000;
     }
   }
 }
@@ -25,7 +25,12 @@ h1 {
     @include rfs(3.2rem, line-height);
     font-weight: 700;
 
-    &.small{
+    @media screen and (max-width: 992px) {
+      @include font-size(3rem);
+      @include rfs(2.4rem, line-height);
+    }
+
+    &.small {
       @include font-size(2rem);
       @include rfs(2rem, line-height);
     }
@@ -98,11 +103,11 @@ h3 {
   display: flex;
   align-items: flex-end;
 
-  i{
+  i {
     pointer-events: none;
   }
 
-  &:hover{
+  &:hover {
     color: #FFFFFF;
   }
 }

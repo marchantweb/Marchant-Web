@@ -14,6 +14,7 @@
                   v-for="(char, index) in headingChars">{{ char }}
             </span>
           </h1>
+          <StatusIndicator class="d-block py-3 d-lg-none"/>
         </div>
         <div class="col-auto">
           <ScrollHint/>
@@ -23,7 +24,7 @@
     </div>
 
     <DevOnly>
-      <div id="awwwards" style="position: fixed; z-index: 999; top: 60px;  right: 0"><a
+      <div id="awwwards" class="d-none d-lg-block" style="position: fixed; z-index: 999; top: 60px;  right: 0"><a
           href="https://www.awwwards.com/sites/marchantweb" target="_blank" class="mouse-md">
         <svg width="53.08" height="171.358">
           <path class="js-color-bg" fill="#5ABDB2" d="M0 0h53.08v171.358H0z"></path>
@@ -62,6 +63,11 @@ const headingChars = heading.split('');
   color: #F2F2F2;
   user-select: none;
   text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
+
+  @media screen and (max-width: 992px) {
+    text-shadow: -0.5px -0.5px 0px rgb(54, 201, 227), 0.5px 0.5px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
+  }
+
 
   span {
     pointer-events: none;

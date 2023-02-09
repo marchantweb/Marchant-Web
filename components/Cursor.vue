@@ -1,5 +1,5 @@
 <template>
-  <div class="cursor"
+  <div class="cursor d-none d-xl-block"
        :style="{ transform: 'translate(' + Math.round((outputX - (size/2))) + 'px, ' + Math.round((outputY - (size/2)) + 1) + 'px)', width: size + 'px', height: size + 'px' }"></div>
 </template>
 
