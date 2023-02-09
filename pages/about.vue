@@ -70,12 +70,6 @@
           </div>
           <h2 class="mt-6 mb-4">Awards &amp; Recognition</h2>
           <p>
-            My work has won an Honorable Mention from Awwwards, which recognizes the talent and effort of the best web
-            designers, developers and agencies in the world.
-
-
-          </p>
-          <p>
             I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
             multitudes of different projects with a near perfect 5-star rating.
           </p>
@@ -88,11 +82,10 @@
           <p>
             I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can take on projects solo, act as a technical lead, or supplement your existing team by smashing on a keyboard.
           </p>
-          <p>Consulting and programming work is billed at $225/hr. For long-term projects, you can book me for two-week
+          <p>Consulting and programming work is billed at $225/hr. For larger projects I offer two-week
             sprints at
-            $14,400 (a 20% discount). I’m always happy to provide an estimate for any project following an
+            $14,400 <em>(a 20% discount)</em>. I’m always happy to provide an estimate for any project following an
             initial discovery call.</p>
-          <p>While I'm aware that my rate is on the higher side, I always strive to bring that level of value to any project; and work efficiently and effectively towards your goals, making measurable progress each day.</p>
           <h2 class="mt-5 mb-4">
             Get in Touch
           </h2>

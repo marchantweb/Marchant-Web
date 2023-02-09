@@ -1,5 +1,5 @@
 <template>
-  <div class="scroll-hint mouse-md d-none d-xl-block">
+  <div class="scroll-hint mouse-md d-none d-xl-flex">
     <span>Scroll to Explore</span> <i class="fa-light fa-computer-mouse-scrollwheel fa-2x"></i>
   </div>
 </template>
@@ -11,11 +11,9 @@
 <style lang="scss" scoped>
 
 .scroll-hint {
-
   border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: 20px;
   min-width: 300px;
-  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 
