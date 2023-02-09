@@ -43,7 +43,7 @@ import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
 import {InertiaPlugin} from "gsap/InertiaPlugin";
 
-const portfolioData = await usePortfolio();
+const portfolioData = await usePortfolio(true);
 const selected = ref(0);
 
 useHead({
