@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div id="portfolio-feed-container" class="container-fluid mt-5 mt-lg-7 px-0" style="overflow: hidden;">
+    <div id="portfolio-feed-container" class="container-fluid mt-5 mt-lg-6 px-0" style="overflow: hidden;">
       <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies"
            v-if="portfolioData">
 

@@ -119,7 +119,7 @@ const elementClasses = computed(() => {
 
 .project-cover__video-container {
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 400px);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 40px 10px -20px;
   border-radius: 5px;
   cursor: pointer;
@@ -127,6 +127,7 @@ const elementClasses = computed(() => {
 
   @media screen and (max-width: 992px) {
     width: 100vw;
+    height: 100%;
     border-radius: 0;
   }
 }
