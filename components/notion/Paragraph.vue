@@ -1,6 +1,6 @@
 <template>
-  <div class="col-9">
-    <p>
+  <div class="col-8">
+    <p style="text-align: justify">
       <span v-for="item in block['paragraph']['rich_text']">{{ item.text.content }}</span>
     </p>
   </div>
