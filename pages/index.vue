@@ -52,7 +52,7 @@ onMounted(() => {
   preloadRouteComponents('/portfolio');
 });
 
-const heading = "I'M A FRONT-END ENGINEER WHO WORKS WITH AGENCIES TO DELIVER NEXT-LEVEL CREATIVE PROJECTS;"
+const heading = "SENIOR FRONT-END ENGINEER WHO HELPS AGENCIES DELIVER CREATIVE WORK;"
 const headingChars = heading.split('');
 
 </script>
