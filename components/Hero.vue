@@ -191,9 +191,9 @@ onMounted(() => {
   initWebGLComponent();
   requestAnimationFrame(renderWebGLComponent);
   gsap.to(initialXOffset, {
-    duration: 2,
+    duration: 7,
     value: 0,
-    ease: "power1.out"
+    ease: "power3.out"
   });
 });
 

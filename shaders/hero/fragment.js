@@ -18,7 +18,7 @@ export default `
       // Shape Definition
       float blob(vec3 q) {
           float f = DEPTH;
-          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2. )) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * ((.6 * (1.0) - (iZoomOffset * 1.0)) + (iMouse.y * .05));
+          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2. )) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * ((.6 * (1.0) - (iZoomOffset * 1.0)) + (iMouse.y * .05 - (iInitialXOffset * 1.5)));
           return f;
       }
 
@@ -33,7 +33,7 @@ export default `
           gl_FragColor = vec4(0, 0, 0, 1.);
 
           vec2 p= -3. + 1.6 * fragmentCoordinates;
-          vec3 o= vec3(p.x + 14. - (iZoomOffset * 4.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.6) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
+          vec3 o= vec3(p.x + 14. - (iZoomOffset * 4.0) - (iInitialXOffset * 4.0) - ((1.0 - iMouse.x) * 0.5), p.y + 2.7 + (iZoomOffset * 0.6) - (iMouse.y * 0.15), -0.35  + (iZoomOffset * 0.2));
           vec3 d= vec3(p.x * 8. + ((1.0 - iMouse.x) * 0.5) - (iZoomOffset * 2.0), p.y + 0.5 + ((1.0 - iMouse.y) * 0.25) - (iZoomOffset * 0.5), 0.8 + (iZoomOffset * -1.5))/128.;
          
           
@@ -49,7 +49,7 @@ export default `
                   n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy));
                   n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx));
                   n = normalize(n);
-                  c += max(dot(vec3(0.2 + (iZoomOffset * 1.0) + (iMouse.x * 0.1), 2., -1. + (iZoomOffset * 0.2)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
+                  c += max(dot(vec3(0.2 + (iZoomOffset * 1.0 + iInitialXOffset) + (iMouse.x * 0.1), 2., -1. + (iZoomOffset * 0.2)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
                   break;
               }
               t += SEGMENT_QUALITY;
