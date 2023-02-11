@@ -83,8 +83,7 @@
             I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can take on projects solo, act as a technical lead, or supplement your existing team by smashing on a keyboard.
           </p>
           <p>Consulting and programming work is billed at $225/hr. For larger projects I offer two-week
-            sprints at
-            $14,400 <em>(a 20% discount)</em>. I’m always happy to provide an estimate for any project following an
+            sprints at a discount. I’m always happy to provide an estimate for any project following an
             initial discovery call.</p>
           <h2 class="mt-5 mb-4">
             Get in Touch
