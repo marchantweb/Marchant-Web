@@ -19,7 +19,7 @@
           <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/portfolio"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back to Explore Projects</NuxtLink>
         </div>
         <div class="col">
-          <video class="mouse-md" loop="true" muted autoplay playsinline>
+          <video class="mouse-md" loop="true" muted autoplay playsinline :poster="currentPortfolioItem['cover']">
             <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
             <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
           </video>
