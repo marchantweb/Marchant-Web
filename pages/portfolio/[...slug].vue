@@ -77,7 +77,20 @@ const currentPortfolioItem = computed(() => {
 useHead({
   title: 'Case Study: ' + currentPortfolioItem.value['title'] + ', ' + currentPortfolioItem.value['type'] + ' | ' + 'Marchant Web',
   meta: [
-    { name: 'description', content: currentPortfolioItem.value['lead'] }
+    { hid: 'description', name: 'description', content:  currentPortfolioItem.value['lead'] },
+    { hid: 'og:title', property: 'og:title', content: currentPortfolioItem.value['title'] },
+    { hid: 'og:url', property: 'og:url', content: 'https://marchantweb.com' + route.fullPath },
+    { hid: 'og:description', property: 'og:description', content: currentPortfolioItem.value['lead'] },
+    { hid: 'og:image', property: 'og:image', content: currentPortfolioItem.value['cover']},
+
+    // twitter card
+    { hid: "twitter:title", name: "twitter:title", content: currentPortfolioItem.value['title'] },
+    { hid: "twitter:url", name: "twitter:url", content: 'https://marchantweb.com' + route.fullPath },
+    { hid: 'twitter:description', name: 'twitter:description', content: currentPortfolioItem.value['lead'] },
+    { hid: "twitter:image", name: "twitter:image", content: currentPortfolioItem.value['cover']},
+  ],
+  link: [
+    { hid: "canonical", rel: "canonical", href: 'https://marchantweb.com' + route.fullPath },
   ],
   bodyAttrs: {
     class: 'enable-scroll'
