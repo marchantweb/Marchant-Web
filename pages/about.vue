@@ -23,38 +23,6 @@
             understanding of user interactions and best practices. I’ve worked on many projects where I start early in
             the discovery process, guide and design the UX from the ground up, and then get to work building it.
           </p>
-          <h2 class="mt-5 mb-4">My Stack</h2>
-          <p>
-            Outside of my core stack, I'm also experienced with a wide range of other technologies and frameworks. I'm always trying new
-            things, and keeping up-to-date with the latest releases and best practices.
-          </p>
-          <details>
-            <summary style="cursor: pointer; font-weight: 600;" class="mouse-sm">Some tech I've explored in the past
-            </summary>
-            <ul style="column-count: 3" class="pt-3">
-              <li>GSAP</li>
-              <li>ThreeJS</li>
-              <li>Webpack</li>
-              <li>Vite</li>
-              <li>Vue</li>
-              <li>Nuxt</li>
-              <li>Electron</li>
-              <li>Wordpress</li>
-              <li>Node / Express</li>
-              <li>Contentful</li>
-              <li>Heroku</li>
-              <li>Git / GitHub</li>
-              <li>Jira</li>
-              <li>Asana</li>
-              <li>Rest/GraphQL APIs</li>
-              <li>Adobe XD</li>
-              <li>Figma</li>
-              <li>CSS/SCSS</li>
-              <li>HTML5 Canvas</li>
-              <li>WebGL</li>
-              <li>AWS</li>
-            </ul>
-          </details>
           <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
           <p class="mb-4">
             Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
