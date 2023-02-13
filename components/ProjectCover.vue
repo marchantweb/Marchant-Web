@@ -12,18 +12,19 @@
         </div>
       </div>
       <div class="col-6 justify-content-end d-none d-lg-flex">
-        <CodeLine :visible="props.isFocused" :number="'//'"><span class="code--white" v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{stackItem.name}} <span class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
+        <CodeLine :visible="props.isFocused" :number="'//'"><span class="code--white"
+                                                                  v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{ stackItem.name }} <span
+            class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>
     </div>
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
-        <video :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted autoplay
-               :src="currentPortfolioItem['video']">
-          <source
-              :src="currentPortfolioItem['video']"
-              type="video/mp4">
+        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted :autoplay="isFocused ? true : null"
+               :src="currentPortfolioItem['videoWebm']">
+          <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
+          <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
         </video>
       </div>
     </NuxtLink>
@@ -76,7 +77,16 @@ const elementClasses = computed(() => {
     'project-cover': true,
     'project-cover--focused': props.isFocused
   }
-})
+});
+
+const video = ref(null);
+watch(() => props.isFocused, (isFocused) => {
+  if (isFocused) {
+    video.value.play();
+  }else{
+    video.value.pause();
+  }
+});
 
 </script>
 
@@ -104,7 +114,7 @@ const elementClasses = computed(() => {
   transition: opacity 0.6s ease;
 }
 
-.tech-stack{
+.tech-stack {
   opacity: 0;
   transition: opacity 0.6s ease;
 
@@ -149,7 +159,7 @@ const elementClasses = computed(() => {
     transition-delay: 0.2s;
   }
 
-  .tech-stack{
+  .tech-stack {
     opacity: 1;
   }
 }

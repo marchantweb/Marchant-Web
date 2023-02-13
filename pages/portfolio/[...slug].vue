@@ -20,9 +20,8 @@
         </div>
         <div class="col">
           <video class="mouse-md" loop="true" muted autoplay>
-            <source
-                :src="currentPortfolioItem['video']"
-                type="video/mp4">
+            <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
+            <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
           </video>
         </div>
       </div>
