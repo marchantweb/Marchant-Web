@@ -22,7 +22,7 @@
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
         <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted :autoplay="isFocused ? true : null"
-               :src="currentPortfolioItem['videoWebm']">
+               :src="currentPortfolioItem['videoWebm']" playsinline>
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
           <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
         </video>
