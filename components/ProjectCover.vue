@@ -21,8 +21,7 @@
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
-        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted :autoplay="isFocused ? true : null"
-               :src="currentPortfolioItem['videoWebm']" playsinline :poster="currentPortfolioItem['cover']">
+        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted :autoplay="isFocused ? true : null" playsinline :poster="currentPortfolioItem['cover']">
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
           <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
         </video>
