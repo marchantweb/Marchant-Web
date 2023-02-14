@@ -12,10 +12,10 @@
       </div>
 
       <!-- Hero-->
-      <div class="row gx-6 mt-6">
+      <div class="row gx-6 mt-5 mt-lg-6">
         <div class="col-12 col-lg-4">
-          <CodeTag class="mb-3">{{ currentPortfolioItem['type'] }}</CodeTag>
-          <h1 class="mb-4 mb-lg-10 project__name"> {{ currentPortfolioItem['title'] }} </h1>
+          <CodeTag class="mb-1 mb-lg-3">{{ currentPortfolioItem['type'] }}</CodeTag>
+          <h1 class="mb-3 mb-lg-10 project__name"> {{ currentPortfolioItem['title'] }} </h1>
           <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/portfolio"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back to Explore Projects</NuxtLink>
         </div>
         <div class="col">
@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <div class="row mt-5 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-5 pb-lg-7">
+      <div class="row mt-6 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-5 pb-lg-7">
         <div class="col-12 col-lg-4 order-2 order-lg-1 pt-6 pt-lg-0">
           <section class="ps-0 ps-lg-6" style="position: sticky; top: 60px">
             <h3 class="mb-5">Details</h3>
@@ -111,6 +111,10 @@ video {
   object-fit: cover;
   box-shadow: rgba(0,0,0,0.2) 0 60px 15px -40px, rgba(0,0,0,0.06) 0 4px 6px -2px;
   border-radius: 5px;
+
+  @media screen and (max-width: 992px) {
+    box-shadow: rgba(0,0,0,0.3) 0 10px 8px -10px, rgba(0,0,0,0.06) 0 4px 6px -2px;
+  }
 }
 
 p {

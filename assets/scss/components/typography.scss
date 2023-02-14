@@ -92,6 +92,12 @@ h3 {
   color: #AFBFD6;
   @include font-size(0.9rem);
   @include rfs(0.9rem, line-height);
+
+  @media screen and (max-width: 992px) {
+    @include font-size(0.8rem);
+    @include rfs(0.8rem, line-height);
+  }
+
 }
 
 .back-link {
