@@ -13,7 +13,7 @@ export default `
       #define SPECULAR_STRENGTH 0.17
       #define ANIMATION_SPEED 0.6
       #define DEPTH 60.
-      #define SEGMENT_QUALITY 1.2
+      #define SEGMENT_QUALITY 1.1
 
       // Shape Definition
       float blob(vec3 q) {
@@ -41,13 +41,13 @@ export default `
           float t = 0.;
           for (int i = 0;i < 180; i++)
           {
-              if (blob(o + d * t) < 10.)
+              if (blob(o + d * t) < 20.)
               {
                   vec3 e = vec3(.1, .0, 2.1 - (iZoomOffset * 0.8));
                   vec3 n = vec3(.0);
-                  n.x = blob(o + d * t) - blob(vec3(o + d * t + e.xyy));
-                  n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy));
-                  n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx));
+                  n.x = blob(o + d * t) - blob(vec3(o + d * t + e.xyy)) - (iZoomOffset * 5.0);
+                  n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy)) - (iZoomOffset * 5.0);
+                  n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx)) + 1.0;
                   n = normalize(n);
                   c += max(dot(vec3(0.2 + (iZoomOffset * 1.0 + iInitialXOffset) + (iMouse.x * 0.1), 2., -1. + (iZoomOffset * 0.2)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
                   break;
