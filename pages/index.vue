@@ -62,12 +62,11 @@ const headingChars = heading.split('');
 .lead {
   color: #F2F2F2;
   user-select: none;
-  text-shadow: -1px 1px 1px rgb(46, 194, 220), 1px -1px 1px rgb(239, 9, 105), 0px 4px 10px rgb(0 0 0 / 50%);
+  text-shadow: -1.5px 1px 0.5px rgb(44, 191, 217), 1px -1.5px 0.5px rgb(239, 9, 105), -4px 5px 3px rgb(0 0 0 / 50%);
 
   @media screen and (max-width: 992px) {
     text-shadow: -0.5px -0.5px 0px rgb(54, 201, 227), 0.5px 0.5px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
   }
-
 
   span {
     pointer-events: none;
