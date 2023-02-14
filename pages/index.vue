@@ -5,7 +5,7 @@
 
     <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-6 justify-content-between align-items-end">
-        <div class="col-12 col-md-10 col-xl-8 col-xxl-6">
+        <div class="col-12 col-md-10 col-xxl-8 col-xxxl-7">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5" aria-hidden="true"></i>
           <h1 role="heading" class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
@@ -62,7 +62,7 @@ const headingChars = heading.split('');
 .lead {
   color: #F2F2F2;
   user-select: none;
-  text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
+  text-shadow: -1px 1px 1px rgb(46, 194, 220), 1px -1px 1px rgb(239, 9, 105), 0px 4px 10px rgb(0 0 0 / 50%);
 
   @media screen and (max-width: 992px) {
     text-shadow: -0.5px -0.5px 0px rgb(54, 201, 227), 0.5px 0.5px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);

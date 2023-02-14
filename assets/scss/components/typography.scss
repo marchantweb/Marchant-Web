@@ -21,8 +21,8 @@ h1 {
   font-weight: 600;
 
   &.lead {
-    @include font-size(4rem);
-    @include rfs(3.2rem, line-height);
+    @include font-size(5rem);
+    @include rfs(4.2rem, line-height);
     font-weight: 700;
 
     @media screen and (max-width: 992px) {
@@ -55,7 +55,7 @@ h3 {
   font-weight: 600;
 }
 
-.lead {
+.lead, .lead > span {
   font-family: "N27", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
