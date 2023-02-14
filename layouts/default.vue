@@ -2,18 +2,8 @@
 
   <main>
 
-    <!-- WebGL Background -->
-    <client-only>
-      <LazyHero/>
-    </client-only>
-
     <!-- Page Content -->
     <slot/>
-
-    <!-- Dynamic Cursor Element -->
-    <client-only>
-      <LazyCursor/>
-    </client-only>
 
     <div class="preloader" :class="preloaderClasses">
       <div class="preloader__overlay"/>

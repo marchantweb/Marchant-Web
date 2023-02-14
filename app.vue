@@ -1,7 +1,20 @@
 <template>
+
+  <!-- WebGL Background -->
+  <client-only>
+    <LazyHero/>
+  </client-only>
+
   <NuxtLayout>
     <NuxtPage/>
   </NuxtLayout>
+
+  <!-- Dynamic Cursor Element -->
+  <client-only>
+    <LazyCursor/>
+  </client-only>
+
+
 </template>
 
 <script setup>
