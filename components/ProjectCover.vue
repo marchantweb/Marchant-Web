@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="col-6 justify-content-end d-none d-lg-flex">
-        <CodeLine :visible="props.isFocused" :number="'//'"><span class="code--white"
+        <CodeLine v-if="props.isFocused" :number="'//'"><span class="code--white"
                                                                   v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{ stackItem.name }} <span
             class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>

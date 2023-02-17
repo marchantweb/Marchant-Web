@@ -15,19 +15,12 @@ const props = defineProps({
   number: {
     type: String,
     required: true
-  },
-  visible: {
-    type: Boolean,
-    default: false
   }
 });
 
-const isVisible = toRef(props, 'visible');
-
 const codeLineClasses = computed(() => {
   return {
-    'code-line': true,
-    'code-line--visible': isVisible.value
+    'code-line': true
   }
 });
 
@@ -44,7 +37,6 @@ const codeLineClasses = computed(() => {
   width: fit-content;
   border-radius: 5px;
   overflow: hidden;
-  opacity: 0;
 
   .code-line__number {
     display: block;
@@ -92,10 +84,6 @@ const codeLineClasses = computed(() => {
     :deep(span.code--orange){
       color: #DF802F;
     }
-  }
-
-  &.code-line--visible {
-    opacity: 1;
   }
 }
 

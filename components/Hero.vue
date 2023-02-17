@@ -3,12 +3,12 @@
   <section id="hero-element" :class="heroClasses">
 
     <!-- Hello World -->
-    <CodeLine :visible="route.path === '/about'" number="00" class="hello-world"><span
+    <CodeLine v-if="route.path === '/about'" number="00" class="hello-world"><span
         class="code--purple">console</span>.<span class="code--yellow">log</span>(<span class="code--green">"hello world"</span>)<span
         class="code--orange">;</span></CodeLine>
 
     <!-- Import from Orlando -->
-    <CodeLine :visible="route.path === '/about'" number="01" class="import-from-orlando"><span class="code--orange">import</span>
+    <CodeLine v-if="route.path === '/about'" number="01" class="import-from-orlando"><span class="code--orange">import</span>
       software_engineer <span class="code--orange">from</span> <span class="code--green">"Orlando, FL"</span><span
           class="code--orange">;</span></CodeLine>
 
