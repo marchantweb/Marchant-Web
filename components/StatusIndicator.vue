@@ -1,10 +1,27 @@
 <template>
-  <div class="status-indicator">
-    <span class="status-indicator__light"/> {{ status }}
+  <div :class="indicatorClasses">
+    <span class="status-indicator__light" aria-hidden="true"/> {{ status }}
   </div>
 </template>
 
 <script setup>
+
+const props = defineProps({
+  type: {
+    type: String,
+    required: false,
+    default: 'light'
+  }
+});
+
+const type = toRef(props, 'type');
+
+const indicatorClasses = computed(() => {
+  return {
+    'status-indicator': true,
+    [`status-indicator--${type.value}`]: true
+  }
+});
 
 // Acquire the status from the metadata API
 const metadata = await $fetch('https://api.marchantweb.com/metadata');
@@ -18,6 +35,10 @@ const status = metadata["status"];
   color: #AFBFD6;
   cursor: default;
   font-size: 0.9rem;
+
+  &.status-indicator--dark{
+    color: #6e829c;
+  }
 }
 
 .status-indicator__light {

@@ -6,7 +6,7 @@
         <div class="col-5 mb-7">
           <CodeTag class="mt-5 mb-3">about</CodeTag>
           <h1 class="mb-3">Simon Le Marchant</h1>
-          <StatusIndicator/>
+          <StatusIndicator type="dark"/>
           <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive experiences
             and custom web software.</h2>
           <p>

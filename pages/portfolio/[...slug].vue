@@ -53,7 +53,11 @@
         </div>
         <div class="col-12 col-lg-8 order-1 order-lg-2">
           <div class="col-12 col-lg-11 col-xl-10">
-            <CodeLine :number="'//'" class="mb-5 mb-lg-4"><span class="code--yellow">npm</span> <span class="code--green">run</span> <span class="code--white">case study</span></CodeLine>
+            <CodeLine :number="'//'" class="mb-5 mb-lg-4">
+              <span class="code--yellow">npm</span>
+              <span class="code--green">&nbsp;run</span>
+              <span class="code--white">&nbsp;case_study</span>
+            </CodeLine>
             <h1 class="mb-4 mb-lg-5">{{ currentPortfolioItem['lead'] }}</h1>
           </div>
           <NotionContent :blocks="currentPortfolioItem['pageContent']"/>

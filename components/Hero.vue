@@ -3,14 +3,27 @@
   <section id="hero-element" :class="heroClasses">
 
     <!-- Hello World -->
-    <CodeLine v-if="route.path === '/about'" number="00" class="hello-world"><span
-        class="code--purple">console</span>.<span class="code--yellow">log</span>(<span class="code--green">"hello world"</span>)<span
-        class="code--orange">;</span></CodeLine>
+    <CodeLine v-if="route.path === '/about'" number="00" class="hello-world">
+      <span class="code--purple">console</span>
+      <span class="code--white">.</span>
+      <span class="code--yellow">log</span>
+      <span class="code--white">(</span>
+      <span class="code--green">"hello world"</span>
+      <span class="code--white">)</span>
+      <span class="code--orange">;</span>
+    </CodeLine>
 
     <!-- Import from Orlando -->
-    <CodeLine v-if="route.path === '/about'" number="01" class="import-from-orlando"><span class="code--orange">import</span>
-      software_engineer <span class="code--orange">from</span> <span class="code--green">"Orlando, FL"</span><span
-          class="code--orange">;</span></CodeLine>
+    <CodeLine v-if="route.path === '/about'" number="01" class="import-from-orlando">
+      <span class="code--orange">const</span>
+      <span class="code--yellow">&nbsp;expertise&nbsp;</span>
+      <span class="code--white">= [...</span>
+      <span class="code--purple">ux</span>
+      <span class="code--white">, ...</span>
+      <span class="code--purple">dev&nbsp;</span>
+      <span class="code--white">]</span>
+      <span class="code--orange">;</span>
+    </CodeLine>
 
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
