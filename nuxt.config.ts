@@ -6,6 +6,7 @@ export default defineNuxtConfig({
             meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
         }
     },
+    css: ["@/assets/scss/app.scss"],
     vite: {
         server: {
             hmr: {
