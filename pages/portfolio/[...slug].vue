@@ -45,9 +45,9 @@
               <dd v-if="currentPortfolioItem['completed']"> {{ currentPortfolioItem['completed']}} </dd>
 
             </dl>
-            <ActionButton to="/contact">
-              <i class="fa-sharp fa-solid fa-message-captions"></i>
-              Let's Chat
+            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
+              <i class="fa-sharp fa-solid fa-phone-arrow-up-right"></i>
+              Schedule a call
             </ActionButton>
           </section>
         </div>

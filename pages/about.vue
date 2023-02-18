@@ -26,7 +26,7 @@
               understanding of user interactions and best practices. I’ve worked on many projects where I start early in
               the discovery process, guide and design the UX from the ground up, and then get to work building it.
             </p>
-            <h2 class="mt-5 mb-4">Clients &amp; Partners</h2>
+            <h3 class="mt-5 mb-4">Clients &amp; Partners</h3>
             <p class="mb-4">
               Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
               industry for some incredible clients, such as:
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="col-5 mb-7">
-            <h2 class="mt-6 mb-4">Awards &amp; Recognition</h2>
+            <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
             <p>
               I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
               multitudes of different projects with a near perfect 5-star rating.
@@ -57,22 +57,22 @@
               organizations, and have been considered a <em>"Star Partner"</em> with one particular client for completely
               overhauling their online business, driving $3M+ in revenue.
             </p>
-            <h2 class="mt-5 mb-4">Freelancing &amp; Consulting</h2>
+            <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
               I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can take on projects solo, act as a technical lead, or supplement your existing team by smashing on a keyboard.
             </p>
             <p>Consulting and programming work is billed at $225/hr. For larger projects I offer two-week
               sprints at a discount. I’m always happy to provide an estimate for any project following an
               initial discovery call.</p>
-            <h2 class="mt-5 mb-4">
+            <h3 class="mt-5 mb-4">
               Get in Touch
-            </h2>
+            </h3>
             <p class="mb-5">
               Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can schedule a discovery call to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
             </p>
-            <ActionButton to="/contact">
-              <i class="fa-sharp fa-solid fa-message-captions"></i>
-              Let's Chat
+            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
+              <i class="fa-sharp fa-solid fa-phone-arrow-up-right"></i>
+              Schedule a call
             </ActionButton>
           </div>
         </main>

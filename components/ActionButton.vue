@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink :to="props.to" class="action-button mouse-md">
+  <NuxtLink :to="props.to" class="action-button mouse-md" :target="props.external ? props.external : null">
     <slot/>
   </NuxtLink>
 </template>
@@ -10,6 +10,10 @@ const props = defineProps({
   to: {
     type: String,
     required: true
+  },
+  external: {
+    type: String,
+    default: null
   }
 })
 
