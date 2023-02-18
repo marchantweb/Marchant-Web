@@ -33,7 +33,6 @@ const codeLineClasses = computed(() => {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 11px 5px -6px;
   width: fit-content;
   border-radius: 5px;
   overflow: hidden;
@@ -47,6 +46,9 @@ const codeLineClasses = computed(() => {
     font-family: 'JetBrains Mono', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
+    transform: scale(0);
+    border-radius: 5px;
+    animation: scaleNumberUp 0.8s cubic-bezier(0.6, 0, 0, 1) forwards;
   }
 
   .code-line__code {
@@ -58,6 +60,11 @@ const codeLineClasses = computed(() => {
     font-family: 'JetBrains Mono', sans-serif;
     font-weight: 400;
     font-size: 0.9rem;
+    transform: scaleX(0);
+    animation: scaleCodeLineX 0.8s cubic-bezier(0.4, 0, 0, 1) forwards;
+    animation-delay: 0.8s;
+    transform-origin: left center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 11px 5px -6px;
 
     :deep(span){
       font-family: 'JetBrains Mono', sans-serif;
@@ -140,6 +147,9 @@ const codeLineClasses = computed(() => {
     opacity: 0;
     transform: translateX(-2px);
   }
+  20%{
+    opacity: 1;
+  }
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -164,6 +174,29 @@ const codeLineClasses = computed(() => {
     opacity: 0;
     visibility: hidden;
     left: 100%;
+  }
+}
+
+@keyframes scaleCodeLineX {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes scaleNumberUp {
+  0% {
+    transform: scale(0);
+    border-radius: 5px;
+  }
+  95%{
+    border-radius: 5px;
+  }
+  100% {
+    transform: scale(1);
+    border-radius: 5px 0 0 5px;
   }
 }
 
