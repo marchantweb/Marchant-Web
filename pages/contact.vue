@@ -1,6 +1,8 @@
 <template>
   <section class="page">
 
+    <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back</NuxtLink>
+
     <div class="container-xxxl">
       <div class="row mt-6 justify-content-start">
         <div class="col-9 offset-3">
@@ -71,6 +73,13 @@ definePageMeta({
 #calendar-container {
   height: 700px;
   width: 100%;
+}
+
+.back-link{
+  color: #212A36;
+  position: fixed;
+  top: 40px;
+  left: 60px;
 }
 
 </style>

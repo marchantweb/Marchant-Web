@@ -1,6 +1,8 @@
 <template>
   <section class="page">
 
+    <NuxtLink class="back-link mouse-md" to="/">Back<i class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
+
     <div class="container-xxxl">
       <div class="row mt-6">
         <main class="d-flex flex-column">
@@ -101,7 +103,7 @@ useHead({
 <style lang="scss" scoped>
 
 .page-enter-active {
-  transition: all 2.4s cubic-bezier(0.6, 0, 0, 1);
+  transition: all 2s cubic-bezier(0.6, 0, 0, 1);
 }
 
 .page-leave-active {
@@ -111,7 +113,7 @@ useHead({
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  transform: translateX(-30%) scale(0.9);
+  transform: translateX(-10%) translateZ(0);
   transform-origin: left center;
 }
 
@@ -139,6 +141,13 @@ useHead({
   width: 100%;
   opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+.back-link{
+  color: #212A36;
+  position: fixed;
+  top: 40px;
+  right: 60px;
 }
 
 </style>
