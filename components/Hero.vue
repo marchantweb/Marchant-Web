@@ -25,6 +25,25 @@
       <span class="code--orange">;</span>
     </CodeLine>
 
+    <!-- Await Fetch Contact -->
+    <CodeLine v-if="route.path === '/contact'" number="03" class="await-fetch-contact">
+      <span class="code--orange">await</span>
+      <span class="code--orange">&nbsp;$fetch</span>
+      <span class="code--white">(</span>
+      <span class="code--green">"/api/contact"</span>
+      <span class="code--white">)</span>
+      <span class="code--orange">;</span>
+    </CodeLine>
+
+    <!-- Click Discovery -->
+    <CodeLine v-if="route.path === '/contact'" number="03" class="click-discovery">
+      <span class="code--orange">@click</span>
+      <span class="code--white">(e) => { new</span>
+      <span class="code--purple">&nbsp;DiscoverySession</span>
+      <span class="code--white">(e)</span>
+      <span class="code--orange">;</span>
+    </CodeLine>
+
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
       <div class="hero-canvas__sidebar" :class="heroClasses">
@@ -363,6 +382,18 @@ body.fixed-webgl {
   position: absolute;
   top: 260px;
   left: 40px;
+}
+
+.await-fetch-contact {
+  position: absolute;
+  bottom: 260px;
+  right: 240px;
+}
+
+.click-discovery {
+  position: absolute;
+  bottom: 200px;
+  right: 40px;
 }
 
 </style>
