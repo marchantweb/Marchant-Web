@@ -47,8 +47,8 @@ import {createShader, createProgram} from "~/shaders/shaderHelpers";
 import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
 import {gsap} from "gsap";
-import { useWindowFocus } from '@vueuse/core'
-import { useElementVisibility } from '@vueuse/core'
+import {useWindowFocus} from '@vueuse/core'
+import {useElementVisibility} from '@vueuse/core'
 
 // Non-reactive WebGL variables
 let gl = null;
@@ -79,10 +79,10 @@ const canvas = ref(null);
 const canvasIsVisible = useElementVisibility(canvas);
 
 let enableRendering = computed(() => {
-  if(focused.value === false){
+  if (focused.value === false) {
     return false;
   }
-  if(route.path === '/' || route.path === '/portfolio'){
+  if (route.path === '/' || route.path === '/portfolio') {
     return true;
   }
   return !!(route.path.startsWith('/portfolio/') && canvasIsVisible.value === true);
@@ -136,7 +136,7 @@ const initWebGLComponent = () => {
  */
 const renderWebGLComponent = () => {
 
-  if(enableRendering.value === false && time !== 0){
+  if (enableRendering.value === false && time !== 0) {
     requestAnimationFrame(renderWebGLComponent);
     return;
   }
@@ -248,8 +248,8 @@ const heroClasses = computed(() => {
 
 <style lang="scss" scoped>
 
-body.fixed-webgl{
-  #hero-element{
+body.fixed-webgl {
+  #hero-element {
     position: fixed;
     bottom: unset;
   }
@@ -286,6 +286,7 @@ body.fixed-webgl{
   object-fit: cover;
   z-index: -1;
   clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+  background-color: #030205;
 
   &.hero--about {
     transform: scale(0.8) perspective(400px) rotateX(2deg);
