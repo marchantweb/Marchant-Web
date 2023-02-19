@@ -35,7 +35,7 @@
       <span class="code--orange">;</span>
     </CodeLine>
 
-    <!-- Click Discovery -->
+    <!-- @Click Discovery Session -->
     <CodeLine v-if="route.path === '/contact'" number="03" class="click-discovery">
       <span class="code--orange">@click</span>
       <span class="code--white">(e) => { new</span>
@@ -44,15 +44,22 @@
       <span class="code--orange">;</span>
     </CodeLine>
 
+    <!-- Yellow to Orange Gradient Bar -->
+    <div class="orange-bar" v-if="route.path === '/about' || route.path === '/contact'"/>
+
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
+
       <div class="hero-canvas__sidebar" :class="heroClasses">
         <CodeTag>WebGL</CodeTag>
         <div class="line-numbers">
           <span class="line-number__line" v-once v-for="i in 50"><span v-if="i < 10">0</span>{{ i }}</span>
         </div>
       </div>
+
+      <!-- WebGL Canvas -->
       <canvas id="hero-canvas" :class="heroClasses" ref="canvas" :width="width" :height="height"/>
+
     </div>
 
   </section>
@@ -291,7 +298,7 @@ body.fixed-webgl {
 
   &.hero--about {
     transition-delay: 0.8s;
-    transform: translateX(65vw);
+    transform: translateX(60vw);
   }
 
   &.hero--contact {
@@ -399,6 +406,31 @@ body.fixed-webgl {
   position: absolute;
   bottom: 200px;
   right: 40px;
+}
+
+.orange-bar {
+  position: absolute;
+  bottom: 7.8%;
+  left: 25%;
+  width: 20%;
+  height: 8px;
+  background: linear-gradient(to right, #F6F606, #F36C35);
+  z-index: 1;
+  border-radius: 1px;
+  box-shadow: rgba(99, 99, 99, 0.1) 0 2px 8px 0;
+  transform: scaleX(0);
+  transform-origin: center right;
+  animation: orangeBarIn 1s cubic-bezier(0.65, 0, 0.15, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes orangeBarIn{
+  0% {
+    transform: scaleX(0) translateZ(0);
+  }
+  100% {
+    transform: scaleX(1) translateZ(0);
+  }
 }
 
 </style>
