@@ -89,6 +89,12 @@ const updateDragSelected = function(event){
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
+  gsap.killTweensOf(portfolioScrollPercentage);
+  gsap.to(portfolioScrollPercentage, {
+    value: selected.value * (1 / portfolioData.value.length),
+    duration: 2,
+    ease: "power1.out"
+  });
 }
 
 let draggable = null;
