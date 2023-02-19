@@ -299,6 +299,16 @@ body.fixed-webgl {
   &.hero--about {
     transition-delay: 0.8s;
     transform: translateX(60vw);
+
+    @media screen and (max-width: 1200px) {
+      transform: translateX(70vw);
+    }
+
+    @media screen and (max-width: 768px) {
+      transition-delay: 0s;
+      transition: none;
+      transform: translateX(100vw);
+    }
   }
 
   &.hero--contact {
@@ -327,6 +337,11 @@ body.fixed-webgl {
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
     transition: all 2.5s cubic-bezier(0.5, 0, 0, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+
+    @media screen and (max-width: 1200px) {
+      box-shadow: none;
+    }
+
   }
 
   &.hero--contact {
@@ -370,6 +385,10 @@ body.fixed-webgl {
   &.hero--about, &.hero--contact {
     transition: transform 1s cubic-bezier(0.65, 0, 0.15, 1);
     transform: translateX(0);
+
+    @media screen and (max-width: 1200px) {
+      transform: translateX(-170px);
+    }
   }
 }
 
@@ -388,12 +407,20 @@ body.fixed-webgl {
   position: absolute;
   top: 200px;
   left: 120px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .import-from-orlando {
   position: absolute;
   top: 260px;
   left: 40px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .await-fetch-contact {
@@ -424,7 +451,7 @@ body.fixed-webgl {
   animation-delay: 0.8s;
 }
 
-@keyframes orangeBarIn{
+@keyframes orangeBarIn {
   0% {
     transform: scaleX(0) translateZ(0);
   }
