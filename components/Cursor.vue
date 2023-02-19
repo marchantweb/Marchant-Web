@@ -8,7 +8,9 @@
 import {useMouse} from "@vueuse/core";
 import {gsap} from "gsap";
 
-const {x, y} = useMouse();
+const {x, y} = useMouse({
+  type: 'client'
+});
 
 let size = ref(22);
 
@@ -68,7 +70,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .cursor {
-  position: absolute;
+  position: fixed;
   z-index: 10000;
   background-color: white;
   border: 2px solid white;
