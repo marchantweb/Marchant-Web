@@ -45,7 +45,7 @@
     </CodeLine>
 
     <!-- Yellow to Orange Gradient Bar -->
-    <div class="orange-bar" v-if="route.path === '/about' || route.path === '/contact'"/>
+    <div class="orange-bar" v-if="route.path === '/about'"/>
 
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
