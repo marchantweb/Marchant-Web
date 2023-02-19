@@ -18,8 +18,8 @@ let outputX = ref(x.value);
 let outputY = ref(y.value);
 
 gsap.ticker.add(() => {
-  outputX.value += (x.value - outputX.value) * 0.4;
-  outputY.value += (y.value - outputY.value) * 0.4;
+  outputX.value += (x.value - outputX.value) * 0.5;
+  outputY.value += (y.value - outputY.value) * 0.5;
 });
 
 /**
