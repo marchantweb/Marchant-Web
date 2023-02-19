@@ -46,6 +46,8 @@ import {InertiaPlugin} from "gsap/InertiaPlugin";
 const portfolioData = await usePortfolio(true);
 const selected = ref(0);
 
+const portfolioScrollPercentage = useState('portfolioScrollPercentage', () => 0);
+
 useHead({
   title: 'Explore Projects | Marchant Web',
   meta: [
@@ -69,6 +71,12 @@ const updateSelected = (selectedIndex) => {
     x: 1040 * selected.value * -1,
     duration: 0.5,
     ease: "power3.out"
+  });
+  gsap.killTweensOf(portfolioScrollPercentage);
+  gsap.to(portfolioScrollPercentage, {
+    value: selected.value * (1 / portfolioData.value.length),
+    duration: 0.5,
+    ease: "power1.out"
   });
 }
 

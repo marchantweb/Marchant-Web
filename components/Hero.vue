@@ -87,11 +87,10 @@ let then = Date.now();
 // Reactive WebGL variables
 const {width, height} = useWindowSize();
 const {x, y} = useMouse();
-
 let outputX = ref(x.value);
 let outputY = ref(y.value);
-
 let initialXOffset = ref(1);
+const portfolioScrollPercentage = useState('portfolioScrollPercentage', () => 0);
 
 const focused = useWindowFocus();
 const canvas = ref(null);
@@ -148,6 +147,9 @@ const initWebGLComponent = () => {
   // Get the location of the initial X offset uniform
   locations.initialXOffset = gl.getUniformLocation(program, "iInitialXOffset");
 
+  // Get the location of the portfolio scroll percentage uniform
+  locations.portfolioScrollPercentage = gl.getUniformLocation(program, "iPortfolioScrollPercentage");
+
 }
 
 /**
@@ -202,6 +204,9 @@ const renderWebGLComponent = () => {
 
     // Pass the initial X offset uniform
     gl.uniform1f(locations.initialXOffset, initialXOffset.value);
+
+    // Pass the portfolio scroll percentage uniform
+    gl.uniform1f(locations.portfolioScrollPercentage, portfolioScrollPercentage.value);
 
     // Draw the vertices
     gl.drawArrays(gl.TRIANGLES, 0, 6);
