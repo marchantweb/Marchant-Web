@@ -45,7 +45,7 @@
     </CodeLine>
 
     <!-- Yellow to Orange Gradient Bar -->
-    <div class="orange-bar" v-if="route.path === '/about'"/>
+    <div class="orange-bar" v-if="route.path === '/about' || route.path === '/contact'"/>
 
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
@@ -313,7 +313,17 @@ body.fixed-webgl {
 
   &.hero--contact {
     transition-delay: 0.8s;
-    transform: translateX(-65vw);
+    transform: translateX(-50vw);
+
+    @media screen and (max-width: 1200px) {
+      transform: translateX(-65vw);
+    }
+
+    @media screen and (max-width: 768px) {
+      transition-delay: 0s;
+      transition: none;
+      transform: translateX(-100vw);
+    }
   }
 }
 
@@ -426,13 +436,21 @@ body.fixed-webgl {
 .await-fetch-contact {
   position: absolute;
   bottom: 260px;
-  right: 240px;
+  right: 280px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .click-discovery {
   position: absolute;
   bottom: 200px;
-  right: 40px;
+  right: 80px;
+
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
 }
 
 .orange-bar {

@@ -1,19 +1,30 @@
 <template>
   <section class="page">
 
-    <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back</NuxtLink>
+    <NuxtLink class="back-link mouse-md d-none d-lg-block" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back
+    </NuxtLink>
 
     <div class="container-xxxl">
-      <div class="row mt-6 justify-content-start">
-        <div class="col-9 offset-3">
-          <div class="px-9">
-            <CodeTag class="mt-5 mb-3">contact</CodeTag>
-            <h1 class="mb-4">Let's Chat</h1>
-            <h2 class="mb-1">Feel free to pick a date/time below to schedule a discovery session, or email me anytime at
-              <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md" style="color: #7A4FEE">hello@marchantweb.com</a>.</h2>
-          </div>
-          <div id="calendar-container" class="mb-6"/>
+      <div class="row mt-6 justify-content-end">
+        <div class="col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-4">
+          <CodeTag class="mt-5 mb-3">contact</CodeTag>
+          <h1 class="mb-4">Let's Chat</h1>
+          <p class="mb-4">Feel free to reach out. I'm always happy to chat to discuss ideas, feasibility, schedule,
+            things like that. Or if you just have questions or want to say hi, that's cool too.</p>
+          <h2 class="mb-6">👋 <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md"
+                                style="color: #7A4FEE">hello@marchantweb.com</a></h2>
+          <h3 class="mb-3">Discovery Session</h3>
+          <p>Once you're serious about working with me, the first step is to schedule a one-hour meeting to see if we're
+            a good fit, and to get on the same page about the work that you're looking for.</p>
+          <p class="mb-5"><strong>Please note that I bill $225 for an initial one-hour session.</strong> This helps me
+            to adequately prepare, block off the time, and ensure that the conversation is productive for both of us.
+          </p>
+          <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
+            <i class="fa-sharp fa-regular fa-calendar-range fa-lg"></i>
+            Book a Discovery Session
+          </ActionButton>
         </div>
+        <div class="col-1 d-none d-xl-block"></div>
       </div>
     </div>
 
@@ -37,35 +48,6 @@ useHead({
   }
 });
 
-useScriptTag(
-    'https://assets.calendly.com/assets/external/widget.js',
-    (el) => {
-      if(document.querySelectorAll("iframe").length === 0 && document.getElementById('calendar-container')) {
-        Calendly.initInlineWidget({
-          url: 'https://calendly.com/marchantweb/discovery?hide_event_type_details=0&hide_gdpr_banner=1&text_color=212a36&primary_color=7a4fee',
-          parentElement: document.getElementById('calendar-container'),
-          prefill: {},
-          utm: {}
-        });
-      }
-    },
-);
-
-definePageMeta({
-  pageTransition: {
-    onAfterEnter: (el) => {
-      if(document.querySelectorAll("iframe").length === 0 && document.getElementById('calendar-container')) {
-        Calendly.initInlineWidget({
-          url: 'https://calendly.com/marchantweb/discovery?hide_event_type_details=1&hide_gdpr_banner=1&text_color=212a36&primary_color=7a4fee',
-          parentElement: document.getElementById('calendar-container'),
-          prefill: {},
-          utm: {}
-        });
-      }
-    }
-  }
-});
-
 </script>
 
 <style lang="scss" scoped>
@@ -75,11 +57,23 @@ definePageMeta({
   width: 100%;
 }
 
-.back-link{
+.back-link {
   color: #212A36;
   position: fixed;
   top: 40px;
   left: 60px;
+}
+
+.container-xxxl {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+    min-height: unset;
+  }
 }
 
 </style>

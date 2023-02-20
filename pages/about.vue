@@ -70,9 +70,9 @@
             <p class="mb-5">
               Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can schedule a discovery call to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
             </p>
-            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
-              <i class="fa-sharp fa-solid fa-phone-arrow-up-right"></i>
-              Schedule a call
+            <ActionButton to="/contact">
+              <i class="fa-sharp fa-solid fa-comment"></i>
+              Let's Chat
             </ActionButton>
           </div>
         </main>
