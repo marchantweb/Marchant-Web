@@ -44,6 +44,11 @@ const navClasses = computed(() => {
 .nav-container {
   position: absolute;
   top: 60px;
+  right: calc((100vw - (1600px - 60px)) / 2);
+
+  @media screen and (max-width: 1680px) {
+    right: 30px;
+  }
 
   @media screen and (max-width: 992px) {
     display: none;

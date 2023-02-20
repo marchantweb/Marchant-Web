@@ -134,12 +134,3 @@ $enable-negative-margins: true;
   }
 
 }
-
-.nav-container {
-  right: calc((100vw - (1600px - 120px)) / 2);
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
-      right: calc(((100vw - (#{$container-max-width} - 120px)) / 2));
-    }
-  }
-}

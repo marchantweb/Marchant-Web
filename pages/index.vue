@@ -24,7 +24,7 @@
     </div>
 
     <DevOnly>
-      <div id="awwwards" class="d-none d-lg-block" style="position: fixed; z-index: 999; top: 60px;  right: 0"><a
+      <div id="awwwards" class="d-none d-lg-block"><a
           href="https://www.awwwards.com/sites/marchantweb" target="_blank" class="mouse-md">
         <svg width="53.08" height="171.358">
           <path class="js-color-bg" fill="#5ABDB2" d="M0 0h53.08v171.358H0z"></path>
@@ -116,6 +116,14 @@ const headingChars = heading.split('');
   transform: translateX(100%);
   animation: animateAwwwardsIn 1s ease-out forwards;
   animation-delay: 1.8s;
+  position: fixed;
+  z-index: 999;
+  top: 60px;
+  right: 0;
+
+  @media screen and (max-width: 1720px) {
+    top: 160px;
+  }
 
   > a {
     display: block;
