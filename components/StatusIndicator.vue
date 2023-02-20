@@ -24,8 +24,8 @@ const indicatorClasses = computed(() => {
 });
 
 // Acquire the status from the metadata API
-const metadata = await $fetch('https://api.marchantweb.com/metadata');
-const status = metadata["status"];
+const metadata = await useMetadata();
+const status = metadata.value["status"];
 
 </script>
 
