@@ -5,7 +5,7 @@
 
     <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-xs-4 mb-sm-6 mb-md-6 justify-content-between align-items-end">
-        <div class="col-12 col-md-10 col-xxl-8 col-xxxl-7">
+        <div class="col-12 col-sm-8 col-xxl-6 col-xxxl-7">
           <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5" aria-hidden="true"></i>
           <h1 role="heading" class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
@@ -99,16 +99,16 @@ const headingChars = heading.split('');
 
 .heading-char {
   display: inline;
-  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  opacity: 0;
   animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0.2, 1) forwards;
 }
 
 @keyframes headingCharReveal {
   0% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    opacity: 0;
   }
   100% {
-    clip-path: polygon(0 0, 110% 0, 110% 110%, 0 110%);
+    opacity: 1;
   }
 }
 
