@@ -33,7 +33,7 @@ const {width} = useWindowSize();
 const navClasses = computed(() => {
   return {
     'nav-container': true,
-    'nav-container--open': y.value < 180 && x.value > (width.value / 2)
+    'nav-container--open': y.value < 180 && x.value > Math.min((width.value / 2), width.value - 800)
   }
 });
 
@@ -107,7 +107,7 @@ const navClasses = computed(() => {
 
       &:nth-child(2){
         transition: transform 0.7s cubic-bezier(0.7, 0, 0, 1);
-        transform: translate(max(-50vw, -800px));
+        transform: translate(min(-50vw, -775px));
       }
 
       &:nth-child(3){
