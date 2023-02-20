@@ -11,7 +11,7 @@
 
           <ol class="portfolio-links ms-6 d-none d-xxl-flex" :style="{ '--selector-offset': (5 + (selected * 40)) + 'px' }">
             <li v-for="(portfolioItem, index) in portfolioData"
-                :class="{ 'portfolio-links--active': index === selected }"><a href="#">{{ index }}</a></li>
+                :class="{ 'portfolio-links--active': index === selected }"><a href="#" @click.prevent="updateSelected(index)" class="mouse-sm">{{ index }}</a></li>
           </ol>
 
         </div>
@@ -266,7 +266,9 @@ ol.portfolio-links {
     font-family: "Font Awesome 6 Sharp", sans-serif;
     position: absolute;
     font-size: 16px;
-    left: var(--selector-offset, 5px);
+    left: 0;
+    transform: translateX(var(--selector-offset, 5px));
+    transition: transform 0.3s ease;
     top: 20px;
   }
 }
