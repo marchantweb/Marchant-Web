@@ -14,12 +14,9 @@
       </ul>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
-      <DevOnly>
-        <i class="fa-sharp fa-solid fa-volume-slash fa-lg mouse-sm audio-icon me-4"></i>
-      </DevOnly>
       <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-6" aria-label="View this site on GitHub"><i
-          class="fa-brands fa-github fa-xl github-icon mouse-sm"></i></NuxtLink>
-      <StatusIndicator/>
+          class="fa-brands fa-github fa-xl github-icon mouse-sm d-none d-xl-inline text-decoration-none"></i></NuxtLink>
+      <StatusIndicator class="d-none d-xl-block"/>
     </div>
   </div>
 </template>
