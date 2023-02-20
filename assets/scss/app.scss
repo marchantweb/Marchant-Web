@@ -127,10 +127,8 @@ $enable-negative-margins: true;
   display: block;
   flex: none;
 
-  @each $breakpoint, $container-max-width in $container-max-widths {
-    @media (min-width: map-get($grid-breakpoints, $breakpoint)) {
-      width: calc(((100vw - #{$container-max-width}) / 2) + (var(--bs-gutter-x) * 0.5));
-    }
+  @media screen and (max-width: 1680px) {
+    width: 30px;
   }
 
 }

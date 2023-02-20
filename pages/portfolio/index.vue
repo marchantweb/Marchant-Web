@@ -5,8 +5,15 @@
 
     <div class="container-xxxl pt-4 pt-lg-6">
       <div class="row">
-        <div class="col">
-          <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home</NuxtLink>
+        <div class="col-auto d-flex flex-row align-items-center">
+          <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home
+          </NuxtLink>
+
+          <ol class="portfolio-links ms-6 d-none d-xxl-flex" :style="{ '--selector-offset': (5 + (selected * 40)) + 'px' }">
+            <li v-for="(portfolioItem, index) in portfolioData"
+                :class="{ 'portfolio-links--active': index === selected }"><a href="#">{{ index }}</a></li>
+          </ol>
+
         </div>
       </div>
     </div>
@@ -84,7 +91,7 @@ const updateSelected = (selectedIndex) => {
  * Updates the selected project, called by drag and touch events
  * @param event
  */
-const updateDragSelected = function(event){
+const updateDragSelected = function (event) {
   let selectedIndex = Math.floor(Math.abs((this.endX) / 1040));
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
@@ -136,13 +143,13 @@ onActivated(() => {
   setupDraggable();
 });
 onUnmounted(() => {
-  if(draggable){
+  if (draggable) {
     draggable[0].kill();
   }
 });
 
-function setupDraggable(){
-  if(draggable){
+function setupDraggable() {
+  if (draggable) {
     return;
   }
   nextTick(() => {
@@ -151,7 +158,7 @@ function setupDraggable(){
       offsets.push((i * 1040) * -1);
     }
     const container = document.querySelector("#portfolio-feed");
-    if(!container){
+    if (!container) {
       setTimeout(() => {
         setupDraggable();
       }, 100);
@@ -186,7 +193,6 @@ h1 {
 
 .feed-section {
   position: relative;
-  //overflow: auto;
   margin-left: 0;
   margin-right: 0;
   display: flex;
@@ -207,6 +213,62 @@ h1 {
   opacity: 0;
   filter: blur(10px);
   transform: translateX(10%);
+}
+
+ol.portfolio-links {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+  gap: 20px;
+  position: relative;
+  padding: 0;
+  margin-top: 6px;
+
+  li {
+    font-family: "JetBrains Mono", monospace;
+    width: 20px;
+    font-size: 14px;
+    text-align: center;
+
+    a {
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      border-bottom: none;
+
+      &:before {
+        content: "0";
+      }
+    }
+
+    &:nth-child(n+11) {
+      a:before {
+        content: "";
+      }
+    }
+
+    &.portfolio-links--active {
+      a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
+  }
+
+  &:after {
+    content: '\f0d8';
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-family: "Font Awesome 6 Sharp", sans-serif;
+    position: absolute;
+    font-size: 16px;
+    left: var(--selector-offset, 5px);
+    top: 20px;
+  }
 }
 
 </style>

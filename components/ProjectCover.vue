@@ -96,7 +96,7 @@ watch(() => props.isFocused, (isFocused) => {
   width: 1040px;
   aspect-ratio: 2;
   flex: none;
-  transform: scale(0.7);
+  transform: scale(0.6);
   transform-origin: bottom center;
   transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
 
