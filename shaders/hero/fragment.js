@@ -14,12 +14,12 @@ export default `
       #define SPECULAR_STRENGTH 0.17
       #define ANIMATION_SPEED 0.6
       #define DEPTH 60.
-      #define SEGMENT_QUALITY 1.0
+      #define SEGMENT_QUALITY 1.2
 
       // Shape Definition
       float blob(vec3 q) {
           float f = DEPTH;
-          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2.)) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED - (iZoomOffset * 5.0)) * cos(q.x) * sin(q.y) * ((.6 * (1.0)) + (iMouse.y * .05 - (iInitialXOffset * 1.5 - (iZoomOffset * 0.5))));
+          f *= (cos(q.z * 1.1)) * (atan(q.x) + 0.2) * (cos(q.y * cos(q.z * 2.)) + 1.0) + cos(q.z * 5. + iTime * ANIMATION_SPEED) * cos(q.x) * sin(q.y) * ((.6 * (1.0)));
           return f;
       }
 
@@ -40,7 +40,7 @@ export default `
           
           vec4 c= vec4(0.);
           float t = 0.;
-          for (int i = 0;i < 180; i++)
+          for (int i = 0;i < 140; i++)
           {
               if (blob(o + d * t) < 20.)
               {
