@@ -1,7 +1,8 @@
 <template>
   <section class="page">
 
-    <NuxtLink class="back-link mouse-md d-none d-lg-block" to="/">Back<i class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
+    <NuxtLink class="back-link mouse-md d-none d-lg-block" to="/">Back<i
+        class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
 
     <div class="container-xxxl">
       <div class="row mt-0 mt-lg-6">
@@ -10,15 +11,17 @@
             <CodeTag class="mt-5 mb-3">about</CodeTag>
             <h1 class="mb-2 mb-lg-3">Simon Le Marchant</h1>
             <StatusIndicator type="dark"/>
-            <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive experiences
+            <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive
+              experiences
               and custom web software.</h2>
             <p>
               Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
               incredible user experiences with web technology. I specialize in programming with <a
                 href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
-              <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a href="https://electronJS.org/"
-                                                                                            target="_blank"
-                                                                                            class="mouse-sm">Electron</a>,
+              <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
+                href="https://electronJS.org/"
+                target="_blank"
+                class="mouse-sm">Electron</a>,
               although I have an extensive full-stack development background.
             </p>
             <p>
@@ -40,9 +43,12 @@
               <img src="~/assets/images/clients/steward.svg" alt="Steward logo" class="client-logo mouse-md">
               <img src="~/assets/images/clients/mit.svg" alt="MIT logo" class="client-logo mouse-md">
               <img src="~/assets/images/clients/alaska.svg" alt="Alaska Airlines logo" class="client-logo mouse-md">
-              <img src="~/assets/images/clients/stanley.svg" alt="Stanley Black and Decker logo" class="client-logo mouse-md">
-              <img src="~/assets/images/clients/checkbook.svg" alt="Consumers' Checkbook logo" class="client-logo mouse-md">
-              <img src="~/assets/images/clients/georgia.svg" alt="University of Georgia logo" class="client-logo mouse-md">
+              <img src="~/assets/images/clients/stanley.svg" alt="Stanley Black and Decker logo"
+                   class="client-logo mouse-md">
+              <img src="~/assets/images/clients/panera.svg" alt="Panera Bread logo"
+                   class="client-logo mouse-md">
+              <img src="~/assets/images/clients/georgia.svg" alt="University of Georgia logo"
+                   class="client-logo mouse-md">
               <img src="~/assets/images/clients/mcasd.svg" alt="MCASD logo" class="client-logo mouse-md">
             </div>
           </div>
@@ -54,12 +60,15 @@
             </p>
             <p>
               I've also supported teams on other projects that have won awards at various levels from different
-              organizations, and have been considered a <em>"Star Partner"</em> with one particular client for completely
+              organizations, and have been considered a <em>"Star Partner"</em> with one particular client for
+              completely
               overhauling their online business, driving $3M+ in revenue.
             </p>
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
-              I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can take on projects solo, act as a technical lead, or supplement your existing team by smashing on a keyboard.
+              I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can
+              take on projects solo, act as a technical lead, or supplement your existing team by smashing on a
+              keyboard.
             </p>
             <p>Consulting and programming work is billed at $225/hr. For larger projects I offer two-week
               sprints at a discount. I’m always happy to provide an estimate for any project following an
@@ -68,7 +77,9 @@
               Get in Touch
             </h3>
             <p class="mb-5">
-              Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I can. You can schedule a discovery call to see if we’re a good fit, or just email at <a href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
+              Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I
+              can. You can schedule a discovery call to see if we’re a good fit, or just email at <a
+                href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
             </p>
             <ActionButton to="/contact">
               <i class="fa-sharp fa-solid fa-comment"></i>
@@ -130,7 +141,7 @@ useHead({
     grid-template-columns: repeat(3, 1fr);
   }
 
-  &:hover{
+  &:hover {
     .client-logo:not(:hover) {
       opacity: 0.2;
     }
@@ -143,7 +154,7 @@ useHead({
   transition: opacity 0.3s ease;
 }
 
-.back-link{
+.back-link {
   color: #212A36;
   position: fixed;
   top: 40px;
