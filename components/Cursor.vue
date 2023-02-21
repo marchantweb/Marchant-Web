@@ -19,8 +19,9 @@ let outputY = ref(y.value);
 
 // Smoothly move the cursor to the mouse position
 gsap.ticker.add(() => {
-  outputX.value += (x.value - outputX.value) * 0.5;
-  outputY.value += (y.value - outputY.value) * 0.5;
+  const dt = 1.0 - Math.pow(1.0 - 0.3, gsap.ticker.deltaRatio());
+  outputX.value += (x.value - outputX.value) * dt;
+  outputY.value += (y.value - outputY.value) * dt;
 });
 
 // Hide the cursor until the user moves their mouse
