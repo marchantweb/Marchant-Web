@@ -13,6 +13,7 @@ const {x, y} = useMouse({
 });
 
 // Starting size/position of the cursor
+let startingSize = 22;
 let size = ref(22);
 let outputX = ref(x.value);
 let outputY = ref(y.value);
@@ -37,45 +38,39 @@ watchOnce(x, () => {
 })
 
 /**
- * Respond to any DOM element with the class of ".mouse-lg" by increasing the size of the cursor
+ * Respond to any DOM element with the class of ".mouse-*" by increasing the size of the cursor
+ * @param className - The name of the CSS class that we're looking for to make the change
+ * @param cursorSize - The size of the cursor when the element is hovered
  */
+const setupMouseEffect = (className, cursorSize) => {
+  document.body.addEventListener('mouseover', (event) => {
+    if (event.target.classList.contains(className)) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.2, value: cursorSize});
+    }
+  });
+  document.body.addEventListener('mouseout', (event) => {
+    if (event.target.classList.contains(className)) {
+      gsap.killTweensOf(size);
+      gsap.to(size, {duration: 0.1, value: startingSize});
+    }
+  });
+};
+
 onMounted(() => {
-  document.body.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('mouse-lg')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.2, value: 200});
-    }
-  });
-  document.body.addEventListener('mouseout', (event) => {
-    if (event.target.classList.contains('mouse-lg')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.1, value: 22});
-    }
-  });
-  document.body.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('mouse-md')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.2, value: 100});
-    }
-  });
-  document.body.addEventListener('mouseout', (event) => {
-    if (event.target.classList.contains('mouse-md')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.1, value: 22});
-    }
-  });
-  document.body.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('mouse-sm')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.2, value: 60});
-    }
-  });
-  document.body.addEventListener('mouseout', (event) => {
-    if (event.target.classList.contains('mouse-sm')) {
-      gsap.killTweensOf(size);
-      gsap.to(size, {duration: 0.1, value: 22});
-    }
-  });
+  setupMouseEffect('mouse-lg', 200);
+  setupMouseEffect('mouse-md', 100);
+  setupMouseEffect('mouse-sm', 60);
+});
+
+// Reset the cursor size when the route changes
+const route = useRoute();
+watch(route, () => {
+  gsap.killTweensOf(size);
+  gsap.to(size, {duration: 0.1, value: startingSize});
+}, {
+  flush: 'post',
+  deep: true
 });
 
 
@@ -98,7 +93,7 @@ onMounted(() => {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 
-  &.cursor--hidden{
+  &.cursor--hidden {
     opacity: 0;
   }
 }
