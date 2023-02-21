@@ -1,26 +1,39 @@
 <template>
-  <div class="cursor d-none d-xl-block"
+  <div :class="cursorClasses"
        :style="{ transform: 'translate(' + Math.round((outputX - (size/2))) + 'px, ' + Math.round((outputY - (size/2)) + 1) + 'px)', width: size + 'px', height: size + 'px' }"></div>
 </template>
 
 <script setup>
 
-import {useMouse} from "@vueuse/core";
+import {useMouse, watchOnce} from "@vueuse/core";
 import {gsap} from "gsap";
 
 const {x, y} = useMouse({
   type: 'client'
 });
 
+// Starting size/position of the cursor
 let size = ref(22);
-
 let outputX = ref(x.value);
 let outputY = ref(y.value);
 
+// Smoothly move the cursor to the mouse position
 gsap.ticker.add(() => {
   outputX.value += (x.value - outputX.value) * 0.5;
   outputY.value += (y.value - outputY.value) * 0.5;
 });
+
+// Hide the cursor until the user moves their mouse
+const isCursorVisible = ref(false);
+const cursorClasses = computed(() => {
+  return {
+    'cursor d-none d-xl-block': true,
+    'cursor--hidden': !isCursorVisible.value,
+  }
+});
+watchOnce(x, () => {
+  isCursorVisible.value = true;
+})
 
 /**
  * Respond to any DOM element with the class of ".mouse-lg" by increasing the size of the cursor
@@ -81,6 +94,12 @@ onMounted(() => {
   mix-blend-mode: difference;
   box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+  &.cursor--hidden{
+    opacity: 0;
+  }
 }
 
 </style>
