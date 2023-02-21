@@ -11,22 +11,30 @@
           <h2 class="project-cover__title mb-0">{{ currentPortfolioItem["title"] }}</h2>
         </div>
       </div>
-      <div class="col-6 justify-content-end d-none d-lg-flex">
+      <div class="col-auto justify-content-end d-none d-xl-flex">
         <CodeLine v-if="props.isFocused" :number="'//'"><span class="code--white"
-                                                                  v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{ stackItem.name }} <span
-            class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
+                                                              v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{
+            stackItem.name
+          }} <span
+              class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
       </div>
     </div>
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
-        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted :autoplay="isFocused ? true : null" playsinline :poster="currentPortfolioItem['cover']">
+        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted
+               :autoplay="isFocused ? true : null" playsinline :poster="currentPortfolioItem['cover']">
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
           <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
         </video>
       </div>
     </NuxtLink>
+
+    <!-- Lead Text (Mobile)  -->
+    <h3 class="project-cover__lead d-block d-lg-none mt-4">
+      {{ currentPortfolioItem['lead'] }}
+    </h3>
 
   </article>
 </template>
@@ -82,7 +90,7 @@ const video = ref(null);
 watch(() => props.isFocused, (isFocused) => {
   if (isFocused) {
     video.value.play();
-  }else{
+  } else {
     video.value.pause();
   }
 });
@@ -100,10 +108,20 @@ watch(() => props.isFocused, (isFocused) => {
   transform-origin: bottom center;
   transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
 
+  @media screen and (max-width: 1680px) {
+    width: 960px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 800px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 700px;
+  }
+
   @media screen and (max-width: 992px) {
-    transform: scale(1);
-    aspect-ratio: 2.5;
-    height: 65vh;
+    width: calc(100vw - 60px);
   }
 }
 
@@ -116,10 +134,6 @@ watch(() => props.isFocused, (isFocused) => {
 .tech-stack {
   opacity: 0;
   transition: opacity 0.6s ease;
-
-  @media screen and (max-width: 992px) {
-    display: none;
-  }
 }
 
 .project-cover__title {
@@ -129,15 +143,13 @@ watch(() => props.isFocused, (isFocused) => {
 .project-cover__video-container {
   width: 100%;
   height: calc(100vh - 400px);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 40px 10px -20px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 40px 10px -20px;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
 
   @media screen and (max-width: 992px) {
-    width: 100vw;
-    height: 100%;
-    border-radius: 0;
+    height: calc(100vh - 320px);
   }
 }
 
@@ -153,7 +165,7 @@ watch(() => props.isFocused, (isFocused) => {
   transition: transform 0.4s cubic-bezier(0.6, 0, 0.2, 1);
   transform: scale(1);
 
-  .project-cover__type {
+  .project-cover__type, .project-cover__lead {
     opacity: 1;
     transition-delay: 0.2s;
   }
@@ -161,6 +173,14 @@ watch(() => props.isFocused, (isFocused) => {
   .tech-stack {
     opacity: 1;
   }
+}
+
+.project-cover__lead {
+  color: #F2F2F2;
+  font-size: 1.1rem;
+  max-width: 500px;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 </style>

@@ -28,7 +28,7 @@
                       :index="index"
                       v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
-        <div class="feed-section__extraElement" style="width: 1040px; height: 10px; display: block; flex:none"/>
+        <div class="feed-section__extraElement"/>
 
         <div class="feed-section__container-padding"/>
 
@@ -45,7 +45,7 @@
 
 <script setup>
 
-import {useEventListener} from "@vueuse/core";
+import {useEventListener, useWindowSize} from "@vueuse/core";
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
 import {InertiaPlugin} from "gsap/InertiaPlugin";
@@ -65,6 +65,23 @@ useHead({
   ]
 });
 
+const {width, height} = useWindowSize();
+const portfolioItemWidth = computed(() => {
+  if(width.value > 1680){
+    return 1040;
+  }
+  if(width.value > 1400){
+    return 960;
+  }
+  if(width.value > 1200){
+    return 800;
+  }
+  if(width.value > 992){
+    return 700;
+  }
+  return width.value - 60;
+});
+
 /**
  * Update the selected project, called by wheel and key events
  * @param selectedIndex
@@ -75,7 +92,7 @@ const updateSelected = (selectedIndex) => {
   selected.value = selectedIndex;
   gsap.killTweensOf("#portfolio-feed");
   gsap.to("#portfolio-feed", {
-    x: 1040 * selected.value * -1,
+    x: portfolioItemWidth.value * selected.value * -1,
     duration: 0.5,
     ease: "power3.out"
   });
@@ -92,7 +109,7 @@ const updateSelected = (selectedIndex) => {
  * @param event
  */
 const updateDragSelected = function (event) {
-  let selectedIndex = Math.floor(Math.abs((this.endX) / 1040));
+  let selectedIndex = Math.floor(Math.abs((this.endX) / portfolioItemWidth.value));
   selectedIndex = selectedIndex < 0 ? 0 : selectedIndex;
   selectedIndex = selectedIndex > portfolioData.value.length - 1 ? portfolioData.value.length - 1 : selectedIndex;
   selected.value = selectedIndex;
@@ -155,7 +172,7 @@ function setupDraggable() {
   nextTick(() => {
     const offsets = [];
     for (let i = 0; i < portfolioData.value.length; i++) {
-      offsets.push((i * 1040) * -1);
+      offsets.push((i * portfolioItemWidth.value) * -1);
     }
     const container = document.querySelector("#portfolio-feed");
     if (!container) {
@@ -171,7 +188,7 @@ function setupDraggable() {
       inertia: true,
       bounds: {
         minX: 0,
-        maxX: 1040 * (portfolioData.value.length - 1) * -1
+        maxX: portfolioItemWidth.value * (portfolioData.value.length - 1) * -1
       },
       //onDrag: updateDragSelected,
       onDragEnd: updateDragSelected,
@@ -271,6 +288,26 @@ ol.portfolio-links {
     transition: transform 0.3s ease;
     top: 20px;
   }
+}
+
+.feed-section__extraElement{
+  width: 1040px;
+  height: 10px;
+  display: block;
+  flex:none;
+
+  @media screen and (max-width: 1680px) {
+    width: 960px;
+  }
+
+  @media screen and (max-width: 1400px) {
+    width: 800px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 700px;
+  }
+
 }
 
 </style>
