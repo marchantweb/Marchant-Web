@@ -52,6 +52,22 @@ useHead({
 
 <style lang="scss" scoped>
 
+.page-enter-active {
+  transition: all 1.5s cubic-bezier(0.4, 0, 0, 1);
+  transition-delay: 0.5s;
+}
+
+.page-leave-active {
+  transition: all 1s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(10%) translateZ(0);
+  transform-origin: right center;
+}
+
 #calendar-container {
   height: 700px;
   width: 100%;

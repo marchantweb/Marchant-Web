@@ -114,11 +114,12 @@ useHead({
 <style lang="scss" scoped>
 
 .page-enter-active {
-  transition: all 2s cubic-bezier(0.6, 0, 0, 1);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0, 1);
+  transition-delay: 0.5s;
 }
 
 .page-leave-active {
-  transition: all 1.5s;
+  transition: all 1s;
 }
 
 .page-enter-from,

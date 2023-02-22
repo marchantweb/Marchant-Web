@@ -45,7 +45,7 @@
 
 <script setup>
 
-import {useEventListener, useWindowSize} from "@vueuse/core";
+import {useEventListener, useThrottleFn, useWindowSize} from "@vueuse/core";
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
 import {InertiaPlugin} from "gsap/InertiaPlugin";
@@ -123,21 +123,23 @@ const updateDragSelected = function (event) {
 
 let draggable = null;
 
+const wheelHandler = useThrottleFn((event) => {
+  let newSelected = selected.value;
+  if (event.deltaY > 0) {
+    newSelected += 1
+  } else {
+    newSelected -= 1
+  }
+  updateSelected(newSelected);
+}, 100)
+
 onMounted(() => {
 
   selected.value = 0;
   gsap.registerPlugin(Draggable, InertiaPlugin);
 
   // Wheel Events
-  useEventListener(document, 'wheel', (event) => {
-    let newSelected = selected.value;
-    if (event.deltaY > 0) {
-      newSelected += 1
-    } else {
-      newSelected -= 1
-    }
-    updateSelected(newSelected);
-  });
+  useEventListener(document, 'wheel', wheelHandler);
 
   // Keyboard Events
   useEventListener(document, 'keyup', (event) => {
@@ -156,7 +158,6 @@ onMounted(() => {
 });
 onActivated(() => {
   selected.value = 0;
-  setupDraggable();
   setupDraggable();
 });
 onUnmounted(() => {
