@@ -1,13 +1,12 @@
 <template>
   <section class="page">
 
-    <NuxtLink class="back-link mouse-md d-none d-lg-block" to="/">Back<i
-        class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
-
     <div class="container-xxxl">
       <div class="row mt-0 mt-lg-6">
         <main class="d-flex flex-column">
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4">
+            <NuxtLink class="back-link mouse-md mt-4 mt-lg-0" to="/">Back<i
+                class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
             <CodeTag class="mt-5 mb-3">about</CodeTag>
             <h1 class="mb-2 mb-lg-3">Simon Le Marchant</h1>
             <StatusIndicator type="dark"/>
@@ -52,7 +51,7 @@
               <img src="~/assets/images/clients/mcasd.svg" alt="MCASD logo" class="client-logo mouse-md">
             </div>
           </div>
-          <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4">
+          <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
             <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
             <p>
               I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
@@ -160,6 +159,12 @@ useHead({
   position: fixed;
   top: 40px;
   right: 60px;
+
+  @media screen and (max-width: 992px) {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
 
 </style>

@@ -1,12 +1,11 @@
 <template>
   <section class="page">
 
-    <NuxtLink class="back-link mouse-md d-none d-lg-block" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back
-    </NuxtLink>
-
     <div class="container-xxxl">
       <div class="row mt-0 mt-lg-6 justify-content-end">
         <div class="col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-4 mb-4">
+          <NuxtLink class="back-link mouse-md mt-4 mt-lg-0" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back
+          </NuxtLink>
           <CodeTag class="mt-5 mb-3">contact</CodeTag>
           <h1 class="mb-4">Let's Chat</h1>
           <p class="mb-4">Feel free to reach out. I'm always happy to chat to discuss ideas, feasibility, schedule,
@@ -78,6 +77,12 @@ useHead({
   position: fixed;
   top: 40px;
   left: 60px;
+
+  @media screen and (max-width: 992px) {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
 
 .container-xxxl {
