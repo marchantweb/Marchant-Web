@@ -15,12 +15,13 @@
   },
   "dependencies": {
     "@vueuse/core": "^9.9.0",
+    "aos": "^2.3.4",
     "gsap": "npm:@gsap/shockingly@^3.11.4",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2"
   },
-  "engines" : {
-    "node" : ">=19.6.1",
-    "npm" : ">=9.4.0"
+  "engines": {
+    "node": ">=19.6.1",
+    "npm": ">=9.4.0"
   }
 }

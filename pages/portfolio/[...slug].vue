@@ -14,23 +14,23 @@
       <!-- Hero-->
       <div class="row gx-6 mt-5 mt-lg-6">
         <div class="col-12 col-lg-4">
-          <CodeTag class="mb-1 mb-lg-3">{{ currentPortfolioItem['type'] }}</CodeTag>
+          <CodeTag class="mb-2 mb-lg-3">{{ currentPortfolioItem['type'] }}</CodeTag>
           <h1 class="mb-3 mb-lg-10 project__name"> {{ currentPortfolioItem['title'] }} </h1>
           <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/portfolio"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back to Explore Projects</NuxtLink>
         </div>
         <div class="col">
-          <video class="mouse-md" loop="true" muted autoplay playsinline :poster="currentPortfolioItem['cover']">
+          <video class="mouse-md" loop="true" muted autoplay playsinline :poster="currentPortfolioItem['cover']" data-aos="zoom-in-down">
             <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
             <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
           </video>
         </div>
       </div>
 
-      <div class="row mt-6 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-5 pb-lg-7">
+      <div class="row mt-5 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-5 pb-lg-7">
         <div class="col-12 col-lg-4 order-2 order-lg-1 pt-6 pt-lg-0">
           <section class="ps-0 ps-lg-6" style="position: sticky; top: 60px">
-            <h3 class="mb-5">Details</h3>
-            <dl class="mb-5 d-block">
+            <h3 class="mb-5" data-aos="fade-up">Details</h3>
+            <dl class="mb-5 d-block" data-aos="fade-up">
 
               <dt v-if="currentPortfolioItem['client']">Client</dt>
               <dd v-if="currentPortfolioItem['client']"> {{ currentPortfolioItem['client']}} </dd>
@@ -45,7 +45,7 @@
               <dd v-if="currentPortfolioItem['completed']"> {{ currentPortfolioItem['completed']}} </dd>
 
             </dl>
-            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
+            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" data-aos="fade-up">
               <i class="fa-sharp fa-solid fa-phone-arrow-up-right"></i>
               Schedule a call
             </ActionButton>
@@ -58,7 +58,7 @@
               <span class="code--green">&nbsp;run</span>
               <span class="code--white">&nbsp;case_study</span>
             </CodeLine>
-            <h1 class="mb-4 mb-lg-5">{{ currentPortfolioItem['lead'] }}</h1>
+            <h1 class="mb-4 mb-lg-5" data-aos="fade-up">{{ currentPortfolioItem['lead'] }}</h1>
           </div>
           <NotionContent :blocks="currentPortfolioItem['pageContent']"/>
         </div>

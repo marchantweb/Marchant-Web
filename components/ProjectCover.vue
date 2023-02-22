@@ -149,7 +149,7 @@ watch(() => props.isFocused, (isFocused) => {
   overflow: hidden;
 
   @media screen and (max-width: 992px) {
-    height: calc(100vh - 320px);
+    height: calc(100vh - 400px);
   }
 }
 

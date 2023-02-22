@@ -1,6 +1,6 @@
 <template>
   <div class="col-12 col-lg-11 col-xl-9 col-xxl-8">
-    <p style="text-align: justify">
+    <p data-aos="fade-up">
       <span v-for="item in block['paragraph']['rich_text']" :style="textStyles(item)">{{ item.text.content }}</span>
     </p>
   </div>
@@ -26,10 +26,18 @@ const textStyles = (item) =>{
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
-p span{
-  font-size: 1.1rem;
+p{
+  text-align: justify;
+
+  @media screen and (max-width: 992px) {
+    text-align: left;
+  }
+
+  span{
+    font-size: 1.1rem;
+  }
 }
 
 </style>
