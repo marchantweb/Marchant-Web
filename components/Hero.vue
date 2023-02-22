@@ -47,6 +47,18 @@
     <!-- Yellow to Orange Gradient Bar -->
     <div class="orange-bar" v-if="route.path === '/about' || route.path === '/contact'"/>
 
+    <!-- JS Icon -->
+    <Transition name="icon-pop">
+      <img src="~/assets/images/hero-js-icon.svg" alt="JavaScript Icon" class="js-icon"
+           v-if="route.path === '/about' || route.path === '/contact'">
+    </Transition>
+
+    <!-- Vue Icon -->
+    <Transition name="icon-pop">
+      <img src="~/assets/images/hero-vue-icon.svg" alt="Vue 3 Icon" class="vue-icon"
+           v-if="route.path === '/about' || route.path === '/contact'">
+    </Transition>
+
     <!-- WebGL Container -->
     <div id="hero-canvas__container" :class="heroClasses">
 
@@ -350,6 +362,10 @@ body.fixed-webgl {
       box-shadow: none;
     }
 
+    @media screen and (max-width: 768px){
+      transform: scale(0.9);
+    }
+
   }
 
   &.hero--contact {
@@ -360,6 +376,15 @@ body.fixed-webgl {
     box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -40px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
+
+    @media screen and (max-width: 1200px) {
+      box-shadow: none;
+    }
+
+    @media screen and (max-width: 768px){
+      transform: scale(0.9);
+    }
+
   }
 
   &.hero--portfolio-single {
@@ -474,6 +499,40 @@ body.fixed-webgl {
   100% {
     transform: scaleX(1) translateZ(0);
   }
+}
+
+.js-icon {
+  position: absolute;
+  top: 160px;
+  right: 120px;
+  width: 140px;
+  z-index: 1;
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+
+.vue-icon {
+  position: absolute;
+  bottom: 140px;
+  left: 130px;
+  width: 60px;
+  z-index: 1;
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+
+.icon-pop-enter-active,
+.icon-pop-leave-active {
+  transition: all 1s cubic-bezier(0.7, 0, 0, 1);
+}
+
+.icon-pop-enter-from, .icon-pop-leave-to {
+  opacity: 0;
+  transform: scale(0.3);
 }
 
 </style>
