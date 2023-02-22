@@ -7,9 +7,14 @@
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4">
             <NuxtLink class="back-link mouse-md mt-4 mt-lg-0" to="/">Back<i
                 class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
-            <CodeTag class="mt-5 mb-3">about</CodeTag>
-            <h1 class="mb-2 mb-lg-3">Simon Le Marchant</h1>
-            <StatusIndicator type="dark"/>
+            <CodeTag class="mt-5 mb-5">about</CodeTag>
+            <div class="d-flex flex-row align-items-center mb-5">
+              <img src="~assets/images/headshot.png" alt="Hey I'm Simon" class="headshot me-4">
+              <div>
+                <h1 class="mb-1">Simon Le Marchant</h1>
+                <StatusIndicator type="dark"/>
+              </div>
+            </div>
             <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive
               experiences
               and custom web software.</h2>
@@ -164,6 +169,15 @@ useHead({
     position: relative;
     top: 0;
     left: 0;
+  }
+}
+
+.headshot{
+  width: 90px;
+  border-radius: 50%;
+
+  @media screen and (max-width: 992px) {
+    width: 70px;
   }
 }
 
