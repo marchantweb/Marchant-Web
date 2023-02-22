@@ -1,7 +1,8 @@
 <template>
   <div class="col-12 col-lg-11 col-xl-9 col-xxl-8">
     <p data-aos="fade-up">
-      <span v-for="item in block['paragraph']['rich_text']" :style="textStyles(item)">{{ item.text.content }}</span>
+      <span v-for="item in block['paragraph']['rich_text']" :class="textClasses(item)"
+            :style="textStyles(item)">{{ item.text.content }}</span>
     </p>
   </div>
 </template>
@@ -15,12 +16,20 @@ defineProps({
   }
 });
 
-const textStyles = (item) =>{
+const textStyles = (item) => {
   const annotations = item.annotations;
   return {
     color: annotations.color ? annotations.color : 'inherit',
     fontWeight: annotations.bold ? 'bold' : 'normal',
-    fontStyle: annotations.italic ? 'italic' : 'normal'
+    fontStyle: annotations.italic ? 'italic' : 'normal',
+    textDecoration: annotations.underline ? 'underline' : 'none'
+  }
+}
+
+const textClasses = (item) => {
+  const annotations = item.annotations;
+  return {
+    'text--code': annotations.code
   }
 }
 
@@ -28,15 +37,24 @@ const textStyles = (item) =>{
 
 <style lang="scss" scoped>
 
-p{
+p {
   text-align: justify;
 
   @media screen and (max-width: 992px) {
     text-align: left;
   }
 
-  span{
+  span {
     font-size: 1.1rem;
+
+    &.text--code{
+      background-color: #ececf0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+      font-weight: bold !important;
+    }
   }
 }
 
