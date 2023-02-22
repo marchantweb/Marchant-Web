@@ -3,13 +3,22 @@
 
     <div class="container">
       <div class="row mt-8">
-        <div class="col-7">
-          <MWIcon :size="50" type="white" />
-          <CodeTag class="mt-5 mb-3">404</CodeTag>
-          <h1 class="mt-6 mb-3 lead">Page Not Found</h1>
-          <p class="text-light">
-            Sorry, looks you've navigated to a broken link. Whoops.
+        <div class="col-auto">
+          <MWIcon type="white" />
+          <CodeLine :number="'404'" class="mt-5 mt-lg-7 mb-5">
+            <span class="code--purple">error:</span>
+            <span class="code--yellow">&nbsp;page</span>
+            <span class="code--green">&nbsp;not</span>
+            <span class="code--white">&nbsp;found</span>
+          </CodeLine>
+          <h1 class="mb-5 lead">OH SH***T;</h1>
+          <p class="text-light mb-6">
+            Looks you've navigated to a broken link.<br><em>Try not doing that again in the future.</em>
           </p>
+          <ActionButton to="/" data-aos="fade-up">
+            <i class="fa-sharp fa-solid fa-arrow-up-left"></i>
+            Back
+          </ActionButton>
         </div>
       </div>
     </div>
