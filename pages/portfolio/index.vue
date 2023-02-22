@@ -146,11 +146,17 @@ onMounted(() => {
     let newSelected = selected.value;
     if (event.key === 'ArrowRight') {
       newSelected += 1
+      updateSelected(newSelected);
+      return;
     }
     if (event.key === 'ArrowLeft') {
       newSelected -= 1
+      updateSelected(newSelected);
+      return;
     }
-    updateSelected(newSelected);
+    if (event.key === 'Enter') {
+      return navigateTo('/portfolio/' + portfolioData.value[selected.value]["slug"]);
+    }
   });
 
   setupDraggable();
