@@ -23,6 +23,7 @@
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
+        <i class="fa-sharp fa-regular fa-arrow-up-right fa-3x open-arrow"></i>
         <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted
                :autoplay="isFocused ? true : null" playsinline :poster="currentPortfolioItem['cover']">
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
@@ -147,6 +148,7 @@ watch(() => props.isFocused, (isFocused) => {
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
 
   @media screen and (max-width: 992px) {
     height: calc(100vh - 400px);
@@ -173,14 +175,39 @@ watch(() => props.isFocused, (isFocused) => {
   .tech-stack {
     opacity: 1;
   }
+
+  &:hover {
+
+    .open-arrow {
+      opacity: 1;
+    }
+  }
 }
 
 .project-cover__lead {
   color: #F2F2F2;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   max-width: 500px;
   opacity: 0;
   transition: opacity 1s ease;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+.open-arrow {
+  color: #F2F2F2;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  z-index: 2;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+
+  @media screen and (max-width: 992px) {
+    opacity: 1;
+  }
 }
 
 </style>
