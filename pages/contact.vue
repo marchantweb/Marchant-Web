@@ -6,7 +6,7 @@
 
     <div class="container-xxxl">
       <div class="row mt-0 mt-lg-6 justify-content-end">
-        <div class="col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-4">
+        <div class="col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-4 mb-4">
           <CodeTag class="mt-5 mb-3">contact</CodeTag>
           <h1 class="mb-4">Let's Chat</h1>
           <p class="mb-4">Feel free to reach out. I'm always happy to chat to discuss ideas, feasibility, schedule,

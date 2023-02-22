@@ -52,7 +52,7 @@
               <img src="~/assets/images/clients/mcasd.svg" alt="MCASD logo" class="client-logo mouse-md">
             </div>
           </div>
-          <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-7">
+          <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4">
             <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
             <p>
               I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
@@ -81,7 +81,7 @@
               can. You can schedule a discovery call to see if we’re a good fit, or just email at <a
                 href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
             </p>
-            <ActionButton to="/contact" data-aos="fade-up">
+            <ActionButton to="/contact" data-aos="fade-up" class="d-none d-lg-block">
               <i class="fa-sharp fa-solid fa-comment"></i>
               Let's Chat
             </ActionButton>

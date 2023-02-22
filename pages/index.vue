@@ -14,8 +14,8 @@
                   v-for="(char, index) in headingChars">{{ char }}
             </span>
           </h1>
-          <ActionButton to="/portfolio" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-5">
-            Explore <i class="fa-sharp fa-regular fa-arrow-right-long fa-lg ps-2"></i>
+          <ActionButton to="/portfolio" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-4">
+            Explore <i class="fa-sharp fa-solid fa-arrow-right-long fa-lg ps-2"></i>
           </ActionButton>
           <NuxtLink class="back-link mouse-md d-inline-block d-lg-none me-5" to="/about">About<i
               class="fa-sharp fa-solid fa-arrow-up-right fa-lg ps-2"></i></NuxtLink>
