@@ -2,7 +2,7 @@
   <div class="col-12 my-4 my-lg-5">
     <figure data-aos="fade-up">
     <img v-once v-if="'file' in block['image']" class="my-4 mouse-sm" :src="'https://api.marchantweb.com/images/' + encodeURI(block['id'])" alt="Visual aid for the case study.">
-      <figcaption v-if="'caption' in block['image'] && block['image']['caption'].length > 0">{{block['image']['caption'][0]['plain_text']}}</figcaption>
+      <figcaption v-if="'caption' in block['image'] && block['image']['caption'].length > 0"><i class="fa-sharp fa-regular fa-barcode pe-2" aria-hidden></i> {{block['image']['caption'][0]['plain_text']}}</figcaption>
     </figure>
   </div>
 </template>
