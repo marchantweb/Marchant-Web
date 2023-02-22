@@ -1,5 +1,6 @@
 /**
  * Creates a WebGL shader from the provided GLSL source code.
+ * @param gl
  * @param type
  * @param source
  * @returns {*|WebGLShader}
@@ -18,6 +19,7 @@ const createShader = (gl, type, source) => {
 
 /**
  * Creates a WebGL program from the provided shaders
+ * @param gl
  * @param vertexShader
  * @param fragmentShader
  * @returns {*|WebGLProgram}

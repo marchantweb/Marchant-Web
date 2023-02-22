@@ -48,10 +48,3 @@ useHead({
   ],
 });
 </script>
-
-<style lang="scss">
-
-/* Application SCSS */
-//@import "assets/scss/app.scss";
-
-</style>
