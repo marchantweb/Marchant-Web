@@ -6,17 +6,17 @@
             <div class="nav-icon__line"></div>
           </div>
           <nav class="nav-links">
-            <NuxtLink to="/">
-              <button class="mouse-sm">Home</button>
+            <NuxtLink to="/" class="mouse-md">
+              Home
             </NuxtLink>
-            <NuxtLink to="/about">
-              <button class="mouse-sm">About</button>
+            <NuxtLink to="/about" class="mouse-md">
+              About
             </NuxtLink>
-            <NuxtLink to="/portfolio">
-              <button class="mouse-sm">Projects</button>
+            <NuxtLink to="/portfolio" class="mouse-md">
+              Projects
             </NuxtLink>
-            <NuxtLink to="/contact">
-              <button class="mouse-sm">Contact</button>
+            <NuxtLink to="/contact" class="mouse-md">
+              Contact
             </NuxtLink>
           </nav>
         </div>
@@ -86,7 +86,7 @@ const navClasses = computed(() => {
       gap: 20px;
     }
 
-    button{
+    a{
       background: none;
       border: none;
       padding: 30px;
@@ -96,8 +96,10 @@ const navClasses = computed(() => {
       text-transform: uppercase;
       font-weight: 600;
       letter-spacing: 3px;
-      text-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+      text-shadow: 0 2px 5px rgb(0 0 0 / 20%);
       font-size: 14px;
+      text-decoration: none;
+      position: relative;
     }
   }
 
