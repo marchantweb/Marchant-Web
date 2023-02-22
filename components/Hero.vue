@@ -306,7 +306,6 @@ body.fixed-webgl {
 
     @media screen and (max-width: 768px) {
       transition-delay: 0s;
-      transition: none;
       transform: translateX(100vw);
     }
   }
@@ -321,7 +320,6 @@ body.fixed-webgl {
 
     @media screen and (max-width: 768px) {
       transition-delay: 0s;
-      transition: none;
       transform: translateX(-100vw);
     }
   }

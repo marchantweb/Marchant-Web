@@ -5,8 +5,8 @@
 
     <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-lg-5 mb-xxl-6 justify-content-between align-items-end">
-        <div class="col-12 col-sm-8 col-xxl-6 col-xxxl-7">
-          <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-5" aria-hidden="true"></i>
+        <div class="col-11 col-sm-8 col-xxl-6 col-xxxl-7">
+          <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-4 mb-lg-5" aria-hidden="true"></i>
           <h1 role="heading" class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
             <span class="heading-char" aria-hidden="true"
@@ -14,10 +14,14 @@
                   v-for="(char, index) in headingChars">{{ char }}
             </span>
           </h1>
-          <ActionButton to="/portfolio" data-aos="fade-up" class="d-block d-lg-none mt-4 mb-2">
-            Explore <i class="fa-sharp fa-solid fa-arrow-right-long ps-2"></i>
+          <ActionButton to="/portfolio" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-5">
+            Explore <i class="fa-sharp fa-regular fa-arrow-right-long fa-lg ps-2"></i>
           </ActionButton>
-          <StatusIndicator class="d-block py-3 d-lg-none"/>
+          <NuxtLink class="back-link mouse-md d-inline-block d-lg-none me-5" to="/about">About<i
+              class="fa-sharp fa-solid fa-arrow-up-right fa-lg ps-2"></i></NuxtLink>
+          <NuxtLink class="back-link mouse-md d-inline-block d-lg-none" to="/contact">Contact<i
+              class="fa-sharp fa-regular fa-arrow-up-right fa-lg ps-2"></i></NuxtLink>
+          <StatusIndicator class="d-block mt-1 mt-lg-0 py-3 d-lg-none"/>
         </div>
         <div class="col-auto">
           <ScrollHint/>
@@ -55,7 +59,7 @@ onMounted(() => {
   preloadRouteComponents('/portfolio');
 });
 
-const heading = "SENIOR FRONT-END ENGINEER WHO HELPS AGENCIES DELIVER CREATIVE WORK;"
+const heading = "SENIOR FRONT END ENGINEER WHO HELPS AGENCIES DELIVER CREATIVE WORK;"
 const headingChars = heading.split('');
 
 </script>
@@ -87,6 +91,11 @@ const headingChars = heading.split('');
   animation-delay: 1s;
   opacity: 0;
   transform: translateX(20px);
+
+  @media screen and (max-width: 992px) {
+    font-size: 28px;
+    font-weight: 400 !important;
+  }
 }
 
 @keyframes leadIconAnimation {

@@ -5,7 +5,7 @@
     </NuxtLink>
 
     <div class="container-xxxl">
-      <div class="row mt-6 justify-content-end">
+      <div class="row mt-0 mt-lg-6 justify-content-end">
         <div class="col-12 col-md-8 col-lg-7 col-xl-5 col-xxl-4">
           <CodeTag class="mt-5 mb-3">contact</CodeTag>
           <h1 class="mb-4">Let's Chat</h1>
