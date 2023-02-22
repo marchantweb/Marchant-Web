@@ -14,6 +14,9 @@
                   v-for="(char, index) in headingChars">{{ char }}
             </span>
           </h1>
+          <ActionButton to="/portfolio" data-aos="fade-up" class="d-block d-lg-none mt-4 mb-2">
+            Explore <i class="fa-sharp fa-solid fa-arrow-right-long ps-2"></i>
+          </ActionButton>
           <StatusIndicator class="d-block py-3 d-lg-none"/>
         </div>
         <div class="col-auto">
