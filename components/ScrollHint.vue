@@ -36,11 +36,30 @@
     font-weight: 600;
     margin-right: 30px;
     pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: animateContentIn 1s ease-in-out forwards;
+    animation-delay: 1s;
   }
 
   i {
     color: #F2F2F2;
     pointer-events: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: animateContentIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes animateContentIn{
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
