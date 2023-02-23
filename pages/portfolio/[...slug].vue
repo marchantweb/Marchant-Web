@@ -28,7 +28,7 @@
 
       <div class="row mt-5 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-3">
         <div class="col-12 col-lg-4 order-2 order-lg-1 pt-6 pt-lg-0">
-          <section class="ps-0 ps-lg-6 mb-5 mb-lg-0" style="position: sticky; top: 60px">
+          <aside class="ps-0 ps-lg-6 mb-5 mb-lg-0" style="position: sticky; top: 60px">
             <h3 class="mb-5" data-aos="fade-up">Details</h3>
             <dl class="mb-5 d-block" data-aos="fade-up">
 
@@ -49,9 +49,9 @@
               <i class="fa-sharp fa-regular fa-calendar-range fa-lg"></i>
               Book some time
             </ActionButton>
-          </section>
+          </aside>
         </div>
-        <div class="col-12 col-lg-8 order-1 order-lg-2">
+        <main class="col-12 col-lg-8 order-1 order-lg-2">
           <div class="col-12 col-lg-11 col-xl-10">
             <CodeLine :number="'//'" class="mb-5 mb-lg-4">
               <span class="code--yellow">npm</span>
@@ -62,7 +62,7 @@
           </div>
           <NotionContent :blocks="currentPortfolioItem['pageContent']"/>
           <p class="mt-7 mt-xxl-8 mt-xxxl-9 text-small text-end copyright d-none d-lg-block">Copyright © {{new Date().getFullYear()}} Marchant Web, LLC. All rights reserved.</p>
-        </div>
+        </main>
       </div>
 
     </div>
