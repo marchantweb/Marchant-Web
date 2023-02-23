@@ -64,10 +64,10 @@
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
               I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can
-              take on projects solo as a trusted partner, act as a technical lead, or supplement your existing team by smashing on a
+              take on projects solo as a trusted partner, act as a technical lead/architect, or supplement your existing dev team by smashing on a
               keyboard.
             </p>
-            <p>All work-for-hire UX design and programming is billed at $180/hr., whereas consulting is billed at $225/hr. I’m always happy to provide an estimate for any project following an initial discovery call.</p>
+            <p>All work-for-hire <em>(UX design and development)</em> is billed at $180/hr., whereas consulting is billed at $225/hr. I’m always happy to provide an estimate for any project following an initial discovery call.</p>
             <h3 class="mt-5 mb-4">
               Get in Touch
             </h3>
