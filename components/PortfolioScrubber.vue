@@ -68,6 +68,13 @@ ol.portfolio-links {
       }
     }
 
+    &.portfolio-links--active {
+      a {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
   }
 
   &:after {
