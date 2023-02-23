@@ -1,6 +1,6 @@
 # Marchant Web '23
 
-![Homepage Screenshot](public/documentation/home.jpg)
+![Homepage Screenshot](public/cover.jpg)
 
 This repo contains the latest code for [MarchantWeb.com](https://marchantweb.com). It's a Nuxt 3 project that centers around a WebGL visualization that ebs and flows into each page.
 
