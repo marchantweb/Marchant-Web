@@ -63,7 +63,7 @@
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
-              I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can
+              <strong>I provide consulting and work-for-hire for agencies looking to deliver challenging creative projects for their clients.</strong> I can
               take on projects solo as a trusted partner, act as a technical lead/architect, or supplement your existing dev team by smashing on a
               keyboard.
             </p>
