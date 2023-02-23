@@ -144,7 +144,7 @@ watch(() => props.isFocused, (isFocused) => {
 
 .project-cover__video-container {
   width: 100%;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 380px);
   box-shadow: rgba(0, 0, 0, 0.3) 0 40px 10px -20px;
   border-radius: 5px;
   cursor: pointer;
