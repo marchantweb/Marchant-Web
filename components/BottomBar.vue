@@ -36,6 +36,10 @@
   line-height: 22px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
+
+  span{
+    color: white;
+  }
 }
 
 .github-icon, .audio-icon {
