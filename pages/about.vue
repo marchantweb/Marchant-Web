@@ -164,7 +164,7 @@ useHead({
 }
 
 .headshot {
-  width: 120px;
+  width: 100px;
   border-radius: 50%;
 
   @media screen and (max-width: 992px) {
