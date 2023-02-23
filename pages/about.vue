@@ -3,7 +3,7 @@
 
     <div class="container-xxxl">
       <div class="row mt-0 mt-lg-6">
-        <main class="d-flex flex-column">
+        <main class="d-flex flex-column" itemscope itemtype="https://schema.org/Person">
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4">
             <NuxtLink class="back-link mouse-md mt-4 mt-lg-0" to="/">Back<i
                 class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
@@ -11,28 +11,32 @@
             <div class="d-flex flex-row align-items-center mb-5">
               <img src="~assets/images/headshot.png" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
               <div>
-                <h1 class="mb-1">Simon Le Marchant</h1>
+                <h1 class="mb-1" itemprop="name">Simon Le Marchant</h1>
                 <StatusIndicator type="dark"/>
               </div>
             </div>
-            <h2 class="my-4">Senior front end engineer with 10+ years building creative websites, interactive
+            <h2 class="my-4" itemprop="description">Senior front end engineer with 10+ years building creative websites,
+              interactive
               experiences
               and custom web software.</h2>
-            <p>
-              Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
-              incredible user experiences with web technology. I specialize in programming with <a
-                href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
-              <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
-                href="https://electronJS.org/"
-                target="_blank"
-                class="mouse-sm">Electron</a>,
-              although I have an extensive full-stack development background.
-            </p>
-            <p>
-              I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
-              understanding of user interactions and best practices. I’ve worked on many projects where I start early in
-              the discovery process, guide and design the UX from the ground up, and then get to work building it.
-            </p>
+            <div itemprop="knowsAbout">
+              <p>
+                Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
+                incredible user experiences with web technology. I specialize in programming with <a
+                  href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
+                <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
+                  href="https://electronJS.org/"
+                  target="_blank"
+                  class="mouse-sm">Electron</a>,
+                although I have an extensive full-stack development background.
+              </p>
+              <p>
+                I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
+                understanding of user interactions and best practices. I’ve worked on many projects where I start early
+                in
+                the discovery process, guide and design the UX from the ground up, and then get to work building it.
+              </p>
+            </div>
             <h3 class="mt-5 mb-4">Clients &amp; Partners</h3>
             <p class="mb-4">
               Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
@@ -57,17 +61,19 @@
             </div>
           </div>
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
-            <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
-            <p>
-              I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
-              multitudes of different projects with a near perfect 5-star rating.
-            </p>
-            <p>
-              I've also supported teams on other projects that have won awards at various levels from different
-              organizations, and have been considered a <em>"Star Partner"</em> with one particular client for
-              completely
-              overhauling their online business, driving $3M+ in revenue.
-            </p>
+            <div itemprop="awards">
+              <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
+              <p>
+                I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
+                multitudes of different projects with a near perfect 5-star rating.
+              </p>
+              <p>
+                I've also supported teams on other projects that have won awards at various levels from different
+                organizations, and have been considered a <em>"Star Partner"</em> with one particular client for
+                completely
+                overhauling their online business, driving $3M+ in revenue.
+              </p>
+            </div>
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
               I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can
@@ -83,7 +89,7 @@
             <p class="mb-5">
               Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I
               can. You can schedule a discovery call to see if we’re a good fit, or just email at <a
-                href="mailto:hello@marchantweb.com" class="mouse-sm">hello@marchantweb.com</a>.
+                href="mailto:hello@marchantweb.com" class="mouse-sm" itemprop="email">hello@marchantweb.com</a>.
             </p>
             <ActionButton to="/contact" data-aos="fade-up" class="d-none d-lg-block">
               <i class="fa-sharp fa-solid fa-comment"></i>
@@ -172,7 +178,7 @@ useHead({
   }
 }
 
-.headshot{
+.headshot {
   width: 120px;
   border-radius: 50%;
 

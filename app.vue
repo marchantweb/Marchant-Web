@@ -23,10 +23,10 @@ import {useHead} from "nuxt/app";
 useHead({
   title: 'Simon Le Marchant | Creative Front End Engineer',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
-  lang: 'en',
+  lang: 'en-US',
   charset: 'utf-8',
   htmlAttrs: {
-    lang: 'en',
+    lang: 'en-US',
   },
   meta: [
     {
