@@ -123,6 +123,7 @@ watch(() => props.isFocused, (isFocused) => {
 
   @media screen and (max-width: 992px) {
     width: calc(100vw - 60px);
+    transform: scale(0.8);
   }
 }
 
@@ -151,7 +152,7 @@ watch(() => props.isFocused, (isFocused) => {
   position: relative;
 
   @media screen and (max-width: 992px) {
-    height: calc(100vh - 400px);
+    height: calc(100vh - 440px);
   }
 }
 
