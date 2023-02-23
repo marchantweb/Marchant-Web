@@ -61,19 +61,6 @@
             </div>
           </div>
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
-            <div itemprop="awards">
-              <h3 class="mt-6 mb-4">Awards &amp; Recognition</h3>
-              <p>
-                I was in the top 3% of all full-stack developers on UpWork as a top-rated professional, and touched
-                multitudes of different projects with a near perfect 5-star rating.
-              </p>
-              <p>
-                I've also supported teams on other projects that have won awards at various levels from different
-                organizations, and have been considered a <em>"Star Partner"</em> with one particular client for
-                completely
-                overhauling their online business, driving $3M+ in revenue.
-              </p>
-            </div>
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
               I provide consulting and work-for-hire for agencies looking to build next-level creative projects. I can
