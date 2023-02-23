@@ -32,7 +32,7 @@
               </p>
               <p>
                 I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
-                understanding of user interactions and best practices. I’ve worked on many projects where I start early
+                understanding of interaction design and best practices. I’ve worked on many projects where I start early
                 in
                 the discovery process, guide and design the UX from the ground up, and then get to work building it.
               </p>
