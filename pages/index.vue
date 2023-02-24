@@ -66,6 +66,11 @@ const headingChars = heading.split('');
 
 <style lang="scss" scoped>
 
+*{
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .lead {
   color: #F2F2F2;
   user-select: none;

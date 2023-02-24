@@ -4,13 +4,25 @@
     <NavMenu/>
 
     <div class="container-xxxl pt-4 pt-lg-6">
-      <div class="row">
+      <div class="row justify-content-between">
         <div class="col-auto d-flex flex-row align-items-center">
+
+          <!-- Back to Home -->
           <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home
           </NuxtLink>
 
-          <PortfolioScrubber class="ms-6 d-none d-xxl-flex" :portfolioData="portfolioData" :selected="selected" @updateSelected="updateSelected"/>
+          <PortfolioScrubber class="ms-6 d-none d-xxl-flex" :portfolioData="portfolioData" :selected="selected"
+                             @updateSelected="updateSelected"/>
 
+        </div>
+        <div class="col-auto position-relative">
+          <!-- Pagination Controls -->
+          <div class="pagination pe-5 pe-xl-6 d-none d-lg-flex" v-if="portfolioData">
+            <i class="fa-sharp fa-regular fa-arrow-left-long fa-3x pagination--prev mouse-md"
+               @click.prevent="paginatePrev" :class="{'disabled': selected === 0}"></i>
+            <i class="fa-sharp fa-regular fa-arrow-right-long fa-3x pagination--next mouse-md"
+               @click.prevent="paginateNext" :class="{'disabled': selected === portfolioData.length - 1}"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -33,11 +45,13 @@
       </div>
     </div>
 
+
     <div id="bottom-bar" class="container-xxxl">
       <BottomBar/>
     </div>
 
-    <PortfolioScrubber class="portfolio-links--mobile d-flex d-lg-none" :portfolioData="portfolioData" :selected="selected" @updateSelected="updateSelected"/>
+    <PortfolioScrubber class="portfolio-links--mobile d-flex d-lg-none" :portfolioData="portfolioData"
+                       :selected="selected" @updateSelected="updateSelected"/>
 
   </section>
 </template>
@@ -66,16 +80,16 @@ useHead({
 
 const {width, height} = useWindowSize();
 const portfolioItemWidth = computed(() => {
-  if(width.value > 1680){
+  if (width.value > 1680) {
     return 1040;
   }
-  if(width.value > 1400){
+  if (width.value > 1400) {
     return 960;
   }
-  if(width.value > 1200){
+  if (width.value > 1200) {
     return 800;
   }
-  if(width.value > 992){
+  if (width.value > 992) {
     return 700;
   }
   return width.value - 60;
@@ -126,9 +140,9 @@ let draggable = null;
  * Handle wheel events as portfolio scrolling, but push back against touchpads
  * @param event
  */
-const wheelHandler = (event) =>{
+const wheelHandler = (event) => {
   const isTouchPad = event["wheelDeltaY"] ? event["wheelDeltaY"] === -3 * event.deltaY : event.deltaMode === 0;
-  if(!isTouchPad){
+  if (!isTouchPad) {
     let newSelected = selected.value;
     if (event.deltaY > 0) {
       newSelected += 1
@@ -139,9 +153,18 @@ const wheelHandler = (event) =>{
   }
 }
 
+const paginateNext = () => {
+  let newSelected = selected.value + 1;
+  updateSelected(newSelected);
+}
+
+const paginatePrev = () => {
+  let newSelected = selected.value - 1;
+  updateSelected(newSelected);
+}
+
 onMounted(() => {
 
-  selected.value = 0;
   gsap.registerPlugin(Draggable, InertiaPlugin);
 
   // Wheel Events
@@ -169,7 +192,6 @@ onMounted(() => {
 
 });
 onActivated(() => {
-  selected.value = 0;
   setupDraggable();
 });
 onUnmounted(() => {
@@ -215,6 +237,11 @@ function setupDraggable() {
 
 <style lang="scss" scoped>
 
+*{
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 h1 {
   color: #F2F2F2;
   text-shadow: -1px -1px 0px rgb(54, 201, 227), 1px 1px 0px rgb(255, 0, 106), 0px 4px 10px rgb(0 0 0 / 50%);
@@ -245,11 +272,11 @@ h1 {
   transform: translateX(10%);
 }
 
-.feed-section__extraElement{
+.feed-section__extraElement {
   width: 1040px;
   height: 10px;
   display: block;
-  flex:none;
+  flex: none;
 
   @media screen and (max-width: 1680px) {
     width: 960px;
@@ -263,6 +290,42 @@ h1 {
     width: 700px;
   }
 
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 180px;
+  right: 0;
+  z-index: 50;
+  gap: 60px;
+
+  i {
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &.disabled {
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    &.pagination--prev {
+
+      &:hover {
+        transform: translateX(-5px);
+      }
+    }
+
+    &.pagination--next {
+
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+  }
 }
 
 </style>
