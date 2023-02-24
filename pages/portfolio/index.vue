@@ -44,7 +44,7 @@
 
 <script setup>
 
-import {useEventListener, useThrottleFn, useWindowSize} from "@vueuse/core";
+import {useEventListener, useWindowSize} from "@vueuse/core";
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable";
 import {InertiaPlugin} from "gsap/InertiaPlugin";
@@ -122,15 +122,22 @@ const updateDragSelected = function (event) {
 
 let draggable = null;
 
-const wheelHandler = useThrottleFn((event) => {
-  let newSelected = selected.value;
-  if (event.deltaY > 0) {
-    newSelected += 1
-  } else {
-    newSelected -= 1
+/**
+ * Handle wheel events as portfolio scrolling, but push back against touchpads
+ * @param event
+ */
+const wheelHandler = (event) =>{
+  const isTouchPad = event["wheelDeltaY"] ? event["wheelDeltaY"] === -3 * event.deltaY : event.deltaMode === 0;
+  if(!isTouchPad){
+    let newSelected = selected.value;
+    if (event.deltaY > 0) {
+      newSelected += 1
+    } else {
+      newSelected -= 1
+    }
+    updateSelected(newSelected);
   }
-  updateSelected(newSelected);
-}, 100)
+}
 
 onMounted(() => {
 
