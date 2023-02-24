@@ -81,14 +81,11 @@ watch(route, () => {
 .cursor {
   position: fixed;
   z-index: 10000;
-  background-color: white;
-  border: 2px solid white;
   border-radius: 100%;
   top: 0;
   left: 0;
-  backdrop-filter: grayscale(1);
-  mix-blend-mode: difference;
-  box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  backdrop-filter: invert(1) grayscale(1);
+  -webkit-backdrop-filter: invert(1) grayscale(1);
   pointer-events: none;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
