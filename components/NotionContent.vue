@@ -4,6 +4,7 @@
       <NotionHeading :block="block" v-if="block.type === 'heading_2'"/>
       <NotionImage :block="block" v-if="block.type === 'image'"/>
       <NotionParagraph :block="block" v-if="block.type === 'paragraph'"/>
+      <NotionQuote :block="block" v-if="block.type === 'quote'"/>
     </div>
   </section>
 </template>
