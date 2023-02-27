@@ -14,8 +14,8 @@
       </ul>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
-      <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-6 text-decoration-none" aria-label="View this site on GitHub"><i
-          class="fa-brands fa-github fa-xl github-icon mouse-sm d-none d-xl-inline text-decoration-none" title="View this site on GitHub"></i></NuxtLink>
+      <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none" aria-label="Find me on Twitter"><i class="fa-brands fa-twitter fa-xl twitter-icon mouse-sm d-none d-xl-inline text-decoration-none" title="Find me on Twitter"></i></NuxtLink>
+      <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-6 text-decoration-none" aria-label="View this site on GitHub"><i class="fa-brands fa-github fa-xl github-icon mouse-sm d-none d-xl-inline text-decoration-none" title="View this site on GitHub"></i></NuxtLink>
       <StatusIndicator class="d-none d-xl-block"/>
     </div>
   </div>
@@ -42,7 +42,7 @@
   }
 }
 
-.github-icon, .audio-icon {
+.github-icon, .audio-icon, .twitter-icon {
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 
