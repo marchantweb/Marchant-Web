@@ -304,8 +304,6 @@ body.fixed-webgl {
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
   transition: transform 2s cubic-bezier(0.65, 0, 0.15, 1);
 
   &.hero--about {
@@ -318,7 +316,7 @@ body.fixed-webgl {
 
     @media screen and (max-width: 768px) {
       transition-delay: 0s;
-      transform: translateX(100vw);
+      transform: translateX(120vw);
     }
   }
 
@@ -332,7 +330,7 @@ body.fixed-webgl {
 
     @media screen and (max-width: 768px) {
       transition-delay: 0s;
-      transform: translateX(-100vw);
+      transform: translateX(-120vw);
     }
   }
 }
@@ -373,7 +371,7 @@ body.fixed-webgl {
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgb(50 50 93 / 20%) 0 100px 20px -75px, #742bff 0px 13px 156px -40px;
+    box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
 
