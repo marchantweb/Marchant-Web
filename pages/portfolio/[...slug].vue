@@ -35,14 +35,17 @@
               <dt v-if="currentPortfolioItem['client']">Client</dt>
               <dd v-if="currentPortfolioItem['client']"> {{ currentPortfolioItem['client']}} </dd>
 
-              <dt v-if="currentPortfolioItem['partner']">Partner</dt>
+              <dt class="mt-4" v-if="currentPortfolioItem['partner']">Partner</dt>
               <dd v-if="currentPortfolioItem['partner']"> {{ currentPortfolioItem['partner']}} </dd>
 
-              <dt v-if="currentPortfolioItem['role']">Role</dt>
+              <dt class="mt-4" v-if="currentPortfolioItem['role']">Role</dt>
               <dd v-if="currentPortfolioItem['role']"> {{ currentPortfolioItem['role']}} </dd>
 
-              <dt v-if="currentPortfolioItem['completed']">Completed</dt>
+              <dt class="mt-4" v-if="currentPortfolioItem['completed']">Completed</dt>
               <dd v-if="currentPortfolioItem['completed']"> {{ currentPortfolioItem['completed']}} </dd>
+
+              <dt class="mt-4" v-if="currentPortfolioItem['awards']">Recognition</dt>
+              <dd v-if="currentPortfolioItem['awards']" v-html="currentPortfolioItem['awards'].replace(/\n/g, '<br />')"></dd>
 
             </dl>
             <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" data-aos="fade-up">
