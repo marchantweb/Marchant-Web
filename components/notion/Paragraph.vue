@@ -3,15 +3,14 @@
     <p data-aos="fade-up">
       <span v-for="item in block['paragraph']['rich_text']" :class="textClasses(item)"
             :style="textStyles(item)">
-        <template v-if="item.text.link.length > 1">
+        <span v-if="item.text.link.length > 1">
           <a :href="item.text.link.url" target="_blank" rel="noopener noreferrer" class="mouse-md">
             {{ item.text.content }}
           </a>
-
-        </template>
-        <template v-else>
+        </span>
+        <span v-else>
           {{ item.text.content }}
-        </template>
+        </span>
       </span>
     </p>
   </div>
