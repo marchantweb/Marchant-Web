@@ -15,31 +15,28 @@
                 <StatusIndicator type="dark"/>
               </div>
             </div>
-            <h2 class="my-4" itemprop="description">Senior front end engineer with 10+ years building creative websites,
-              interactive
-              experiences
-              and custom web software.</h2>
+            <h2 class="my-4" itemprop="description">Senior front end engineer with 15+ years designing and programming
+              creative websites / applications.</h2>
             <div itemprop="knowsAbout">
               <p>
-                Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I'm passionate about creating
-                incredible user experiences with web technology. I specialize in programming with <a
-                  href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>,
-                <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
+                Hey I’m Simon, and I'm based in Orlando, Florida. My work revolves around creating
+                unique interactive experiences with browser-based technology. I specialize in <a href="https://nuxt.com/" target="_blank"
+                                                                           class="mouse-sm">Nuxt</a>/<a
+                  href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, and <a
                   href="https://electronJS.org/"
                   target="_blank"
                   class="mouse-sm">Electron</a>,
-                although I have an extensive full-stack development background.
+                although I come from an extensive full-stack development background.
               </p>
               <p>
-                I love writing code but I'm also experienced in UX consulting, with a keen eye for detail and an
-                understanding of interaction design and best practices. I’ve worked on many projects where I start early
-                in
-                the discovery process, guide and design the UX from the ground up, and then get to work building it.
+                I love writing code but I'm also experienced in UX design, with a keen eye for detail and a deep
+                understanding of best practices. I often lead projects from ideation and architecture through
+                implementation and Q/A.
               </p>
             </div>
             <h3 class="mt-5 mb-4">Clients &amp; Partners</h3>
             <p class="mb-4">
-              Over the past 10+ years I've had the opportunity to work alongside some of the most talented people in the
+              Over the past 15+ years I've had the opportunity to work alongside some of the most talented people in the
               industry for some incredible clients, such as:
             </p>
           </div>
@@ -63,12 +60,13 @@
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
             <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
             <p>
-              <strong>I specialize in expert consulting, UX design, and front end programming for agencies that are building cutting-edge web experiences for their clients.</strong> From solo work to supporting your team as a technical lead, I'm here to help;
-              working efficiently and collaboratively to bring each project to life.
+              <strong>I'm available for project consulting, UX design, and creative programming for agencies that are
+                building cutting-edge web experiences for their clients.</strong> From taking on a project solo, to
+              supporting your team as a technical lead, I'm here to help.
             </p>
-            <p>My hourly rate for work-for-hire <em>(UX design and development)</em> is $180/hr., whereas consulting is
-              billed at $225/hr. I’m always happy to provide an estimate for any project following an initial discovery
-              call.</p>
+            <p>My rate for work-for-hire is $180/hr. and one-off consultations are billed at $225/hr. I’m always happy
+              to
+              provide an estimate for any project, but typically work hourly thereafter.</p>
             <h3 class="mt-5 mb-4">
               Get in Touch
             </h3>

@@ -80,13 +80,11 @@
 <script setup>
 
 // Imports
-import {useFps, useMouse, useWindowSize} from "@vueuse/core";
+import {useMouse, useWindowSize, useElementVisibility, useWindowFocus} from "@vueuse/core";
 import {createShader, createProgram} from "~/shaders/shaderHelpers";
 import fragment from "~/shaders/hero/fragment.js";
 import vertex from "~/shaders/hero/vertex.js";
 import {gsap} from "gsap";
-import {useWindowFocus} from '@vueuse/core'
-import {useElementVisibility} from '@vueuse/core'
 
 // Non-reactive WebGL variables
 let gl = null;

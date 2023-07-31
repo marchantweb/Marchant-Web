@@ -7,10 +7,10 @@
     <div class="col-5 col-xl-4 ms-5 mb-3 me-auto">
       <ul class="tech-stack">
         <li>UX</li>
-        <li>Vue</li>
         <li>Nuxt</li>
+        <li>Vue</li>
         <li>Electron</li>
-        <li>WebGL</li>
+        <li>Consulting</li>
       </ul>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
