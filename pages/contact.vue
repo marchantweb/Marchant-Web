@@ -10,14 +10,11 @@
           <h1 class="mb-4">Let's Chat</h1>
           <p class="mb-4">Feel free to reach out. I'm always happy to chat to discuss ideas, feasibility, schedule,
             things like that. Or if you just have questions or want to say hi, that's cool too.</p>
-          <h2 class="mb-6">👋 <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md"
+          <h2 class="mb-7"><a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md"
                                 style="color: #7A4FEE">hello@marchantweb.com</a></h2>
           <h3 class="mb-3">Discovery Session</h3>
-          <p>Once you're serious about working with me, the first step is to schedule a one-hour meeting to see if we're
-            a good fit, and to get on the same page about the work that you're looking for.</p>
-          <p class="mb-5"><strong>Please note that I bill $225 for an initial one-hour session.</strong> This helps me
-            to adequately prepare, block off the time, and ensure that the conversation is productive for both of us.
-          </p>
+          <p class="mb-4">If you want to dive more into your project specifics, you can schedule a 30-minute meeting to see if we're
+            a good fit.</p>
           <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
             <i class="fa-sharp fa-regular fa-calendar-range fa-lg"></i>
             Book a Discovery Session
