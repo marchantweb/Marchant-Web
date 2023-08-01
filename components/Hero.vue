@@ -258,16 +258,16 @@ onMounted(() => {
  */
 const route = useRoute();
 let zoomOffset = ref(route.path === '/portfolio' ? 1 : 0);
-watch(route, (route) => {
-  if (route["path"] === "/portfolio") {
+watch(() => route.path, (newVal, oldVal) => {
+  if (newVal === "/portfolio") {
     gsap.to(zoomOffset, {
-      duration: 6,
+      duration: 5,
       value: 1,
       ease: "power1.out"
     });
   } else {
     gsap.to(zoomOffset, {
-      duration: 6,
+      duration: 5,
       value: 0,
       ease: "power1.inOut"
     });

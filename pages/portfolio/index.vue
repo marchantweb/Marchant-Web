@@ -18,9 +18,9 @@
         <div class="col-auto position-relative">
           <!-- Pagination Controls -->
           <div class="pagination pe-5 pe-xl-6 d-none d-lg-flex" v-if="portfolioData">
-            <i class="fa-sharp fa-regular fa-arrow-left-long fa-3x pagination--prev mouse-md"
+            <i class="fa-sharp fa-light fa-angles-left fa-3x pagination--prev mouse-md"
                @click.prevent="paginatePrev" :class="{'disabled': selected === 0}"></i>
-            <i class="fa-sharp fa-regular fa-arrow-right-long fa-3x pagination--next mouse-md"
+            <i class="fa-sharp fa-light fa-angles-right fa-3x pagination--next mouse-md"
                @click.prevent="paginateNext" :class="{'disabled': selected === portfolioData.length - 1}"></i>
           </div>
         </div>

@@ -4,13 +4,13 @@
     <NavMenu/>
 
     <div id="bottom-bar" class="container-xxxl">
-      <div class="row mb-3 mb-lg-5 mb-xxl-6 justify-content-between align-items-end">
-        <div class="col-11 col-sm-8 col-xxl-6 col-xxxl-7">
-          <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-4 mb-lg-5" aria-hidden="true"></i>
+      <div class="row mb-3 mb-lg-5 mb-xxl-7 justify-content-between align-items-end">
+        <div class="col-11 col-sm-7 col-xxl-5 col-xxxl-5">
+          <i class="fa-sharp fa-light fa-wand-magic-sparkles lead-icon mb-4 mb-lg-5 mouse-md" aria-hidden="true"></i>
           <h1 class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
             <span class="heading-char" aria-hidden="true"
-                  :style="{'animation-delay': (index % 5 === 0 ? 0.7 : 0.005 * index) + 's'}"
+                  :style="{'animation-delay': (index % 5 === 0 ? 0.7 : 0.01 * index) + 's'}"
                   v-for="(char, index) in headingChars">{{ char }}
             </span>
           </h1>
@@ -54,7 +54,7 @@ onMounted(() => {
   preloadRouteComponents('/portfolio');
 });
 
-const heading = "SENIOR FRONT END ENGINEER WHO HELPS AGENCIES DELIVER CREATIVE WORK;"
+const heading = "I help agencies bring creative projects to life;"
 const headingChars = heading.split('');
 
 </script>
@@ -69,7 +69,7 @@ const headingChars = heading.split('');
 .lead {
   color: #F2F2F2;
   user-select: none;
-  text-shadow: -1px 0 0 rgb(44, 191, 217), 1px 0 0 rgb(239, 9, 105);
+  text-shadow: -1px 0 0 rgb(44, 191, 217), 1px 0 0 rgb(239, 9, 105), 0px 2px 0 rgb(91, 48, 246);
   transition: text-shadow 0.1s ease-in-out;
 
   @media screen and (max-width: 992px) {
@@ -86,7 +86,7 @@ const headingChars = heading.split('');
 .lead-icon {
   color: #F2F2F2;
   font-size: 40px;
-  text-shadow: 0 22px 30px rgba(0, 0, 0, 0.4), 2px 2px 1px rgba(206, 89, 55, 0);
+  text-shadow: 0 22px 30px rgba(0, 0, 0, 0.2), 2px 2px 1px rgba(206, 89, 55, 0);
   animation: leadIconAnimation 1s ease-in-out forwards;
   animation-delay: 1s;
   opacity: 0;
