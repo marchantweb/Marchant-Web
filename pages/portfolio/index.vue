@@ -11,8 +11,10 @@
           <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home
           </NuxtLink>
 
-          <PortfolioScrubber class="ms-6 d-none d-xxl-flex" :portfolioData="portfolioData" :selected="selected"
-                             @updateSelected="updateSelected"/>
+          <div v-if="portfolioData">
+            <PortfolioScrubber class="ms-6 d-none d-xxl-flex" :portfolioData="portfolioData" :selected="selected"
+                               @updateSelected="updateSelected"/>
+          </div>
 
         </div>
         <div class="col-auto position-relative">
@@ -28,18 +30,21 @@
     </div>
 
     <div id="portfolio-feed-container" class="container-fluid mt-5 mt-lg-6 px-0" style="overflow: hidden;">
-      <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies"
-           v-if="portfolioData">
+      <div id="portfolio-feed" class="feed-section" role="feed" aria-busy="false" aria-label="Case Studies">
 
-        <div class="feed-section__container-padding"/>
+        <template v-if="portfolioData">
 
-        <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
-                      :index="index"
-                      v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
+          <div class="feed-section__container-padding"/>
 
-        <div class="feed-section__extraElement"/>
+          <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
+                        :index="index"
+                        v-for="(portfolioItem, index) in portfolioData" :isFocused="index === selected"/>
 
-        <div class="feed-section__container-padding"/>
+          <div class="feed-section__extraElement"/>
+
+          <div class="feed-section__container-padding"/>
+
+        </template>
 
 
       </div>
@@ -50,8 +55,10 @@
       <BottomBar/>
     </div>
 
-    <PortfolioScrubber class="portfolio-links--mobile d-flex d-lg-none" :portfolioData="portfolioData"
-                       :selected="selected" @updateSelected="updateSelected"/>
+    <div v-if="portfolioData">
+      <PortfolioScrubber class="portfolio-links--mobile d-flex d-lg-none" :portfolioData="portfolioData"
+                         :selected="selected" @updateSelected="updateSelected"/>
+    </div>
 
   </section>
 </template>
@@ -149,7 +156,10 @@ const wheelHandler = (event) => {
     } else {
       newSelected -= 1
     }
-    updateSelected(newSelected);
+    if (portfolioData.value && portfolioData.value.length > 0) {
+      updateSelected(newSelected);
+    }
+
   }
 }
 
@@ -189,7 +199,6 @@ onMounted(() => {
   });
 
   setupDraggable();
-
 });
 onActivated(() => {
   setupDraggable();
@@ -225,9 +234,7 @@ function setupDraggable() {
         minX: 0,
         maxX: portfolioItemWidth.value * (portfolioData.value.length - 1) * -1
       },
-      //onDrag: updateDragSelected,
       onDragEnd: updateDragSelected,
-      //allowNativeTouchScrolling: false,
       zIndexBoost: false
     });
   });
@@ -237,7 +244,7 @@ function setupDraggable() {
 
 <style lang="scss" scoped>
 
-*{
+* {
   user-select: none;
   -webkit-user-select: none;
 }

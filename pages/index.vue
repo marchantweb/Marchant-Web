@@ -45,16 +45,19 @@
 
 import {useEventListener} from "@vueuse/core";
 
+let navigatingToPortfolio = false;
+
 onMounted(() => {
+  preloadRouteComponents('/portfolio');
   useEventListener(document, 'wheel', async (event) => {
-    if (event.deltaY > 0) {
-      await navigateTo('/portfolio');
+    if (event.deltaY > 0 &&!navigatingToPortfolio) {
+      navigatingToPortfolio = true;
+      navigateTo('/portfolio');
     }
   });
-  preloadRouteComponents('/portfolio');
 });
 
-const heading = "I help agencies bring creative projects to life;"
+const heading = "I help agencies deliver web-based experiences;"
 const headingChars = heading.split('');
 
 </script>

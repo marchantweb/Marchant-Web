@@ -162,6 +162,7 @@ watch(() => props.isFocused, (isFocused) => {
   object-fit: cover;
   object-position: center center;
   transform-origin: center center;
+  background-color: #25223d;
 }
 
 .project-cover--focused {
