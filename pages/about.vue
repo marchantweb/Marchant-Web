@@ -9,7 +9,7 @@
                 class="fa-sharp fa-solid fa-arrow-up-right fa-2x ps-3"></i></NuxtLink>
             <CodeTag class="mt-5 mb-5 d-none d-lg-block">about</CodeTag>
             <div class="d-flex flex-row align-items-center mb-5">
-              <img src="~assets/images/headshot.png" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
+              <img src="~assets/images/headshot.jpg" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
               <div>
                 <h1 class="mb-1" itemprop="name">Simon Le Marchant</h1>
                 <StatusIndicator type="dark"/>
