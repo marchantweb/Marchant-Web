@@ -57,7 +57,7 @@ onMounted(() => {
   });
 });
 
-const heading = "I help agencies deliver web-based experiences;"
+const heading = "I help agencies deliver creative web experiences;"
 const headingChars = heading.split('');
 
 </script>

@@ -21,7 +21,7 @@
 import {useHead} from "nuxt/app";
 
 useHead({
-  title: 'Simon Le Marchant | Creative Front End Engineer',
+  title: 'Home — Simon Le Marchant',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
   lang: 'en-US',
   charset: 'utf-8',

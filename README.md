@@ -1,4 +1,4 @@
-# Marchant Web '23
+# Marchant Web '24
 
 ![Homepage Screenshot](public/cover.jpg)
 

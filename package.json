@@ -9,17 +9,17 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.7.2",
-    "bootstrap": "^5.2.3",
-    "nuxt": "^3.6.5",
+    "@nuxt/devtools": "^1.0.6",
+    "bootstrap": "^5.3.2",
+    "nuxt": "^3.8.2",
     "raw-loader": "^4.0.2"
   },
   "dependencies": {
-    "@vueuse/core": "^9.9.0",
+    "@vueuse/core": "^10.7.0",
     "aos": "^2.3.4",
-    "gsap": "npm:@gsap/shockingly@^3.11.4",
-    "sass": "^1.55.0",
-    "sass-loader": "^13.0.2"
+    "gsap": "npm:@gsap/shockingly@^3.12.3",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2"
   },
   "engines": {
     "node": ">=19.6.1",
