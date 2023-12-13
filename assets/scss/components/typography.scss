@@ -26,7 +26,7 @@ h1 {
 
   &.lead {
     @include font-size(4rem);
-    @include rfs(3.2rem, line-height);
+    @include rfs(3.3rem, line-height);
     font-weight: 700;
 
     @media screen and (max-width: 992px) {
