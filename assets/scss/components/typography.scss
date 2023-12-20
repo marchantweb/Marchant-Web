@@ -24,6 +24,12 @@ h1 {
   @include rfs(2.6rem, line-height);
   font-weight: 600;
 
+  &.article__title{
+    @include font-size(3rem);
+    @include rfs(3.5rem, line-height);
+    font-weight: 700;
+  }
+
   &.lead {
     @include font-size(4rem);
     @include rfs(3.3rem, line-height);

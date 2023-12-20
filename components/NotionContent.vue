@@ -1,10 +1,10 @@
 <template>
   <section v-once>
     <div v-for="block in blocks" :key="block.id">
-      <NotionHeading :block="block" v-if="block.type === 'heading_2'"/>
-      <NotionImage :block="block" v-if="block.type === 'image'"/>
-      <NotionParagraph :block="block" v-if="block.type === 'paragraph'"/>
-      <NotionQuote :block="block" v-if="block.type === 'quote'"/>
+      <NotionHeading :isArticle="isArticle" :block="block" v-if="block.type === 'heading_2'"/>
+      <NotionImage :isArticle="isArticle" :block="block" v-if="block.type === 'image'"/>
+      <NotionParagraph :isArticle="isArticle" :block="block" v-if="block.type === 'paragraph'"/>
+      <NotionQuote :isArticle="isArticle" :block="block" v-if="block.type === 'quote'"/>
     </div>
   </section>
 </template>
@@ -15,6 +15,10 @@ defineProps({
   blocks: {
     type: Array,
     required: true
+  },
+  isArticle: {
+    type: Boolean,
+    default: false
   }
 })
 

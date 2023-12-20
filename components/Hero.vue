@@ -282,6 +282,7 @@ const heroClasses = computed(() => {
     'hero--about': route.path === '/about',
     'hero--contact': route.path === '/contact',
     'hero--portfolio-single': route.path.startsWith('/portfolio/'),
+    'hero--article-single': route.path.startsWith('/article/'),
   }
 });
 
@@ -389,6 +390,10 @@ body.fixed-webgl {
     @media screen and (max-width: 992px) {
       clip-path: polygon(0 0, 100% 0, 100% 35%, 0 52%);
     }
+  }
+
+  &.hero--article-single {
+    clip-path: polygon(15% 0, 100% 0, 80% 200px, 15% 0);
   }
 }
 

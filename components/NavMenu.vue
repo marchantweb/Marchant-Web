@@ -6,14 +6,11 @@
             <div class="nav-icon__line"></div>
           </div>
           <nav class="nav-links">
-            <NuxtLink to="/" class="mouse-md">
-              Home
-            </NuxtLink>
             <NuxtLink to="/about" class="mouse-md">
               About
             </NuxtLink>
             <NuxtLink to="/portfolio" class="mouse-md">
-              Projects
+              Work
             </NuxtLink>
             <NuxtLink to="/contact" class="mouse-md">
               Contact
@@ -113,7 +110,7 @@ const navClasses = computed(() => {
 
       &:nth-child(2){
         transition: transform 0.7s cubic-bezier(0.7, 0, 0, 1);
-        transform: translate(min(-45vw, -700px));
+        transform: translate(-600px);
       }
 
       &:nth-child(3){

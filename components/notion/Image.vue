@@ -26,6 +26,12 @@ img{
   box-shadow: rgba(0,0,0,0.2) 0 60px 15px -40px, rgba(0,0,0,0.06) 0 4px 6px -2px;
 }
 
+.article__content img{
+  margin-left: -120px;
+  margin-right: -120px;
+  width: calc(100% + 240px);
+}
+
 figcaption{
   opacity: 0.5;
   font-size: 14px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 col-lg-11 col-xl-9 col-xxl-8">
+  <div :class="isArticle ? 'col' : 'col-12 col-lg-11 col-xl-9 col-xxl-8'">
     <p data-aos="fade-up">
       <span v-for="item in block['paragraph']['rich_text']" :class="textClasses(item)"
             :style="textStyles(item)">
@@ -22,6 +22,10 @@ defineProps({
   block: {
     type: Object,
     required: true
+  },
+  isArticle: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -65,6 +69,11 @@ p {
       font-weight: bold !important;
     }
   }
+}
+
+.article__content p span{
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 </style>
