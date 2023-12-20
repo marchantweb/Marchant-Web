@@ -14,12 +14,12 @@
       <div class="row mt-5 mt-lg-8 mt-xl-9 pb-3 justify-content-center">
         <main class="col-12 col-lg-6">
           <div class="col">
-            <h1 class="mb-3 mb-lg-4 article__title"> {{ currentArticleItem['title'] }} </h1>
+            <h1 class="mb-3 mb-lg-4 article__title mouse-md"> {{ currentArticleItem['title'] }} </h1>
             <h2 class="article__lead mb-5"> {{ currentArticleItem['lead'] }} </h2>
             <div class="d-flex flex-row align-items-center mb-4">
               <img src="~assets/images/headshot.jpg" alt="Simon Le Marchant" class="article__headshot me-4 mouse-sm">
               <div>
-                <label class="article__author" itemprop="name">Simon Le Marchant · <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink">Follow on 𝕏</a></label>
+                <label class="article__author" itemprop="name">Simon Le Marchant · <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Follow on 𝕏</a></label>
                 <span class="article__readtime">X min read · MMM 'YY</span>
               </div>
             </div>
@@ -38,15 +38,11 @@
 <script setup>
 
 const route = useRoute();
-const portfolioData = await usePortfolio();
+const articleData = await useArticles();
 
 const currentArticleItem = computed(() => {
-  return {
-    title: 'Serializing and rehydrating composables in Pinia stores.',
-    lead: 'Pinia stores provide many ways to persist their state. In this article, we will explore how to serialize and rehydrate composables in Pinia stores.',
-    pageContent: portfolioData.value[0].pageContent
-  };
-})
+  return articleData.value[articleData.value.findIndex(article => article["slug"] === route.params["slug"][0])];
+});
 
 useHead({
   title: currentArticleItem.value['title'] + ' | ' + 'Marchant Web',
