@@ -20,7 +20,7 @@
               <img src="~assets/images/headshot.jpg" alt="Simon Le Marchant" class="article__headshot me-4 mouse-sm">
               <div>
                 <label class="article__author" itemprop="name">Simon Le Marchant · <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Follow on 𝕏</a></label>
-                <span class="article__readtime">X min read · MMM 'YY</span>
+                <span class="article__readtime">{{ readTime}} · MMM 'YY</span>
               </div>
             </div>
             <hr class="mb-6">
@@ -42,6 +42,19 @@ const articleData = await useArticles();
 
 const currentArticleItem = computed(() => {
   return articleData.value[articleData.value.findIndex(article => article["slug"] === route.params["slug"][0])];
+});
+
+const readTime = computed(() => {
+  let totalTextLength = 0;
+  currentArticleItem.value['pageContent'].forEach((block) => {
+    if ((block.type === 'paragraph' || block.type === 'code') && block[block.type]["rich_text"].length) {
+      block[block.type]["rich_text"].forEach((textBlock) => {
+        totalTextLength += textBlock["plain_text"].trim().split(/\s+/).length;
+      });
+    }
+  });
+  const readTimeMinutes = Math.ceil(totalTextLength / 100);
+  return `${readTimeMinutes} min read`;
 });
 
 useHead({
