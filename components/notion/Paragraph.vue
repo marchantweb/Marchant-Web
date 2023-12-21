@@ -66,7 +66,6 @@ p {
       border-radius: 3px;
       font-family: "JetBrains Mono", monospace;
       font-size: 14px;
-      font-weight: bold !important;
     }
   }
 }

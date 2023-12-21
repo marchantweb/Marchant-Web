@@ -1,10 +1,12 @@
 <template>
   <section v-once>
     <div v-for="block in blocks" :key="block.id">
-      <NotionHeading :isArticle="isArticle" :block="block" v-if="block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3'"/>
+      <NotionHeading :isArticle="isArticle" :block="block"
+                     v-if="block.type === 'heading_1' || block.type === 'heading_2' || block.type === 'heading_3'"/>
       <NotionImage :isArticle="isArticle" :block="block" v-if="block.type === 'image'"/>
       <NotionParagraph :isArticle="isArticle" :block="block" v-if="block.type === 'paragraph'"/>
       <NotionQuote :isArticle="isArticle" :block="block" v-if="block.type === 'quote'"/>
+      <NotionCode :isArticle="isArticle" :block="block" v-if="block.type === 'code'"/>
     </div>
   </section>
 </template>
