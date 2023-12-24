@@ -10,35 +10,32 @@
             <CodeTag class="mt-5 mb-5 d-none d-lg-block">about</CodeTag>
             <div class="d-flex flex-row align-items-center mb-5">
               <img src="~assets/images/headshot.jpg" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
-              <div>
-                <h1 class="mb-1" itemprop="name">Simon Le Marchant</h1>
-                <StatusIndicator type="dark"/>
-              </div>
             </div>
-            <h2 class="my-4" itemprop="description">Senior front end engineer with 15+ years designing and programming
-              creative websites / applications.</h2>
+            <h2 class="my-4" itemprop="description">Hey I'm Simon — a front-end engineer with 15+ years in
+              leading and crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                Hey I’m Simon, and I'm based in Orlando, Florida. My work revolves around creating
-                unique interactive experiences with browser-based technology. I specialize in <a href="https://nuxt.com/" target="_blank"
-                                                                           class="mouse-sm">Nuxt</a>/<a
-                  href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, and <a
-                  href="https://electronJS.org/"
-                  target="_blank"
-                  class="mouse-sm">Electron</a>,
-                although I come from an extensive full-stack development background.
+                I enjoy building with <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>,
+                <a
+                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, and <a
+                  href="https://electronJS.org/" target="_blank" class="mouse-sm">Electron</a>, but my journey in tech
+                spans a comprehensive full-stack development landscape, going all the way back to when Macromedia Flash
+                and ActionScript was
+                a thing.
               </p>
               <p>
-                I love writing code but I'm also experienced in UX design, with a keen eye for detail and a deep
-                understanding of best practices. I often lead projects from ideation and architecture through
-                implementation and Q/A.
+                I've worked with a wide range of clients, from startups to Fortune 500 companies; typically in a leading
+                technical role, but also as a helping hand on a larger team. Usually I partner with agencies and
+                startups to provide
+                one or more sprints of focused work.
+              </p>
+              <p>
+                Beyond code proficiency, I bring a practical understanding of UX design principles on top of marketing
+                and product development experience. From initial concept to final Q/A checks, I enjoy guiding
+                projects through each phase and delivering top-notch work.
               </p>
             </div>
-            <h3 class="mt-5 mb-4">Clients &amp; Partners</h3>
-            <p class="mb-4">
-              Over the past 15+ years I've had the opportunity to work alongside some of the most talented people in the
-              industry for some incredible clients, such as:
-            </p>
+            <h3 class="mt-5 mb-3">Some companies I've worked with:</h3>
           </div>
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxxl-6">
             <div class="client-logo__container">
@@ -58,26 +55,19 @@
             </div>
           </div>
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
-            <h3 class="mt-5 mb-4">Freelancing &amp; Consulting</h3>
+            <h3 class="mt-5 mb-4">Availability</h3>
             <p>
-              <strong>I'm available for project consulting, UX design, and creative programming for agencies that are
-                building cutting-edge web experiences for their clients.</strong> From taking on a project solo, to
-              supporting your team as a technical lead, I'm here to help.
+              I'm interested in collaborating with teams that are building creative websites, interactive experiences,
+              or bespoke Electron apps — especially where the front-end requirements present complex and unique
+              challenges.
             </p>
-            <p>My rate for work-for-hire is $180/hr. and one-off consultations are billed at $225/hr. I’m always happy
-              to
-              provide an estimate for any project, but typically work hourly thereafter.</p>
-            <h3 class="mt-5 mb-4">
-              Get in Touch
-            </h3>
             <p class="mb-5">
-              Thanks for reading a little bit about me. I’m always happy to chat and provide any helpful advice that I
-              can. You can schedule a discovery call to see if we’re a good fit, or just email at <a
-                href="mailto:hello@marchantweb.com" class="mouse-sm" itemprop="email">hello@marchantweb.com</a>.
+              In 2024, I have availability for a limited range of committed projects, but I'm always open to discussing new
+              opportunities. If you have a project in mind, feel free to get in touch.
             </p>
             <ActionButton to="/contact" data-aos="fade-up" class="d-none d-lg-block">
-              <i class="fa-sharp fa-solid fa-comment"></i>
-              Let's Chat
+              <i class="fa-sharp fa-light fa-paper-plane"></i>
+              Let's chat
             </ActionButton>
           </div>
         </main>
@@ -91,11 +81,11 @@
 <script setup>
 
 useHead({
-  title: 'Hey, I\'m Simon | Marchant Web',
+  title: 'Hey I\'m Simon — a front-end engineer with 15+ years in leading and crafting innovative web projects. | Marchant Web',
   meta: [
     {
       name: 'description',
-      content: 'Senior front end engineer with 10+ years building creative websites, interactive experiences and custom web software.'
+      content: 'Hey I\'m Simon — a front-end engineer with 15+ years in leading and crafting innovative web projects.'
     }
   ],
   bodyAttrs: {
@@ -138,7 +128,7 @@ useHead({
 
   &:hover {
     .client-logo:not(:hover) {
-      opacity: 0.2;
+      opacity: 0.5;
     }
   }
 }
@@ -163,7 +153,7 @@ useHead({
 }
 
 .headshot {
-  width: 100px;
+  width: 80px;
   border-radius: 50%;
 
   @media screen and (max-width: 992px) {

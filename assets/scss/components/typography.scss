@@ -49,7 +49,7 @@ h1 {
 
 h2 {
   @include font-size(1.6rem);
-  @include rfs(2rem, line-height);
+  @include rfs(2.2rem, line-height);
   font-weight: 600;
 
   &.lead {

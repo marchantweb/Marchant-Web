@@ -2,11 +2,11 @@
   <div class="row mb-5 align-items-end d-none d-lg-flex">
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon/>
-      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Marchant Web, LLC.</span></h1>
+      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Creative Software Engineer</span></h1>
     </div>
     <div class="col-5 col-xl-3 ms-5 mb-3 me-auto">
       <ul class="tech-stack">
-        <li>UX</li>
+        <li>UX / UI</li>
         <li>Nuxt</li>
         <li>Vue</li>
         <li>Electron</li>

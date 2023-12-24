@@ -32,7 +32,7 @@ useHead({
     {
       hid: 'description',
       name: 'description',
-      content: 'Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I\'m passionate about creating incredible user experiences with web technology. I specialize in programming with Vue, Nuxt and Electron although I have an extensive full-stack development background. I love writing code but I\'m also experienced in UX consulting, with a keen eye for detail and an understanding of interaction design and best practices. I’ve worked on many projects where I start early in the discovery process, guide and design the UX from the ground up, and then get to work building it.'
+      content: 'Hey I\'m Simon — a front-end engineer with 15+ years in leading and crafting innovative web projects.'
     },
     {
       hid: 'theme-color',
@@ -77,7 +77,7 @@ useHead({
     {
       hid: 'og:description',
       name: 'og:description',
-      content: 'Hey I’m Simon, a creative front end engineer based in Orlando, Florida. I\'m passionate about creating incredible user experiences with web technology. I specialize in programming with Vue, Nuxt and Electron although I have an extensive full-stack development background. I love writing code but I\'m also experienced in UX consulting, with a keen eye for detail and an understanding of interaction design and best practices. I’ve worked on many projects where I start early in the discovery process, guide and design the UX from the ground up, and then get to work building it.'
+      content: 'Hey I\'m Simon — a front-end engineer with 15+ years in leading and crafting innovative web projects.'
     },
     {
       hid: 'og:site_name',
