@@ -20,7 +20,8 @@
     "aos": "^2.3.4",
     "gsap": "npm:@gsap/shockingly@^3.12.3",
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2"
+    "sass-loader": "^13.3.2",
+    "sugar": "^2.0.6"
   },
   "engines": {
     "node": ">=19.6.1",

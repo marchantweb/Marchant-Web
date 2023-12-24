@@ -36,6 +36,8 @@
 </template>
 
 <script setup>
+import sugar from 'sugar';
+sugar.extend();
 
 const route = useRoute();
 const articleData = await useArticles();
@@ -57,10 +59,25 @@ const readTime = computed(() => {
   return `${readTimeMinutes} min read`;
 });
 
+/**
+ * Shows the article's date, formatted based on how long ago it was published.
+ * Within 10 days is relative, 30 days is medium, and anything older is just the year (if the same year).
+ * Can also return an empty string if the date is too old, to avoid it appearing stale.
+ * @type {ComputedRef<string|string>}
+ */
 const formattedDate = computed(() => {
   const date = new Date(currentArticleItem.value['createdAt']);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  if (date.isAfter(Date.create("10 days ago"))) {
+    return date.relative();
+  } else if (date.isAfter(Date.create("30 days ago"))) {
+    return date.medium();
+  } else if (date.getFullYear() === new Date().getFullYear()) {
+    return date.format('{yyyy}');
+  } else {
+    return '';
+  }
 });
+
 
 useHead({
   title: currentArticleItem.value['title'] + ' | ' + 'Marchant Web',
