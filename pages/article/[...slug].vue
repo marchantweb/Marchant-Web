@@ -20,7 +20,7 @@
               <img src="~assets/images/headshot.jpg" alt="Simon Le Marchant" class="article__headshot me-4 mouse-sm">
               <div>
                 <label class="article__author" itemprop="name">Simon Le Marchant · <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Follow on 𝕏</a></label>
-                <span class="article__readtime">{{ readTime}} · MMM 'YY</span>
+                <span class="article__readtime">{{ readTime}} · {{ formattedDate }} </span>
               </div>
             </div>
             <hr class="mb-6">
@@ -55,6 +55,11 @@ const readTime = computed(() => {
   });
   const readTimeMinutes = Math.ceil(totalTextLength / 100);
   return `${readTimeMinutes} min read`;
+});
+
+const formattedDate = computed(() => {
+  const date = new Date(currentArticleItem.value['createdAt']);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 });
 
 useHead({
