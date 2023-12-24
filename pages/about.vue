@@ -62,10 +62,9 @@
               challenges.
             </p>
             <p class="mb-5">
-              In 2024, I have availability for a limited range of committed projects, but I'm always open to discussing new
-              opportunities. If you have a project in mind, feel free to get in touch.
+              While my schedule includes ongoing projects, I'm always interested in discussing new opportunities. If you have a project in mind, don't hesitate to reach out.
             </p>
-            <ActionButton to="/contact" data-aos="fade-up" class="d-none d-lg-block">
+            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
               <i class="fa-sharp fa-light fa-paper-plane"></i>
               Let's chat
             </ActionButton>

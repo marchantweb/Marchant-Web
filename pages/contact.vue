@@ -8,17 +8,14 @@
           </NuxtLink>
           <CodeTag class="mt-5 mb-3">contact</CodeTag>
           <h1 class="mb-4">Let's Chat</h1>
-          <p class="mb-4">Feel free to reach out. I'm always happy to chat to discuss ideas, feasibility, schedule,
-            things like that. Or if you just have questions or want to say hi, that's cool too.</p>
-          <h2 class="mb-7"><a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md"
-                                style="color: #7A4FEE">hello@marchantweb.com</a></h2>
-          <h3 class="mb-3">Discovery Session</h3>
-          <p class="mb-4">If you want to dive more into your project specifics, you can schedule a 30-minute meeting to see if we're
-            a good fit.</p>
-          <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank">
-            <i class="fa-sharp fa-regular fa-calendar-range fa-lg"></i>
-            Book a Discovery Session
+          <p class="mb-4">In 2024, alongside my ongoing projects, I'm keen to explore additional opportunities that spark creativity and challenge. If you have a project in mind, feel free to get in touch.</p>
+          <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
+            <i class="fa-sharp fa-light fa-paper-plane"></i>
+            Let's chat
           </ActionButton>
+          <hr class="mb-6">
+          <h3 class="mb-3">Alternate contact options</h3>
+          <p class="mb-4">You can reach me on <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Twitter / 𝕏</a> or email at <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md" style="color: #7A4FEE">hello@marchantweb.com</a>.</p>
         </div>
         <div class="col-1 d-none d-xl-block"></div>
       </div>
@@ -28,8 +25,6 @@
 </template>
 
 <script setup>
-
-import {useScriptTag} from '@vueuse/core'
 
 useHead({
   title: 'Let\'s Chat - Schedule a Discovery Session | Marchant Web',
