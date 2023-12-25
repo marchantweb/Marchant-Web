@@ -7,6 +7,7 @@
       <NotionParagraph :isArticle="isArticle" :block="block" v-if="block.type === 'paragraph'"/>
       <NotionQuote :isArticle="isArticle" :block="block" v-if="block.type === 'quote'"/>
       <NotionCode :isArticle="isArticle" :block="block" v-if="block.type === 'code'"/>
+      <NotionToDo :isArticle="isArticle" :block="block" v-if="block.type === 'to_do'"/>
     </div>
   </section>
 </template>
