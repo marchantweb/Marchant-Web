@@ -18,21 +18,19 @@
                 I enjoy building with <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>,
                 <a
                     href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, and <a
-                  href="https://electronJS.org/" target="_blank" class="mouse-sm">Electron</a>, but my journey in tech
-                spans a comprehensive full-stack development landscape, going all the way back to when Macromedia Flash
-                and ActionScript was
-                a thing.
+                  href="https://electronJS.org/" target="_blank" class="mouse-sm">Electron</a>, but also have a
+                comprehensive full-stack background going all the way back to when Macromedia Flash
+                and ActionScript was a thing. My core principle is to be helpful. That's it, keeps things simple.
               </p>
               <p>
                 I've worked with a wide range of clients, from startups to Fortune 500 companies; typically in a leading
                 technical role, but also as a helping hand on a larger team. Usually I partner with agencies and
-                startups to provide
-                one or more sprints of focused work.
+                startups to provide sprint-based blocks of focused time.
               </p>
               <p>
-                Beyond code proficiency, I bring a practical understanding of UX design principles on top of marketing
-                and product development experience. From initial concept to final Q/A checks, I enjoy guiding
-                projects through each phase and delivering top-notch work.
+                Beyond code proficiency, I bring a holistic understanding of UX design principles on top of marketing
+                and product development insight. From initial concept to final quality checks, I enjoy being part of the
+                process and delivering top-notch work.
               </p>
             </div>
             <h3 class="mt-5 mb-3">Some companies I've worked with:</h3>
@@ -62,7 +60,8 @@
               challenges.
             </p>
             <p class="mb-5">
-              While my schedule includes ongoing projects, I'm always interested in discussing new opportunities. If you have a project in mind, don't hesitate to reach out.
+              While my schedule includes ongoing projects, I'm always interested in discussing new opportunities. If you
+              have a project in mind, don't hesitate to reach out.
             </p>
             <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
               <i class="fa-sharp fa-light fa-paper-plane"></i>

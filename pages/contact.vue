@@ -8,14 +8,14 @@
           </NuxtLink>
           <CodeTag class="mt-5 mb-3">contact</CodeTag>
           <h1 class="mb-4">Let's Chat</h1>
-          <p class="mb-4">In 2024, alongside my ongoing projects, I'm keen to explore additional opportunities that spark creativity and challenge. If you have a project in mind, feel free to get in touch.</p>
+          <p class="mb-4">In 2024 — alongside my ongoing projects I'm keen to explore additional opportunities that spark creativity and challenge. If you have a project in mind, feel free to schedule a time to chat.</p>
           <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
             <i class="fa-sharp fa-light fa-paper-plane"></i>
             Let's chat
           </ActionButton>
           <hr class="mb-6">
           <h3 class="mb-3">Alternate contact options</h3>
-          <p class="mb-4">You can reach me on <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Twitter / 𝕏</a> or email at <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md" style="color: #7A4FEE">hello@marchantweb.com</a>.</p>
+          <p class="mb-4">You can find me posting occasionally on <a href="https://twitter.com/marchantweb" target="blank" class="article__followlink mouse-sm">Twitter / 𝕏 (@marchantweb)</a> or email me at <a href="mailto:hello@marchantweb.com" target="blank" class="mouse-md" style="color: #7A4FEE">hello@marchantweb.com</a>.</p>
         </div>
         <div class="col-1 d-none d-xl-block"></div>
       </div>

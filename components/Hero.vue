@@ -26,7 +26,7 @@
     </CodeLine>
 
     <!-- Await Fetch Contact -->
-    <CodeLine v-if="route.path === '/contact'" number="03" class="await-fetch-contact">
+    <CodeLine v-if="route.path === '/contact'" number="02" class="await-fetch-contact">
       <span class="code--orange">await</span>
       <span class="code--orange">&nbsp;$fetch</span>
       <span class="code--white">(</span>
