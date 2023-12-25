@@ -27,9 +27,13 @@ htmlCode.value = await codeToHtml(codeContent, {lang: 'vue', theme: 'material-th
 .shiki {
   border-radius: 5px;
   padding: 20px 30px;
-  margin-left: -120px;
-  margin-right: -120px;
-  width: calc(100% + 240px);
+  width: 100%;
+
+  @media screen and (min-width: 992px) {
+    margin-left: -120px;
+    margin-right: -120px;
+    width: calc(100% + 240px);
+  }
 
   span {
     font-family: "JetBrains Mono", monospace;

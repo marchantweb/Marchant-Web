@@ -12,7 +12,7 @@
       </div>
 
       <div class="row mt-5 mt-lg-8 mt-xl-9 pb-3 justify-content-center">
-        <main class="col-12 col-lg-6">
+        <main class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-6">
           <div class="col">
             <h1 class="mb-3 mb-lg-4 article__title mouse-md"> {{ currentArticleItem['title'] }} </h1>
             <h2 class="article__lead mb-5"> {{ currentArticleItem['lead'] }} </h2>

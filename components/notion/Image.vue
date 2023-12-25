@@ -28,9 +28,11 @@ img{
 }
 
 .article__content img{
-  margin-left: -120px;
-  margin-right: -120px;
-  width: calc(100% + 240px);
+  @media screen and (min-width: 992px) {
+    margin-left: -120px;
+    margin-right: -120px;
+    width: calc(100% + 240px);
+  }
 }
 
 figcaption{
