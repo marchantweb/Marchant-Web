@@ -19,7 +19,7 @@ const props = defineProps({
 let htmlCode = ref('');
 
 const codeContent = props.block['code']['rich_text'][0]['text']['content'];
-htmlCode.value = await codeToHtml(codeContent, {lang: 'vue', theme: 'material-theme'});
+htmlCode.value = await codeToHtml(codeContent, {lang: props.block['code']['rich_text'][0]['text']['content'].includes('<template>') ? 'vue': 'javascript', theme: 'material-theme'});
 
 </script>
 
