@@ -17,7 +17,7 @@ export default defineNuxtConfig({
             meta: [{name: 'viewport', content: 'width=device-width, initial-scale=1'}],
         }
     },
-    modules: ['@nuxtseo/module'],
+    modules: ['@nuxtseo/module', 'nuxt-gtag'],
     css: ["@/assets/scss/app.scss"],
     vite: {
         server: {
@@ -25,6 +25,9 @@ export default defineNuxtConfig({
                 port: 5050
             }
         }
+    },
+    gtag: {
+        id: 'G-E1LXB89D1E'
     },
     devtools: {
         enabled: true,
