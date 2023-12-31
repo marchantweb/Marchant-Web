@@ -122,6 +122,7 @@ const updateSelected = (selectedIndex) => {
     duration: 0.5,
     ease: "power1.out"
   });
+  useTrackEvent('portfolio_scroll')
 }
 
 /**
