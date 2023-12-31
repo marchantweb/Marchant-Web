@@ -240,6 +240,11 @@ function setupDraggable() {
   });
 }
 
+const { gtag } = useGtag()
+gtag('event', 'page_view', {
+  page_title: 'Portfolio'
+})
+
 </script>
 
 <style lang="scss" scoped>

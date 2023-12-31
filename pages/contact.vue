@@ -39,6 +39,11 @@ useHead({
   }
 });
 
+const { gtag } = useGtag()
+gtag('event', 'page_view', {
+  page_title: 'Contact'
+})
+
 </script>
 
 <style lang="scss" scoped>
