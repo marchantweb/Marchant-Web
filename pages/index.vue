@@ -60,11 +60,6 @@ onMounted(() => {
 const heading = "Senior front-end engineer who helps agencies deliver creative work;"
 const headingChars = heading.split('');
 
-const { gtag } = useGtag()
-gtag('event', 'page_view', {
-  page_title: 'Home'
-})
-
 </script>
 
 <style lang="scss" scoped>

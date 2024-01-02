@@ -122,7 +122,6 @@ const updateSelected = (selectedIndex) => {
     duration: 0.5,
     ease: "power1.out"
   });
-  useTrackEvent('portfolio_scroll')
 }
 
 /**
@@ -240,11 +239,6 @@ function setupDraggable() {
     });
   });
 }
-
-const { gtag } = useGtag()
-gtag('event', 'page_view', {
-  page_title: 'Portfolio'
-})
 
 </script>
 

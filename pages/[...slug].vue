@@ -26,15 +26,6 @@
   </section>
 </template>
 
-<script setup>
-
-const { gtag } = useGtag()
-gtag('event', 'page_view', {
-  page_title: '404'
-})
-
-</script>
-
 <style lang="scss" scoped>
 
 .lead {

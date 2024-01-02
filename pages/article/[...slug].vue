@@ -138,11 +138,6 @@ useSchemaOrg([
   }
 ])
 
-const { gtag } = useGtag()
-gtag('event', 'page_view', {
-  page_title: 'Article: ' + currentArticleItem.value['title']
-})
-
 </script>
 
 <style lang="scss" scoped>
