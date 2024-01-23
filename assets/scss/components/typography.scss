@@ -34,10 +34,11 @@ h1 {
     @include font-size(4rem);
     @include rfs(3.3rem, line-height);
     font-weight: 700;
+    text-wrap: balance;
 
     @media screen and (max-width: 992px) {
-      @include font-size(3rem);
-      @include rfs(2.4rem, line-height);
+      @include font-size(4rem);
+      @include rfs(3.2rem, line-height);
     }
 
     &.small {

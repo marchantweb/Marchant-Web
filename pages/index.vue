@@ -5,8 +5,7 @@
 
     <div id="bottom-bar" class="container-xxxl">
       <div class="row mb-3 mb-lg-5 mb-xxl-7 justify-content-between align-items-end">
-        <div class="col-11 col-sm-8 col-xxl-6 col-xxxl-6">
-          <i class="fa-sharp fa-solid fa-code-commit lead-icon mb-4 mb-lg-5 mouse-md" aria-hidden="true"></i>
+        <div class="col-11 col-sm-10 col-md-10 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-6">
           <h1 class="visually-hidden">{{ heading }}</h1>
           <h1 class="lead mouse-lg" v-once>
             <span class="heading-char" aria-hidden="true"
@@ -57,7 +56,7 @@ onMounted(() => {
   });
 });
 
-const heading = "Senior front-end engineer who helps agencies deliver creative work;"
+const heading = "Creative front end engineer who fights web browsers so you don't have to;";
 const headingChars = heading.split('');
 
 </script>
@@ -115,7 +114,7 @@ const headingChars = heading.split('');
 .heading-char {
   display: inline;
   opacity: 0;
-  animation: headingCharReveal 2.8s cubic-bezier(0.7, 0, 0.2, 1) forwards;
+  animation: headingCharReveal 2s cubic-bezier(0.7, 0, 0.2, 1) forwards;
 }
 
 @keyframes headingCharReveal {

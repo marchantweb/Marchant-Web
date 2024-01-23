@@ -15,21 +15,20 @@
               leading and crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                I enjoy building with <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>,
-                <a
-                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, and <a
+                I enjoy building with <a
+                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
                   href="https://electronJS.org/" target="_blank" class="mouse-sm">Electron</a>, but also have a
                 comprehensive full-stack background going all the way back to when Macromedia Flash
                 and ActionScript was a thing. My core principle is to be helpful. That's it, keeps things simple.
               </p>
               <p>
-                I've worked with a wide range of clients, from startups to Fortune 500 companies; typically in a leading
-                technical role, but also as a helping hand on a larger team. Usually I partner with agencies and
-                startups to provide sprint-based blocks of focused time.
+                I've worked with a wide range of teams, from startups to Fortune 500 companies; typically in a leading
+                technical role but also as a helping hand. Usually I partner with agencies and
+                startups to provide sprint-based blocks of focused dev time.
               </p>
               <p>
                 Beyond code proficiency, I bring a holistic understanding of UX design principles on top of marketing
-                and product development insight. From initial concept to final quality checks, I enjoy being part of the
+                and product development insight. I don't just code, I bring my own ideas to the table. From initial concept to final quality checks, I enjoy being part of the
                 process and delivering top-notch work.
               </p>
             </div>
@@ -56,8 +55,7 @@
             <h3 class="mt-5 mb-4">Availability</h3>
             <p>
               I'm interested in collaborating with teams that are building creative websites, interactive experiences,
-              or bespoke Electron apps — especially where the front-end requirements present complex and unique
-              challenges.
+              or bespoke interfaces — especially those with unique twists. Give me a reason to challenge the browser to a battle of wits <em>(or patience)</em>.
             </p>
             <p class="mb-5">
               While my schedule includes ongoing projects, I'm always interested in discussing new opportunities. If you

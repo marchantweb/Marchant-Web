@@ -4,12 +4,12 @@
       <MWIcon/>
       <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Creative Front End Engineer</span></h1>
     </div>
-    <div class="col-5 col-xl-3 ms-5 mb-3 me-auto">
+    <div class="col-5 col-xl-3 ms-5 mb-4 me-auto">
       <ul class="tech-stack">
-        <li>UX / UI</li>
         <li>Nuxt</li>
         <li>Vue</li>
         <li>Electron</li>
+        <li>UX</li>
       </ul>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
