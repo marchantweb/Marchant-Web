@@ -7,32 +7,59 @@ import {InertiaPlugin} from "gsap/InertiaPlugin";
 
 gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin);
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick(); // Ensure all DOM elements are rendered
+
+  const cardsContainer = document.querySelector('.cards');
   const cards = gsap.utils.toArray('.card');
-  const wrapWidth = document.querySelector('.cards').offsetWidth;
+  let wrapWidth = document.querySelector('.cards').offsetWidth;
 
-  console.log(wrapWidth);
+  // Dynamically calculate wrapWidth based on the actual widths of cards
+  wrapWidth = cards.reduce((acc, card) => acc + card.offsetWidth, 0);
 
-  Draggable.create('.cards', {
-    type: 'x',
-    inertia: true,
-    edgeResistance: 0.65,
-    bounds: document.querySelector('.page'),
+  // Find the width of the widest card
+  let widestCardWidth = Math.max(...cards.map(card => card.offsetWidth));
+
+  let position = 0; // Tracking the cumulative position (x offset) of each card
+  cards.forEach((card, i) => {
+    gsap.set(card, { x: position, left: -widestCardWidth });
+    position += card.offsetWidth + 10; // Increment position for the next card, plus 10px for spacing between cards
+    wrapWidth += 10; // Add 10px for spacing between cards
+  });
+
+  // Creating a draggable proxy element
+  const proxy = document.createElement("div");
+
+  // GSAP animation controlled by Draggable
+  const animation = gsap.to(cards, {
+    x: "+=" + wrapWidth,
+    ease: "none",
+    paused: true,
+    repeat: -1,
     modifiers: {
-      x: function (x) {
-        // Use a modulo operation to create the wrap effect
-        let newX = parseFloat(x) % wrapWidth;
-        if (newX < 0) {
-          newX += wrapWidth; // Adjust to keep within positive range
-        }
-        return newX + "px";
-      }
-    },
-    onDrag: function () {
-      // Optional: Implement logic during drag, such as updating indicators or the current visible card
+      x: gsap.utils.unitize(x => parseFloat(x) % wrapWidth),
     }
   });
-})
+
+  Draggable.create(proxy, {
+    type: "x",
+    trigger: cardsContainer,
+    inertia: true,
+    onThrowComplete: updateAnimation,
+    onDrag: updateAnimation,
+    onThrowUpdate: updateAnimation,
+  });
+
+  const wrapProgress = gsap.utils.wrap(0, 1)
+  const props = gsap.getProperty(proxy);
+
+  // Function to update GSAP animation progress based on drag action
+  function updateAnimation() {
+    animation.progress(wrapProgress((props("x") + widestCardWidth) / wrapWidth));
+  }
+
+  updateAnimation();
+});
 
 </script>
 
@@ -55,16 +82,16 @@ onMounted(() => {
 
     <section id="explore-slider">
       <ul class="cards">
-        <li class="card mouse-md">0</li>
-        <li class="card mouse-md">1</li>
-        <li class="card mouse-md">2</li>
-        <li class="card mouse-md">3</li>
-        <li class="card mouse-md">4</li>
-        <li class="card mouse-md">5</li>
-        <li class="card mouse-md">6</li>
-        <li class="card mouse-md">7</li>
-        <li class="card mouse-md">8</li>
-        <li class="card mouse-md">9</li>
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/800')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/801')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/802')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/803')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/804')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/805')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/806')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/807')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/808')" />
+        <li class="card mouse-md" style="background-image:url('https://placekitten.com/809')" />
       </ul>
     </section>
 
@@ -94,11 +121,10 @@ onMounted(() => {
   flex-wrap: nowrap;
   align-items: center;
   height: 100%;
-  padding: 0 100px;
   gap: 8px;
 }
 
-.cards li {
+.card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,25 +137,23 @@ onMounted(() => {
   background-color: rgb(234, 238, 239);
   background-size: cover;
   background-position: center;
-  color: #1e1e1e;
+  color: black;
+  font-size: 100px;
   border-radius: 8px;
-  flex-basis: 800px;
-  flex-shrink: 0;
   box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
   cursor: pointer;
+  position: absolute;
+  left: 0;
 
-  /*&:nth-child(4n + 1) {
+  &:nth-child(4n + 1) {
     width: 350px;
     flex-basis: 350px;
-    background-image: url("https://marchantweb.com/cdn-cgi/image/width=1974,quality=100,format=auto/https://api.marchantweb.com/images/f53c08bd-6a71-48d5-bc45-4db4832d38c8");
-    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 70%)
   }
 
   &:nth-child(4n + 3) {
     width: 350px;
     flex-basis: 350px;
-    background-image: url("https://marchantweb.com/cdn-cgi/image/width=1974,quality=100,format=auto/https://api.marchantweb.com/images/f29717eb-c82b-45b2-92f3-40fb9e22d02e");
-  }*/
+  }
 }
 
 </style>
