@@ -3,16 +3,9 @@
 
     <NavMenu/>
 
-    <div id="bottom-bar" class="container-xxxl">
-      <div class="row mb-3 mb-lg-5 mb-xxl-7 justify-content-between align-items-end">
+    <div id="bottom-bar" class="container-fluid">
+      <div class="row mb-3 justify-content-between align-items-end">
         <div class="col-11 col-sm-10 col-md-10 col-lg-8 col-xl-7 col-xxl-6 col-xxxl-6">
-          <h1 class="visually-hidden">{{ heading }}</h1>
-          <h1 class="lead mouse-lg" v-once>
-            <span class="heading-char" aria-hidden="true"
-                  :style="{'animation-delay': (index % 5 === 0 ? 0.5 : 0.01 * index) + 's'}"
-                  v-for="(char, index) in headingChars">{{ char }}
-            </span>
-          </h1>
           <ActionButton to="/portfolio" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-4">
             Explore <i class="fa-sharp fa-solid fa-arrow-right-long fa-lg ps-2"></i>
           </ActionButton>
@@ -56,7 +49,7 @@ onMounted(() => {
   });
 });
 
-const heading = "Creative front end engineer who fights web browsers so you don't have to;";
+const heading = "Creative front end engineer;";
 const headingChars = heading.split('');
 
 </script>
@@ -132,7 +125,7 @@ const headingChars = heading.split('');
   animation-delay: 1.8s;
   position: fixed;
   z-index: 999;
-  top: 60px;
+  top: 180px;
   right: 0;
 
   @media screen and (max-width: 1720px) {

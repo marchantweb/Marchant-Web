@@ -3,7 +3,7 @@
 
     <NavMenu/>
 
-    <div class="container-xxxl pt-4 pt-lg-6">
+    <div class="container-fluid pt-4">
       <div class="row justify-content-between">
         <div class="col-auto d-flex flex-row align-items-center">
 
@@ -42,7 +42,7 @@
     </div>
 
 
-    <div id="bottom-bar" class="container-xxxl">
+    <div id="bottom-bar" class="container-fluid">
       <BottomBar/>
     </div>
 

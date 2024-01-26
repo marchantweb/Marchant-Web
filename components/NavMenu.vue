@@ -40,8 +40,8 @@ const navClasses = computed(() => {
 
 .nav-container {
   position: absolute;
-  top: 60px;
-  right: calc((100vw - (1600px - 60px)) / 2);
+  top: 30px;
+  right: 30px;
 
   @media screen and (max-width: 1680px) {
     right: 30px;
@@ -92,8 +92,8 @@ const navClasses = computed(() => {
       font-family: 'N27', sans-serif;
       text-transform: uppercase;
       font-weight: 600;
-      letter-spacing: 3px;
-      text-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 1px rgb(0 0 0 / 40%);
       font-size: 14px;
       text-decoration: none;
       position: relative;

@@ -150,7 +150,6 @@ watch(() => props.isFocused, (isFocused) => {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  max-height: 700px;
 
   @media screen and (max-width: 992px) {
     height: calc(100vh - 440px);
