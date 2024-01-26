@@ -59,7 +59,7 @@ onMounted(() => {
   });
 });
 
-const heading = "Creative front-end engineer who centers divs without googling it;";
+const heading = "Creative front-end engineer; 🧪";
 const headingChars = heading.split('');
 
 </script>
