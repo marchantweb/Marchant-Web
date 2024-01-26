@@ -7,7 +7,7 @@
       <div class="row mb-3 justify-content-between align-items-end">
         <div class="col-11 col-lg-8">
           <h1 class="visually-hidden">{{ heading }}</h1>
-          <h1 class="lead mouse-lg mb-3 mb-lg-5 " v-once>
+          <h1 class="lead mouse-lg mb-3 mb-lg-4 " v-once>
             <span class="heading-char" aria-hidden="true"
                   :style="{'animation-delay': (index % 5 === 0 ? 0.5 : 0.01 * index) + 's'}"
                   v-for="(char, index) in headingChars">{{ char }}
