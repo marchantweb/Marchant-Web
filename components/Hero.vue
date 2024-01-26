@@ -117,7 +117,7 @@ let enableRendering = computed(() => {
   if (focused.value === false) {
     return false;
   }
-  if (route.path === '/' || route.path === '/portfolio') {
+  if (route.path === '/' || route.path === '/portfolio' || route.path === '/explore') {
     return true;
   }
   return !!(route.path.startsWith('/portfolio/') && canvasIsVisible.value === true);
@@ -257,9 +257,9 @@ onMounted(() => {
  * @type {*}
  */
 const route = useRoute();
-let zoomOffset = ref(route.path === '/portfolio' ? 1 : 0);
+let zoomOffset = ref(route.path === '/portfolio' || route.path === '/explore' ? 1 : 0);
 watch(() => route.path, (newVal, oldVal) => {
-  if (newVal === "/portfolio") {
+  if (newVal === "/portfolio" || newVal === "/explore") {
     gsap.to(zoomOffset, {
       duration: 5,
       value: 1,

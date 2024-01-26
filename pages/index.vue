@@ -50,11 +50,11 @@ import {useEventListener} from "@vueuse/core";
 let navigatingToPortfolio = false;
 
 onMounted(() => {
-  preloadRouteComponents('/portfolio');
+  preloadRouteComponents('/explore');
   useEventListener(document, 'wheel', async (event) => {
     if (event.deltaY > 0 && !navigatingToPortfolio) {
       navigatingToPortfolio = true;
-      navigateTo('/portfolio');
+      navigateTo('/explore');
     }
   });
 });
