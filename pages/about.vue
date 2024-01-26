@@ -15,21 +15,16 @@
               leading and crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                I enjoy building with <a
-                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, and <a
-                  href="https://electronJS.org/" target="_blank" class="mouse-sm">Electron</a>, but also have a
-                comprehensive full-stack background going all the way back to when Macromedia Flash
-                and ActionScript was a thing. My core principle is to be helpful. That's it, keeps things simple.
+                I enjoy challenging the web browser to a battle of wits <em>(or patience)</em> when creating something new and fun. My expertise is in <a
+                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a> / <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, but I also have a
+                comprehensive full-stack background going all the way back to when Adobe Flash was a thing. I'm always exploring the limits of the front end ecosystem, and breaking things along the way.
               </p>
               <p>
                 I've worked with a wide range of teams, from startups to Fortune 500 companies; typically in a leading
-                technical role but also as a helping hand. Usually I partner with agencies and
-                startups to provide sprint-based blocks of focused dev time.
+                technical role but also as a helping hand. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work at a time.
               </p>
               <p>
-                Beyond code proficiency, I bring a holistic understanding of UX design principles on top of marketing
-                and product development insight. I don't just code, I bring my own ideas to the table. From initial concept to final quality checks, I enjoy being part of the
-                process and delivering top-notch work.
+                On a personal note... I live in Orlando FL with my wife and daughter. I would <em>like</em> to say that I'm a big fan of the outdoors and like long walks on the beach, but in my free time I enjoy programming so I'm usually at my desk 🧑‍💻.
               </p>
             </div>
             <h3 class="mt-5 mb-3">Some companies I've worked with:</h3>
@@ -55,10 +50,10 @@
             <h3 class="mt-5 mb-4">Availability</h3>
             <p>
               I'm interested in collaborating with teams that are building creative websites, interactive experiences,
-              or bespoke interfaces — especially those with unique twists. Give me a reason to challenge the browser to a battle of wits <em>(or patience)</em>.
+              or bespoke interfaces — especially those with unique twists that make Chrome and Safari nervous.
             </p>
             <p class="mb-5">
-              While my schedule includes ongoing projects, I'm always interested in discussing new opportunities. If you
+              While my schedule includes ongoing projects, I'm open to discussing new opportunities. If you
               have a project in mind, don't hesitate to reach out.
             </p>
             <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">

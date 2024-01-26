@@ -2,7 +2,7 @@
   <div class="row mb-3 align-items-end d-none d-lg-flex justify-content-between">
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon size="45" class="pb-2" type="notext"/>
-      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Senior Creative Vue Engineer</span></h1>
+      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Vue / Nuxt / Creative UX</span></h1>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
       <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none" aria-label="Find me on Twitter"><i class="fa-brands fa-x-twitter fa-xl twitter-icon mouse-sm d-none d-xl-inline text-decoration-none" title="Find me on Twitter"></i></NuxtLink>
@@ -25,7 +25,7 @@
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 21px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
 
@@ -40,11 +40,12 @@
 }
 
 .github-icon, .audio-icon, .twitter-icon, .linkedin-icon {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(224, 222, 255, 0.8);
+  mix-blend-mode: color-dodge;
   cursor: pointer;
 
   &:hover {
-    color: white;
+    color: #ffffff;
   }
 }
 

@@ -43,7 +43,7 @@ onMounted(() => {
   height: 100%;
   background-color: #050016;
   z-index: 9998;
-  transition: all 2s cubic-bezier(0.4, 0, 0, 1);
+  transition: all 1.5s cubic-bezier(0.4, 0, 0, 1);
   transform: translateX(0) translateZ(0);
   backface-visibility: hidden;
 }

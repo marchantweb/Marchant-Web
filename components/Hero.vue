@@ -245,9 +245,9 @@ onMounted(() => {
   initWebGLComponent();
   requestAnimationFrame(renderWebGLComponent);
   gsap.to(initialXOffset, {
-    duration: 7,
+    duration: 10,
     value: 0,
-    ease: "power3.out"
+    ease: "expo.out"
   });
 });
 
@@ -263,7 +263,7 @@ watch(() => route.path, (newVal, oldVal) => {
     gsap.to(zoomOffset, {
       duration: 5,
       value: 1,
-      ease: "power1.out"
+      ease: "power3.inOut"
     });
   } else {
     gsap.to(zoomOffset, {
@@ -340,17 +340,17 @@ body.fixed-webgl {
   height: 100%;
   transition: all 1.8s cubic-bezier(0.7, 0, 0, 1);
   border-radius: 0;
-  box-shadow: transparent 0 0px 20px -10px, transparent 0px 13px 156px -10px;
+  box-shadow: transparent 0 0 0 0, transparent 0 0 0 0;
   object-fit: cover;
   z-index: -1;
   clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
   background-color: #030205;
+  overflow: hidden;
 
   &.hero--about {
     transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
     transition: all 2.5s cubic-bezier(0.5, 0, 0, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
@@ -369,7 +369,6 @@ body.fixed-webgl {
     transform: scale(0.8) perspective(400px) rotateX(2deg);
     backface-visibility: hidden;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
     transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
@@ -393,7 +392,7 @@ body.fixed-webgl {
   }
 
   &.hero--article-single {
-    clip-path: polygon(min(10vw, 200px) 0, 100% 0, min(calc(((100vw - 1600px) / 2) + 1600px), 100%) min(18vw, 200px), min(10vw, 200px) 0);
+    clip-path: polygon(min(10vw, 200px) 0, 100% 0, 100% 60px, min(calc(((100vw - 1600px) / 2) + 1600px), 100%) min(18vw, 200px));
   }
 }
 
