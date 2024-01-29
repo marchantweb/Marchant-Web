@@ -10,8 +10,7 @@ gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, Observer);
 
 const portfolioData = await usePortfolio(true);
 
-// TODO: Just clean this up a little before committing it. It's a mess.
-// TODO: Also review on mobile and perhaps make the cards a little smaller - need to handle resize event.
+// TODO: Review on mobile and perhaps make the cards a little smaller - need to handle resize event.
 
 /**
  * The proxy element that Draggable will use to track the drag action
@@ -51,8 +50,8 @@ onMounted(async () => {
   // Set the initial position of each card in the slider
   cards.forEach((card, i) => {
     gsap.set(card, {x: position, left: -widestCardWidth});
-    position += card.offsetWidth + 10; // Add 10px for spacing between cards
-    wrapWidth += 10; // Add 10px for spacing between cards
+    position += card.offsetWidth + 5; // Add 5px for spacing between cards
+    wrapWidth += 5; // Add 5px for spacing between cards
   });
 
   // Creating a draggable proxy element
@@ -146,7 +145,7 @@ onUnmounted(() => {
 <template>
   <section class="page">
 
-    <div class="container-fluid pt-4" style="z-index: 2; position: relative;">
+    <div class="container-fluid pt-4" style="position: relative; z-index: 2;">
       <div class="row">
         <div class="col">
 
@@ -155,10 +154,12 @@ onUnmounted(() => {
           </NuxtLink>
 
         </div>
+        <div class="col">
+          <NavMenu/>
+        </div>
       </div>
     </div>
 
-    <NavMenu/>
 
     <template v-if="portfolioData">
       <section id="explore-slider">
@@ -208,7 +209,7 @@ onUnmounted(() => {
   left: 0;
 }
 
-@keyframes slider-rotation{
+@keyframes slider-rotation {
   0% {
     transform: rotate3d(0, 0, 1, -3deg);
   }

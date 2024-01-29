@@ -1,11 +1,12 @@
 <template>
-  <article role="article" :class="elementClasses" tabindex="0" :aria-label="currentPortfolioItem['title']"
+  <article role="article" :class="elementClasses" :style="containerStyle" tabindex="0"
+           :aria-label="currentPortfolioItem['title']"
            :aria-description="currentPortfolioItem['lead']">
 
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
-        <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted
+        <video ref="video" :style="mediaStyle" class="project-cover__video mouse-md" loop="true" muted
                :autoplay="true" playsinline :poster="currentPortfolioItem['cover']">
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
           <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
@@ -59,13 +60,23 @@ const {x, y} = useMouse();
 const parallaxOffset = 30;
 
 /**
- * Determine the inline styles to apply to the element
+ * Determine the inline styles to apply to the video/image element
  */
-const elementStyle = computed(() => {
+const mediaStyle = computed(() => {
   return {
-    'transform': `translate(${(((1 / width.value) * x.value) * parallaxOffset * -1)}px, ${(((1 / height.value) * y.value) * parallaxOffset * -1)}px)`,
+    'transform': `translate(${(((1 / width.value) * x.value) * parallaxOffset * -1)}px, ${(((1 / height.value) * y.value) * parallaxOffset * -1)}px)`
   }
 });
+
+/**
+ * Determine the inline styles to apply to the container element
+ * @type {ComputedRef<{aspectRatio: string}>}
+ */
+const containerStyle = computed(() => {
+  return {
+    'aspectRatio': props.index % 3 === 0 ? '0.6' : '1.6'
+  }
+})
 
 const elementClasses = computed(() => {
   return {
@@ -89,7 +100,7 @@ watch(() => props.isFocused, (isFocused) => {
 
 .project-cover {
   position: relative;
-  width: 900px;
+  height: 600px;
   flex: none;
   transform-origin: bottom center;
   background: #111115;
@@ -122,7 +133,7 @@ watch(() => props.isFocused, (isFocused) => {
 
 .project-cover__video-container {
   width: 100%;
-  aspect-ratio: 1.6;
+  height: 100%;
   border-radius: 8px;
   cursor: pointer;
   overflow: hidden;

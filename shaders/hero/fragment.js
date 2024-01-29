@@ -68,7 +68,7 @@ export default `
           gl_FragColor += c * (SPECULAR_STRENGTH + (iZoomOffset * 0.1)) * vec4(.40, 0.6, 0.89 - (iZoomOffset * 0.02), 1);
 
           // Brightness
-          gl_FragColor *= (t * (.04 + (iZoomOffset * 0.03)));
+          gl_FragColor *= (t * (.03 + (iZoomOffset * 0.04)));
 
           // Apply Noise
           vec2 ps = vec2(1.0) / iResolution.xy;

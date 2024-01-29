@@ -392,7 +392,7 @@ body.fixed-webgl {
   }
 
   &.hero--article-single {
-    clip-path: polygon(min(10vw, 200px) 0, 100% 0, 100% 60px, min(calc(((100vw - 1600px) / 2) + 1600px), 100%) min(18vw, 200px));
+    clip-path: polygon(min(10vw, 200px) 0, 100% 0, 100% 80px, min(calc(((100vw - 1600px) / 2) + 1600px), 100%) min(18vw, 200px));
   }
 }
 
