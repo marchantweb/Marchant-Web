@@ -15,19 +15,19 @@
               leading and crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                I enjoy challenging the web browser to a battle of wits <em>(or patience)</em> when creating something new and fun. My expertise is in <a
+                I mostly work in <a
                     href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a> / <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, but I also have a
-                comprehensive full-stack background going all the way back to when Adobe Flash was a thing. I'm always exploring the limits of the front end ecosystem, and breaking things along the way.
+                comprehensive full-stack background going all the way back to when Adobe Flash was a thing. I enjoy challenging the web browser to a battle of wits <em>(or patience)</em> when creating something new and fun. Not to brag, but I can center a div without Googling it <em>(most of the time)</em>.
               </p>
               <p>
                 I've worked with a wide range of teams, from startups to Fortune 500 companies; typically in a leading
-                technical role but also as a helping hand. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work at a time.
+                technical role but also as a helping hand. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work. I like getting into a project as early as possible, helping to shape the outcome from the ground up.
               </p>
               <p>
-                On a personal note... I live in Orlando FL with my wife and daughter. I would <em>like</em> to say that I'm a big fan of the outdoors and like long walks on the beach, but in my free time I enjoy programming so I'm usually at my desk 🧑‍💻.
+                On a personal note... I live in Orlando FL with my wife and daughter. I <em>want</em> to say that I'm a big fan of the outdoors and that I like long walks on the beach, but in my free time I enjoy programming, so I'm usually just at my desk 🧑‍💻.
               </p>
             </div>
-            <h3 class="mt-5 mb-3">Some companies I've worked with:</h3>
+            <h3 class="mt-5 mb-3">Some teams I've worked with:</h3>
           </div>
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxxl-6">
             <div class="client-logo__container">
@@ -49,11 +49,11 @@
           <div class="col-12 col-md-8 col-lg-7 col-xl-6 col-xxl-5 mb-4 mb-lg-8">
             <h3 class="mt-5 mb-4">Availability</h3>
             <p>
-              I'm interested in collaborating with teams that are building creative websites, interactive experiences,
-              or bespoke interfaces — especially those with unique twists that make Chrome and Safari nervous.
+              I'm interested in collaborating with people who are building creative websites, interactive experiences,
+              or bespoke interfaces — especially those with unique twists that make Chrome/Safari nervous and my GPU start melting.
             </p>
             <p class="mb-5">
-              While my schedule includes ongoing projects, I'm open to discussing new opportunities. If you
+              While I always have some sort of ongoing work, I'm open to discussing new opportunities. If you
               have a project in mind, don't hesitate to reach out.
             </p>
             <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
