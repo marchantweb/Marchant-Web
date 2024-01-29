@@ -74,7 +74,7 @@ const mediaStyle = computed(() => {
  */
 const containerStyle = computed(() => {
   return {
-    'aspectRatio': props.index % 3 === 0 ? '0.6' : '1.6'
+    'aspectRatio': (props.index + 1) % 3 === 0 ? '0.6' : '1.6'
   }
 })
 
@@ -106,6 +106,10 @@ watch(() => props.isFocused, (isFocused) => {
   background: #111115;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+  @media screen and (max-width: 768px) {
+    height: 60vh;
+  }
 }
 
 .title-bar {

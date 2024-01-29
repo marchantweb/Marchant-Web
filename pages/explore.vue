@@ -143,7 +143,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="page">
+  <section class="page" style="overflow: hidden">
 
     <div class="container-fluid pt-4" style="position: relative; z-index: 2;">
       <div class="row">
