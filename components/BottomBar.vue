@@ -2,12 +2,22 @@
   <div class="row mb-3 align-items-end d-none d-lg-flex justify-content-between">
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon :size="45" class="pb-2" type="notext"/>
-      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span itemprop="jobTitle">Vue / Nuxt / Creative UX</span></h1>
+      <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span
+          itemprop="jobTitle">Creative Front-End Dev ⚡</span></h1>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
-      <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none" aria-label="Find me on Twitter"><i class="fa-brands fa-x-twitter fa-xl twitter-icon mouse-sm d-none d-xl-inline text-decoration-none" title="Find me on Twitter"></i></NuxtLink>
-      <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-4 text-decoration-none" aria-label="View this site on GitHub"><i class="fa-brands fa-github fa-xl github-icon mouse-sm d-none d-xl-inline text-decoration-none" title="View this site on GitHub"></i></NuxtLink>
-      <NuxtLink to="https://www.linkedin.com/in/marchantweb/" target="_blank" class="me-5 text-decoration-none" aria-label="Find me on LinkedIn"><i class="fa-brands fa-linkedin fa-xl linkedin-icon mouse-sm d-none d-xl-inline text-decoration-none" title="Find me on LinkedIn"></i></NuxtLink>
+      <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none"
+                aria-label="Find me on Twitter"><i
+          class="fa-brands fa-x-twitter fa-xl twitter-icon mouse-sm d-none d-xl-inline text-decoration-none"
+          title="Find me on Twitter"></i></NuxtLink>
+      <NuxtLink to="https://github.com/marchantweb/Marchant-Web" target="_blank" class="me-4 text-decoration-none"
+                aria-label="View this site on GitHub"><i
+          class="fa-brands fa-github fa-xl github-icon mouse-sm d-none d-xl-inline text-decoration-none"
+          title="View this site on GitHub"></i></NuxtLink>
+      <NuxtLink to="https://www.linkedin.com/in/marchantweb/" target="_blank" class="me-5 text-decoration-none"
+                aria-label="Find me on LinkedIn"><i
+          class="fa-brands fa-linkedin fa-xl linkedin-icon mouse-sm d-none d-xl-inline text-decoration-none"
+          title="Find me on LinkedIn"></i></NuxtLink>
       <StatusIndicator class="d-none d-xl-block"/>
     </div>
   </div>
@@ -25,16 +35,17 @@
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  line-height: 21px;
+  line-height: 18px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
 
-  span{
+  span {
     color: white;
 
-    &:last-child{
-      color: #929eb6;
+    &:last-child {
+      color: #bdc8e0;
       font-weight: 500;
+      font-size: 12px;
     }
   }
 }

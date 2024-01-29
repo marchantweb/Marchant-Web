@@ -4,34 +4,62 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {Draggable} from "gsap/Draggable";
 import {InertiaPlugin} from "gsap/InertiaPlugin";
+import {Observer} from "gsap/Observer";
 
-gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin);
+gsap.registerPlugin(ScrollTrigger, Draggable, InertiaPlugin, Observer);
+
+const portfolioData = await usePortfolio(true);
+
+// TODO: Just clean this up a little before committing it. It's a mess.
+// TODO: Also review on mobile and perhaps make the cards a little smaller - need to handle resize event.
+
+/**
+ * The proxy element that Draggable will use to track the drag action
+ */
+let proxy = null;
+
+/**
+ * The animation to be controlled by Draggable
+ */
+let animation = null;
+
+/**
+ * The Observer instance that will be used to track mouse wheel events
+ */
+let wheelObserver = null;
+
+/**
+ * Flag to indicate whether the user is interacting with the slider
+ */
+let isInteracting = false;
+
+/**
+ * The ID of the animation frame that will be used to update the position of the slider
+ */
+let animationFrameId;
 
 onMounted(async () => {
-  await nextTick(); // Ensure all DOM elements are rendered
 
+  // Let's calculate some starting values
   const cardsContainer = document.querySelector('.cards');
   const cards = gsap.utils.toArray('.card');
   let wrapWidth = document.querySelector('.cards').offsetWidth;
-
-  // Dynamically calculate wrapWidth based on the actual widths of cards
   wrapWidth = cards.reduce((acc, card) => acc + card.offsetWidth, 0);
-
-  // Find the width of the widest card
   let widestCardWidth = Math.max(...cards.map(card => card.offsetWidth));
+  let position = 0;
 
-  let position = 0; // Tracking the cumulative position (x offset) of each card
+  // Set the initial position of each card in the slider
   cards.forEach((card, i) => {
-    gsap.set(card, { x: position, left: -widestCardWidth });
-    position += card.offsetWidth + 10; // Increment position for the next card, plus 10px for spacing between cards
+    gsap.set(card, {x: position, left: -widestCardWidth});
+    position += card.offsetWidth + 10; // Add 10px for spacing between cards
     wrapWidth += 10; // Add 10px for spacing between cards
   });
 
   // Creating a draggable proxy element
-  const proxy = document.createElement("div");
+  proxy = document.createElement("div");
 
   // GSAP animation controlled by Draggable
-  const animation = gsap.to(cards, {
+  animation = gsap.to(cards, {
     x: "+=" + wrapWidth,
     ease: "none",
     paused: true,
@@ -41,15 +69,25 @@ onMounted(async () => {
     }
   });
 
+  // Initialize Draggable
   Draggable.create(proxy, {
     type: "x",
     trigger: cardsContainer,
     inertia: true,
+    onPress: () => {
+      isInteracting = true;
+      cancelAnimationFrame(animationFrameId);
+    },
+    onRelease: () => {
+      isInteracting = false;
+      animationFrameId = requestAnimationFrame(updatePosition);
+    },
     onThrowComplete: updateAnimation,
     onDrag: updateAnimation,
     onThrowUpdate: updateAnimation,
   });
 
+  // Utility function to wrap items around the slider infinitely
   const wrapProgress = gsap.utils.wrap(0, 1)
   const props = gsap.getProperty(proxy);
 
@@ -58,7 +96,49 @@ onMounted(async () => {
     animation.progress(wrapProgress((props("x") + widestCardWidth) / wrapWidth));
   }
 
-  updateAnimation();
+  // Now let's also make it work with mouse wheel
+  wheelObserver = Observer.create({
+    type: "wheel",
+    onWheel: (self) => {
+      gsap.to(proxy, {
+        x: "+=" + (self.deltaY < 0 ? 1200 : -1200),
+        onUpdate: () => updateAnimation(),
+        ease: "power1.out",
+        duration: 0.5
+      });
+    },
+    onWheelStart: () => {
+      isInteracting = true;
+      cancelAnimationFrame(animationFrameId);
+    },
+    onWheelEnd: () => {
+      isInteracting = false;
+      animationFrameId = requestAnimationFrame(updatePosition);
+    },
+    preventDefault: true,
+  });
+
+  // Lastly, let's get an ambient scrolling motion going on when the user is not interacting with the slider
+  const updatePosition = () => {
+    if (!isInteracting) { // Only update position if user is not interacting
+      const currentX = parseFloat(gsap.getProperty(proxy, "x")) || 0;
+      const newX = currentX - (40 / 60);
+
+      gsap.set(proxy, {x: newX % wrapWidth});
+      updateAnimation();
+    }
+    animationFrameId = requestAnimationFrame(updatePosition);
+  };
+  animationFrameId = requestAnimationFrame(updatePosition);
+
+});
+
+// Commit mass murder
+onUnmounted(() => {
+  wheelObserver.kill();
+  animation.kill();
+  Draggable.get(proxy).kill();
+  cancelAnimationFrame(animationFrameId);
 });
 
 </script>
@@ -80,20 +160,16 @@ onMounted(async () => {
 
     <NavMenu/>
 
-    <section id="explore-slider">
-      <ul class="cards">
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/800')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/801')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/802')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/803')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/804')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/805')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/806')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/807')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/808')" />
-        <li class="card mouse-md" style="background-image:url('https://placekitten.com/809')" />
-      </ul>
-    </section>
+    <template v-if="portfolioData">
+      <section id="explore-slider">
+        <ul class="cards">
+          <li class="card" v-for="(portfolioItem, index) in portfolioData">
+            <ProjectCover :aria-posinset="index" :aria-setsize="portfolioData.length" :portfolioItem="portfolioItem"
+                          :index="index"/>
+          </li>
+        </ul>
+      </section>
+    </template>
 
     <div id="bottom-bar" class="container-fluid">
       <BottomBar/>
@@ -110,7 +186,7 @@ onMounted(async () => {
   left: 0;
   right: 0;
   bottom: 0;
-  transform: rotate3d(0, 0, 1, 5deg);
+  animation: slider-rotation 12s ease-in-out infinite alternate;
 }
 
 .cards {
@@ -125,34 +201,19 @@ onMounted(async () => {
 }
 
 .card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 800px;
-  height: 600px;
-  background-color: rgb(234, 238, 239);
-  background-size: cover;
-  background-position: center;
-  color: black;
-  font-size: 100px;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.09) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
-  cursor: pointer;
   position: absolute;
   left: 0;
+}
 
-  &:nth-child(4n + 1) {
-    width: 350px;
-    flex-basis: 350px;
+@keyframes slider-rotation{
+  0% {
+    transform: rotate3d(0, 0, 1, -3deg);
   }
-
-  &:nth-child(4n + 3) {
-    width: 350px;
-    flex-basis: 350px;
+  100% {
+    transform: rotate3d(0, 0, 1, 3deg);
   }
 }
 

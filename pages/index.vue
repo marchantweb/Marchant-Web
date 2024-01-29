@@ -6,14 +6,7 @@
     <div id="bottom-bar" class="container-fluid">
       <div class="row mb-3 justify-content-between align-items-end">
         <div class="col-11 col-lg-8">
-          <h1 class="visually-hidden">{{ heading }}</h1>
-          <h1 class="lead mouse-lg mb-3 mb-lg-4 " v-once>
-            <span class="heading-char" aria-hidden="true"
-                  :style="{'animation-delay': (index % 5 === 0 ? 0.5 : 0.01 * index) + 's'}"
-                  v-for="(char, index) in headingChars">{{ char }}
-            </span>
-          </h1>
-          <ActionButton to="/portfolio" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-4">
+          <ActionButton to="/explore" data-aos="fade-right" class="d-block d-lg-none mt-4 mb-4">
             Explore <i class="fa-sharp fa-solid fa-arrow-right-long fa-lg ps-2"></i>
           </ActionButton>
           <NuxtLink class="back-link mouse-md d-inline-block d-lg-none me-5" to="/about">About<i
@@ -58,9 +51,6 @@ onMounted(() => {
     }
   });
 });
-
-const heading = "Creative front-end engineer; 🧪";
-const headingChars = heading.split('');
 
 </script>
 

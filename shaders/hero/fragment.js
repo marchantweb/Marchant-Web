@@ -11,7 +11,7 @@ export default `
 
       // Configuration
       #define NOISE_STRENGTH 0.08
-      #define SPECULAR_STRENGTH 0.17
+      #define SPECULAR_STRENGTH 0.2
       #define ANIMATION_SPEED 0.6
       #define DEPTH 60.
       #define SEGMENT_QUALITY 1.2
@@ -30,8 +30,13 @@ export default `
 
       // Output
       void main(void) {
-
-          gl_FragColor = vec4(0, 0, 0, 1.);
+          
+          // Initial color (left to right gradient)
+          float mixFactor = gl_FragCoord.x / iResolution.x;
+          vec3 leftSide = vec3(.063, .035, .192);
+          vec3 rightSide = vec3(.03, .015, .1);
+          vec3 gradientColor = mix(leftSide, rightSide, mixFactor);
+          gl_FragColor = vec4(gradientColor, 1.0);
 
           vec2 p= -3. + 1.6 * fragmentCoordinates + (iZoomOffset * 0.2);
           vec3 o= vec3(p.x + 14. - (iZoomOffset * 3.0) - (iInitialXOffset * 3.0) - ((1.0 - iMouse.x) * 0.5) + ((iPortfolioScrollPercentage * 5.0) * iZoomOffset), p.y + 2.7 - (iZoomOffset * 0.3) - (iMouse.y * 0.15), -0.35 + (iZoomOffset * 0.4));
@@ -50,17 +55,17 @@ export default `
                   n.y = blob(o + d * t) - blob(vec3(o + d * t + e.yxy)) - (iZoomOffset * 7.0);
                   n.z = blob(o + d * t) - blob(vec3(o + d * t + e.yyx)) + 1.0;
                   n = normalize(n);
-                  c += max(dot(vec3(0.2 + (iZoomOffset * 1.0 + iInitialXOffset) + (iMouse.x * 0.1), 1.5, -1. - (iZoomOffset * 0.5)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
+                  c += max(dot(vec3(0.2 + (iZoomOffset * 0.5 + iInitialXOffset) + (iMouse.x * 0.1), 1.5, -1. - (iZoomOffset * 0.5)), n), .0) + min(dot(vec3(3.0  - (iZoomOffset * 2.0), 10.2 - (iZoomOffset * 3.0), -11. - (iZoomOffset * 3.0)), n), .1) * 0.1;
                   break;
               }
               t += SEGMENT_QUALITY;
           }
 
           // Base Color
-          gl_FragColor += vec4(.16, 0.05, .38, 0.) * (0.8 + (iZoomOffset * 0.3));
+          gl_FragColor += vec4(.15, 0.05, .38, 0.) * (0.8 + (iZoomOffset * 0.1));
 
           // Specular
-          gl_FragColor += c * (SPECULAR_STRENGTH + (iZoomOffset * 0.1)) * vec4(.40, 0.6, 0.89 - (iZoomOffset * 0.01), 1);
+          gl_FragColor += c * (SPECULAR_STRENGTH + (iZoomOffset * 0.1)) * vec4(.40, 0.6, 0.89 - (iZoomOffset * 0.02), 1);
 
           // Brightness
           gl_FragColor *= (t * (.04 + (iZoomOffset * 0.03)));

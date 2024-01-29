@@ -2,40 +2,27 @@
   <article role="article" :class="elementClasses" tabindex="0" :aria-label="currentPortfolioItem['title']"
            :aria-description="currentPortfolioItem['lead']">
 
-    <!-- Title & Stack -->
-    <div class="title-bar row justify-content-between align-items-end mb-3 flex-nowrap">
-      <div class="col-auto">
-        <h2 class="lead pb-1 pe-3 d-inline-block mb-0 ps-4 ps-0" style="color: #F2F2F2">{{ displayIndex }}.</h2>
-        <div class="d-inline-block">
-          <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
-          <h2 class="project-cover__title mb-0">{{ currentPortfolioItem["title"] }}</h2>
-        </div>
-      </div>
-      <div class="col-auto justify-content-end d-none d-xl-flex">
-        <CodeLine v-if="props.isFocused" :number="'//'"><span class="code--white"
-                                                              v-for="(stackItem, stackIndex) in currentPortfolioItem['stack']">{{
-            stackItem.name
-          }} <span
-              class="px-1" v-if="stackIndex < currentPortfolioItem['stack'].length - 1"> | </span></span></CodeLine>
-      </div>
-    </div>
-
     <!-- Video -->
     <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
       <div class="project-cover__video-container">
-        <i class="fa-sharp fa-regular fa-arrow-up-right fa-3x open-arrow"></i>
         <video ref="video" :style="elementStyle" class="project-cover__video mouse-md" loop="true" muted
-               :autoplay="isFocused ? true : null" playsinline :poster="currentPortfolioItem['cover']">
+               :autoplay="true" playsinline :poster="currentPortfolioItem['cover']">
           <source :src="currentPortfolioItem['videoWebm']" type="video/webm">
           <source :src="currentPortfolioItem['videoMP4']" type="video/mp4">
         </video>
       </div>
+      <img class="project-cover__featured-image mouse-md" :src="currentPortfolioItem['featuredImage']"/>
     </NuxtLink>
 
-    <!-- Lead Text (Mobile)  -->
-    <h3 class="project-cover__lead d-block d-lg-none mt-4">
-      {{ currentPortfolioItem['lead'] }}
-    </h3>
+    <!-- Title & Stack -->
+    <div class="title-bar row">
+      <div class="col-auto">
+        <div class="d-block">
+          <h3 class="project-cover__title mb-0">{{ currentPortfolioItem["title"] }}</h3>
+          <span class="project-cover__type text-small mb-0 d-block">{{ currentPortfolioItem["type"] }}</span>
+        </div>
+      </div>
+    </div>
 
   </article>
 </template>
@@ -83,7 +70,7 @@ const elementStyle = computed(() => {
 const elementClasses = computed(() => {
   return {
     'project-cover': true,
-    'project-cover--focused': props.isFocused
+    'project-cover--focused': true
   }
 });
 
@@ -102,33 +89,24 @@ watch(() => props.isFocused, (isFocused) => {
 
 .project-cover {
   position: relative;
-  width: 1040px;
-  aspect-ratio: 2;
+  width: 900px;
   flex: none;
-  transform: scale(0.6);
   transform-origin: bottom center;
-  transition: scale 0.6s cubic-bezier(0.6, 0, 0.2, 1);
+  background: #111115;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
 
-  @media screen and (max-width: 1680px) {
-    width: 960px;
-  }
-
-  @media screen and (max-width: 1400px) {
-    width: 800px;
-  }
-
-  @media screen and (max-width: 1200px) {
-    width: 700px;
-  }
-
-  @media screen and (max-width: 992px) {
-    width: calc(100vw - 60px);
-    transform: scale(0.8);
-  }
+.title-bar {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  pointer-events: none;
+  z-index: 3;
 }
 
 .project-cover__type {
-  color: #AFBFD6;
+  color: #FFFFFF;
   opacity: 0;
   transition: opacity 0.6s ease;
 }
@@ -144,16 +122,12 @@ watch(() => props.isFocused, (isFocused) => {
 
 .project-cover__video-container {
   width: 100%;
-  height: calc(100vh - 380px);
-  box-shadow: rgba(0, 0, 0, 0.3) 0 40px 10px -20px;
-  border-radius: 5px;
+  aspect-ratio: 1.6;
+  border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
   position: relative;
-
-  @media screen and (max-width: 992px) {
-    height: calc(100vh - 440px);
-  }
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, .1) 95%);
 }
 
 .project-cover__video {
@@ -177,13 +151,6 @@ watch(() => props.isFocused, (isFocused) => {
   .tech-stack {
     opacity: 1;
   }
-
-  &:hover {
-
-    .open-arrow {
-      opacity: 1;
-    }
-  }
 }
 
 .project-cover__lead {
@@ -196,18 +163,22 @@ watch(() => props.isFocused, (isFocused) => {
   font-family: "Inter", sans-serif;
 }
 
-.open-arrow {
-  color: #F2F2F2;
+.project-cover__featured-image {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 8px;
   z-index: 2;
-  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
-  transition: opacity 0.1s ease;
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 
-  @media screen and (max-width: 992px) {
+  &:hover {
     opacity: 1;
   }
 }

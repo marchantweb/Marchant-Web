@@ -261,13 +261,13 @@ let zoomOffset = ref(route.path === '/portfolio' || route.path === '/explore' ? 
 watch(() => route.path, (newVal, oldVal) => {
   if (newVal === "/portfolio" || newVal === "/explore") {
     gsap.to(zoomOffset, {
-      duration: 5,
+      duration: 10,
       value: 1,
-      ease: "power3.inOut"
+      ease: "power1.inOut"
     });
   } else {
     gsap.to(zoomOffset, {
-      duration: 5,
+      duration: 10,
       value: 0,
       ease: "power1.inOut"
     });

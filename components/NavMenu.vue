@@ -9,8 +9,8 @@
             <NuxtLink to="/about" class="mouse-md">
               About
             </NuxtLink>
-            <NuxtLink to="/portfolio" class="mouse-md">
-              Work
+            <NuxtLink to="/explore" class="mouse-md">
+              Explore
             </NuxtLink>
             <NuxtLink to="/contact" class="mouse-md">
               Contact
