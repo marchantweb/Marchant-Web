@@ -1,5 +1,5 @@
 <template>
-  <div class="row mb-3 align-items-end d-none d-lg-flex justify-content-between">
+  <div class="bottom-bar row pb-3 align-items-end d-none d-lg-flex justify-content-between">
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon :size="45" class="pb-2" type="notext"/>
       <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span
@@ -28,6 +28,20 @@
 </script>
 
 <style lang="scss" scoped>
+
+.bottom-bar{
+
+  &:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 200px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+    z-index: -1;
+  }
+}
 
 .bottom-navigation__title {
   display: block;
