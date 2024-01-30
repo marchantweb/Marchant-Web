@@ -384,10 +384,14 @@ body.fixed-webgl {
   }
 
   &.hero--portfolio-single {
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 65%);
+    clip-path: polygon(0 0, 100% 0, 100% 400px, 0 600px);
 
     @media screen and (max-width: 992px) {
-      clip-path: polygon(0 0, 100% 0, 100% 35%, 0 52%);
+      clip-path: polygon(0 0, 100% 0, 100% 350px, 0 450px);
+    }
+
+    @media screen and (min-width: 1680px) {
+      clip-path: polygon(0 0, 100% 0, 100% 500px, 0 700px);
     }
   }
 

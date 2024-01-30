@@ -29,10 +29,12 @@ htmlCode.value = await codeToHtml(codeContent, {lang: props.block['code']['rich_
   padding: 20px 30px;
   width: 100%;
 
-  @media screen and (min-width: 992px) {
-    margin-left: -120px;
-    margin-right: -120px;
-    width: calc(100% + 240px);
+  .article__content{
+    @media screen and (min-width: 992px) {
+      margin-left: -120px;
+      margin-right: -120px;
+      width: calc(100% + 240px);
+    }
   }
 
   span {

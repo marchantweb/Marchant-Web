@@ -15,7 +15,7 @@
       <div class="row gx-6 mt-5 mt-lg-6">
         <div class="col-12 col-lg-4">
           <CodeTag class="mb-2 mb-lg-3">{{ currentPortfolioItem['type'] }}</CodeTag>
-          <h1 class="mb-3 mb-lg-10 project__name"> {{ currentPortfolioItem['title'] }} </h1>
+          <h1 class="mb-5 mb-lg-8 project__name"> {{ currentPortfolioItem['title'] }} </h1>
           <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/explore"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back to Explore</NuxtLink>
         </div>
         <div class="col">
@@ -29,7 +29,7 @@
       <div class="row mt-5 mt-lg-8 mt-xl-7 gx-6 gx-xl-8 pb-3">
         <div class="col-12 col-lg-4 order-2 order-lg-1 pt-6 pt-lg-0">
           <aside class="ps-0 ps-lg-6 mb-5 mb-lg-0" style="position: sticky; top: 60px">
-            <h3 class="mb-5" data-aos="fade-up">Details</h3>
+            <h3 class="mb-5" data-aos="fade-up">{{ currentPortfolioItem['title'] }}</h3>
             <dl class="mb-5 d-block" data-aos="fade-up">
 
               <dt v-if="currentPortfolioItem['client']">Client</dt>
@@ -48,9 +48,9 @@
               <dd v-if="currentPortfolioItem['awards']" v-html="currentPortfolioItem['awards'].replace(/\n/g, '<br />')"></dd>
 
             </dl>
-            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" data-aos="fade-up">
-              <i class="fa-sharp fa-regular fa-calendar-range fa-lg"></i>
-              Book some time
+            <ActionButton to="https://calendly.com/marchantweb/discovery" target="_blank" class="mb-6">
+              <i class="fa-sharp fa-light fa-paper-plane"></i>
+              Let's chat
             </ActionButton>
           </aside>
         </div>
@@ -115,7 +115,7 @@ h1.project__name {
 
 video {
   width: 100%;
-  aspect-ratio: 2;
+  aspect-ratio: 16/9;
   object-fit: cover;
   box-shadow: rgba(0,0,0,0.2) 0 60px 15px -40px, rgba(0,0,0,0.06) 0 4px 6px -2px;
   border-radius: 5px;
