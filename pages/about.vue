@@ -22,7 +22,7 @@
                 technical role. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work.
               </p>
               <p>
-                On a personal note... I live in Orlando FL with my wife and daughter. I <em>want</em> to say that I'm a big fan of the outdoors and that I like long walks on the beach, but in my free time I enjoy programming, so I'm usually just at my desk 🧑‍💻.
+                On a personal note... I live in Orlando FL with my wife and daughter. I <em style="text-decoration: underline">want</em> to say that I'm a big fan of the outdoors and that I like long walks on the beach; but instead my passion is programming so I'm usually just at my desk 🧑‍💻
               </p>
             </div>
             <h3 class="mt-5 mb-3">Some teams I've worked with:</h3>
@@ -48,7 +48,7 @@
             <h3 class="mt-5 mb-4">Availability</h3>
             <p>
               I'm interested in collaborating with people who are building creative websites, interactive experiences,
-              or bespoke interfaces — especially those with unique twists that make my GPU catch fire.
+              or bespoke interfaces — especially those with graphics so intense that my GPU catches fire 🔥
             </p>
             <p class="mb-5">
               While I always have some sort of ongoing work, I'm open to discussing new opportunities. If you
