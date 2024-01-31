@@ -14,13 +14,12 @@
             <h2 class="my-4" itemprop="description">Hey I'm Simon — a creative frontend engineer with 15+ years of crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                I build creative things, mostly working with <a
-                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, but I also have a
-                comprehensive full-stack background going all the way back to when Adobe Flash was a thing. I enjoy challenging the web browser to a battle of wits <em>(or patience)</em> when creating something new and fun. Not to brag, but I can center a div without Googling it <em>(most of the time)</em>.
+                I build things with <a
+                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a> and it's ecosystem of tooling. Before specializing in the frontend, I was a full-stack developer putting together enterprise-scale websites. I enjoy challenging Chrome and Safari to a battle of wits <em>(or patience)</em> and architecting simple solutions to complex problems.
               </p>
               <p>
-                I've worked with a wide range of teams, from startups to Fortune 500 companies; typically in a leading
-                technical role but also as a helping hand. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work. I like getting into a project as early as possible, helping to shape the outcome from the ground up.
+                I've worked with a wide range of teams, from startups to Fortune 500 companies; typically in a principal
+                technical role. Usually I partner with agencies, design studios, or startups to provide sprints of focused dev work.
               </p>
               <p>
                 On a personal note... I live in Orlando FL with my wife and daughter. I <em>want</em> to say that I'm a big fan of the outdoors and that I like long walks on the beach, but in my free time I enjoy programming, so I'm usually just at my desk 🧑‍💻.
@@ -49,7 +48,7 @@
             <h3 class="mt-5 mb-4">Availability</h3>
             <p>
               I'm interested in collaborating with people who are building creative websites, interactive experiences,
-              or bespoke interfaces — especially those with unique twists that make Chrome/Safari nervous and my GPU start melting.
+              or bespoke interfaces — especially those with unique twists that make my GPU catch fire.
             </p>
             <p class="mb-5">
               While I always have some sort of ongoing work, I'm open to discussing new opportunities. If you
