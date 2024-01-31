@@ -11,12 +11,11 @@
             <div class="d-flex flex-row align-items-center mb-5">
               <img src="~assets/images/headshot.jpg" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
             </div>
-            <h2 class="my-4" itemprop="description">Hey I'm Simon — a front-end engineer with 15+ years in
-              leading and crafting innovative web projects.</h2>
+            <h2 class="my-4" itemprop="description">Hey I'm Simon — a creative frontend engineer with 15+ years of crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
-                I mostly work in <a
-                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a> / <a href="https://nuxt.com/" target="_blank" class="mouse-sm">Nuxt</a>, but I also have a
+                I build creative things, mostly working with <a
+                    href="https://vuejs.org/" target="_blank" class="mouse-sm">Vue</a>, but I also have a
                 comprehensive full-stack background going all the way back to when Adobe Flash was a thing. I enjoy challenging the web browser to a battle of wits <em>(or patience)</em> when creating something new and fun. Not to brag, but I can center a div without Googling it <em>(most of the time)</em>.
               </p>
               <p>

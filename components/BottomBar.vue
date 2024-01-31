@@ -3,7 +3,7 @@
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon :size="45" class="pb-2" type="notext"/>
       <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span
-          itemprop="jobTitle">Creative Front-End Dev ⚡</span></h1>
+          itemprop="jobTitle">Creative Frontend Engineer ⚡</span></h1>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
       <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none"
