@@ -3,7 +3,7 @@
     <div class="col-auto d-flex align-items-center" itemscope itemtype="https://schema.org/Person">
       <MWIcon :size="45" class="pb-2" type="notext"/>
       <h1 class="bottom-navigation__title ms-4"><span itemprop="name">Simon Le Marchant</span><br><span
-          itemprop="jobTitle">Creative Frontend Engineer ⚡</span></h1>
+          itemprop="jobTitle">Creative Frontend Engineer</span></h1>
     </div>
     <div class="col-auto mb-3 d-flex align-items-center">
       <NuxtLink to="https://twitter.com/marchantweb" target="_blank" class="me-4 text-decoration-none"
@@ -46,9 +46,9 @@
 .bottom-navigation__title {
   display: block;
   color: white;
-  font-size: 14px;
+  font-size: 1rem;
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
+  font-weight: 00;
   line-height: 18px;
   letter-spacing: 0.2px;
   margin-bottom: 12px;
@@ -58,8 +58,8 @@
 
     &:last-child {
       color: #bdc8e0;
-      font-weight: 500;
-      font-size: 12px;
+      font-weight: 400;
+      font-size: 0.9rem;
     }
   }
 }
