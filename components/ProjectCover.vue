@@ -1,10 +1,10 @@
 <template>
-  <article role="article" :class="elementClasses" :style="containerStyle" tabindex="0"
+  <article role="article" :class="containerClasses" tabindex="0"
            :aria-label="currentPortfolioItem['title']"
            :aria-description="currentPortfolioItem['lead']">
 
     <!-- Video -->
-    <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']">
+    <NuxtLink :to="'/portfolio/' + currentPortfolioItem['slug']" @click="isActive = false">
       <div class="project-cover__video-container">
         <video ref="video" :style="mediaStyle" class="project-cover__video mouse-md" loop="true" muted
                :autoplay="true" playsinline :poster="currentPortfolioItem['cover']">
@@ -58,6 +58,7 @@ const container = ref(null);
 const {width, height} = useWindowSize();
 const {x, y} = useMouse();
 const parallaxOffset = 30;
+const isActive = ref(false);
 
 /**
  * Determine the inline styles to apply to the video/image element
@@ -68,20 +69,10 @@ const mediaStyle = computed(() => {
   }
 });
 
-/**
- * Determine the inline styles to apply to the container element
- * @type {ComputedRef<{aspectRatio: string}>}
- */
-const containerStyle = computed(() => {
-  return {
-    'aspectRatio': (props.index + 1) % 3 === 0 ? '0.6' : '1.6'
-  }
-})
-
-const elementClasses = computed(() => {
+const containerClasses = computed(() => {
   return {
     'project-cover': true,
-    'project-cover--focused': true
+    'project-cover--active': isActive.value,
   }
 });
 
@@ -94,6 +85,10 @@ watch(() => props.isFocused, (isFocused) => {
   }
 });
 
+onMounted(() => {
+  isActive.value = true;
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -102,13 +97,31 @@ watch(() => props.isFocused, (isFocused) => {
   position: relative;
   height: 600px;
   flex: none;
-  transform-origin: bottom center;
   background: #111115;
   border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0 5px 10px;
+  transform: scale(0) rotateZ(10deg);
+  transform-origin: center center;
+  transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  aspect-ratio: 1.6;
 
-  @media screen and (max-width: 768px) {
-    height: 60vh;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 80%);
+    z-index: 5;
+    border-radius: 0 0 8px 8px;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 1200px) {
+    height: 60svh;
+    aspect-ratio: 0.8;
   }
 }
 
@@ -117,21 +130,12 @@ watch(() => props.isFocused, (isFocused) => {
   bottom: 20px;
   left: 40px;
   pointer-events: none;
-  z-index: 3;
-}
-
-.project-cover__type {
-  color: #FFFFFF;
+  z-index: 6;
   opacity: 0;
   transition: opacity 0.6s ease;
 }
 
-.tech-stack {
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.project-cover__title {
+.project-cover__title, .project-cover__type {
   color: #F2F2F2;
 }
 
@@ -142,7 +146,6 @@ watch(() => props.isFocused, (isFocused) => {
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, .1) 95%);
 }
 
 .project-cover__video {
@@ -154,28 +157,13 @@ watch(() => props.isFocused, (isFocused) => {
   background-color: #25223d;
 }
 
-.project-cover--focused {
-  transition: transform 0.4s cubic-bezier(0.6, 0, 0.2, 1);
+.project-cover--active {
   transform: scale(1);
 
-  .project-cover__type, .project-cover__lead {
+  .title-bar {
     opacity: 1;
-    transition-delay: 0.2s;
+    transition-delay: 1.2s;
   }
-
-  .tech-stack {
-    opacity: 1;
-  }
-}
-
-.project-cover__lead {
-  color: #F2F2F2;
-  font-size: 1.0rem;
-  max-width: 500px;
-  opacity: 0;
-  transition: opacity 1s ease;
-  font-weight: 500;
-  font-family: "Inter", sans-serif;
 }
 
 .project-cover__featured-image {

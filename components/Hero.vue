@@ -370,7 +370,7 @@ body.fixed-webgl {
     backface-visibility: hidden;
     border-radius: 10px;
     box-shadow: rgb(50 50 93 / 20%) 0 40px 20px -20px, #742bff -80px 13px 156px -120px;
-    transition: transform 1.5s cubic-bezier(0.85, 0, 0.15, 1);
+    transition: all 1.5s cubic-bezier(0.85, 0, 0.15, 1);
     clip-path: polygon(-10% -10%, 110% -10%, 110% 110%, -10% 110%);
 
     @media screen and (max-width: 1200px) {

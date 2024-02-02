@@ -2,9 +2,23 @@
 
   <main>
 
+    <!-- Navigation -->
+    <Transition name="navigation">
+      <NavMenu v-if="showNavigation"/>
+    </Transition>
+
     <!-- Page Content -->
     <slot/>
 
+
+    <!-- Bottom Bar -->
+    <Transition name="bottom-bar">
+      <div id="bottom-bar" class="container-fluid" v-if="showBottomBar">
+        <BottomBar/>
+      </div>
+    </Transition>
+
+    <!--  Preloader -->
     <div class="preloader" :class="preloaderClasses">
       <div class="preloader__overlay"/>
     </div>
@@ -29,6 +43,16 @@ onMounted(() => {
   });
 });
 
+const route = useRoute()
+
+const showBottomBar = computed(() => {
+  return route.path === '/' || route.path === '/explore'
+})
+
+const showNavigation = computed(() => {
+  return route.path !== '/about' && route.path !== '/contact'
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -48,11 +72,33 @@ onMounted(() => {
   backface-visibility: hidden;
 }
 
-.preloader--loaded{
-  .preloader__overlay{
+.preloader--loaded {
+  .preloader__overlay {
     pointer-events: none;
     transform: translateX(-100%) translateZ(0);
   }
+}
+
+.bottom-bar-enter-active, .bottom-bar-leave-active {
+  transition: all 1s;
+}
+
+.bottom-bar-enter-from, .bottom-bar-leave-to {
+  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+}
+
+.navigation-enter-active, .navigation-leave-active {
+  transition: all 1s;
+}
+
+.bottom-bar-enter-active, .navigation-enter-active {
+  transition-delay: 1.5s;
+}
+
+.navigation-enter-from, .navigation-leave-to {
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
 }
 
 </style>

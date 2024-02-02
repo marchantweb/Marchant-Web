@@ -42,6 +42,7 @@ const navClasses = computed(() => {
   position: absolute;
   top: 30px;
   right: 30px;
+  z-index: 100;
 
   @media screen and (max-width: 1680px) {
     right: 30px;

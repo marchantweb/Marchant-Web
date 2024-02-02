@@ -145,22 +145,6 @@ onUnmounted(() => {
 <template>
   <section class="page" style="overflow: hidden">
 
-    <div class="container-fluid pt-4" style="position: relative; z-index: 2;">
-      <div class="row">
-        <div class="col">
-
-          <!-- Back to Home -->
-          <NuxtLink class="back-link mouse-md" to="/"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Home
-          </NuxtLink>
-
-        </div>
-        <div class="col">
-          <NavMenu/>
-        </div>
-      </div>
-    </div>
-
-
     <template v-if="portfolioData">
       <section id="explore-slider">
         <ul class="cards">
@@ -172,14 +156,18 @@ onUnmounted(() => {
       </section>
     </template>
 
-    <div id="bottom-bar" class="container-fluid">
-      <BottomBar/>
-    </div>
-
   </section>
 </template>
 
 <style scoped lang="scss">
+
+.page-leave-active {
+  transition: all 0.6s;
+}
+
+.page-enter-active {
+  transition: none;
+}
 
 #explore-slider {
   position: absolute;
@@ -188,6 +176,11 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   animation: slider-rotation 12s ease-in-out infinite alternate;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 100px;
+    animation: none;
+  }
 }
 
 .cards {

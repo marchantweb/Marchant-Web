@@ -1,8 +1,6 @@
 <template>
   <section class="page">
 
-    <NavMenu/>
-
     <div class="container-xxxl">
 
       <div class="row mt-5">
@@ -16,7 +14,7 @@
         <div class="col-12 col-lg-4">
           <CodeTag class="mb-2 mb-lg-3">{{ currentPortfolioItem['type'] }}</CodeTag>
           <h1 class="mb-5 mb-lg-8 project__name"> {{ currentPortfolioItem['title'] }} </h1>
-          <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/explore"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back to Explore</NuxtLink>
+          <NuxtLink class="back-link mouse-md mb-5 mb-lg-0" to="/explore"><i class="fa-sharp fa-solid fa-arrow-up-left fa-2x pe-3"></i>Back</NuxtLink>
         </div>
         <div class="col">
           <video class="mouse-md" loop="true" muted autoplay playsinline :poster="currentPortfolioItem['cover']" data-aos="zoom-in-down">
@@ -118,7 +116,7 @@ video {
   aspect-ratio: 16/9;
   object-fit: cover;
   box-shadow: rgba(0,0,0,0.2) 0 60px 15px -40px, rgba(0,0,0,0.06) 0 4px 6px -2px;
-  border-radius: 5px;
+  border-radius: 8px;
 
   @media screen and (max-width: 992px) {
     box-shadow: rgba(0,0,0,0.3) 0 10px 8px -10px, rgba(0,0,0,0.06) 0 4px 6px -2px;
