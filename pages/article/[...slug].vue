@@ -75,7 +75,7 @@ const coverImage = computed(() => {
   let coverImage = 'https://marchantweb.com/cover.jpg';
   for (let block of currentArticleItem.value['pageContent']) {
     if (block.type === 'image') {
-      coverImage = block['image']['file']['url'];
+      coverImage = 'https://marchantweb.com/cdn-cgi/image/width=1974,quality=100,format=auto/https://api.marchantweb.com/images/' + encodeURI(block['id']);
       break;
     }
   }
