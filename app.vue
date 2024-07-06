@@ -57,7 +57,7 @@ useHead({
     {
       hid: 'og:title',
       name: 'og:title',
-      content: 'Simon Le Marchant | Creative Front End Engineer'
+      content: 'Simon Le Marchant | Independent Interactive Developer'
     },
     {
       hid: 'og:type',
@@ -72,7 +72,7 @@ useHead({
     {
       hid: 'og:image:alt',
       name: 'og:image:alt',
-      content: 'Simon Le Marchant | Creative Front End Engineer'
+      content: 'Simon Le Marchant | Independent Interactive Developer'
     },
     {
       hid: 'og:description',
@@ -82,7 +82,7 @@ useHead({
     {
       hid: 'og:site_name',
       name: 'og:site_name',
-      content: 'Simon Le Marchant | Creative Front End Engineer'
+      content: 'Simon Le Marchant | Independent Interactive Developer'
     },
     {
       hid: 'og:locale',
@@ -112,12 +112,12 @@ useHead({
     {
       hid: 'twitter:title',
       name: 'twitter:title',
-      content: 'Simon Le Marchant | Creative Front End Engineer'
+      content: 'Simon Le Marchant | Independent Interactive Developer'
     },
     {
       hid: 'twitter:description',
       name: 'twitter:description',
-      content: 'Hey I’m Simon, a creative front end engineer based in Orlando, Florida.'
+      content: 'Hey I’m Simon, an independent interactive developer based in Orlando, Florida.'
     },
     {
       hid: 'twitter:image',
@@ -127,7 +127,7 @@ useHead({
     {
       hid: 'twitter:image:alt',
       name: 'twitter:image:alt',
-      content: 'Simon Le Marchant | Creative Front End Engineer'
+      content: 'Simon Le Marchant | Independent Interactive Developer'
     }
   ],
   link: [

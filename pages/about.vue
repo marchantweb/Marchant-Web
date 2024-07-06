@@ -11,7 +11,7 @@
             <div class="d-flex flex-row align-items-center mb-5">
               <img src="~assets/images/headshot.jpg" alt="Hey I'm Simon" class="headshot me-4 me-lg-5">
             </div>
-            <h2 class="my-4" itemprop="description">Hey I'm Simon — a creative frontend engineer with 15+ years of
+            <h2 class="my-4" itemprop="description">Hey I'm Simon — an independent interactive developer with 15+ years of
               crafting innovative web projects.</h2>
             <div itemprop="knowsAbout">
               <p>
